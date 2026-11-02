@@ -15,7 +15,7 @@
     "vertical": "general",
     "pain_points": [],
     "growth_goals": [],
-    "created_at": "2026-10-31T18:25:51.173077Z"
+    "created_at": "2026-11-01T18:13:46.001095Z"
   },
   "status": "replied",
   "audit": {
@@ -29,7 +29,7 @@
     ],
     "quantified_loss": null,
     "screenshot_path": null,
-    "audited_at": "2026-10-31T18:25:51.173103Z"
+    "audited_at": "2026-11-01T18:13:46.001111Z"
   },
   "draft": null,
   "contact_name": null,
@@ -44,19 +44,19 @@
     {
       "sender": "prospect",
       "message": "We get all our bookings through word of mouth and referrals",
-      "timestamp": "2026-10-31T18:25:51.196156+00:00",
+      "timestamp": "2026-11-01T18:13:46.017307+00:00",
       "intent": "general_query"
     },
     {
       "sender": "closer_agent",
       "message": "Word of mouth is undeniably the best source! But even word-of-mouth referrals look up your website or Instagram at 9 PM on their phones. If they hit a static page with no date checker, 60% delay contacting and often end up booking another venue with instant answers.\n\nTake a look at the live date-checker prototype: https://calendly.com/agency-demo/15min",
-      "timestamp": "2026-10-31T18:25:51.196156+00:00"
+      "timestamp": "2026-11-01T18:13:46.017307+00:00"
     }
   ],
   "meeting_link": null,
   "research": null,
   "pstack_proof": null,
   "handoff_trace": [],
-  "created_at": "2026-10-31T18:25:51.173122Z",
-  "updated_at": "2026-10-31T18:25:51.196192Z"
+  "created_at": "2026-11-01T18:13:46.001126Z",
+  "updated_at": "2026-11-01T18:13:46.017335Z"
 }

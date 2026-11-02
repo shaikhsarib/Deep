@@ -1,0 +1,63 @@
+{
+  "id": "test_lead_wf_02",
+  "profile": {
+    "company_name": "Urban Glow Salon",
+    "business_type": "salon",
+    "location": "Mumbai",
+    "phone": "+91 98201 77889",
+    "email": null,
+    "website": null,
+    "has_website": false,
+    "address": null,
+    "rating": null,
+    "source": "manual",
+    "source_url": null,
+    "vertical": "general",
+    "pain_points": [],
+    "growth_goals": [],
+    "created_at": "2026-11-01T18:14:52.044025Z"
+  },
+  "status": "replied",
+  "audit": {
+    "load_time_seconds": null,
+    "has_ssl": true,
+    "is_mobile_responsive": true,
+    "has_whatsapp_widget": false,
+    "has_online_booking": false,
+    "key_flaws": [
+      "No online booking system",
+      "Missing WhatsApp direct widget"
+    ],
+    "quantified_loss": null,
+    "screenshot_path": null,
+    "audited_at": "2026-11-01T18:14:52.044069Z"
+  },
+  "draft": null,
+  "contact_name": null,
+  "contact_email": null,
+  "budget": null,
+  "interest_level": null,
+  "summary": null,
+  "qualified": false,
+  "contacted_channels": [],
+  "last_contacted_at": null,
+  "conversation_history": [
+    {
+      "sender": "prospect",
+      "message": "Kitna charge karte ho monthly?",
+      "timestamp": "2026-11-01T18:14:52.060231+00:00",
+      "intent": "price_objection"
+    },
+    {
+      "sender": "closer_agent",
+      "message": "Great question! Our setup pays for itself within the first month. Most salon owners in Mumbai lose 20-30% on aggregator commissions. With direct WhatsApp ordering, retaining just 2-3 extra customers covers the entire cost.\n\nLet's hop on a quick 5-min screen share to see live numbers: https://calendly.com/agency-demo/15min",
+      "timestamp": "2026-11-01T18:14:52.060231+00:00"
+    }
+  ],
+  "meeting_link": null,
+  "research": null,
+  "pstack_proof": null,
+  "handoff_trace": [],
+  "created_at": "2026-11-01T18:14:52.044054Z",
+  "updated_at": "2026-11-01T18:14:52.060266Z"
+}

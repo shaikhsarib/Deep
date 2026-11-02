@@ -215,7 +215,7 @@
         }
       }
     ],
-    "verified_at": "2026-10-31T18:25:51.270210Z"
+    "verified_at": "2026-11-01T18:13:46.088515Z"
   },
   "handoff_trace": [
     {
@@ -354,8 +354,69 @@
       },
       "proof_artifacts": [],
       "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_6245633d",
+      "source_agent": "scout_agent",
+      "target_agent": "researcher_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-01T18:13:46.087464Z",
+      "status": "validated",
+      "payload": {
+        "company_name": "TransNational Freight & Logistics",
+        "business_type": "freight transport and logistics"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_0c93275b",
+      "source_agent": "researcher_agent",
+      "target_agent": "auditor_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-01T18:13:46.087557Z",
+      "status": "initiated",
+      "payload": {
+        "website": "",
+        "company_name": "TransNational Freight & Logistics"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_9f4da46b",
+      "source_agent": "auditor_agent",
+      "target_agent": "copywriter_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-01T18:13:46.087658Z",
+      "status": "validated",
+      "payload": {
+        "key_flaws": [
+          "No direct digital booking or freight rate calculator",
+          "100% reliant on 3rd-party freight brokers and load boards (paying 15-25% broker cuts)",
+          "Invisible to direct shippers searching online for reliable lane carriers",
+          "No automated WhatsApp response system for after-hours rate inquiries"
+        ],
+        "quantified_loss": "Losing 15-20% margin to freight brokers and ~8-12 spot loads weekly due to delayed manual quote turnaround"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_bbbc8e1c",
+      "source_agent": "copywriter_agent",
+      "target_agent": "paperclip_approval_gate",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-01T18:13:46.115508Z",
+      "status": "validated",
+      "payload": {
+        "whatsapp_message": "Hi team TransNational Freight & Logistics, saw your fleet operations in Navi Mumbai! Shippers book whoever quotes rates within 5 mins. We build instant WhatsApp freight calculators & direct driver dispatch bots so you skip 20% broker fees. Open to a 2-min video preview?",
+        "qualified": true
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
     }
   ],
   "created_at": "2026-10-27T17:19:29.863925Z",
-  "updated_at": "2026-10-31T18:25:51.462774Z"
+  "updated_at": "2026-11-01T18:13:46.115596Z"
 }

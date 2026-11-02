@@ -3,10 +3,10 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "standard-autonomous"
+name = "deep"
 version = "2.0.0"
-description = "Multi-Agent Autonomous OS for Enterprise Discovery, Technical Audits & AI Consensus Swarms"
-authors = [{ name = "Standard Autonomous Team" }]
+description = "Deep: Autonomous OS for Enterprise Discovery, Technical Audits & AI Consensus Swarms"
+authors = [{ name = "Deep Team" }]
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
@@ -32,7 +32,7 @@ dev = [
 ]
 
 [project.scripts]
-standard-autonomous = "cli:app"
+deep = "cli:app"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

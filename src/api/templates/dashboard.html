@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Standard Autonomous</title>
+    <title>Deep</title>
     <link rel="icon" type="image/svg+xml" href="/static/standard_autonomous_logo.svg?v=3">
+    <link rel="icon" type="image/svg+xml" href="/static/deep_logo.svg?v=4">
     <link rel="icon" type="image/png" sizes="64x64" href="/static/favicon.png?v=3">
     <link rel="shortcut icon" href="/favicon.ico?v=3">
     <link rel="apple-touch-icon" href="/static/ic_logo_badge.png?v=3">
@@ -29,7 +30,7 @@
     </script>
     <style>
         /* ==========================================================================
-           STANDARD AUTONOMOUS — DESIGN SYSTEM v2
+           DEEP — DESIGN SYSTEM v2
            Tokens: bklit dark-set + Hallmark paper-set  |  Motion: react-bits / motion.dev
            Reference stack: Twenty CRM grid · Linear shell · kokonutui agent cards
            ========================================================================== */
@@ -3568,6 +3569,595 @@
             }
         }
     </style>
+    <style id="deep-agent-os-styles">
+        /* ==========================================================================
+           13. RAKAZO 3-COLUMN AGENT OS & LIVING PROCEDURAL AVATARS
+           Stepped Slate Obsidians · macOS Window Architecture · Micro-Borders
+           ========================================================================== */
+        #studio-subview-workspace {
+            display: none;
+            flex-direction: column;
+            gap: 14px;
+            width: 100%;
+            height: calc(100vh - 130px);
+            min-height: 680px;
+            max-height: 940px;
+        }
+
+        .os-subview-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 4px;
+            flex-shrink: 0;
+        }
+
+        .os-subview-title {
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .os-desktop-shell {
+            display: grid;
+            grid-template-columns: 280px 1fr 340px;
+            gap: 1px;
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--r-xl, 16px);
+            overflow: hidden;
+            flex: 1;
+            min-height: 0;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Column 1: Left Agent Roster */
+        .os-col-roster {
+            background: #090b0f;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            overflow: hidden;
+            border-right: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .os-roster-top {
+            padding: 14px 14px 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            flex-shrink: 0;
+        }
+
+        .os-roster-search {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .os-roster-search input {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 8px;
+            padding: 7px 10px 7px 32px;
+            font-size: 12px;
+            color: #fff;
+            outline: none;
+            transition: all 0.15s;
+        }
+
+        .os-roster-search input:focus {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(56, 189, 248, 0.45);
+        }
+
+        .os-roster-search svg {
+            position: absolute;
+            left: 10px;
+            color: rgba(255, 255, 255, 0.35);
+            pointer-events: none;
+        }
+
+        .os-roster-list {
+            flex: 1;
+            overflow-y: auto;
+            padding: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .os-roster-item {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            padding: 9px 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            user-select: none;
+            transition: background 0.15s, border 0.15s;
+            border: 1px solid transparent;
+        }
+
+        .os-roster-item:hover {
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .os-roster-item.active {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.09);
+        }
+
+        .os-roster-avatar {
+            position: relative;
+            width: 32px;
+            height: 32px;
+            flex-shrink: 0;
+        }
+
+        .os-roster-avatar canvas {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: block;
+        }
+
+        .os-roster-info {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .os-roster-name-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 6px;
+        }
+
+        .os-roster-name {
+            font-size: 12.5px;
+            font-weight: 600;
+            color: #f1f3f7;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .os-roster-time {
+            font-size: 10px;
+            color: rgba(255, 255, 255, 0.38);
+            flex-shrink: 0;
+        }
+
+        .os-roster-snippet {
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.48);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: 1.3;
+        }
+
+        .os-roster-footer {
+            padding: 10px 14px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 11.5px;
+            color: rgba(255, 255, 255, 0.7);
+            flex-shrink: 0;
+        }
+
+        .os-user-avatar {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #2563eb;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 9.5px;
+            font-weight: 700;
+        }
+
+        /* Column 2: Center Conversational Canvas */
+        .os-col-center {
+            background: #0e1015;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .os-center-header {
+            padding: 12px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-shrink: 0;
+        }
+
+        .os-active-agent-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .os-active-agent-avatar {
+            width: 28px;
+            height: 28px;
+            border-radius: 7px;
+            flex-shrink: 0;
+            display: block;
+        }
+
+        .os-active-agent-name {
+            font-size: 13.5px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .os-feed-scroll {
+            flex: 1;
+            overflow-y: auto;
+            padding: 18px 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .os-time-stamp {
+            align-self: center;
+            font-size: 10.5px;
+            color: rgba(255, 255, 255, 0.35);
+            font-weight: 500;
+        }
+
+        .os-work-card {
+            background: #14171f;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 16px 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+        }
+
+        .os-work-card-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 12.5px;
+        }
+
+        .os-check-icon {
+            color: #00ba69;
+            font-weight: 700;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 14px;
+        }
+
+        .os-check-action {
+            font-weight: 700;
+            color: #fff;
+            width: 65px;
+        }
+
+        .os-check-arrow {
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 11px;
+        }
+
+        .os-check-desc {
+            color: rgba(255, 255, 255, 0.75);
+            flex: 1;
+        }
+
+        .os-bubble-agent {
+            background: #14171f;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 13px 18px;
+            color: #d1d5db;
+            font-size: 12.5px;
+            line-height: 1.5;
+            max-width: 85%;
+            align-self: flex-start;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .os-bubble-user {
+            background: #ffffff;
+            color: #090a0f;
+            font-weight: 500;
+            font-size: 12.5px;
+            line-height: 1.45;
+            padding: 9px 18px;
+            border-radius: 20px;
+            max-width: 75%;
+            align-self: flex-end;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .os-composer-bar {
+            padding: 12px 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #0b0d11;
+            flex-shrink: 0;
+        }
+
+        .os-composer-wrap {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 4px 6px 4px 14px;
+            transition: border 0.15s, background 0.15s;
+        }
+
+        .os-composer-wrap:focus-within {
+            border-color: rgba(56, 189, 248, 0.45);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .os-composer-input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            outline: none;
+            font-size: 12.5px;
+            color: #fff;
+            padding: 6px 0;
+        }
+
+        .os-composer-input::placeholder {
+            color: rgba(255, 255, 255, 0.35);
+        }
+
+        .os-send-btn {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: #ffffff;
+            color: #0b0c10;
+            border: none;
+            outline: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.15s, opacity 0.15s;
+            flex-shrink: 0;
+        }
+
+        .os-send-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .os-send-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* Column 3: Right Agent's Computer & Routines */
+        .os-col-right {
+            background: #090b0f;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            padding: 16px;
+            overflow-y: auto;
+            border-left: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .os-computer-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 12.5px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .os-screen-box {
+            background: #0e1015;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+        }
+
+        .os-screen-bar {
+            background: #151821;
+            padding: 6px 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .os-screen-dots {
+            display: flex;
+            gap: 5px;
+        }
+
+        .os-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        .os-dot.r {
+            background: #ff5f56;
+        }
+
+        .os-dot.y {
+            background: #ffbd2e;
+        }
+
+        .os-dot.g {
+            background: #27c93f;
+        }
+
+        .os-screen-url {
+            flex: 1;
+            background: rgba(0, 0, 0, 0.35);
+            border-radius: 4px;
+            padding: 2px 8px;
+            font-family: var(--font-mono, monospace);
+            font-size: 10px;
+            color: rgba(255, 255, 255, 0.5);
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .os-terminal-body {
+            padding: 12px;
+            font-family: var(--font-mono, monospace);
+            font-size: 11px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.85);
+            min-height: 130px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .os-term-prompt {
+            color: #38bdf8;
+            font-weight: 600;
+        }
+
+        .os-term-ok {
+            color: #00ba69;
+        }
+
+        .os-term-num {
+            color: #f1f3f7;
+            font-weight: 600;
+        }
+
+        .os-take-control-btn {
+            align-self: flex-end;
+            background: transparent;
+            border: none;
+            color: rgba(255, 255, 255, 0.55);
+            font-size: 11px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: color 0.15s;
+            padding: 2px 4px;
+        }
+
+        .os-take-control-btn:hover {
+            color: #38bdf8;
+        }
+
+        .os-routines-box {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 12px;
+        }
+
+        .os-routines-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .os-routine-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            font-size: 11.5px;
+            padding: 5px 0;
+        }
+
+        .os-routine-name {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            color: #f1f3f7;
+            font-weight: 500;
+        }
+
+        .os-routine-cadence {
+            font-size: 10.5px;
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .os-add-routine-btn {
+            align-self: flex-start;
+            background: transparent;
+            border: none;
+            color: rgba(255, 255, 255, 0.45);
+            font-size: 11px;
+            cursor: pointer;
+            margin-top: 4px;
+            transition: color 0.15s;
+        }
+
+        .os-add-routine-btn:hover {
+            color: #38bdf8;
+        }
+
+        /* Topology Living Avatars */
+        .topo-avatar-canvas {
+            display: block;
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 1080px) {
+            .os-desktop-shell {
+                grid-template-columns: 240px 1fr;
+            }
+
+            .os-col-right {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .os-desktop-shell {
+                grid-template-columns: 1fr;
+            }
+
+            .os-col-roster {
+                display: none;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -3842,16 +4432,21 @@
     <!-- ================= 1. SIDEBAR ================= -->
     <aside class="sidebar" id="sidebar">
         <div class="org-switcher">
-            <div class="org-badge" onclick="handleOrgBadgeClick()" title="Standard Autonomous (Click to toggle)"
-                role="button" tabindex="0">
+            <div class="org-badge" onclick="handleOrgBadgeClick()" title="Deep (Click to toggle)" role="button"
+                tabindex="0">
                 <span class="brand-logo-mark">
-                    <svg width="24" height="24" viewBox="0 0 100 100" fill="none" shape-rendering="geometricPrecision" aria-hidden="true">
-                        <path d="M83.5 44.1 A34 34 0 1 1 71.85 23.95" fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="butt" />
+                    <svg width="24" height="24" viewBox="0 0 100 100" fill="none" shape-rendering="geometricPrecision"
+                        aria-hidden="true">
+                        <path d="M83.5 44.1 A34 34 0 1 1 71.85 23.95" fill="none" stroke="currentColor"
+                            stroke-width="12" stroke-linecap="butt" />
                         <circle cx="81" cy="31" r="8" fill="currentColor" />
                     </svg>
                 </span>
+                <span class="brand-logo-mark" style="padding:0;overflow:hidden;border:none;background:transparent;"><img
+                        src="/static/deep_logo.svg" width="28" height="28" style="border-radius:7px;display:block;"
+                        alt="Deep"></span>
                 <span class="org-name-wrap">
-                    <span class="org-name">Standard Autonomous</span>
+                    <span class="org-name">Deep</span>
                     <span class="org-sub">AUTONOMOUS OS</span>
                 </span>
                 <span class="org-caret">▾</span>
@@ -3894,8 +4489,10 @@
                 </span>
                 <span class="nav-badge ok">12 LIVE</span>
             </button>
-            <button class="nav-item" id="nav-react-studio"
-                onclick="setViewMode('paperclip_orchestration'); setStudioSubview('iframe');" title="Agent workspace">
+            <button class="nav-item" id="nav-react-studio" onclick="setViewMode('paperclip_orchestration'); setStudioSubview('workspace');" title="Agent Workspace">
+
+
+
                 <span class="nav-item-left">
                     <span class="icon"><svg width="15" height="15">
                             <use href="#i-monitor" />
@@ -3909,7 +4506,7 @@
                     <span class="icon"><svg width="15" height="15">
                             <use href="#i-clip" />
                         </svg></span>
-                    <span class="nav-label">Approvals Gate</span>
+                    <span class="nav-label">Paperclip Gate</span>
                 </span>
                 <span class="nav-badge warn" id="sidebar-count-paperclip">0 PENDING</span>
             </button>
@@ -3919,7 +4516,7 @@
                     <span class="icon"><svg width="15" height="15">
                             <use href="#i-users" />
                         </svg></span>
-                    <span class="nav-label">AI Agent Team</span>
+                    <span class="nav-label">Paperclip Team</span>
                 </span>
             </button>
 
@@ -3961,8 +4558,8 @@
                 <span>SECURITY GUARD</span>
                 <b style="color: var(--emerald);"><span class="live-dot ok"></span>ACTIVE</b>
             </div>
-            <div class="status-row" title="Approval Gate: Human Review">
-                <span>APPROVAL GATE</span>
+            <div class="status-row" title="Paperclip Gate: Human Review" onclick="setViewMode('paperclip_inbox')" style="cursor:pointer;">
+                <span>PAPERCLIP GATE</span>
                 <b style="color: var(--amber);"><span class="live-dot warn"></span>HUMAN REVIEW</b>
             </div>
             <div class="status-row" title="Tactile Audio: Toggle">
@@ -3985,9 +4582,13 @@
         <header class="workspace-header">
             <div class="header-title-group">
                 <span class="page-icon">
-                    <svg width="22" height="22" viewBox="0 0 100 100" fill="none" shape-rendering="geometricPrecision" aria-hidden="true">
-                        <path d="M83.5 44.1 A34 34 0 1 1 71.85 23.95" fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="butt" />
+                    <svg width="22" height="22" viewBox="0 0 100 100" fill="none" shape-rendering="geometricPrecision"
+                        aria-hidden="true">
+                        <path d="M83.5 44.1 A34 34 0 1 1 71.85 23.95" fill="none" stroke="currentColor"
+                            stroke-width="12" stroke-linecap="butt" />
                         <circle cx="81" cy="31" r="8" fill="currentColor" />
+
+
                     </svg>
                 </span>
                 <h1 id="page-title">Prospects &amp; Leads</h1>
@@ -4121,18 +4722,21 @@
                     <button id="btn-view-inbox" onclick="setViewMode('paperclip_inbox')" title="Review pitches">
                         <svg width="12.5" height="12.5">
                             <use href="#i-clip" />
-                        </svg>Review
+                        </svg>Paperclip Gate
                     </button>
                     <button id="btn-view-workforce" onclick="setViewMode('paperclip_workforce')" title="Agent team">
                         <svg width="12.5" height="12.5">
                             <use href="#i-users" />
-                        </svg>Team
+                        </svg>Paperclip Team
                     </button>
-                    <button id="btn-view-orchestration" onclick="setViewMode('paperclip_orchestration')"
+                    <button id="btn-view-orchestration" onclick="setViewMode('paperclip_orchestration'); setStudioSubview('topology');"
                         title="Workflow studio">
                         <svg width="12.5" height="12.5">
                             <use href="#i-workflow" />
                         </svg>Workflow
+                    </button>
+                    <button id="btn-view-workspace" onclick="setViewMode('paperclip_orchestration'); setStudioSubview('workspace');" title="Living Agent OS">
+                        <svg width="12.5" height="12.5"><use href="#i-monitor" /></svg>Agent OS
                     </button>
                 </div>
             </div>
@@ -4389,10 +4993,17 @@
                                     <use href="#i-workflow" />
                                 </svg>Topology
                             </button>
+                            <button class="studio-tab-btn" id="tab-btn-workspace"
+                                onclick="setStudioSubview('workspace')">
+                                <svg width="12" height="12">
+                                    <use href="#i-monitor" />
+                                </svg>Agent OS
+                            </button>
                             <button class="studio-tab-btn" id="tab-btn-iframe" onclick="setStudioSubview('iframe')">
                                 <svg width="12" height="12">
                                     <use href="#i-monitor" />
-                                </svg>Workspace
+
+                                </svg>Paperclip Studio (:5173)
                             </button>
                         </div>
                     </div>
@@ -4407,6 +5018,197 @@
                         <svg class="flow-svg" id="flow-svg" aria-hidden="true"></svg>
                         <div class="topo-flow" id="topo-flow-grid">
                             <!-- Nodes injected by renderPaperclipOrchestration() -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ============ SUBVIEW: RAKAZO 3-COLUMN AGENT OS ============ -->
+                <div class="studio-pane" id="studio-subview-workspace" style="display:none">
+                    <div class="os-subview-head">
+                        <div class="os-subview-title">
+                            <svg width="16" height="16" style="color:var(--ic-blue)">
+                                <use href="#i-monitor" />
+                            </svg>
+                            Agent Workspace · Living Autonomous OS
+                        </div>
+                        <div class="segmented">
+                            <button class="studio-tab-btn" onclick="setStudioSubview('topology')">
+                                <svg width="12" height="12">
+                                    <use href="#i-workflow" />
+                                </svg>Topology
+                            </button>
+                            <button class="studio-tab-btn active" onclick="setStudioSubview('workspace')">
+                                <svg width="12" height="12">
+                                    <use href="#i-monitor" />
+                                </svg>Agent OS
+                            </button>
+                            <button class="studio-tab-btn" onclick="setStudioSubview('iframe')">
+                                <svg width="12" height="12">
+                                    <use href="#i-globe" />
+                                </svg>Paperclip Studio (:5173)
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="os-desktop-shell">
+                        <!-- Column 1: Left Agent Roster -->
+                        <div class="os-col-roster">
+                            <div class="os-roster-top">
+                                <div class="os-roster-search">
+                                    <svg width="13" height="13">
+                                        <use href="#i-search" />
+                                    </svg>
+                                    <input type="text" id="os-agent-search-input" placeholder="Search agents or tasks…"
+                                        oninput="filterOSAgentList(this.value)">
+                                </div>
+                            </div>
+                            <div class="os-roster-list" id="os-agent-roster-list">
+                                <!-- Injected dynamically by initRakazoAgentOS() -->
+                            </div>
+                            <div class="os-roster-footer">
+                                <div class="os-user-avatar">AK</div>
+                                <div style="display:flex;flex-direction:column;line-height:1.2;">
+                                    <span style="font-weight:600;color:#fff;">Avery Kim</span>
+                                    <span style="font-size:10px;color:rgba(255,255,255,0.4);">Managing Partner</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Column 2: Center Conversational Canvas & Work Stream -->
+                        <div class="os-col-center">
+                            <div class="os-center-header">
+                                <div class="os-active-agent-info">
+                                    <canvas id="os-header-avatar" class="os-active-agent-avatar" width="28"
+                                        height="28"></canvas>
+                                    <div>
+                                        <div class="os-active-agent-name" id="os-active-agent-name">Inbox Manager</div>
+                                        <div style="font-size:10.5px;color:rgba(255,255,255,0.4);"
+                                            id="os-active-agent-role">Executive Triage · Routine Processing</div>
+                                    </div>
+                                </div>
+                                <div style="display:flex;align-items:center;gap:8px;">
+                                    <button class="btn-icon" onclick="pulseActiveOSAgent()"
+                                        title="Pulse agent heartbeat"><svg width="13" height="13">
+                                            <use href="#i-sparkle" />
+                                        </svg></button>
+                                </div>
+                            </div>
+
+                            <div class="os-feed-scroll" id="os-chat-stream">
+                                <div class="os-time-stamp" id="os-chat-timestamp">12:11 AM</div>
+
+                                <!-- Work Summary Checklist Card (Rakazo Signature) -->
+                                <div class="os-work-card" id="os-work-card">
+                                    <div class="os-work-card-row">
+                                        <span class="os-check-icon">✓</span>
+                                        <span class="os-check-action">Archived</span>
+                                        <span class="os-check-arrow">→</span>
+                                        <span class="os-check-desc" id="os-work-archived">26 newsletters +
+                                            receipts</span>
+                                    </div>
+                                    <div class="os-work-card-row">
+                                        <span class="os-check-icon">✓</span>
+                                        <span class="os-check-action">Replied</span>
+                                        <span class="os-check-arrow">→</span>
+                                        <span class="os-check-desc" id="os-work-replied">9 routine threads · scheduling
+                                            and intros</span>
+                                    </div>
+                                    <div class="os-work-card-row">
+                                        <span class="os-check-icon">✓</span>
+                                        <span class="os-check-action">Drafted</span>
+                                        <span class="os-check-arrow">→</span>
+                                        <span class="os-check-desc" id="os-work-drafted">6 that sound like you · held
+                                            for your read</span>
+                                    </div>
+                                    <div class="os-work-card-row">
+                                        <span class="os-check-icon">✓</span>
+                                        <span class="os-check-action">Flagged</span>
+                                        <span class="os-check-arrow">→</span>
+                                        <span class="os-check-desc" id="os-work-flagged">1 from nora · contract
+                                            question</span>
+                                    </div>
+                                </div>
+
+                                <!-- Conversational Dialogue -->
+                                <div class="os-bubble-agent" id="os-initial-agent-msg">
+                                    nora is asking whether the renewal covers the new seats. her draft answers yes and
+                                    quotes the contract line. it is at the top of the held pile.
+                                </div>
+
+                                <div class="os-bubble-user" id="os-initial-user-msg">
+                                    send nora's, i'll take the rest tomorrow
+                                </div>
+
+                                <div class="os-bubble-agent" id="os-initial-reply-msg">
+                                    sent. inbox at zero, with 5 drafts parked for tomorrow.
+                                </div>
+                            </div>
+
+                            <div class="os-composer-bar">
+                                <div class="os-composer-wrap">
+                                    <input type="text" class="os-composer-input" id="os-composer-input"
+                                        placeholder="Message agent…" onkeydown="if(event.key==='Enter')sendOSMessage()">
+                                    <button class="os-send-btn" onclick="sendOSMessage()" title="Send instruction">
+                                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2.5">
+                                            <line x1="12" y1="19" x2="12" y2="5" />
+                                            <polyline points="5 12 12 5 19 12" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Column 3: Right Agent's Computer & Routines -->
+                        <div class="os-col-right">
+                            <div class="os-computer-header">
+                                <span id="os-computer-title">Inbox Manager's computer</span>
+                                <svg width="13" height="13" style="color:rgba(255,255,255,0.4);">
+                                    <use href="#i-cpu" />
+                                </svg>
+                            </div>
+
+                            <div class="os-screen-box">
+                                <div class="os-screen-bar">
+                                    <div class="os-screen-dots">
+                                        <span class="os-dot r"></span>
+                                        <span class="os-dot y"></span>
+                                        <span class="os-dot g"></span>
+                                    </div>
+                                    <div class="os-screen-url" id="os-sandbox-url">sandbox://mail.google.com</div>
+                                </div>
+                                <div class="os-terminal-body" id="os-terminal-body">
+                                    <div><span class="os-term-prompt">$</span> inbox &amp; drafts parked:</div>
+                                    <div><span class="os-term-ok">✓</span> <span class="os-term-num">22</span> threads
+                                        read</div>
+                                    <div><span class="os-term-ok">✓</span> <span class="os-term-num">28</span> archived
+                                        · <span class="os-term-num">5</span> replied</div>
+                                    <div><span class="os-term-ok">✓</span> <span class="os-term-num">5</span> seats
+                                        renewed held</div>
+                                </div>
+                            </div>
+
+                            <button class="os-take-control-btn" onclick="takeControlOfComputer()">Take control</button>
+
+                            <div class="os-routines-box">
+                                <div class="os-routines-title">Routines</div>
+                                <div id="os-routines-list">
+                                    <div class="os-routine-item">
+                                        <span class="os-routine-name">⏰ Morning sweep</span>
+                                        <span class="os-routine-cadence">Weekdays 6am</span>
+                                    </div>
+                                    <div class="os-routine-item">
+                                        <span class="os-routine-name">⏰ Reply Zero</span>
+                                    </div>
+                                    <div class="os-routine-item" onclick="setViewMode('paperclip_inbox')" style="cursor:pointer;" title="Click to view Paperclip approvals">
+                                        <span class="os-routine-name">📎 Paperclip Gate Sync</span>
+                                        <span class="os-routine-cadence">Live Event-Driven</span>
+                                        <span class="os-routine-cadence">Hourly</span>
+                                    </div>
+                                </div>
+                                <button class="os-add-routine-btn" onclick="openNewRoutinePrompt()">+ New
+                                    routine</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -4432,7 +5234,7 @@
         </div>
 
         <!-- ============ FLOATING COPILOT ============ -->
-        <div class="copilot" id="floating-copilot" role="complementary" aria-label="Standard Autonomous Copilot">
+        <div class="copilot" id="floating-copilot" role="complementary" aria-label="Deep Copilot">
             <div class="copilot-head">
                 <div class="copilot-brand">
                     <span class="spark">
@@ -4440,7 +5242,7 @@
                             <use href="#i-sparkle" />
                         </svg>
                     </span>
-                    Standard Autonomous Copilot
+                    Deep Copilot
                 </div>
                 <div style="display:flex;align-items:center;gap:6px;">
                     <div class="copilot-tabs">
@@ -5155,12 +5957,12 @@
             } else {
                 setActiveNav(currentStage === 'audits' ? 'nav-people' : currentStage === 'deals' ? 'nav-opportunities' : 'nav-companies');
             }
-            setSegmented(mode === 'table' ? 'btn-view-table' : mode === 'kanban' ? 'btn-view-kanban' : mode === 'paperclip_inbox' ? 'btn-view-inbox' : mode === 'paperclip_workforce' ? 'btn-view-workforce' : 'btn-view-orchestration');
+            setSegmented(mode === 'table' ? 'btn-view-table' : mode === 'kanban' ? 'btn-view-kanban' : mode === 'paperclip_inbox' ? 'btn-view-inbox' : mode === 'paperclip_workforce' ? 'btn-view-workforce' : (activeStudioSubview === 'workspace' ? 'btn-view-workspace' : 'btn-view-orchestration'));
 
             const titles = {
-                paperclip_orchestration: ['Agent Workflow Studio', 'Workflow Studio'],
-                paperclip_inbox: ['Review Pitches · Human Approval', 'Pitches for Review'],
-                paperclip_workforce: ['AI Agent Team · Autonomous Roles', 'AI Agent Team'],
+                paperclip_orchestration: activeStudioSubview === 'workspace' ? ['Agent Workspace · Autonomous OS', 'Living Agent OS'] : ['Agent Workflow Studio', 'Workflow Studio'],
+                paperclip_inbox: ['Paperclip Gate · Human Verification & Compliance', 'Paperclip Gate'],
+                paperclip_workforce: ['Paperclip Swarm · Agent Workforce & Org Chart', 'Paperclip Team'],
                 kanban: ['Sales Pipeline Board', 'Pipeline Board']
             };
             if (titles[mode]) {
@@ -5196,6 +5998,7 @@
         function persistNavigationState() {
             let hash = '#leads';
             if (currentViewMode === 'paperclip_orchestration') hash = activeStudioSubview === 'iframe' ? '#workspace' : '#workflow';
+            if (currentViewMode === 'paperclip_orchestration') hash = activeStudioSubview === 'iframe' ? '#iframe' : (activeStudioSubview === 'workspace' ? '#workspace' : '#workflow');
             else if (currentViewMode === 'paperclip_inbox') hash = '#approvals';
             else if (currentViewMode === 'paperclip_workforce') hash = '#team';
             else if (currentViewMode === 'kanban') hash = '#pipeline';
@@ -5210,7 +6013,9 @@
         function restoreNavigationState() {
             const hash = window.location.hash || localStorage.getItem('ic_nav_hash') || '#leads';
             if (hash === '#workflow') { currentViewMode = 'paperclip_orchestration'; setViewMode('paperclip_orchestration'); setStudioSubview('topology'); }
-            else if (hash === '#workspace') { currentViewMode = 'paperclip_orchestration'; setViewMode('paperclip_orchestration'); setStudioSubview('iframe'); }
+
+            else if (hash === '#workspace' || hash === '#agent-os') { currentViewMode = 'paperclip_orchestration'; setViewMode('paperclip_orchestration'); setStudioSubview('workspace'); }
+            else if (hash === '#iframe') { currentViewMode = 'paperclip_orchestration'; setViewMode('paperclip_orchestration'); setStudioSubview('iframe'); }
             else if (hash === '#approvals') setViewMode('paperclip_inbox');
             else if (hash === '#team') setViewMode('paperclip_workforce');
             else if (hash === '#pipeline') setViewMode('kanban');
@@ -5739,10 +6544,16 @@
                         ${i === 0 ? '<span class="st-running"><span class="live-dot blue"></span>running</span>' : ''}
                         ${n.cls === 'gate' ? '<span style="color:var(--amber)">● gate</span>' : ''}
                     </div>
-                    <div class="node-title"><svg width="14" height="14" style="color:var(--ic-blue)"><use href="#${n.icon}"/></svg>${n.title}</div>
+
+                    <div class="node-title-row" style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">
+                        <canvas id="topo-avatar-${i}" class="topo-avatar-canvas" width="36" height="36"></canvas>
+                        <div class="node-title" style="margin-bottom:0;"><svg width="14" height="14" style="color:var(--ic-blue)"><use href="#${n.icon}"/></svg>${n.title}</div>
+                    </div>
                     <div class="node-desc">${n.desc}</div>
                     <div class="node-foot"><span>${n.adapter}</span><span class="ok">${n.stat}</span></div>
                 </div>`).join('');
+
+            initTopoAvatars();
 
             // animate bus behind nodes
             const wrap = grid.parentElement;
@@ -5761,13 +6572,34 @@
             Sound.play(520);
             activeStudioSubview = subview;
             const topo = document.getElementById('studio-subview-topology');
+            const ws = document.getElementById('studio-subview-workspace');
             const iframe = document.getElementById('studio-subview-iframe');
             if (topo) topo.style.display = subview === 'topology' ? 'flex' : 'none';
+            if (ws) ws.style.display = subview === 'workspace' ? 'flex' : 'none';
             if (iframe) iframe.style.display = subview === 'iframe' ? 'flex' : 'none';
             const t1 = document.getElementById('tab-btn-topology');
-            const t2 = document.getElementById('tab-btn-iframe');
+
+            const t2 = document.getElementById('tab-btn-workspace');
+            const t3 = document.getElementById('tab-btn-iframe');
             if (t1) t1.classList.toggle('active', subview === 'topology');
-            if (t2) t2.classList.toggle('active', subview === 'iframe');
+
+            if (t2) t2.classList.toggle('active', subview === 'workspace');
+            if (t3) t3.classList.toggle('active', subview === 'iframe');
+            if (subview === 'workspace') {
+                setActiveNav('nav-react-studio');
+                setSegmented('btn-view-workspace');
+                setText('page-title', 'Agent Workspace · Autonomous OS');
+                setText('view-title', 'Living Agent OS');
+                if (!window.__agentOSInitialized) initRakazoAgentOS();
+                else { renderOSAgentRoster(); selectOSAgent(activeOSAgentId, true); }
+            } else if (subview === 'topology') {
+                setActiveNav('nav-orchestration');
+                setSegmented('btn-view-orchestration');
+                setText('page-title', 'Agent Workflow Studio');
+                setText('view-title', 'Swarm Topology');
+                initTopoAvatars();
+            }
+
             persistNavigationState();
         }
 
@@ -6268,7 +7100,7 @@
                 { group: 'Navigation', label: 'Approvals Gate', icon: 'i-clip', hint: '#approvals', run: () => setViewMode('paperclip_inbox') },
                 { group: 'Navigation', label: 'AI Agent Team', icon: 'i-users', hint: '#team', run: () => setViewMode('paperclip_workforce') },
                 { group: 'Navigation', label: 'Workflow Studio', icon: 'i-workflow', hint: '#workflow', run: () => setViewMode('paperclip_orchestration') },
-                { group: 'Navigation', label: 'Agent Workspace', icon: 'i-monitor', hint: '#workspace', run: () => { setViewMode('paperclip_orchestration'); setStudioSubview('iframe'); } },
+                { group: 'Navigation', label: 'Agent Workspace', icon: 'i-monitor', hint: '#workspace', run: () => { setViewMode('paperclip_orchestration'); setStudioSubview('workspace'); } },
                 { group: 'Navigation', label: 'Site Audits', icon: 'i-gauge', hint: '#audits', run: () => switchStage('audits') },
                 { group: 'Navigation', label: 'Opportunities', icon: 'i-trending', hint: '#conversations', run: () => switchStage('deals') }
             ];
@@ -6517,6 +7349,831 @@
         /* sortCompanies kept as alias for any external references */
         function sortCompanies() { toggleDD(new Event('click', { bubbles: true }), 'dd-sort'); }
         function openFilterInput() { document.getElementById('tableFilter').focus(); }
+
+        /* ========================================================================
+           19. LIVING PROCEDURAL AVATAR ENGINE & RAKAZO AGENT OS
+           Bible Strong Lab Geometry · Grok Thinking States · Rakazo Execution Dynamics
+           Deep Angled Capsule Eyes (-42deg) · 60fps RequestAnimationFrame
+           ======================================================================== */
+        const OS_AGENTS_DATA = [
+            {
+                id: 'agent_inbox_manager',
+                name: 'Inbox Manager',
+                role: 'Executive Triage · Routine Processing',
+                archetype: 'drop',
+                primaryColor: '#0284c7',
+                secondaryColor: '#38bdf8',
+                state: 'IDLE',
+                time: '12:11 AM',
+                snippet: 'sent. inbox at zero, 5 drafts parked',
+                unread: false,
+                workCard: {
+                    archived: '26 newsletters + receipts',
+                    replied: '9 routine threads · scheduling and intros',
+                    drafted: '6 that sound like you · held for your read',
+                    flagged: '1 from nora · contract question'
+                },
+                agentMsg: 'nora is asking whether the renewal covers the new seats. her draft answers yes and quotes the contract line. it is at the top of the held pile.',
+                userMsg: "send nora's, i'll take the rest tomorrow",
+                replyMsg: 'sent. inbox at zero, with 5 drafts parked for tomorrow.',
+                sandboxUrl: 'sandbox://mail.google.com',
+                terminal: [
+                    { prompt: '$', text: 'paperclip bridge --status' },
+                    { ok: true, text: 'Paperclip DB bridge connected (:3100)' },
+                    { ok: true, text: '28 archived · 5 replied' },
+                    { ok: true, text: '5 leads held in Paperclip Gate' }
+                ],
+                routines: [
+                    { name: '⏰ Morning sweep', cadence: 'Weekdays 6am' },
+                    { name: '⏰ Reply Zero', cadence: 'Hourly' },
+                    { name: '📎 Paperclip Gate Sync', cadence: 'Live Event-Driven' }
+                ]
+            },
+            {
+                id: 'agent_scout',
+                name: 'Scout Agent',
+                role: 'High-Ticket Corridor Intelligence',
+                archetype: 'sphere',
+                primaryColor: '#059669',
+                secondaryColor: '#34d399',
+                state: 'WORKING',
+                time: 'Yesterday',
+                snippet: '40 accounts researched, 18 qualified',
+                unread: true,
+                workCard: {
+                    archived: '14 out-of-corridor domains discarded',
+                    replied: '18 high ICP prospects indexed into CRM',
+                    drafted: '12 WhatsApp audit summaries compiled',
+                    flagged: '3 high-ticket logistics leads ready for review'
+                },
+                agentMsg: 'Found 3 new high-margin freight corridors in Navi Mumbai with >1.4s TTFB. WhatsApp rates pitch ready in inbox.',
+                userMsg: 'queue TransNational and Grand Monarch for review',
+                replyMsg: 'queued 2 records into Approvals Gate with ECC AgentShield verified.',
+                sandboxUrl: 'sandbox://gosom.maps/corridors/navi-mumbai',
+                terminal: [
+                    { prompt: '$', text: 'gosom-maps scout --corridor="Navi Mumbai"' },
+                    { ok: true, text: '40 targets probed via HTTP / TLS 1.3' },
+                    { ok: true, text: '18 passed ICP filter · 3 high ticket' },
+                    { ok: true, text: 'dispatched to HyperResearch queue' }
+                ],
+                routines: [
+                    { name: '⏰ Corridor Scan', cadence: 'Every 5m' },
+                    { name: '⏰ ICP Re-score', cadence: 'Daily 2am' }
+                ]
+            },
+            {
+                id: 'agent_sales',
+                name: 'Sales Outbound',
+                role: 'Objection Handling & Deal Closing',
+                archetype: 'tangerine_disc',
+                primaryColor: '#ea580c',
+                secondaryColor: '#fb923c',
+                state: 'WORKING',
+                time: '3:10 AM',
+                snippet: 'done. 40 accounts researched, 18…',
+                unread: false,
+                workCard: {
+                    archived: '8 unqualified leads marked cold',
+                    replied: '4 warm replies handled on WhatsApp',
+                    drafted: '3 custom scope estimators generated',
+                    flagged: '1 proposal accepted: Zenith Academy ($6,500/mo)'
+                },
+                agentMsg: 'Zenith IIT-JEE Academy agreed to trial bot deployment! Scope is 60-second inquiry response.',
+                userMsg: 'finalize invoice and dispatch welcome link',
+                replyMsg: 'invoice link sent via Stripe · onboarding playbook triggered.',
+                sandboxUrl: 'sandbox://crm.twenty.com/deals/zenith',
+                terminal: [
+                    { prompt: '$', text: 'twenty-crm deal-stage --update closed_won' },
+                    { ok: true, text: 'Zenith Academy $6,500/mo ARR confirmed' },
+                    { ok: true, text: 'Stripe webhook payment intent verified' }
+                ],
+                routines: [
+                    { name: '⏰ Inbound Reply Sweeper', cadence: 'Every 15m' },
+                    { name: '⏰ Pipeline Sync', cadence: 'Hourly' }
+                ]
+            },
+            {
+                id: 'agent_account',
+                name: 'Account Manager',
+                role: 'Client Retention & Expansion',
+                archetype: 'violet_orb',
+                primaryColor: '#7c3aed',
+                secondaryColor: '#c084fc',
+                state: 'IDLE',
+                time: 'Yesterday',
+                snippet: "invite's out to sam, helix note add…",
+                unread: false,
+                workCard: {
+                    archived: '12 weekly SLA tickets resolved',
+                    replied: '5 client check-in emails sent',
+                    drafted: '2 quarterly business review decks',
+                    flagged: '1 upsell signal from TransNational Logistics'
+                },
+                agentMsg: 'TransNational fleet expansion completed. They requested an additional driver dispatch node.',
+                userMsg: 'approve node addition and schedule demo',
+                replyMsg: 'demo scheduled for Thursday 3:00 PM IST.',
+                sandboxUrl: 'sandbox://accounts.deep.os/tenants',
+                terminal: [
+                    { prompt: '$', text: 'tenant-metrics --usage trans_national' },
+                    { ok: true, text: '99.98% uptime · 1,420 dispatches this week' },
+                    { ok: true, text: 'driver WhatsApp bot SLA < 8s' }
+                ],
+                routines: [
+                    { name: '⏰ Health Score Check', cadence: 'Daily 9am' },
+                    { name: '⏰ Upsell Detector', cadence: 'Weekly' }
+                ]
+            },
+            {
+                id: 'agent_talent',
+                name: 'Talent Scout',
+                role: 'Autonomous Recruiter & Screen',
+                archetype: 'shield',
+                primaryColor: '#1d4ed8',
+                secondaryColor: '#60a5fa',
+                state: 'IDLE',
+                time: 'Yesterday',
+                snippet: '3 intros drafted in your voice, held',
+                unread: false,
+                workCard: {
+                    archived: '45 junior profiles filtered out',
+                    replied: '8 candidate screenings scheduled',
+                    drafted: '3 personalized partner outreach messages',
+                    flagged: '1 senior AI infra engineer candidate'
+                },
+                agentMsg: 'Screened 3 senior systems engineers with Playwright & async python experience. Briefs attached.',
+                userMsg: 'send the top candidate an intro calendar invite',
+                replyMsg: 'intro invite dispatched with standard screening scorecard.',
+                sandboxUrl: 'sandbox://recruiter.deep.os/candidates',
+                terminal: [
+                    { prompt: '$', text: 'scout-candidates --role "Distributed Systems"' },
+                    { ok: true, text: '48 profiles scored against technical bar' },
+                    { ok: true, text: '3 candidates passed 95th percentile' }
+                ],
+                routines: [
+                    { name: '⏰ Inbound Resume Sweep', cadence: 'Daily 8am' },
+                    { name: '⏰ Candidate Followup', cadence: 'Every 2 days' }
+                ]
+            },
+            {
+                id: 'agent_expense',
+                name: 'Expense Manager',
+                role: 'Audit & Receipt Reconciliation',
+                archetype: 'star',
+                primaryColor: '#d97706',
+                secondaryColor: '#f59e0b',
+                state: 'IDLE',
+                time: 'Yesterday',
+                snippet: 'report filed. 9 receipts, nothing ou…',
+                unread: false,
+                workCard: {
+                    archived: '31 auto-matched SaaS receipts',
+                    replied: '2 vendor invoice confirmations',
+                    drafted: '1 monthly GST input credit schedule',
+                    flagged: '0 policy exceptions · 100% matched'
+                },
+                agentMsg: 'Monthly infrastructure ledger reconciled. Cloud compute expenses down 14% via model quantization.',
+                userMsg: 'export GST filing report to accounting folder',
+                replyMsg: 'report exported as CSV and parked in Google Drive.',
+                sandboxUrl: 'sandbox://ledger.deep.os/compliance',
+                terminal: [
+                    { prompt: '$', text: 'reconcile-ledger --month=current' },
+                    { ok: true, text: '9 bank lines matched against invoices' },
+                    { ok: true, text: 'ECC compliance score: 100/100' }
+                ],
+                routines: [
+                    { name: '⏰ Nightly Receipt Matching', cadence: 'Daily 11pm' },
+                    { name: '⏰ Monthly Ledger Close', cadence: '1st of month' }
+                ]
+            },
+            {
+                id: 'agent_triage',
+                name: 'Bug Triage',
+                role: 'Autonomous Sentry & Telemetry Ingest',
+                archetype: 'heart',
+                primaryColor: '#e11d48',
+                secondaryColor: '#fb7185',
+                state: 'WORKING',
+                time: 'Monday',
+                snippet: 'reproduced 4 of 6, steps in the iss…',
+                unread: false,
+                workCard: {
+                    archived: '18 transient rate-limit errors resolved',
+                    replied: '3 automated crash report acknowledgments',
+                    drafted: '2 regression test suites in Playwright',
+                    flagged: '0 critical errors in production'
+                },
+                agentMsg: 'Reproduced TTFB timeout on single mobile CDN node. Hotfix PR generated and passing automated tests.',
+                userMsg: 'merge hotfix to production branch',
+                replyMsg: 'hotfix deployed cleanly. Telemetry error rate: 0.00%.',
+                sandboxUrl: 'sandbox://telemetry.deep.os/sentry',
+                terminal: [
+                    { prompt: '$', text: 'telemetry-stream --level=warn,error' },
+                    { ok: true, text: '12 node probes nominal' },
+                    { ok: true, text: 'Playwright CDP audit pass rate 100%' }
+                ],
+                routines: [
+                    { name: '⏰ Sentry Ingestion', cadence: 'Continuous' },
+                    { name: '⏰ Synthetic Ping Sweep', cadence: 'Every 60s' }
+                ]
+            }
+        ];
+
+        let activeOSAgentId = 'agent_inbox_manager';
+        let registeredAvatars = [];
+        let avatarRafId = null;
+
+        /* ========================================================================
+           LIVING PROCEDURAL AVATAR DRAWING ENGINE
+           ======================================================================== */
+        function drawProceduralAvatar(canvas, cfg, timestamp) {
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            if (!ctx) return;
+
+            const w = canvas.width;
+            const h = canvas.height;
+            const t = (timestamp || performance.now()) * 0.001;
+            const state = cfg.state || 'IDLE';
+
+            ctx.clearRect(0, 0, w, h);
+
+            // Center coords
+            const cx = w * 0.5;
+            const cy = h * 0.5;
+            const r = Math.min(w, h) * 0.42;
+
+            // Physics / Motion state modulation
+            let yBob = 0;
+            let xJitter = 0;
+            let tiltAngle = 0;
+            let bodyScaleX = 1;
+            let bodyScaleY = 1;
+
+            if (state === 'WORKING') {
+                // Rakazo energetic execution bob (2.4Hz)
+                yBob = Math.sin(t * 15.0) * (r * 0.12);
+                bodyScaleY = 1 + Math.sin(t * 15.0) * 0.04;
+                bodyScaleX = 1 - Math.sin(t * 15.0) * 0.02;
+            } else if (state === 'THINKING') {
+                // Grok slow contemplative elevation & subtle tilt
+                yBob = -Math.abs(Math.sin(t * 2.2)) * (r * 0.14);
+                tiltAngle = Math.sin(t * 1.6) * 0.06;
+            } else if (state === 'WAITING_APPROVAL') {
+                // Tense anchor micro-vibration
+                xJitter = (Math.random() - 0.5) * 1.2;
+                yBob = (Math.random() - 0.5) * 0.8;
+            } else {
+                // IDLE: gentle deep breathing rhythm
+                yBob = Math.sin(t * 2.0) * (r * 0.06);
+                bodyScaleY = 1 + Math.sin(t * 2.0) * 0.02;
+            }
+
+            // Expanding radar rings for WORKING state (Rakazo signature)
+            if (state === 'WORKING') {
+                const ringProgress = (t * 1.2) % 1.0;
+                const ringRadius = r * (0.9 + ringProgress * 0.65);
+                const ringAlpha = (1 - ringProgress) * 0.4;
+                ctx.save();
+                ctx.strokeStyle = cfg.secondaryColor || '#38bdf8';
+                ctx.lineWidth = 1.5;
+                ctx.globalAlpha = ringAlpha;
+                ctx.beginPath();
+                ctx.arc(cx, cy + yBob, ringRadius, 0, Math.PI * 2);
+                ctx.stroke();
+                ctx.restore();
+            }
+
+            ctx.save();
+            ctx.translate(cx + xJitter, cy + yBob);
+            if (tiltAngle) ctx.rotate(tiltAngle);
+            ctx.scale(bodyScaleX, bodyScaleY);
+
+            // Ambient base drop shadow
+            ctx.shadowColor = 'rgba(0, 0, 0, 0.45)';
+            ctx.shadowBlur = r * 0.35;
+            ctx.shadowOffsetY = r * 0.2;
+
+            // Geometry Archetypes (Bible Strong Avatar Lab procedural vector math)
+            const archetype = cfg.archetype || 'drop';
+            const grad = ctx.createRadialGradient(-r * 0.25, -r * 0.35, r * 0.1, 0, 0, r * 1.2);
+            grad.addColorStop(0, cfg.secondaryColor || '#38bdf8');
+            grad.addColorStop(0.7, cfg.primaryColor || '#0284c7');
+            grad.addColorStop(1, '#07090e');
+
+            ctx.fillStyle = grad;
+            ctx.beginPath();
+
+            if (archetype === 'drop') {
+                // Smooth teardrop geometry with pinched top
+                ctx.moveTo(0, -r * 1.05);
+                ctx.bezierCurveTo(r * 0.85, -r * 0.2, r * 0.95, r * 0.75, 0, r * 0.95);
+                ctx.bezierCurveTo(-r * 0.95, r * 0.75, -r * 0.85, -r * 0.2, 0, -r * 1.05);
+            } else if (archetype === 'sphere') {
+                // 3D illuminated sphere
+                ctx.arc(0, 0, r * 0.92, 0, Math.PI * 2);
+            } else if (archetype === 'violet_orb') {
+                // Celestial orb with ethereal curvature
+                ctx.arc(0, 0, r * 0.9, 0, Math.PI * 2);
+            } else if (archetype === 'tangerine_disc') {
+                // Warm clay squircle
+                const sq = r * 0.82;
+                if (ctx.roundRect) ctx.roundRect(-sq, -sq, sq * 2, sq * 2, r * 0.38);
+                else ctx.rect(-sq, -sq, sq * 2, sq * 2);
+            } else if (archetype === 'shield') {
+                // Two-tone split crest
+                ctx.moveTo(-r * 0.8, -r * 0.75);
+                ctx.lineTo(r * 0.8, -r * 0.75);
+                ctx.bezierCurveTo(r * 0.85, r * 0.1, r * 0.5, r * 0.75, 0, r * 1.0);
+                ctx.bezierCurveTo(-r * 0.5, r * 0.75, -r * 0.85, r * 0.1, -r * 0.8, -r * 0.75);
+            } else if (archetype === 'star') {
+                // 6-point soft faceted star
+                for (let i = 0; i < 12; i++) {
+                    const angle = (i * Math.PI) / 6;
+                    const rad = (i % 2 === 0) ? r * 0.95 : r * 0.62;
+                    const px = Math.cos(angle) * rad;
+                    const py = Math.sin(angle) * rad;
+                    if (i === 0) ctx.moveTo(px, py);
+                    else ctx.lineTo(px, py);
+                }
+                ctx.closePath();
+            } else if (archetype === 'heart') {
+                // Organic heart/pod shape
+                ctx.moveTo(0, r * 0.85);
+                ctx.bezierCurveTo(r * 0.9, r * 0.2, r * 0.95, -r * 0.65, 0, -r * 0.35);
+                ctx.bezierCurveTo(-r * 0.95, -r * 0.65, -r * 0.9, r * 0.2, 0, r * 0.85);
+            } else {
+                ctx.arc(0, 0, r * 0.9, 0, Math.PI * 2);
+            }
+            ctx.fill();
+
+
+
+            // Archetype detail overlays (Deep 3D Brand Suite & Bible Strong Avatar Lab)
+            if (archetype === 'drop' || archetype === 'lumen') {
+                const antSway = Math.sin(t * 3.5) * (r * 0.1);
+                ctx.save();
+                ctx.beginPath();
+                ctx.moveTo(0, -r * 0.95);
+                ctx.quadraticCurveTo(r * 0.25 + antSway, -r * 1.45, r * 0.45 + antSway, -r * 1.35);
+                ctx.strokeStyle = cfg.secondaryColor || '#7dd3fc';
+                ctx.lineWidth = Math.max(1.5, r * 0.08);
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.arc(r * 0.45 + antSway, -r * 1.35, r * 0.16, 0, Math.PI * 2);
+                ctx.fillStyle = '#a7f3d0';
+                ctx.shadowColor = '#2dd4bf';
+                ctx.shadowBlur = 8;
+                ctx.fill();
+                ctx.restore();
+            } else if (archetype === 'sphere' || archetype === 'pearl') {
+                ctx.save();
+                ctx.strokeStyle = cfg.secondaryColor || '#7dd3fc';
+                ctx.lineWidth = Math.max(1.2, r * 0.07);
+                ctx.globalAlpha = 0.75;
+                ctx.beginPath();
+                ctx.ellipse(0, r * 0.35, r * 1.18, r * 0.28, -0.25, 0, Math.PI * 2);
+                ctx.stroke();
+                ctx.restore();
+            } else if (archetype === 'violet_orb' || archetype === 'jelly') {
+                ctx.save();
+                ctx.lineWidth = Math.max(1.5, r * 0.07);
+                ctx.strokeStyle = cfg.secondaryColor || '#c084fc';
+                ctx.globalAlpha = 0.8;
+                for (let ti = -1.5; ti <= 1.5; ti += 1.0) {
+                    const tx = ti * (r * 0.28);
+                    const sway = Math.sin(t * 3.2 + ti * 1.4) * (r * 0.14);
+                    ctx.beginPath();
+                    ctx.moveTo(tx, r * 0.5);
+                    ctx.quadraticCurveTo(tx + sway, r * 0.85, tx - sway * 0.5, r * 1.18);
+                    ctx.stroke();
+                }
+                ctx.restore();
+            }
+
+            // Clear shadow for interior details
+            ctx.shadowColor = 'transparent';
+
+            // Top specular illumination arc
+            ctx.save();
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.45)';
+            ctx.lineWidth = Math.max(1, r * 0.08);
+            ctx.beginPath();
+            ctx.arc(0, -r * 0.05, r * 0.72, -Math.PI * 0.75, -Math.PI * 0.25);
+            ctx.stroke();
+            ctx.restore();
+
+            // Grok internal chromatic neural wave during THINKING
+            if (state === 'THINKING') {
+                const waveY = Math.sin(t * 4.0) * r * 0.5;
+                ctx.save();
+                ctx.globalAlpha = 0.35;
+                const waveGrad = ctx.createLinearGradient(0, waveY - r * 0.2, 0, waveY + r * 0.2);
+                waveGrad.addColorStop(0, 'rgba(56, 189, 248, 0)');
+                waveGrad.addColorStop(0.5, 'rgba(192, 132, 252, 0.85)');
+                waveGrad.addColorStop(1, 'rgba(56, 189, 248, 0)');
+                ctx.fillStyle = waveGrad;
+                ctx.beginPath();
+                ctx.arc(0, 0, r * 0.85, 0, Math.PI * 2);
+                ctx.fill();
+
+
+                ctx.restore();
+            }
+
+            // ========================================================================
+            // SIGNATURE DEEP ANGLED CAPSULE EYES (/ / at -42deg)
+            // ========================================================================
+            const blinkCycle = (t * 0.25) % 1.0;
+            const isBlinking = blinkCycle > 0.96;
+            const eyeScaleY = isBlinking ? 0.12 : (state === 'THINKING' ? 0.75 : 1.0);
+
+            // Gaze calculation
+            let gazeX = 0;
+            let gazeY = 0;
+            if (state === 'THINKING') {
+                // Grok gaze elevation (+12deg)
+                gazeY = -r * 0.18;
+                gazeX = Math.sin(t * 1.5) * (r * 0.06);
+            } else if (state === 'WORKING') {
+                // Rakazo line scanning micro-saccades
+                gazeX = Math.sin(t * 6.0) * (r * 0.12);
+                gazeY = r * 0.08;
+            } else {
+                // IDLE micro-saccades every 3s
+                const saccadePeriod = Math.floor(t / 3.0);
+                gazeX = Math.sin(saccadePeriod * 17.1) * (r * 0.08);
+                gazeY = Math.cos(saccadePeriod * 13.7) * (r * 0.05);
+            }
+
+            const eyeSpacing = r * 0.38;
+            const eyeW = Math.max(2.2, r * 0.15);
+            const eyeH = Math.max(4.5, r * 0.36);
+            const eyeAngle = -42 * (Math.PI / 180); // Signature -42 deg from deep-peeker-white.svg
+
+            const drawCapsuleEye = (ex, ey) => {
+                ctx.save();
+                ctx.translate(ex + gazeX, ey + gazeY);
+                ctx.rotate(eyeAngle);
+                ctx.scale(1, eyeScaleY);
+
+                // Angled pill shape
+                ctx.fillStyle = '#ffffff';
+                ctx.beginPath();
+                if (ctx.roundRect) ctx.roundRect(-eyeW * 0.5, -eyeH * 0.5, eyeW, eyeH, eyeW * 0.5);
+                else ctx.rect(-eyeW * 0.5, -eyeH * 0.5, eyeW, eyeH);
+                ctx.fill();
+
+
+
+                // Inner iris / pupil slit dot
+                if (!isBlinking && eyeH > 6) {
+                    ctx.fillStyle = '#0b0d13';
+                    ctx.beginPath();
+                    ctx.arc(0, 0, eyeW * 0.35, 0, Math.PI * 2);
+                    ctx.fill();
+
+
+
+                    // Specular pin-light
+                    ctx.fillStyle = '#38bdf8';
+                    ctx.beginPath();
+                    ctx.arc(-eyeW * 0.15, -eyeH * 0.2, eyeW * 0.18, 0, Math.PI * 2);
+                    ctx.fill();
+
+
+                }
+                ctx.restore();
+            };
+
+            const eyeLevelY = (archetype === 'drop') ? r * 0.05 : -r * 0.08;
+            drawCapsuleEye(-eyeSpacing * 0.5, eyeLevelY);
+            drawCapsuleEye(eyeSpacing * 0.5, eyeLevelY);
+
+            // Blush cheeks (Deep 3D brand system & Bible Strong Avatar Lab)
+            ctx.save();
+            ctx.fillStyle = 'rgba(255, 143, 176, 0.48)';
+            ctx.beginPath();
+            ctx.ellipse(-eyeSpacing * 0.55, eyeLevelY + r * 0.22, r * 0.14, r * 0.08, 0, 0, Math.PI * 2);
+            ctx.fill();
+
+
+            ctx.beginPath();
+            ctx.ellipse(eyeSpacing * 0.55, eyeLevelY + r * 0.22, r * 0.14, r * 0.08, 0, 0, Math.PI * 2);
+            ctx.fill();
+
+
+            ctx.restore();
+
+            ctx.restore();
+        }
+
+        /* 60fps RequestAnimationFrame Animation Loop */
+        function avatarAnimationLoop(timestamp) {
+            registeredAvatars.forEach(entry => {
+                const el = document.getElementById(entry.id);
+                if (el && el.offsetParent !== null) {
+                    drawProceduralAvatar(el, entry.cfg, timestamp);
+                }
+            });
+            avatarRafId = requestAnimationFrame(avatarAnimationLoop);
+        }
+
+        function registerAvatarCanvas(id, cfg) {
+            const existingIdx = registeredAvatars.findIndex(e => e.id === id);
+            if (existingIdx >= 0) registeredAvatars[existingIdx].cfg = cfg;
+            else registeredAvatars.push({ id, cfg });
+        }
+
+        /* Topology Card Avatars */
+        function initTopoAvatars() {
+            if (!avatarRafId) avatarAnimationLoop(performance.now());
+            const stageArchetypes = [
+                { archetype: 'sphere', primaryColor: '#2563eb', secondaryColor: '#60a5fa', state: 'WORKING' },
+                { archetype: 'drop', primaryColor: '#0284c7', secondaryColor: '#38bdf8', state: 'WORKING' },
+                { archetype: 'violet_orb', primaryColor: '#7c3aed', secondaryColor: '#c084fc', state: 'IDLE' },
+                { archetype: 'star', primaryColor: '#0d9488', secondaryColor: '#2dd4bf', state: 'IDLE' },
+                { archetype: 'tangerine_disc', primaryColor: '#ea580c', secondaryColor: '#fb923c', state: 'IDLE' },
+                { archetype: 'heart', primaryColor: '#e11d48', secondaryColor: '#fb7185', state: 'IDLE' },
+                { archetype: 'shield', primaryColor: '#d97706', secondaryColor: '#fbbf24', state: 'WAITING_APPROVAL' },
+                { archetype: 'shield', primaryColor: '#4338ca', secondaryColor: '#818cf8', state: 'WAITING_APPROVAL' },
+                { archetype: 'sphere', primaryColor: '#059669', secondaryColor: '#34d399', state: 'IDLE' },
+                { archetype: 'tangerine_disc', primaryColor: '#b45309', secondaryColor: '#f59e0b', state: 'WORKING' }
+            ];
+
+            for (let i = 0; i < 10; i++) {
+                const canvasId = `topo-avatar-${i}`;
+                const cfg = stageArchetypes[i] || { archetype: 'drop', primaryColor: '#0284c7', secondaryColor: '#38bdf8', state: 'IDLE' };
+                registerAvatarCanvas(canvasId, cfg);
+            }
+        }
+
+        /* ========================================================================
+           RAKAZO AGENT OS INTERACTIVITY
+           ======================================================================== */
+        function initRakazoAgentOS() {
+            window.__agentOSInitialized = true;
+            renderOSAgentRoster();
+            selectOSAgent(activeOSAgentId, true);
+            if (!avatarRafId) avatarAnimationLoop(performance.now());
+        }
+
+        function renderOSAgentRoster(filter = '') {
+            const listEl = document.getElementById('os-agent-roster-list');
+            if (!listEl) return;
+
+            const q = filter.trim().toLowerCase();
+            const agents = OS_AGENTS_DATA.filter(a => !q || a.name.toLowerCase().includes(q) || a.role.toLowerCase().includes(q) || a.snippet.toLowerCase().includes(q));
+
+            listEl.innerHTML = agents.map(agent => {
+                const isActive = agent.id === activeOSAgentId;
+                const canvasId = `os-avatar-item-${agent.id}`;
+                return `
+                <div class="os-roster-item ${isActive ? 'active' : ''}" onclick="selectOSAgent('${agent.id}')" id="os-roster-row-${agent.id}">
+                    <div class="os-roster-avatar">
+                        <canvas id="${canvasId}" width="32" height="32"></canvas>
+                    </div>
+                    <div class="os-roster-info">
+                        <div class="os-roster-name-row">
+                            <span class="os-roster-name">${agent.name}</span>
+                            <span class="os-roster-time">${agent.time}</span>
+                        </div>
+                        <div class="os-roster-snippet">${agent.snippet}</div>
+                    </div>
+                </div>`;
+            }).join('');
+
+            // Register canvases
+            agents.forEach(agent => {
+                registerAvatarCanvas(`os-avatar-item-${agent.id}`, {
+                    archetype: agent.archetype,
+                    primaryColor: agent.primaryColor,
+                    secondaryColor: agent.secondaryColor,
+                    state: agent.state
+                });
+            });
+        }
+
+        function filterOSAgentList(val) {
+            renderOSAgentRoster(val);
+        }
+
+        function selectOSAgent(agentId, silent = false) {
+            activeOSAgentId = agentId;
+            const agent = OS_AGENTS_DATA.find(a => a.id === agentId);
+            if (!agent) return;
+
+            if (!silent) Sound.play('pop');
+
+            // Update roster highlight
+            document.querySelectorAll('.os-roster-item').forEach(el => el.classList.remove('active'));
+            const activeRow = document.getElementById(`os-roster-row-${agentId}`);
+            if (activeRow) activeRow.classList.add('active');
+
+            // Update Header
+            const nameEl = document.getElementById('os-active-agent-name');
+            const roleEl = document.getElementById('os-active-agent-role');
+            if (nameEl) nameEl.textContent = agent.name;
+            if (roleEl) roleEl.textContent = agent.role;
+
+            registerAvatarCanvas('os-header-avatar', {
+                archetype: agent.archetype,
+                primaryColor: agent.primaryColor,
+                secondaryColor: agent.secondaryColor,
+                state: agent.state
+            });
+
+            // Update Work Summary Card
+            const card = { ...agent.workCard };
+            if (masterCorridors && masterCorridors.length) {
+                const total = masterCorridors.length;
+                const pending = masterCorridors.filter(r => r.status === 'pending_approval').length;
+                const deals = masterCorridors.filter(r => ['replied', 'negotiating', 'closed_won'].includes(r.status)).length;
+                const rejected = masterCorridors.filter(r => r.status === 'rejected').length;
+                const flagged = masterCorridors.filter(r => parseFloat(r.ttfb) > 1.35).length;
+                if (agentId === 'agent_inbox_manager' || agentId === 'agent_scout') {
+                    card.archived = `${rejected > 0 ? rejected : 26} out-of-corridor domains discarded`;
+                    card.replied = `${deals > 0 ? deals : 9} routine threads · active client negotiation`;
+                    card.drafted = `${pending > 0 ? pending : 6} audit-backed pitches held for your review`;
+                    card.flagged = `${flagged > 0 ? flagged : 1} critical latency / compliance bottleneck`;
+                }
+            }
+            setText('os-work-archived', card.archived);
+            setText('os-work-replied', card.replied);
+            setText('os-work-drafted', card.drafted);
+            setText('os-work-flagged', card.flagged);
+
+            // Update Chat Stream
+            const stream = document.getElementById('os-chat-stream');
+            if (stream) {
+                stream.innerHTML = `
+                    <div class="os-time-stamp" id="os-chat-timestamp">${agent.time}</div>
+                    <div class="os-work-card" id="os-work-card">
+                        <div class="os-work-card-row">
+                            <span class="os-check-icon">✓</span>
+                            <span class="os-check-action">Archived</span>
+                            <span class="os-check-arrow">→</span>
+                            <span class="os-check-desc">${card.archived}</span>
+                        </div>
+                        <div class="os-work-card-row">
+                            <span class="os-check-icon">✓</span>
+                            <span class="os-check-action">Replied</span>
+                            <span class="os-check-arrow">→</span>
+                            <span class="os-check-desc">${card.replied}</span>
+                        </div>
+                        <div class="os-work-card-row">
+                            <span class="os-check-icon">✓</span>
+                            <span class="os-check-action">Drafted</span>
+                            <span class="os-check-arrow">→</span>
+                            <span class="os-check-desc">${card.drafted}</span>
+                        </div>
+                        <div class="os-work-card-row">
+                            <span class="os-check-icon">✓</span>
+                            <span class="os-check-action">Flagged</span>
+                            <span class="os-check-arrow">→</span>
+                            <span class="os-check-desc">${card.flagged}</span>
+                        </div>
+                    </div>
+                    <div class="os-bubble-agent">${agent.agentMsg}</div>
+                    <div class="os-bubble-user">${agent.userMsg}</div>
+                    <div class="os-bubble-agent">${agent.replyMsg}</div>
+                `;
+            }
+
+            // Update Column 3 Computer Panel
+            setText('os-computer-title', `${agent.name}'s computer`);
+            setText('os-sandbox-url', agent.sandboxUrl);
+
+            const term = document.getElementById('os-terminal-body');
+            if (term) {
+                term.innerHTML = agent.terminal.map(t => {
+                    if (t.prompt) return `<div><span class="os-term-prompt">${t.prompt}</span> ${t.text}</div>`;
+                    if (t.ok) return `<div><span class="os-term-ok">✓</span> ${t.text}</div>`;
+                    return `<div>${t.text}</div>`;
+                }).join('');
+            }
+
+            const routinesEl = document.getElementById('os-routines-list');
+            if (routinesEl) {
+                routinesEl.innerHTML = agent.routines.map(r => `
+                    <div class="os-routine-item">
+                        <span class="os-routine-name">${r.name}</span>
+                        <span class="os-routine-cadence">${r.cadence}</span>
+                    </div>`).join('');
+            }
+
+            // Update composer placeholder
+            const input = document.getElementById('os-composer-input');
+            if (input) input.placeholder = `Message ${agent.name}…`;
+        }
+
+        function sendOSMessage() {
+            const input = document.getElementById('os-composer-input');
+            if (!input || !input.value.trim()) return;
+
+            const text = input.value.trim();
+            input.value = '';
+            Sound.play('open');
+
+            const stream = document.getElementById('os-chat-stream');
+            if (!stream) return;
+
+            // Append pure white user pill bubble
+            const userBubble = document.createElement('div');
+            userBubble.className = 'os-bubble-user';
+            userBubble.textContent = text;
+            userBubble.style.animation = 'itemIn 0.25s ease-out both';
+            stream.appendChild(userBubble);
+            stream.scrollTop = stream.scrollHeight;
+
+            // Transition active agent to THINKING (Grok elevated gaze & neural glow)
+            const agent = OS_AGENTS_DATA.find(a => a.id === activeOSAgentId);
+            if (agent) {
+                agent.state = 'THINKING';
+                registerAvatarCanvas('os-header-avatar', {
+                    archetype: agent.archetype,
+                    primaryColor: agent.primaryColor,
+                    secondaryColor: agent.secondaryColor,
+                    state: 'THINKING'
+                });
+            }
+
+            // Terminal log update
+            const term = document.getElementById('os-terminal-body');
+            if (term) {
+                const line = document.createElement('div');
+                line.innerHTML = `<span class="os-term-prompt">$</span> exec dispatch --action="${text.substring(0, 32)}"`;
+                term.appendChild(line);
+            }
+
+            // Working phase after 700ms
+            setTimeout(() => {
+                if (agent) {
+                    agent.state = 'WORKING';
+                    registerAvatarCanvas('os-header-avatar', {
+                        archetype: agent.archetype,
+                        primaryColor: agent.primaryColor,
+                        secondaryColor: agent.secondaryColor,
+                        state: 'WORKING'
+                    });
+                }
+            }, 700);
+
+            // Response after 1600ms
+            setTimeout(() => {
+                if (agent) {
+                    agent.state = 'IDLE';
+                    registerAvatarCanvas('os-header-avatar', {
+                        archetype: agent.archetype,
+                        primaryColor: agent.primaryColor,
+                        secondaryColor: agent.secondaryColor,
+                        state: 'IDLE'
+                    });
+                }
+
+                const agentBubble = document.createElement('div');
+                agentBubble.className = 'os-bubble-agent';
+                agentBubble.style.animation = 'itemIn 0.3s ease-out both';
+                agentBubble.textContent = `Acknowledged. Executing "${text}" through ECC AgentShield. Routine metrics updated.`;
+                stream.appendChild(agentBubble);
+                stream.scrollTop = stream.scrollHeight;
+                Sound.play('success');
+
+                if (term) {
+                    const okLine = document.createElement('div');
+                    okLine.innerHTML = `<span class="os-term-ok">✓</span> task executed nominal`;
+                    term.appendChild(okLine);
+                }
+            }, 1600);
+        }
+
+        function pulseActiveOSAgent() {
+            const agent = OS_AGENTS_DATA.find(a => a.id === activeOSAgentId);
+            const name = agent ? agent.name : 'Agent';
+            pulseSingleAgent(name);
+        }
+
+        function takeControlOfComputer() {
+            Sound.play('pop');
+            const agent = OS_AGENTS_DATA.find(a => a.id === activeOSAgentId);
+            showToast(`Operator session attached to ${agent ? agent.name : "Agent"}'s virtual sandbox`, 'info');
+            if (masterCorridors && masterCorridors.length) {
+                const targetLead = masterCorridors.find(r => r.status === 'pending_approval') || masterCorridors[0];
+                if (targetLead) setTimeout(() => openRecordDrawer(targetLead.id), 250);
+            }
+        }
+
+        function openNewRoutinePrompt() {
+            Sound.play('pop');
+            const name = prompt('Enter new routine name (e.g. "Hourly Health Ping"):');
+            if (!name) return;
+            const cadence = prompt('Enter routine schedule (e.g. "Every 30m"):', 'Every 30m');
+            const agent = OS_AGENTS_DATA.find(a => a.id === activeOSAgentId);
+            if (agent && name) {
+                agent.routines.push({ name: `⏰ ${name}`, cadence: cadence || 'Daily' });
+                selectOSAgent(activeOSAgentId, true);
+                showToast(`New routine added to ${agent.name}`, 'success');
+            }
+        }
 
         /* ========================================================================
            20. BOOT

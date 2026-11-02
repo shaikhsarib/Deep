@@ -15,7 +15,7 @@
     "vertical": "general",
     "pain_points": [],
     "growth_goals": [],
-    "created_at": "2026-10-31T18:25:51.152613Z"
+    "created_at": "2026-11-01T18:13:45.983532Z"
   },
   "status": "replied",
   "audit": {
@@ -29,7 +29,7 @@
     ],
     "quantified_loss": null,
     "screenshot_path": null,
-    "audited_at": "2026-10-31T18:25:51.152641Z"
+    "audited_at": "2026-11-01T18:13:45.983549Z"
   },
   "draft": null,
   "contact_name": null,
@@ -44,19 +44,19 @@
     {
       "sender": "prospect",
       "message": "We only work with freight brokers and load boards",
-      "timestamp": "2026-10-31T18:25:51.171652+00:00",
+      "timestamp": "2026-11-01T18:13:45.999968+00:00",
       "intent": "general_query"
     },
     {
       "sender": "closer_agent",
       "message": "Understood! Keep your existing broker network for baseline volume. Our automated WhatsApp rate bot is designed to capture 100% of direct repeat shippers who search for SpeedHaul Carriers online—giving you direct freight at full margin without giving away 18%.\n\nGrab a quick 5-min slot to see live carrier demo: https://calendly.com/agency-demo/15min",
-      "timestamp": "2026-10-31T18:25:51.171652+00:00"
+      "timestamp": "2026-11-01T18:13:45.999968+00:00"
     }
   ],
   "meeting_link": null,
   "research": null,
   "pstack_proof": null,
   "handoff_trace": [],
-  "created_at": "2026-10-31T18:25:51.152664Z",
-  "updated_at": "2026-10-31T18:25:51.171685Z"
+  "created_at": "2026-11-01T18:13:45.983563Z",
+  "updated_at": "2026-11-01T18:13:45.999997Z"
 }

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200" width="600" height="200" fill="none">
+  <!-- DEEP WORDMARK - SCALE AI INSPIRED PASTEL HOLOGRAPHIC GRADIENT -->
+  <defs>
+    <linearGradient id="scale-hologram" x1="60" y1="100" x2="540" y2="100" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#c084fc"/>    <!-- Lilac (Scale 's') -->
+      <stop offset="35%" stop-color="#818cf8"/>   <!-- Periwinkle (Scale 'c') -->
+      <stop offset="68%" stop-color="#60a5fa"/>   <!-- Soft Blue (Scale 'al') -->
+      <stop offset="100%" stop-color="#38bdf8"/>  <!-- Cyan (Scale 'e') -->
+    </linearGradient>
+  </defs>
+
+  <g fill="url(#scale-hologram)">
+    <!-- 'd' -->
+    <path d="M 80 50 C 80 43 85 38 92 38 C 99 38 104 43 104 50 L 104 88 C 114 74 130 65 152 65 C 190 65 218 95 218 136 C 218 177 190 207 152 207 C 130 207 114 198 104 184 L 104 195 C 104 202 99 207 92 207 C 85 207 80 202 80 195 Z M 148 89 C 122 89 104 110 104 136 C 104 162 122 183 148 183 C 174 183 192 162 192 136 C 192 110 174 89 148 89 Z" fill-rule="evenodd"/>
+
+    <!-- 'e' 1 -->
+    <path d="M 240 136 C 240 96 268 65 308 65 C 348 65 374 95 374 136 C 374 142 370 146 364 146 L 266 146 C 269 169 286 184 309 184 C 324 184 337 177 344 167 C 348 162 354 161 359 164 C 364 167 366 174 362 179 C 350 196 331 207 308 207 C 268 207 240 176 240 136 Z M 348 123 C 345 103 331 88 308 88 C 285 88 270 103 266 123 Z" fill-rule="evenodd"/>
+
+    <!-- 'e' 2 -->
+    <path d="M 396 136 C 396 96 424 65 464 65 C 504 65 530 95 530 136 C 530 142 526 146 520 146 L 422 146 C 425 169 442 184 465 184 C 480 184 493 177 500 167 C 504 162 510 161 515 164 C 520 167 522 174 518 179 C 506 196 487 207 464 207 C 424 207 396 176 396 136 Z M 504 123 C 501 103 487 88 464 88 C 441 88 426 103 422 123 Z" fill-rule="evenodd"/>
+
+    <!-- 'p' -->
+    <path d="M 552 75 C 552 68 557 65 564 65 C 571 65 576 68 576 75 L 576 88 C 586 74 602 65 624 65 C 662 65 690 95 690 136 C 690 177 662 207 624 207 C 602 207 586 198 576 184 L 576 235 C 576 242 571 247 564 247 C 557 247 552 242 552 235 Z M 620 89 C 594 89 576 110 576 136 C 576 162 594 183 620 183 C 646 183 664 162 664 136 C 664 110 646 89 620 89 Z" fill-rule="evenodd" transform="translate(-20, 0)"/>
+  </g>
+</svg>

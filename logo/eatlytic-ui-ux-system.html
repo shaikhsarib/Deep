@@ -1,0 +1,631 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Eatlytic UI/UX System</title>
+<style>
+/* ============ TOKENS (single source of truth; the table below is generated from the same data) ============ */
+:root,[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0B0B0C; --panel:#0A0A0B; --raised:#1C1C1F; --field:#171719; --sel:#151517; --composer:#131315;
+  --line:#1B1B1D; --line-soft:#141416; --hover:rgba(255,255,255,.04);
+  --ink:#E9E9EA; --ink-2:#DDDDE0; --ink-3:#8A8A90; --ink-4:#7A7A7F;
+  --user:#F1F1EF; --user-ink:#1A1A1A;
+  --ok:#2E9647; --work:#4D9BFF; --warn:#E28600; --bad:#FF6463; --routine:#E65707; --focus:#1884FC; --unread:#4D9BFF;
+  --eye:#101014; --shadow-pop:0 0 0 1px rgba(255,255,255,.08),0 12px 32px -12px rgba(0,0,0,.7);
+}
+[data-theme="light"]{
+  color-scheme:light;
+  --bg:#FFFFFF; --panel:#F7F7F8; --raised:#F2F2F3; --field:#F4F4F5; --sel:#EBEBED; --composer:#FFFFFF;
+  --line:#E4E4E7; --line-soft:#EEEEF0; --hover:rgba(0,0,0,.04);
+  --ink:#1C1C1C; --ink-2:#2B2B2E; --ink-3:#5E5E66; --ink-4:#6B6B73;
+  --user:#1C1C1C; --user-ink:#FFFFFF;
+  --ok:#00854A; --work:#0B6DD3; --warn:#AA6300; --bad:#CD2834; --routine:#C2410C; --focus:#1E86FC; --unread:#0B6DD3;
+  --eye:#101014; --shadow-pop:0 0 0 1px rgba(0,0,0,.06),0 12px 32px -12px rgba(0,0,0,.18);
+}
+:root{
+  --r-row:12px; --r-field:12px; --r-card:14px; --r-bubble:20px; --r-pill:999px;
+  --font:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  --ease:cubic-bezier(.23,1,.32,1);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink-2);font:14px/20px var(--font);-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px;border-radius:8px}
+.tnum{font-variant-numeric:tabular-nums}
+
+/* ============ DOC CHROME ============ */
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:16px;height:48px}
+.top b{color:var(--ink);font-weight:600}
+.top nav{display:flex;gap:2px;overflow-x:auto;flex:1;scrollbar-width:none}
+.top nav a{color:var(--ink-3);text-decoration:none;font-size:12px;padding:6px 10px;border-radius:8px;white-space:nowrap}
+.top nav a:hover{background:var(--hover);color:var(--ink)}
+.chip{border:1px solid var(--line);border-radius:var(--r-pill);padding:5px 12px;font-size:12px;color:var(--ink-2)}
+.chip:hover{background:var(--hover)}
+section{padding:48px 0 8px}
+h1{font-size:30px;line-height:36px;letter-spacing:-.02em;color:var(--ink);margin:40px 0 12px;font-weight:600}
+h2{font-size:22px;line-height:28px;letter-spacing:-.012em;color:var(--ink);margin:0 0 6px;font-weight:600}
+h3{font-size:15px;line-height:20px;color:var(--ink);margin:28px 0 8px;font-weight:600}
+p{margin:0 0 12px;max-width:74ch}
+.lede{font-size:16px;line-height:24px;color:var(--ink-2);max-width:70ch}
+.kicker{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-bottom:6px}
+.card{background:var(--raised);border-radius:var(--r-card);padding:16px 18px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media(max-width:760px){.grid2,.grid3{grid-template-columns:1fr}}
+ul,ol{margin:0 0 12px;padding-left:20px;max-width:74ch}li{margin:4px 0}
+code,pre{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px}
+code{background:var(--field);padding:1px 6px;border-radius:6px;color:var(--ink)}
+pre{background:var(--field);border:1px solid var(--line);border-radius:var(--r-card);padding:14px 16px;overflow:auto;margin:8px 0 16px;line-height:18px;color:var(--ink-2)}
+pre code{background:none;padding:0}
+table{width:100%;border-collapse:collapse;margin:8px 0 16px;font-size:13px}
+th{font-weight:500;color:var(--ink-3);text-align:left;font-size:12px}
+th,td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+td:first-child{white-space:nowrap}
+.sw{display:inline-block;width:14px;height:14px;border-radius:5px;vertical-align:-3px;margin-right:8px;box-shadow:inset 0 0 0 1px rgba(128,128,128,.35)}
+.tag{display:inline-block;font-size:11px;border-radius:var(--r-pill);padding:1px 8px;border:1px solid var(--line);color:var(--ink-3)}
+.tag.s{color:var(--ok);border-color:color-mix(in srgb,var(--ok) 40%,var(--line))}
+.tag.e{color:var(--warn);border-color:color-mix(in srgb,var(--warn) 40%,var(--line))}
+.tag.x{color:var(--bad);border-color:color-mix(in srgb,var(--bad) 40%,var(--line))}
+.callout{border-left:2px solid var(--work);background:var(--raised);padding:12px 16px;border-radius:0 var(--r-card) var(--r-card) 0;margin:12px 0 16px;max-width:78ch}
+.callout.warn{border-color:var(--warn)}.callout.bad{border-color:var(--bad)}
+.callout b{color:var(--ink)}
+
+/* ============ AGENT AVATAR ============ */
+.av{position:relative;flex:none;display:inline-grid;place-items:center}
+.av svg{overflow:visible;display:block}
+.av .body{transform-box:fill-box;transform-origin:center;filter:drop-shadow(0 2px 3px rgba(0,0,0,.34))}
+.av .eyes{transform-box:fill-box;transform-origin:center}
+.av:hover .body{transform:scale(1.03);transition:transform .3s var(--ease)}
+.av[data-w="1"] .body{animation:var(--mv,av-float) var(--dur,1.6s) ease-in-out infinite;filter:drop-shadow(0 0 calc(var(--s)*.16px) var(--c))}
+.av[data-w="1"] .eyes{animation:var(--ey,av-eye0) 6.6s ease-in-out infinite}
+.av[data-live="1"][data-w="0"] .eyes{animation:av-blink 6s ease-in-out var(--bd,0s) infinite}
+.av .dot{position:absolute;right:-1px;bottom:-1px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 var(--ring,2px) var(--ringc,var(--bg))}
+@keyframes av-float{0%,100%{transform:translateY(2px) scaleX(1.02)}50%{transform:translateY(-3px) scaleX(.98)}}
+@keyframes av-squash{0%,100%{transform:scale(1.04,.96)}50%{transform:scale(.96,1.04)}}
+@keyframes av-sway{0%,100%{transform:translateX(-1px) rotate(-3deg)}50%{transform:translateX(1px) rotate(3deg)}}
+@keyframes av-eye0{0%,100%{transform:translate(-3px,0)}50%{transform:translate(3px,1px)}}
+@keyframes av-eye1{0%,100%{transform:translate(2px,-1px)}50%{transform:translate(-2px,2px)}}
+@keyframes av-eye2{0%,100%{transform:translate(0,-2px)}50%{transform:translate(2px,2px)}}
+@keyframes av-blink{0%,94%,100%{transform:scaleY(1)}96.5%{transform:scaleY(.1)}}
+@media(prefers-reduced-motion:reduce){.av *{animation:none!important;transition:none!important}}
+
+/* ============ APP SHELL (the live reference) ============ */
+.stage{margin:20px 0 8px;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--bg);box-shadow:var(--shadow-pop)}
+.app{display:grid;grid-template-columns:248px minmax(0,1fr) 288px;height:620px;color:var(--ink-2)}
+@media(max-width:980px){.app{grid-template-columns:248px minmax(0,1fr)}.rp{display:none}}
+@media(max-width:640px){.app{grid-template-columns:1fr}.sb{display:none}}
+.sb{background:var(--bg);border-right:1px solid var(--line);display:flex;flex-direction:column;min-height:0}
+.sb-h{display:flex;align-items:center;justify-content:space-between;padding:16px 18px 12px}
+.sb-h b{font-size:14px;color:var(--ink);font-weight:600;letter-spacing:-.01em}
+.ib{width:28px;height:28px;border-radius:var(--r-pill);display:inline-grid;place-items:center;color:var(--ink-3)}
+.ib:hover{color:var(--ink);background:var(--hover)}
+.ib svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.search{margin:0 10px 12px;display:flex;align-items:center;gap:8px;height:34px;padding:0 10px;background:var(--field);border:1px solid var(--line);border-radius:var(--r-field);color:var(--ink-3)}
+.search:focus-within{border-color:var(--focus)}
+.search input{all:unset;flex:1;min-width:0;color:var(--ink);font-size:13px}
+.search input::placeholder{color:var(--ink-4)}
+.roster{flex:1;min-height:0;overflow:auto;padding:0 8px 8px;display:flex;flex-direction:column;gap:2px}
+.row{display:flex;align-items:center;gap:10px;width:100%;min-height:44px;padding:6px 10px;border-radius:var(--r-row);text-align:left}
+.row:hover{background:var(--hover)}.row[aria-current="true"]{background:var(--sel)}
+.row .m{min-width:0;flex:1}
+.row .l1{display:flex;justify-content:space-between;gap:6px;align-items:baseline}
+.row .nm{font-size:13px;line-height:18px;font-weight:500;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.row .nm.u{font-weight:600}
+.row .tm{font-size:12px;line-height:16px;color:var(--ink-4);flex:none}
+.row .pv{font-size:12px;line-height:16px;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px}
+.row .pv.w{color:var(--work);font-weight:600}
+.row .ud{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--unread);margin-left:6px}
+.sb-f{display:flex;align-items:center;gap:10px;padding:10px 14px;border-top:1px solid var(--line);font-size:13px;color:var(--ink)}
+.you{width:28px;height:28px;border-radius:50%;background:var(--raised);display:grid;place-items:center;font-size:11px;color:var(--ink-2)}
+.main{display:flex;flex-direction:column;min-width:0;min-height:0;background:var(--bg)}
+.hd{display:flex;align-items:center;gap:10px;height:52px;padding:0 16px;border-bottom:1px solid var(--line);flex:none}
+.hd b{font-size:14px;color:var(--ink);font-weight:600}
+.hd small{display:block;font-size:12px;line-height:14px;color:var(--ink-3)}
+.hd small.w{color:var(--work)}
+.hd .sp{flex:1}
+.thread{flex:1;min-height:0;overflow:auto;padding:20px 24px;display:flex;flex-direction:column;gap:10px}
+.ts{align-self:center;font-size:11px;color:var(--ink-4);margin:4px 0}
+.b{max-width:min(420px,86%);padding:12px 18px;border-radius:var(--r-bubble);background:var(--raised);color:var(--ink-2);font-size:14px;line-height:20px;overflow-wrap:anywhere}
+.b.me{align-self:flex-end;background:var(--user);color:var(--user-ink);border-bottom-right-radius:8px}
+.b.bot{align-self:flex-start;border-bottom-left-radius:8px}
+.b.sum{display:flex;flex-direction:column;gap:6px;padding:14px 18px}
+.b.sum div{display:flex;gap:10px;align-items:baseline;font-size:14px}
+.b.sum i{font-style:normal;color:var(--ok);width:12px}.b.sum b{color:var(--ink);font-weight:600}.b.sum span{color:var(--ink-3)}
+.ask{align-self:flex-start;width:min(360px,100%);background:var(--raised);border:1px solid var(--line);border-radius:18px;padding:14px 18px}
+.ask .t{display:flex;justify-content:space-between;align-items:center;font-weight:500;color:var(--ink);font-size:14px}
+.ask .t em{font-style:normal;font-size:11px;color:var(--warn);border:1px solid color-mix(in srgb,var(--warn) 45%,transparent);border-radius:var(--r-pill);padding:1px 8px}
+.ask p{margin:8px 0 12px;font-size:13px;line-height:19px;color:var(--ink-3)}
+.ask .a{display:flex;gap:8px;flex-wrap:wrap}
+.btn{height:32px;padding:0 14px;border-radius:var(--r-pill);font-size:13px;font-weight:500;border:1px solid var(--line);color:var(--ink)}
+.btn:hover{background:var(--hover)}.btn.p{background:var(--user);color:var(--user-ink);border-color:transparent}.btn.p:hover{opacity:.9}
+.comp{flex:none;padding:0 24px 16px}
+.pill{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:8px;min-height:44px;padding:5px 6px 5px 6px;background:var(--composer);border:1px solid var(--line);border-radius:26px;max-width:720px;margin:0 auto}
+.pill:focus-within{border-color:color-mix(in srgb,var(--ink) 28%,var(--line))}
+.pill input{all:unset;min-width:0;color:var(--ink);font-size:14px;padding:6px 0}
+.pill input::placeholder{color:var(--ink-4)}
+.send{width:32px;height:32px;border-radius:50%;background:var(--user);color:var(--user-ink);display:grid;place-items:center}
+.send:disabled{opacity:.22;cursor:default}
+.send svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.rp{background:var(--panel);border-left:1px solid var(--line-soft);padding:16px;display:flex;flex-direction:column;gap:12px;min-height:0;overflow:auto}
+.rp .rh{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--ink-3)}
+.scr{aspect-ratio:16/10;border-radius:12px;background:linear-gradient(160deg,#27324a,#4a3a2c 60%,#1b1d23);position:relative;overflow:hidden}
+.scr .w1{position:absolute;inset:14% 36% 18% 8%;background:#101114;border-radius:6px;padding:6px}
+.scr .w2{position:absolute;inset:30% 6% 10% 32%;background:#0d0e10;border-radius:6px;padding:8px;border:1px solid rgba(255,255,255,.08)}
+.scr i{display:block;height:3px;border-radius:2px;background:rgba(255,255,255,.18);margin:5px 0}
+.scr i.g{background:var(--ok);width:40%}.scr i.s{width:70%}
+.lnk{font-size:12px;color:var(--link,var(--work));align-self:flex-end;margin-top:-4px}
+.lnk:hover{text-decoration:underline}
+.rt{display:flex;align-items:center;gap:10px;height:36px;padding:0 6px;border-radius:10px;font-size:13px;color:var(--ink)}
+.rt:hover{background:var(--hover)}
+.rt svg{width:14px;height:14px;stroke:var(--routine);fill:none;stroke-width:2;flex:none}
+.rt span{flex:1}.rt small{font-size:12px;color:var(--ink-3)}
+.rt.n{color:var(--ink-3)}.rt.n svg{stroke:var(--ink-3)}
+.fn{font-size:12px;color:var(--ink-3);margin:8px 2px 0}
+/* ctl bar above stage */
+.ctl{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 0;align-items:center}
+.ctl .chip[aria-pressed="true"]{background:var(--sel);color:var(--ink);border-color:color-mix(in srgb,var(--ink) 25%,var(--line))}
+.swatches{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 12px}
+.swatches span{display:flex;flex-direction:column;align-items:center;gap:6px;font-size:11px;color:var(--ink-3)}
+.matrix{display:flex;gap:14px;flex-wrap:wrap;align-items:flex-end;margin:10px 0}
+.matrix figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:8px;font-size:11px;color:var(--ink-3)}
+.pass{color:var(--ok)}.fail{color:var(--bad)}
+.foot{padding:48px 0 80px;color:var(--ink-3);font-size:12px}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <b>Eatlytic UI/UX System</b>
+  <nav aria-label="Sections">
+    <a href="#live">Live reference</a><a href="#why">Why it works</a><a href="#tokens">Tokens</a><a href="#layout">Layout</a><a href="#components">Components</a><a href="#avatar">Agent avatars</a><a href="#slop">Anti-slop</a><a href="#backend">Backend &amp; infra</a><a href="#plan">Migration plan</a><a href="#transparency">Transparency</a>
+  </nav>
+  <button class="chip" id="themeBtn" aria-label="Toggle light and dark theme">Dark</button>
+</div></header>
+
+<main class="wrap">
+<h1>Make Eatlytic look like a product, not a template</h1>
+<p class="lede">Teen repos (Rakazo, OpenDuet, OpenDots) padhe, aur tumhare screenshot ke pixel colors directly sample kiye. Neeche pehle ek <b>live working reference</b> hai (Eatlytic ke agents ke saath), uske baad exact tokens, measurements, component specs, avatar system, backend/infra, aur migration plan. Koi comparison table nahi: sirf wo jo tumhe copy karna hai.</p>
+<div class="callout"><b>Reference jo tumne diya tha:</b> screenshot ke bot avatar colors <code>#3EC5A8 #F5A03C #6A6BF5 #9B5CF6 #3B82F6 #F2622A #D9508A</code> Rakazo ke <code>botColors</code> se exact match karte hain. Yaani wo screenshot Rakazo-family ka UI hai. Surface colors maine pixels se sample kiye (repo ke <code>tokens.css</code> se alag hain, aur zyada deep/cool hain).</div>
+
+<!-- ================= LIVE ================= -->
+<section id="live">
+<div class="kicker">1 · Live reference</div>
+<h2>Working prototype: sidebar, search, chat, composer, agent computer</h2>
+<p>Click agents, search karo, "Working" toggle karo (avatar animate hoga), Allow/Refuse dabao, Light/Dark switch karo. Sab content <b>sample data</b> hai, real compliance output nahi.</p>
+<div class="ctl">
+  <button class="chip" id="workBtn" aria-pressed="false">Simulate: agent working</button>
+  <button class="chip" id="liveBtn" aria-pressed="true">Idle blink (header only)</button>
+  <span class="fn">Tip: <kbd style="font:inherit">/</kbd> dabao search focus ke liye.</span>
+</div>
+<div class="stage"><div class="app" id="app">
+  <aside class="sb" aria-label="Agents">
+    <div class="sb-h"><b>Eatlytic</b><button class="ib" aria-label="New agent"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button></div>
+    <label class="search"><svg class="ib" style="width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></svg><input id="q" name="sidebar-search" placeholder="Search agents" aria-label="Search agents" autocomplete="off"></label>
+    <div class="roster" id="roster" role="list"></div>
+    <div class="sb-f"><span class="you">UM</span><span>Umer</span></div>
+  </aside>
+  <section class="main" aria-label="Conversation">
+    <div class="hd" id="hd"></div>
+    <div class="thread" id="thread" aria-live="polite"></div>
+    <div class="comp"><form class="pill" id="form">
+      <button type="button" class="ib" aria-label="Attach"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button>
+      <input id="msg" placeholder="Message agent" aria-label="Message" autocomplete="off">
+      <button class="send" id="send" aria-label="Send" disabled><svg viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
+    </form></div>
+  </section>
+  <aside class="rp" aria-label="Agent computer">
+    <div class="rh"><span id="rpName">Agent's computer</span><span style="display:flex;gap:2px"><button class="ib" aria-label="Settings"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></svg></button></span></div>
+    <div class="scr" role="img" aria-label="Preview of the agent's browser"><div class="w1"><i class="g"></i><i class="s"></i><i></i><i class="s"></i></div><div class="w2"><i class="g"></i><i></i><i class="s"></i></div></div>
+    <button class="lnk">Take control</button>
+    <div class="rh" style="margin-top:6px"><span>Routines</span></div>
+    <div class="rt"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l2.5 2"/></svg><span>Morning sweep</span><small>Weekdays 6am</small></div>
+    <div class="rt"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l2.5 2"/></svg><span>Expiry watch</span><small>Hourly</small></div>
+    <div class="rt n"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg><span>New routine</span></div>
+  </aside>
+</div></div>
+<p class="fn">Prototype isi file me hai (zero dependencies, vanilla CSS+JS). Isko seedha Eatlytic ke naye shell ka starting point bana sakte ho.</p>
+</section>
+
+<!-- ================= WHY ================= -->
+<section id="why">
+<div class="kicker">2 · Why it doesn't look like AI slop</div>
+<h2>Eight rules, extracted from the code, not from taste</h2>
+<ol>
+<li><b>Ek hi surface, hairline se alag.</b> Screenshot me sidebar aur chat area dono <code>#0B0B0C</code> hain; beech me sirf 1px <code>#1B1B1D</code> line (x=226 pe sampled). Right panel ek step recessed <code>#0A0A0B</code>. Alag-alag "box" colors nahi, isiliye sab merge hota hai.</li>
+<li><b>Sirf raised cheezein halki hoti hain.</b> Bot bubble <code>#1C1C1F</code>, selected row <code>#151517</code>, search <code>#171719</code>, composer <code>#131315</code>: 4-5 near-neutral steps, koi random gray nahi.</li>
+<li><b>Text/border/hover = ink ka opacity.</b> Rakazo ka <code>tokens.css</code> comment: "Surfaces are opaque; text, borders, hover and selection are the ink at an opacity, so they read the same on every surface." Isliye har surface pe consistent.</li>
+<li><b>Ek hi bright cheez: user bubble.</b> <code>#F1F1EF</code> pe <code>#1A1A1A</code>. Send button same color. Primary action = near-white, accent gradient nahi.</li>
+<li><b>Color sirf meaning ke liye.</b> Green = sirf working dot / success check, blue = sirf unread + "working" status + link, orange = sirf routines, red = sirf error. Rakazo ke comments: "Unread dot. The one blue", "Working dot… The one green".</li>
+<li><b>4 radii, 6 font sizes.</b> Radius 12 (row/field) · 14-18 (cards) · 20 (bubble) · full (pill, avatar). Type 11/12/13/14/17/22. Isse zyada = slop.</li>
+<li><b>Alignment ek grid se.</b> Header <code>px-18</code>, search <code>mx-10</code>, row <code>px-10</code> (+8 roster padding), avatar 28-32: left edge sab ek vertical line pe. Composer content <code>max 60rem</code> centered.</li>
+<li><b>Character, mascot nahi.</b> Avatar = organic blob + 2 vertical eyes, identity-hash se seeded. Sirf busy hone par move karta hai. Static me still. Ye "AI robot icon" se bilkul alag feel deta hai.</li>
+</ol>
+</section>
+
+<!-- ================= TOKENS ================= -->
+<section id="tokens">
+<div class="kicker">3 · Design tokens</div>
+<h2>Copy-paste tokens</h2>
+<p>Dark values screenshot se sampled hain (✔ = pixel-sampled, ~ = maine choose kiya). Light values Rakazo ke web light palette + meri derivation. Contrast column browser me live compute hota hai (vs <code>--bg</code>).</p>
+<table id="tokTable"><thead><tr><th>Token</th><th>Dark</th><th>Light</th><th>Role</th><th>Contrast vs bg (dark / light)</th></tr></thead><tbody></tbody></table>
+<div class="callout warn"><b>Do NOT copy:</b> screenshot ka timestamp <code>#66666A</code> sirf ~3.5:1 hai (AA small text 4.5:1 chahiye). Maine <code>--ink-4</code> ko <code>#7A7A7F</code> kiya. Preview text <code>#7E7E82</code> bhi borderline tha, <code>--ink-3</code> <code>#8A8A90</code> kiya. Eatlytic ko accessibility-first chahiye, isliye ye fix zaroori hai.</div>
+<h3>Ready CSS (auto-generated from the same data as the table)</h3>
+<pre><code id="cssOut"></code></pre>
+<h3>Agent palette (7 hues, same eye ink on all)</h3>
+<div class="swatches" id="palette"></div>
+<p>Eye ink <code>#101014</code> har body color pe same (Rakazo <code>botEyeColor</code>). Ye hi wajah hai ki 7 alag colors ek family lagte hain.</p>
+</section>
+
+<!-- ================= LAYOUT ================= -->
+<section id="layout">
+<div class="kicker">4 · Layout, spacing, type</div>
+<h2>Exact measurements</h2>
+<table>
+<thead><tr><th>Element</th><th>Value</th><th>Source</th></tr></thead>
+<tbody>
+<tr><td>Sidebar width</td><td>248px in the prototype (names + time + unread dot fit without ugly truncation) · screenshot ≈226 + 1px line · Rakazo web 16rem=256 · collapsed icon rail 3rem=48 · mobile drawer 18rem</td><td><span class="tag s">repo</span> <span class="tag e">screenshot est.</span></td></tr>
+<tr><td>Sidebar header</td><td>padding 16 18 12; icon buttons 28×28 round</td><td><span class="tag s">repo</span></td></tr>
+<tr><td>Search field</td><td>margin 0 10px 12px; height ~34; radius 12; 1px line; bg <code>--field</code>; icon 16px stroke 1.8; focus → border <code>--focus</code></td><td><span class="tag s">repo</span></td></tr>
+<tr><td>Roster row</td><td>min-height 44; padding 6 10; gap 10; radius 12; selected = <code>--sel</code>; hover = ink 4%</td><td><span class="tag s">repo</span> (compact variant)</td></tr>
+<tr><td>Row text</td><td>name 13/18 w500 (unread w600) · preview 12/16 <code>--ink-3</code> · time 12/16 tabular-nums <code>--ink-4</code></td><td><span class="tag s">repo</span></td></tr>
+<tr><td>Unread dot</td><td>8px, <code>--unread</code>; on collapsed rail: 8px with 2px ring of the sidebar color</td><td><span class="tag s">repo</span></td></tr>
+<tr><td>Header</td><td>height 52; avatar 28; name 14/600; status 12/14</td><td><span class="tag e">screenshot est.</span></td></tr>
+<tr><td>Chat column</td><td>thread padding 20 24; bubbles max ~420 (≈86%); gap 10; composer content max 60rem (Rakazo) / 720 (prototype)</td><td><span class="tag s">repo</span></td></tr>
+<tr><td>Bubble</td><td>radius 20; padding 12×18; 14/20; bot = <code>--raised</code>, user = <code>--user</code>; tail corner 8px</td><td><span class="tag s">repo</span> + <span class="tag e">tail is mine</span></td></tr>
+<tr><td>Composer</td><td>pill radius 26; border 1px line; focus → border brightens (no glow ring); buttons 32 round; disabled send = 22% opacity</td><td><span class="tag s">repo</span></td></tr>
+<tr><td>Right panel</td><td>~288 wide; bg one step darker than chat; line <code>--line-soft</code>; preview radius 12-14</td><td><span class="tag e">screenshot est.</span> + repo</td></tr>
+<tr><td>Radii</td><td>12 row/field · 14 card · 18 approval card · 20 bubble · 26 composer · full pill/avatar</td><td><span class="tag s">repo</span></td></tr>
+<tr><td>Type scale (web)</td><td>11/16 caption · 12/16 label · 13/18 body2 · 14/20 body1 · 17/24 h3 · 22/28 h2 · 26/32 h1 (tight negative tracking on h1-h3)</td><td><span class="tag s">repo</span></td></tr>
+<tr><td>Touch target</td><td>44px minimum (rows are 44; icon buttons 28 only on desktop pointer, make 44 on touch)</td><td><span class="tag s">OpenDuet</span> <code>--duet-target</code></td></tr>
+<tr><td>Motion</td><td>tap 120ms · swap 200ms · enter 250ms · sheet 350ms · ease <code>cubic-bezier(.23,1,.32,1)</code>; all off under <code>prefers-reduced-motion</code></td><td><span class="tag s">OpenDuet</span></td></tr>
+<tr><td>Fonts</td><td>Inter variable, self-hosted (<code>font-display:swap</code>) with system fallback. Use <code>tabular-nums</code> for times, counts, batch numbers.</td><td>OpenDuet uses Inter; Rakazo uses system stack</td></tr>
+</tbody></table>
+<h3>Alignment rule (this is the "proper alignment" you noticed)</h3>
+<pre><code>Left edge of every sidebar item = 18px from sidebar edge
+  header text/icon    padding-left 18
+  search field        margin-left 10  + input padding 10   → icon at 20 (≈ aligned to 18 optical)
+  roster row          roster pad 8 + row pad 10            → avatar at 18   ← the anchor
+  footer              padding-left 14 + 4 inner            → avatar at 18
+
+Rule: pick ONE anchor (18px) and make every nested wrapper sum to it.
+Vertical rhythm: 4px base. Gaps used: 2 (rows), 6, 8, 10, 12, 16, 24. Nothing else.</code></pre>
+</section>
+
+<!-- ================= COMPONENTS ================= -->
+<section id="components">
+<div class="kicker">5 · Components</div>
+<h2>Component specs for Eatlytic</h2>
+<div class="grid2">
+<div class="card"><h3 style="margin-top:0">Roster row (agent)</h3>
+<p>Avatar · name · time · 1-line preview. States: <b>idle</b> (muted preview) · <b>working</b> (preview in <code>--work</code>, w600, avatar animates + green dot) · <b>unread</b> (name w600 + blue dot) · <b>error</b> (red 8px dot with sidebar-colored ring + "Needs attention" text, never only color). Right-click menu: pin, mute, archive.</p></div>
+<div class="card"><h3 style="margin-top:0">Search</h3>
+<p>Hidden by default behind the header icon, or always visible if &lt;12 agents. Escape clears then closes. IME-safe (ignore Escape while composing). Placeholder context-aware: "Search agents" / "Search runs". Results replace the roster in place, no modal.</p></div>
+<div class="card"><h3 style="margin-top:0">Summary card (agent result)</h3>
+<p>Bubble with <code>✓ Label → result</code> lines: green check, bold label, arrow, muted result. Max 4-5 lines. This is how an agent reports "what I did". Use for scan batches: ✓ Scanned → 38 labels, ✓ Held → 3 batches, ✓ Flagged → 1.</p></div>
+<div class="card"><h3 style="margin-top:0">Approval card (ask-before-acting)</h3>
+<p>From OpenDuet's gateway pattern: exact action + who it affects + 3 buttons <b>Allow once · Always allow · Refuse</b>. Primary = near-white. Never blocks chat; stays answerable. Mandatory for: WhatsApp sends, report publication, anything touching a store manager.</p></div>
+<div class="card"><h3 style="margin-top:0">Agent computer panel</h3>
+<p>Live preview (radius 12) + "Take control" link right-aligned + Routines list. Idle state: grayscale avatar at 50% with "zz". Click on preview = wake (costs money, so never auto-wake).</p></div>
+<div class="card"><h3 style="margin-top:0">Composer</h3>
+<p>Pill, auto-grow to 100px, "+" left, send right. Slash menu + attachment chips <i>above</i> the pill, radius 14, no shadow. Draft saved per agent. Disabled while offline with an inline reason.</p></div>
+</div>
+<h3>Four states every component needs (you probably don't have these)</h3>
+<table><thead><tr><th>State</th><th>Rule</th></tr></thead><tbody>
+<tr><td>Loading</td><td>Skeleton rows with same height as real rows (44px), pulse on <code>--sel</code>. No spinners in lists.</td></tr>
+<tr><td>Empty</td><td>One sentence + one action. "No agents yet. Create one with +."</td></tr>
+<tr><td>Error</td><td>Inline, <code>role="alert"</code>, says what failed and what to do. Never red-only.</td></tr>
+<tr><td>Focus</td><td>2px <code>--focus</code> outline, 2px offset, on every interactive element. Visible in both themes.</td></tr>
+</tbody></table>
+</section>
+
+<!-- ================= AVATAR ================= -->
+<section id="avatar">
+<div class="kicker">6 · Agent character system</div>
+<h2>How the avatars work (and a drop-in implementation)</h2>
+<p>Rakazo me avatar <b>asset nahi</b>, balki <b>function of identity</b> hai: <code>hash(agentId)</code> → body family (10 families) + color + eye pattern + motion style. Isliye har agent hamesha same dikhta hai, kahin store karne ki zaroorat nahi.</p>
+<div class="matrix" id="avMatrix"></div>
+<h3>Rules extracted from the code</h3>
+<ul>
+<li><b>Identity = hash(id).</b> Same agent → same body/color on web, mobile, emails. Rakazo uses <code>hash = (hash&lt;&lt;5) − hash + charCode</code>; OpenDuet moved to FNV-1a because short similar ids (<code>your-agent</code>, <code>support-desk</code>) all landed on one color. The module below uses FNV-1a with independent bit slices for family, color, motion and eyes.</li>
+<li><b>Collisions are solved at creation, not at render.</b> Rakazo's <code>bot-avatar-choice.ts</code> picks the <i>least-used</i> look (random among ties), then generates ids until one hashes to that family (up to 200 tries), and never gives new bots the heart family. So a user's roster is always varied, while the avatar stays a pure function of the id. The prototype's six agents are set this way (<code>fam/col</code> explicit, all distinct).</li>
+<li><b>Body</b> = closed Catmull-Rom curve through 10-22 control points, smoothed 1-2 passes, + tiny seeded scale/shear so no two look identical.</li>
+<li><b>Eyes</b> = two vertical rounded rects (7×24, r3.5) in one fixed ink; whole eye group rotated by seed (−4…+4°).</li>
+<li><b>Motion modes:</b> <code>static</code> (headers, pickers) · <code>lazy</code> (moves only while busy: roster rows) · <code>live</code> (blinks at rest: call card) · <code>running</code> (always).</li>
+<li><b>Never animate ≤24px</b> (reads as jitter). Under 44px use gentlest clips. After work ends, keep moving 1.4s ("settle") then freeze.</li>
+<li><b>Working</b> = body loop (float / squash / sway / turn, 1.1-2.4s by family) + eyes drift (4 patterns, 6-8s) + <b>green dot</b> bottom-right sized by avatar (10px ≤40, 12px &lt;80) with a ring in the surface color so it cuts out cleanly.</li>
+<li><b>Thinking</b> (writing reply) = face shrinks into three typing dots with a left→right lead wave (period 1.2s).</li>
+<li><b>Pause offscreen</b> (IntersectionObserver) and <b>respect reduced motion</b>. Photo avatars: only <code>data:image/</code> URLs, never arbitrary http (tracking/SSRF).</li>
+<li><b>Tap reactions</b> on big avatars: spin / bounce / nod, cycling. Small delight, zero cost.</li>
+</ul>
+<h3>Drop-in module (what the prototype above runs)</h3>
+<pre><code id="avCode"></code></pre>
+<div class="callout"><b>License note:</b> Rakazo is Apache-2.0 and OpenDuet/OpenDots are MIT, but the module above is my own reimplementation of the <i>idea</i> (new control points, simplified motion), not a copy of their shape data. Artwork-wise you stay original.</div>
+</section>
+
+<!-- ================= SLOP ================= -->
+<section id="slop">
+<div class="kicker">7 · Anti-slop checklist</div>
+<h2>Audit your 6,000-line <code>index.html</code> against this</h2>
+<p>Evidence from the repos: Rakazo web uses semantic token classes ~1,227 times vs 39 hard-coded hex values; OpenDuet ~919 token refs vs 33 hex. OpenDots (the weakest of the three) has <b>426 hex literals (339 distinct)</b> in one CSS file and <b>91 font-size declarations ≤10px</b>: that's exactly the "something is off" feel.</p>
+<table><thead><tr><th>Ban</th><th>Replace with</th></tr></thead><tbody>
+<tr><td>Purple→blue gradients, gradient borders, glow on cards</td><td>Flat opaque surfaces + 1px hairline. Glow only on a <i>working</i> avatar.</td></tr>
+<tr><td>Pure <code>#000</code> bg + pure <code>#fff</code> text</td><td><code>#0B0B0C</code> / <code>#E9E9EA</code> (softer, less halation)</td></tr>
+<tr><td>Different gray for every box</td><td>5 surface steps max (<code>bg, panel, raised, field, sel</code>)</td></tr>
+<tr><td>Emoji as icons, mixed icon sets</td><td>One stroke set (1.8 stroke, 16px). Emoji only in user content.</td></tr>
+<tr><td>Text under 12px, ≤10px labels</td><td>Floor = 12px. Caption 11 only for non-essential meta.</td></tr>
+<tr><td>5+ radii, per-component radius</td><td>12 / 14 / 20 / pill. Done.</td></tr>
+<tr><td>Drop shadows on dark UI</td><td>Hairline ring (<code>0 0 0 1px</code> ink 8%) + soft blur only for popovers</td></tr>
+<tr><td>Centered hero text, giant headings in an app</td><td>App chrome is left-aligned, 14px body, max h1 26px</td></tr>
+<tr><td>Color-only status</td><td>Color + text/icon ("Needs attention", ✓)</td></tr>
+<tr><td>Inline hex in HTML / JS</td><td>Only <code>var(--token)</code>. Add a test that greps for <code>#[0-9a-f]{3,8}</code> outside the token file (OpenDuet does this: <code>visual-system.test.ts</code> fails on drift).</td></tr>
+</tbody></table>
+<h3>One-command audit for your file</h3>
+<pre><code># counts that predict "looks off"
+grep -oE '#[0-9a-fA-F]{3,8}\b' index.html | sort -u | wc -l          # distinct hex  (target &lt; 40, all in :root)
+grep -oE 'font-size: *[0-9.]+(px|rem)' index.html | sort | uniq -c   # distinct sizes (target ≤ 7)
+grep -oE 'border-radius: *[0-9.]+(px|%)' index.html | sort | uniq -c # distinct radii (target ≤ 5)
+grep -c 'style="' index.html                                           # inline styles (target → 0)</code></pre>
+</section>
+
+<!-- ================= BACKEND ================= -->
+<section id="backend">
+<div class="kicker">8 · Backend, agent architecture, infra</div>
+<h2>What's worth taking, mapped to Eatlytic (FastAPI stays)</h2>
+<h3>Rakazo (TypeScript monorepo)</h3>
+<ul>
+<li><b>Layers:</b> <code>apps/{web,desktop,mobile,api,worker,www}</code> + <code>packages/{contracts,core,db,adapters,adapter-kit,ui-tokens,ui-web,chat-ui,memory,auth,logging,testkit}</code>. Hono + oRPC API, Postgres + Prisma (106 models), Graphile Worker for jobs, Better Auth, agent runtime "Pi", sandboxes (Docker/E2B/Daytona…) behind provider-neutral adapters.</li>
+<li><b>Run model:</b> <code>Bot → Thread → Message / Event → Task → Run → Attempt</code> + <code>SteeringMessage</code>, <code>ExternalEffect</code>, <code>ActionApprovalRule</code>, <code>AuditEvent</code>. Runs/attempts are internal; the user sees one continuous thread.</li>
+<li><b>Principle (VISION.md):</b> "Frontends express intent and render state while the backend owns orchestration, authorization, validation, retries, recovery." "Core tests remain deterministic and offline by default."</li>
+<li><b>Infra:</b> Docker Compose (images installer script), Caddy, PITR backups + backup drill, host hardening, <code>restrict-computer-egress.sh</code> (sandboxes can't call out freely), content encryption, Infisical secrets, audit-log forwarding.</li>
+</ul>
+<h3>OpenDuet / OpenBot</h3>
+<ul>
+<li><b>AG-UI streaming:</b> server (Hono + CopilotKit runtime) → agent over AG-UI; every tool call returns through a <b>gateway: policy → audit record → act</b>.</li>
+<li><b>Safety defaults:</b> any tool not positively classified as a read is treated as a write; messages to other people always ask first showing recipient + body; outgoing text is scanned for sensitive info; passwords go through a masked box and never into the transcript; credentials encrypted, write-only, redacted from audit.</li>
+<li><b>Packaging:</b> everything product-specific lives in one folder (<code>brand.yaml, agents.yaml, channels.yaml, model.yaml, skills.yaml</code>) so the engine is untouched.</li>
+<li><b>Infra:</b> Postgres + pgvector, per-agent container (Chromium + <code>/workspace</code> + shell) via supervisor, s6 services, Docker/Helm docs, fake-Google test server so demos work offline.</li>
+</ul>
+<h3>OpenDots</h3>
+<ul>
+<li><b>Runner:</b> simple claim/lease loop (<code>setInterval 1s</code>, one active task, abort controllers, on stop → mark in-flight tasks <i>interrupted</i> with "review completed effects before retrying"). Small and readable; good model for a first job runner.</li>
+<li><b>Compose hardening:</b> <code>cap_drop: ALL</code>, <code>no-new-privileges</code>, browser container <code>read_only</code> with tmpfs, <b>internal-only network</b> between app and browser (<code>browser-link: internal: true</code>), separate egress networks, per-agent derived computer credentials, 24+ char <code>OWNER_TOKEN</code> required to boot.</li>
+</ul>
+
+<h3>Eatlytic mapping</h3>
+<table><thead><tr><th>Eatlytic problem</th><th>Take this</th><th>How</th></tr></thead><tbody>
+<tr><td>WhatsApp formatter appends hardcoded warnings to every reply</td><td>OpenDuet "outgoing message gateway"</td><td>Single <code>send_outbound(verdict, draft)</code> function: builds text <i>from the verdict only</i>, runs a policy check + audit row, and for first-time recipients requires approval. Add a unit test: PASS verdict ⇒ no warning text.</td></tr>
+<tr><td>Live <code>.env</code> with real credentials in distributed zip</td><td>OpenDots (<code>.env</code> required vars fail-fast) + Rakazo (Infisical, <code>install-images.sh</code> generates random secrets)</td><td><b>Rotate every key in that .env now</b> (assume leaked). Ship <code>.env.example</code> only; app refuses to boot if a placeholder is present; CI step that fails on <code>.env</code> in the artifact (<code>git ls-files</code> / zip listing check).</td></tr>
+<tr><td>Agents feel like a pile of endpoints</td><td>Rakazo run model</td><td>Tables: <code>agent, thread, message, run, attempt, event, approval, audit_event</code>. Stream run events to the UI over SSE (same shape as AG-UI: text delta, tool call, state, interrupt).</td></tr>
+<tr><td>Deterministic physics layer ("Atwater engine") must stay trustworthy</td><td>Rakazo "verify effects independently" + deterministic offline tests</td><td>LLM never decides a verdict; it only explains one. Golden-file tests per verdict, run offline in CI.</td></tr>
+<tr><td>Multi-provider LLM failover</td><td>Rakazo adapters / OpenDuet <code>model.yaml</code></td><td>Provider-neutral interface + conformance tests per adapter; failover decision logged as an event.</td></tr>
+<tr><td>OCR / browser sandboxes</td><td>OpenDots compose</td><td>Run OCR worker with <code>cap_drop ALL</code>, read-only FS, internal network, no egress.</td></tr>
+<tr><td>MCP server for agentic interoperability</td><td>OpenDuet gateway</td><td>Classify each MCP tool read vs write; unknown = write = needs approval.</td></tr>
+<tr><td>Backups / ops (no external users yet, so cheap now)</td><td>Rakazo <code>backup-prod.sh</code>, <code>backup-drill.sh</code></td><td>Nightly <code>pg_dump</code> + monthly restore drill. Don't wait until you have customers.</td></tr>
+</tbody></table>
+<div class="callout bad"><b>Priority zero, UI se pehle:</b> .env credentials rotate karo aur zip se hatao. Ye security incident hai, design task nahi.</div>
+</section>
+
+<!-- ================= PLAN ================= -->
+<section id="plan">
+<div class="kicker">9 · Migration plan</div>
+<h2>6,000-line index.html → system, without a rewrite</h2>
+<ol>
+<li><b>Day 1 · Tokens.</b> Paste the generated <code>:root</code> block. Run the audit commands above to get your baseline numbers.</li>
+<li><b>Day 1-2 · Hex sweep.</b> Replace every hard-coded color with the nearest token (script it; review the diff). Delete near-duplicate grays.</li>
+<li><b>Day 2-3 · Shell.</b> Replace outer layout with the 3-column shell (sidebar 248 / main / panel 288). Hairlines, not boxes.</li>
+<li><b>Day 3-5 · Components.</b> Build 8 components once (row, search, bubble, summary card, approval card, composer, panel, button). Replace usages page by page.</li>
+<li><b>Week 2 · Reports.</b> Make report output (HTML/PDF) consume the same tokens: your "report doesn't match the main UI" issue disappears when both import one file.</li>
+<li><b>Week 2 · Avatars.</b> Add the avatar module; each pipeline stage (Inward, Expiry, Label, Fraud, WhatsApp, Reports) becomes a character.</li>
+<li><b>Guardrail.</b> CI test: no hex outside <code>tokens.css</code>; no font-size &lt;12px; contrast ≥4.5 for text tokens.</li>
+<li><b>Split the file:</b> <code>tokens.css · app.css · components/*.js</code>, only after the sweep (splitting first just spreads the mess).</li>
+</ol>
+</section>
+
+<!-- ================= TRANSPARENCY ================= -->
+<section id="transparency">
+<div class="kicker">10 · Transparency</div>
+<h2>What I analyzed, what I didn't</h2>
+<div class="grid2">
+<div class="card"><h3 style="margin-top:0">Analyzed (read directly)</h3>
+<ul>
+<li>Cloned all three repos (shallow). Rakazo: 3,872 files; OpenDuet: 2,364; OpenDots: 206.</li>
+<li>Rakazo: <code>ui-tokens</code> (tokens, type scale, bot palette), <code>core</code> avatar files (<code>avatar-shape</code>, <code>avatar-life</code>, <code>avatar-motion</code>), <code>ui-web/bot-avatar.tsx</code> + avatar CSS, sidebar primitives, <code>shell-sidebar</code>, <code>sidebar-roster</code> row markup, composer + message-view classnames, computer panel, VISION.md, README, infra file listing, DB model list.</li>
+<li>OpenDuet: <code>styles.css</code> (tokens, dark theme), <code>theme-tokens.ts</code>, <code>abstract-avatar</code>, <code>mic-orb-draw</code> (first 150 lines), <code>sidebar-shell</code>, <code>bot-roster</code>, README architecture section.</li>
+<li>OpenDots: <code>style.css</code> (sidebar, nav, avatar, search), theme code, <code>runner.ts</code> head, <code>compose.yml</code>, README.</li>
+<li>Your screenshot: pixel-sampled surfaces, text, avatars, one divider line, one row height.</li>
+</ul></div>
+<div class="card"><h3 style="margin-top:0">NOT analyzed / limits</h3>
+<ul>
+<li><b>Your Eatlytic code.</b> Tumne attach nahi kiya, isliye mapping tumhari memory/describe ki hui problems pe based hai, actual code review nahi. Ek baar <code>index.html</code> bhej do to exact sweep script bana dunga.</li>
+<li>Apps ko <b>run nahi kiya</b>; rendered output maine repo screens me nahi dekha (sirf code + tumhara screenshot). Visual claims code/pixels se hain.</li>
+<li>76k+ lines UI code me se sirf key files padhe; mobile (Expo) aur Electron, auth flows, billing, plugins/MCP internals, most of the 106 DB models, worker internals: <b>skim ya skip</b>.</li>
+<li>Security audit of the repos: <b>nahi kiya</b>. Infra notes sirf file listing + compose/README se hain; kuch scripts (backup, PITR, egress) ke naam dekhe, andar ka logic verify nahi kiya.</li>
+<li><code>mic-orb-draw.ts</code> (738 lines) ka sirf starting part padha; OpenDuet ke orb ka full animation logic nahi samjha.</li>
+</ul></div>
+<div class="card"><h3 style="margin-top:0">Estimates &amp; judgment calls</h3>
+<ul>
+<li>Screenshot ek 906×524 capture hai; sidebar ~226px aur row ~40px us scale ke estimates hain, repo ke 256px/44px se alag ho sakte hain.</li>
+<li>Light theme: Rakazo web light + meri derivation; <b>pixel-sampled nahi</b> (screenshot dark hai).</li>
+<li><code>--ink-3/--ink-4</code> maine accessibility ke liye badle (screenshot values AA fail karte hain).</li>
+<li>Bubble tail corner (8px), 3-column breakpoints, 288px panel: meri design choices.</li>
+<li>Sample chat content Eatlytic ke naam pe invented hai; isme koi real FSSAI/INS rule ya data claim nahi hai.</li>
+</ul></div>
+<div class="card"><h3 style="margin-top:0">How to verify me</h3>
+<ul>
+<li>Token claims: <code>rakazo/packages/ui-tokens/src/index.ts</code>, <code>tokens.css</code>.</li>
+<li>Avatar claims: <code>rakazo/packages/core/src/avatar-*.ts</code>, <code>rakazo/packages/ui-web/src/bot-avatar.tsx</code>.</li>
+<li>Hex counts: the grep commands in section 7 (run on the clones; I used <code>*.tsx</code> excluding tests for Rakazo/OpenDuet, and the single <code>style.css</code> for OpenDots).</li>
+<li>Contrast numbers in the token table are computed live in your browser from the hex values.</li>
+</ul></div>
+</div>
+</section>
+<div class="foot">Generated 2 Nov 2026 · single-file reference · no external requests</div>
+</main>
+
+<script>
+/* ============ DATA: tokens (one source for table + CSS output) ============ */
+const TOK=[
+ ['--bg','#0B0B0C','#FFFFFF','Page AND sidebar (one surface; ✔ sampled)'],
+ ['--panel','#0A0A0B','#F7F7F8','Right/utility panel, one step recessed (✔)'],
+ ['--raised','#1C1C1F','#F2F2F3','Bot bubble, cards, popovers (✔)'],
+ ['--field','#171719','#F4F4F5','Search & inputs (✔)'],
+ ['--sel','#151517','#EBEBED','Selected row (✔)'],
+ ['--composer','#131315','#FFFFFF','Composer pill (✔ outer sample)'],
+ ['--line','#1B1B1D','#E4E4E7','Hairlines between regions (✔)'],
+ ['--line-soft','#141416','#EEEEF0','Panel divider (✔)'],
+ ['--ink','#E9E9EA','#1C1C1C','Names, headings (✔)'],
+ ['--ink-2','#DDDDE0','#2B2B2E','Body text in bubbles (✔)'],
+ ['--ink-3','#8A8A90','#5E5E66','Secondary / preview (~ raised for AA)'],
+ ['--ink-4','#7A7A7F','#6B6B73','Timestamps, placeholders (~ raised for AA)'],
+ ['--user','#F1F1EF','#1C1C1C','User bubble + send button fill (✔)'],
+ ['--user-ink','#1A1A1A','#FFFFFF','Text on --user (✔)'],
+ ['--ok','#2E9647','#00854A','Success check, working dot (✔)'],
+ ['--work','#4D9BFF','#0B6DD3','Working status text, links, unread (repo)'],
+ ['--warn','#E28600','#AA6300','Needs-you / approval badge (repo)'],
+ ['--bad','#FF6463','#CD2834','Errors (repo)'],
+ ['--routine','#E65707','#C2410C','Routine/clock icon only (✔)'],
+ ['--focus','#1884FC','#1E86FC','Focus ring, search focus border (repo)']
+];
+const PAL=['#3EC5A8','#F5A03C','#6A6BF5','#9B5CF6','#3B82F6','#F2622A','#D9508A'];
+
+/* contrast helpers */
+const lin=c=>{c/=255;return c<=.03928?c/12.92:((c+.055)/1.055)**2.4};
+const lum=h=>{const n=parseInt(h.slice(1),16);return .2126*lin(n>>16)+.7152*lin(n>>8&255)+.0722*lin(n&255)};
+const cr=(a,b)=>{const x=lum(a),y=lum(b);return (Math.max(x,y)+.05)/(Math.min(x,y)+.05)};
+const textTok=new Set(['--ink','--ink-2','--ink-3','--ink-4','--ok','--work','--warn','--bad','--routine']);
+{ // token table
+  const tb=document.querySelector('#tokTable tbody'); const bgD=TOK[0][1],bgL=TOK[0][2];
+  tb.innerHTML=TOK.map(([n,d,l,r])=>{
+    let c='—';
+    if(textTok.has(n)){const a=cr(d,bgD),b=cr(l,bgL);
+      c=`<span class="${a>=4.5?'pass':'fail'}">${a.toFixed(1)}</span> / <span class="${b>=4.5?'pass':'fail'}">${b.toFixed(1)}</span>`}
+    return `<tr><td><code>${n}</code></td><td><i class="sw" style="background:${d}"></i>${d}</td><td><i class="sw" style="background:${l}"></i>${l}</td><td>${r}</td><td class="tnum">${c}</td></tr>`}).join('');
+  const css=(k)=>TOK.map(t=>`  ${t[0]}:${t[k]};`).join('\n');
+  document.getElementById('cssOut').textContent=
+`:root,[data-theme="dark"]{ color-scheme:dark;\n${css(1)}\n  --eye:#101014;\n}\n[data-theme="light"]{ color-scheme:light;\n${css(2)}\n}\n:root{\n  --r-row:12px; --r-field:12px; --r-card:14px; --r-bubble:20px; --r-pill:999px;\n  --font:Inter,-apple-system,"Segoe UI",Roboto,sans-serif;\n  --ease:cubic-bezier(.23,1,.32,1);\n}\n/* rule: text, borders, hover, selection = ink at an opacity; surfaces = opaque */`;
+  document.getElementById('palette').innerHTML=PAL.map(c=>`<span><i class="sw" style="width:36px;height:36px;border-radius:12px;margin:0;background:${c}"></i>${c}</span>`).join('');
+}
+
+/* ============ AVATAR MODULE (own implementation) ============ */
+const AVATAR_SRC=`// avatar.js — identity-seeded organic agent character
+const COLORS=['#3EC5A8','#F5A03C','#6A6BF5','#9B5CF6','#3B82F6','#F2622A','#D9508A'];
+const hash=s=>{let h=0x811c9dc5;for(const c of s){h^=c.charCodeAt(0);h=Math.imul(h,0x01000193)>>>0}return h}; // FNV-1a
+const scallop=Array.from({length:12},(_,i)=>{const a=i/12*Math.PI*2,r=i%2?38:47;return[Math.cos(a)*r,Math.sin(a)*r]});
+const BODIES=[
+ [[0,-50],[16,-26],[34,-2],[40,20],[28,40],[0,46],[-28,40],[-40,20],[-34,-2],[-16,-26]],          // drop
+ [[-30,-44],[0,-47],[30,-44],[46,-30],[48,0],[46,30],[30,44],[0,47],[-30,44],[-46,30],[-48,0],[-46,-30]], // squircle
+ [[0,-46],[32,-34],[46,0],[34,34],[0,46],[-34,34],[-46,0],[-32,-34]],                              // blob
+ [[0,40],[-28,22],[-44,-2],[-38,-28],[-18,-38],[0,-26],[18,-38],[38,-28],[44,-2],[28,22]],        // heart
+ [[-46,32],[-40,0],[-26,-30],[0,-44],[26,-30],[40,0],[46,32],[24,40],[0,42],[-24,40]],            // dome
+ [[0,-52],[24,-44],[34,-20],[34,20],[24,44],[0,52],[-24,44],[-34,20],[-34,-20],[-24,-44]],        // pill
+ scallop,                                                                                          // flower
+ [[-44,14],[-48,-6],[-34,-22],[-16,-24],[-6,-40],[14,-40],[24,-24],[42,-20],[50,0],[42,18],[24,28],[0,26],[-24,28]] // cloud
+];
+function bodyPath(fam,seed){
+  const ph=(seed%360)*Math.PI/180, sx=1+Math.sin(ph)*.035, sy=1+Math.cos(ph)*.025;
+  const P=BODIES[fam].map(([x,y])=>[x*sx,y*sy]), n=P.length, f=v=>Math.round(v*100)/100;
+  let d='M'+f(P[0][0])+' '+f(P[0][1]);
+  for(let i=0;i<n;i++){const a=P[(i-1+n)%n],b=P[i],c=P[(i+1)%n],e=P[(i+2)%n];
+    d+='C'+f(b[0]+(c[0]-a[0])/6)+' '+f(b[1]+(c[1]-a[1])/6)+' '+f(c[0]-(e[0]-b[0])/6)+' '+f(c[1]-(e[1]-b[1])/6)+' '+f(c[0])+' '+f(c[1])}
+  return d+'Z';
+}
+// New agents: pick the LEAST-USED family+color, then search for an id whose hash lands there
+// (Rakazo: up to 200 tries, never the heart family). Identity stays a pure function of id.
+export const pickLeastUsed=(opts,used)=>{const n=opts.map(o=>used.filter(u=>u===o).length),m=Math.min(...n);
+  const c=opts.filter((_,i)=>n[i]===m);return c[Math.floor(Math.random()*c.length)]};
+export function avatar(id,{size=32,working=false,live=false,ring='var(--bg)',fam,col}={}){
+  const s=hash(id), F=fam??s%BODIES.length, color=COLORS[col??(s>>>8)%COLORS.length], still=size<=24;
+  const mv=['av-float','av-squash','av-sway'][(s>>>4)%3], dur=[1.8,1.35,1.6,2.4][(s>>>12)%4];
+  const dot=Math.max(8,Math.round(size<=40?10:12));
+  return \`<span class="av" data-w="\${working&&!still?1:0}" data-live="\${live&&!still?1:0}"
+    style="width:\${size}px;height:\${size}px;--c:\${color};--s:\${size};--mv:\${mv};--dur:\${dur}s;--ey:av-eye\${(s>>>16)%3};--bd:-\${(s%50)/10}s;--ringc:\${ring};--ring:\${size*.046}px">
+    <svg viewBox="-60 -60 120 120" width="\${size}" height="\${size}" aria-hidden="true">
+      <path class="body" d="\${bodyPath(F,s)}" fill="\${color}"/>
+      <g transform="rotate(\${(s%9)-4})"><g class="eyes" fill="var(--eye)"><rect x="-14" y="-12" width="7" height="24" rx="3.5"/><rect x="7" y="-12" width="7" height="24" rx="3.5"/></g></g>
+    </svg>\${working?'<i class="dot" style="width:'+dot+'px;height:'+dot+'px"></i>':''}</span>\`;
+}`;
+document.getElementById('avCode').textContent=AVATAR_SRC+'\n\n/* CSS: see .av rules in this file (float/squash/sway/eye-drift/blink keyframes + prefers-reduced-motion off-switch) */';
+// run the same source in-page (strip module export)
+const avatar=new Function(AVATAR_SRC.replace(/export (const|function)/g,'$1')+';return avatar;')();
+
+/* ============ PROTOTYPE DATA (sample, invented) ============ */
+const AG=[
+ {id:'inward-inspector',fam:0,col:2,name:'Inward Inspector',time:'12:11 AM',pv:'3 batches held, 1 expiry mismatch',u:0,
+  head:'Dark store #14 · inward',sum:[['Scanned','38 labels across 6 deliveries'],['Passed','31 batches'],['Held','3 batches · expiry mismatch'],['Flagged','1 · needs you']],
+  bot:'Batch 2217 shows two different expiry dates (carton vs. unit). I held it. Want me to draft the note to the vendor?',me:'draft it, hold the rest till morning',re:'Done. Note drafted and parked. 3 batches remain held.',ask:null},
+ {id:'expiry-guard',fam:2,col:0,name:'Expiry Guard',time:'Yesterday',pv:'checked 212 SKUs, 4 near-expiry',u:0,
+  head:'Hourly expiry watch',sum:[['Checked','212 SKUs'],['Near expiry','4 · sorted by days left'],['Moved','2 to markdown shelf']],
+  bot:'4 SKUs are inside the near-expiry window. Two already moved; two need a shelf decision.',me:'show the two',re:'SKU lists are in the report. Nothing else is at risk today.',ask:null},
+ {id:'label-auditor',fam:6,col:1,name:'Label Auditor',time:'10:40 PM',pv:'INS code unclear on 2 labels',u:1,
+  head:'Label review',sum:[['Read','38 labels (OCR)'],['Matched','34 to additive list'],['Unclear','2 · low image quality'],['Flagged','2 · needs you']],
+  bot:'Two labels have an INS code I cannot read with confidence. I will not guess it. Can someone re-shoot them?',me:'ask store to re-shoot both',re:'Request queued for the store team. I will re-check when new photos arrive.',ask:null},
+ {id:'fraud-sentinel',fam:4,col:3,name:'Fraud Sentinel',time:'Yesterday',pv:'1 possible relabel pattern',u:0,
+  head:'Fraud checks',sum:[['Compared','212 batches to history'],['Pattern','1 repeated date edit'],['Escalated','1 · human review']],
+  bot:'Same vendor, same date-edit pattern on three batches this week. This is a signal, not a verdict. Please review.',me:'open the case',re:'Case opened with the three batch photos attached.',ask:null},
+ {id:'whatsapp-desk',fam:7,col:5,name:'WhatsApp Desk',time:'Yesterday',pv:'6 replies drafted, held',u:1,
+  head:'WhatsApp replies',sum:[['Drafted','6 replies'],['Held','6 · awaiting approval']],
+  bot:'I drafted a reply to Store #14 about the held batch. Sending needs your OK.',me:'',re:'',
+  ask:{t:'Send WhatsApp to Store #14',b:'To: Store #14 manager. Message: "Batch 2217 is on hold: two different expiry dates. Please re-check the carton and reply."'}},
+ {id:'report-writer',fam:5,col:6,name:'Report Writer',time:'Monday',pv:'weekly compliance report filed',u:0,
+  head:'Weekly report',sum:[['Compiled','7 days · 6 stores'],['Filed','weekly compliance report']],
+  bot:'Report filed. It uses the same tokens as the app, so the PDF matches the product.',me:'',re:'',ask:null}
+];
+let cur=AG[0], working=false, live=true;
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function roster(){
+  const q=$('#q').value.trim().toLowerCase();
+  const list=AG.filter(a=>!q||(a.name+' '+a.pv).toLowerCase().includes(q));
+  $('#roster').innerHTML=list.length?list.map(a=>{
+    const w=working&&a.id===cur.id;
+    return `<button class="row" role="listitem" data-id="${a.id}" aria-current="${a.id===cur.id}">
+      ${avatar(a.id,{size:32,working:w,fam:a.fam,col:a.col,ring:a.id===cur.id?'var(--sel)':'var(--bg)'})}
+      <span class="m"><span class="l1"><span class="nm ${a.u?'u':''}">${esc(a.name)}</span><span class="tm tnum">${a.time}${a.u?'<span class="ud" aria-label="unread"></span>':''}</span></span>
+      <span class="pv ${w?'w':''}">${w?'Working · reading label 14/38':esc(a.pv)}</span></span></button>`}).join(''):
+    '<p class="fn" style="padding:12px">No agents match. Clear the search.</p>';
+}
+function head(){
+  $('#hd').innerHTML=`${avatar(cur.id,{size:28,working,live:live,fam:cur.fam,col:cur.col})}<div><b>${esc(cur.name)}</b><small class="${working?'w':''}">${working?'Working · reading label 14/38':esc(cur.head)}</small></div><span class="sp"></span>
+  <button class="ib" aria-label="Show computer"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></button>`;
+  $('#rpName').textContent=cur.name+"'s computer";
+}
+function thread(){
+  const t=[];
+  t.push('<div class="ts tnum">12:11 AM</div>');
+  t.push('<div class="b bot sum">'+cur.sum.map(([k,v])=>`<div><i>✓</i><b>${esc(k)}</b><span>→</span><span style="color:var(--ink-2)">${esc(v)}</span></div>`).join('')+'</div>');
+  t.push(`<div class="b bot">${esc(cur.bot)}</div>`);
+  if(cur.ask)t.push(`<div class="ask" id="ask"><div class="t"><span>${esc(cur.ask.t)}</span><em>Needs you</em></div><p>${esc(cur.ask.b)}</p><div class="a"><button class="btn p" data-a="once">Allow once</button><button class="btn" data-a="always">Always allow</button><button class="btn" data-a="no">Refuse</button></div></div>`);
+  if(cur.me)t.push(`<div class="b me">${esc(cur.me)}</div>`);
+  if(cur.re)t.push(`<div class="b bot">${esc(cur.re)}</div>`);
+  (cur.extra||[]).forEach(m=>t.push(`<div class="b ${m.r}">${esc(m.t)}</div>`));
+  $('#thread').innerHTML=t.join('');
+  $('#thread').scrollTop=1e6;
+}
+function all(){roster();head();thread()}
+$('#roster').addEventListener('click',e=>{const r=e.target.closest('.row');if(!r)return;cur=AG.find(a=>a.id===r.dataset.id);all()});
+$('#q').addEventListener('input',roster);
+document.addEventListener('keydown',e=>{if(e.key==='/'&&!/INPUT|TEXTAREA/.test(document.activeElement.tagName)){e.preventDefault();$('#q').focus()}
+  if(e.key==='Escape'&&document.activeElement===$('#q')&&!e.isComposing&&e.keyCode!==229){$('#q').value='';roster();$('#q').blur()}});
+$('#msg').addEventListener('input',e=>{$('#send').disabled=!e.target.value.trim()});
+$('#form').addEventListener('submit',e=>{e.preventDefault();const v=$('#msg').value.trim();if(!v)return;
+  (cur.extra=cur.extra||[]).push({r:'me',t:v},{r:'bot',t:'Noted. (Prototype: no real agent behind this box.)'});$('#msg').value='';$('#send').disabled=true;thread()});
+$('#thread').addEventListener('click',e=>{const b=e.target.closest('[data-a]');if(!b)return;
+  const m={once:'Allowed once. Sent.',always:'Rule saved: always allow this action for this recipient.',no:'Refused. Nothing was sent.'}[b.dataset.a];
+  document.getElementById('ask').outerHTML=`<div class="b bot">${m}</div>`});
+$('#workBtn').addEventListener('click',e=>{working=!working;e.currentTarget.setAttribute('aria-pressed',working);all()});
+$('#liveBtn').addEventListener('click',e=>{live=!live;e.currentTarget.setAttribute('aria-pressed',live);head()});
+$('#themeBtn').addEventListener('click',e=>{const d=document.documentElement,n=d.dataset.theme==='dark'?'light':'dark';d.dataset.theme=n;e.currentTarget.textContent=n==='dark'?'Dark':'Light';all()});
+all();
+
+/* avatar matrix: body families x states */
+{const m=$('#avMatrix');const ids=['inward-inspector','expiry-guard','label-auditor','fraud-sentinel','whatsapp-desk','report-writer','a','b','c','d'];
+ m.innerHTML=ids.map(i=>`<figure>${avatar(i,{size:56})}<span>idle</span></figure>`).join('')+
+ ['inward-inspector','label-auditor','whatsapp-desk'].map(i=>`<figure>${avatar(i,{size:56,working:true})}<span>working</span></figure>`).join('')+
+ [16,24,32,44,72].map(s=>`<figure>${avatar('expiry-guard',{size:s,working:true})}<span>${s}px ${s<=24?'(still)':''}</span></figure>`).join('');}
+</script>
+</body>
+</html>

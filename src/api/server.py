@@ -22,9 +22,9 @@ from src.agents.ecc_shield import ECCShield
 from fastapi.staticfiles import StaticFiles
 
 app = FastAPI(
-    title="Standard Autonomous",
+    title="Deep",
     version=settings.app_version,
-    description="Standard Autonomous Multi-Agent Swarm Platform."
+    description="Deep Multi-Agent Swarm Platform."
 )
 
 app.add_middleware(

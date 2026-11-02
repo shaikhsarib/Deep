@@ -13,7 +13,7 @@ class AppSettings(BaseSettings):
     )
 
     # App Info
-    app_name: str = "Standard Autonomous"
+    app_name: str = "Deep"
     app_version: str = "2.0.0"
     debug: bool = False
     
