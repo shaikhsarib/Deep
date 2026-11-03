@@ -115,7 +115,7 @@
         "finding": "Valid HTTPS encryption verified",
         "evidence_type": "live_http_probe",
         "proof_reference": "https://www.lodhagroup.in/",
-        "reproducibility_command": null,
+        "reproducibility_command": "curl -Iv --tlsv1.3 https://www.lodhagroup.in/ || openssl s_client -connect www.lodhagroup.in:443",
         "is_verified": true,
         "pstack_status": "PROVEN_TRUE"
       },
@@ -135,7 +135,7 @@
         "finding": "Mobile viewport configured: True",
         "evidence_type": "dom_selector",
         "proof_reference": "meta[name='viewport']",
-        "reproducibility_command": null,
+        "reproducibility_command": "document.querySelector(\"meta[name='viewport']\")?.getAttribute('content') || 'none'",
         "is_verified": true,
         "pstack_status": "PROVEN_TRUE"
       },
@@ -145,7 +145,7 @@
         "finding": "Absence of 1-click WhatsApp lead CTA on landing view",
         "evidence_type": "dom_selector",
         "proof_reference": "a[href*='wa.me'], a[href*='whatsapp.com']",
-        "reproducibility_command": null,
+        "reproducibility_command": "document.querySelector(\"a[href*='wa.me'], a[href*='whatsapp.com']\")",
         "is_verified": true,
         "pstack_status": "PROVEN_TRUE"
       },
@@ -155,7 +155,7 @@
         "finding": "Live source citation: Top 15 IT Parks in Mumbai - GetSetHome",
         "evidence_type": "web_citation",
         "proof_reference": "https://blog.getsethome.com/top-15-it-parks-in-mumbai/",
-        "reproducibility_command": null,
+        "reproducibility_command": "web_search \"Top 15 IT Parks in Mumbai - GetSetHome\"",
         "is_verified": true,
         "pstack_status": "PROVEN_TRUE"
       },
@@ -165,7 +165,7 @@
         "finding": "Live source citation: Top 10 Coworking Spaces in Lower Parel, Mumbai for Rent",
         "evidence_type": "web_citation",
         "proof_reference": "https://digest.myhq.in/coworking-space-in-lower-parel/",
-        "reproducibility_command": null,
+        "reproducibility_command": "web_search \"Top 10 Coworking Spaces in Lower Parel, Mumbai for Rent\"",
         "is_verified": true,
         "pstack_status": "PROVEN_TRUE"
       },
@@ -175,7 +175,7 @@
         "finding": "Live source citation: Top IT Parks in Mumbai: Discover the Best Tech Hubs in the City",
         "evidence_type": "web_citation",
         "proof_reference": "https://www.nobroker.in/blog/top-it-parks-in-mumbai/",
-        "reproducibility_command": null,
+        "reproducibility_command": "web_search \"Top IT Parks in Mumbai: Discover the Best Tech Hubs in the City\"",
         "is_verified": true,
         "pstack_status": "PROVEN_TRUE"
       }
@@ -214,7 +214,7 @@
         }
       }
     ],
-    "verified_at": "2026-11-01T18:13:45.260273Z"
+    "verified_at": "2026-11-02T17:03:30.321461Z"
   },
   "handoff_trace": [
     {
@@ -366,5 +366,5 @@
     }
   ],
   "created_at": "2026-10-27T16:09:00.531327Z",
-  "updated_at": "2026-11-01T18:13:45.260411Z"
+  "updated_at": "2026-11-02T17:03:30.321584Z"
 }

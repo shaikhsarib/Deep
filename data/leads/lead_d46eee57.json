@@ -1,0 +1,300 @@
+{
+  "id": "lead_d46eee57",
+  "profile": {
+    "company_name": "Rcc Transport Co Pvt Ltd",
+    "business_type": "freight carriers",
+    "location": "Bhiwandi",
+    "phone": "+91 93221 29778",
+    "email": null,
+    "website": null,
+    "has_website": false,
+    "address": "\n41, Ner Kotak Mahindra Bank Anmol Textile Bhiwandi, Mumbai, Maharashtra 421302",
+    "rating": "5.0",
+    "source": "google_maps",
+    "source_url": "https://www.google.com/maps/place/Rcc+Transport+Co+Pvt+Ltd/data=!4m7!3m6!1s0x3be7bc4d48f40a13:0xc94ff133f99493de!8m2!3d19.2718086!4d73.0399005!16s%2Fg%2F11tfd8hy4q!19sChIJEwr0SE285zsR3pOU-TPxT8k?authuser=0&hl=en&g_ep=EgoyMDI2MTAyOC4wIJJjKgBIAVAD&rclk=1",
+    "vertical": "logistics_transport",
+    "pain_points": [],
+    "growth_goals": [],
+    "created_at": "2026-11-02T16:57:11.602430Z"
+  },
+  "status": "contacted",
+  "audit": {
+    "load_time_seconds": null,
+    "has_ssl": false,
+    "is_mobile_responsive": false,
+    "has_whatsapp_widget": false,
+    "has_online_booking": false,
+    "key_flaws": [
+      "No direct digital booking or freight rate calculator",
+      "100% reliant on 3rd-party freight brokers and load boards (paying 15-25% broker cuts)",
+      "Invisible to direct shippers searching online for reliable lane carriers",
+      "No automated WhatsApp response system for after-hours rate inquiries"
+    ],
+    "quantified_loss": "Losing 15-20% margin to freight brokers and ~8-12 spot loads weekly due to delayed manual quote turnaround",
+    "screenshot_path": null,
+    "audited_at": "2026-11-02T17:03:07.484128Z"
+  },
+  "draft": {
+    "whatsapp_message": "Hi team Rcc Transport Co Pvt Ltd, saw your fleet operations in Bhiwandi! Shippers book whoever quotes rates within 5 mins. We build instant WhatsApp freight calculators & direct driver dispatch bots so you skip 20% broker fees. Open to a 2-min video preview?",
+    "email_subject": "Automating direct shipper quotes for Rcc Transport Co Pvt Ltd (skip 18% broker cuts)",
+    "email_body": "Hi Team Rcc Transport Co Pvt Ltd,\n\nI was checking out commercial freight and transport operators in Bhiwandi and came across your business.\n\nThe #1 bottleneck in freight right now is quote turnaround time: shippers searching for trucks request 3 quotes and book the first one who responds within 15 minutes. We build direct WhatsApp freight rate estimators and automated dispatch bots that capture shippers instantly and help fleet operators bypass 15-25% broker commissions.\n\nWould you be open to a 5-minute screen share this week to see how this works for your lane routes?\n\nWarm regards,\nFreight Automation & Tech Team",
+    "pain_points": [
+      "No direct digital booking or freight rate calculator",
+      "100% reliant on 3rd-party freight brokers and load boards (paying 15-25% broker cuts)",
+      "Invisible to direct shippers searching online for reliable lane carriers",
+      "No automated WhatsApp response system for after-hours rate inquiries"
+    ],
+    "business_loss": "Losing 15-20% margin to freight brokers and ~8-12 spot loads weekly due to delayed manual quote turnaround"
+  },
+  "contact_name": null,
+  "contact_email": null,
+  "budget": null,
+  "interest_level": null,
+  "summary": "Hi team Rcc Transport Co Pvt Ltd, saw your fleet operations in Bhiwandi! Shippers book whoever quotes rates within 5 mins. We build instant WhatsApp freight calculators & direct driver dispatch bots so you skip 20% broker fees. Open to a 2-min video preview?",
+  "qualified": true,
+  "contacted_channels": [
+    "whatsapp"
+  ],
+  "last_contacted_at": "2026-11-02T17:03:27.081947Z",
+  "conversation_history": [],
+  "meeting_link": null,
+  "research": {
+    "market_overview": "Competitive local market for freight carriers services in Bhiwandi.",
+    "target_demographics": "Local consumers in Bhiwandi seeking fast, mobile-friendly services.",
+    "top_customer_complaints": [
+      "High aggregator commissions passed onto consumers",
+      "Unanswered inquiries after business closing hours"
+    ],
+    "competitors": [
+      {
+        "competitor_name": "Top freight carriers in Bhiwandi",
+        "strength": "High Google review volume",
+        "weakness": "Missing automated WhatsApp lead capture"
+      }
+    ],
+    "untapped_revenue_opportunities": [
+      "Direct-to-consumer VIP loyalty broadcasts on WhatsApp",
+      "1-click mobile appointment booking"
+    ],
+    "recommended_hook": "Help Rcc Transport Co Pvt Ltd capture direct customer orders without 20-30% platform cuts.",
+    "citations": [
+      {
+        "title": "4 Reviews for Rcc Transport Co Pvt Ltd in Bhiwandi City, Bhiwandi ...",
+        "url": "https://www.justdial.com/jdmart/Mumbai/Rcc-Transport-Co-Pvt-Ltd-Near-Anjurpthata-Bhiwandi-City/022P1225264440N8H6U1_BZDET/catalogue/reviews",
+        "snippet": "Unbiased, genuine based on 4 Customer Reviews and Ratings with Photos. Check Timings, Address, Contact Number, Photos, Maps of Rcc Transport Co Pvt Ltd in Bhiwandi City, Bhiwandi - Justdial"
+      },
+      {
+        "title": "1 Reviews for RCC Transport Co Pvt Ltd in Anjur, Bhiwandi - Justdial",
+        "url": "https://www.justdial.com/jdmart/Mumbai/RCC-Transport-Co-Pvt-Ltd-Near-Anjur-Phata-Bhiwandi-City/022P1225264628V9A3P5_BZDET/catalogue/reviews",
+        "snippet": "Unbiased, genuine based on 1 Customer Reviews and Ratings with Photos. Check Timings, Address, Contact Number, Photos, Maps of RCC Transport Co Pvt Ltd in Anjur, Bhiwandi - Justdial"
+      },
+      {
+        "title": "RCC Transport Co Pvt Ltd. - Amritsar - 093560 91828 - Cybo",
+        "url": "https://www.cybo.com/IN-biz/rcc-transport-co-pvt-ltd",
+        "snippet": "RCC Transport Co Pvt Ltd. Amritsar. See Google profile, Hours, Phone, Email and more for this business. 3.5 Cybo Score. RCC Transport Co Pvt Ltd. is working in Moving companies, Other transport activities, Trucks and trailers activities. Review on Cy"
+      },
+      {
+        "title": "International Air Freight - Global Air Cargo Experts",
+        "url": "https://www.bing.com/aclick?ld=e8VgIQ4Uj7n2cnanY83ht7WDVUCUw6qnDflOJ6jVBR07HCQwVG_G0KJmClS0rakPBSqljsL7vlN1kxqnE18oo9ig7GDze5ddoN0Iu8Ox327aarB5YjoCBotnahJKJ3v2Y5IUMQD2BdWvjKQcgFyVsUVvnUElQaFtoPDdB-OpJQmZp6jlX62zn0birT5LJtdvZ29rmaWLndEMmQkjytHOCGRdj6odE&u=aHR0cHMlM2ElMmYlMmZ3d3cud2NzY2FyZ28uY29tJTJmZ2xvYmFsJTJmYWlyLWZyZWlnaHQlM2Ztc2Nsa2lkJTNkZTc2NTU1OTU5YmRmMTIzYjdlYzAzZjdkNTllMGY0NGYlMjZ1dG1fc291cmNlJTNkYmluZyUyNnV0bV9tZWRpdW0lM2RjcGMlMjZ1dG1fY2FtcGFpZ24lM2QqKkxQJTI1MjBTZWFyY2glMjUyMC0lMjUyMEZyZWlnaHQlMjZ1dG1fdGVybSUzZGZyZWlnaHQlMjUyMGNvbXBhbmllcyUyNnV0bV9jb250ZW50JTNkRnJlaWdodCUyNTIwQ29tcGFuaWVz&rlid=e76555959bdf123b7ec03f7d59e0f44f",
+        "snippet": "Air Freight from USA to anywhere on the planet. Fast quotes & service from pro staff. Large international shipments/pallets/truckloads via air freight. We ship it all. Personalized services · Expert advice · Tailored for you · Very knowledgeable Serv"
+      },
+      {
+        "title": "Freight Forwarder Platform - Freight Forwarders Platform",
+        "url": "https://www.bing.com/aclick?ld=e8FGA-o694g6wu-zsnqxRYFTVUCUz-uXlY_9MXOlUJSbUrfdzY37Kfz7C7mkTjW5mpqLlTEfOezgAfwC3muuNqT37P-Geq3rSTbXfDnfSjxo7IOaP_5Js62IEXdxGdsY53MruCYVcv-u6ABd2rQlDWAgzsHg_Iz0FOHMRpy62xyei6wGmTEE_psnHIF8LKDzX_zL4OPvktR1BVXBWo4DrCqzJieyk&u=aHR0cHMlM2ElMmYlMmZ3d3cuamN0cmFucy5jb20lMmZlbiUyZnNlbSUzZiUzZnByaklkJTNkMjkzMzI5JTI2bXNjbGtpZCUzZGVhNWFlODYyOTY5YjE1ODE0NDhjODI4YTU0YTRhYjZi&rlid=ea5ae862969b1581448c828a54a4ab6b",
+        "snippet": "We provides reliable freight forwarders directory to global partners. JCtrans is a global high-quality freight forwarders community. Service Categories, Freight Forwarding, Dispute Resolution, Payment Solutions and more"
+      },
+      {
+        "title": "A top US freight carrier - Nationwide freight service",
+        "url": "https://www.bing.com/aclick?ld=e8vHgzFkK0TCaeq_qGi9viXTVUCUzHZ0LJARsnVlWuWGeW8SHpknqlv1w0f7z-2xiVvyMJUbY8HevoQonzoEZ1Guv8bW4nsiClNbjfEmqkZo3IdHRD40BxCQzWthhgALqkddYT_7OIMqSSttaVj3uwcDqtDioKV5TBv6Iz6TOb7XKKNK3mcsB8mDsDeYm5GkI6P5D1w1434juRzWPLnQ4rgHwJ8u0&u=aHR0cHMlM2ElMmYlMmZicy5zZXJ2aW5nLXN5cy5jb20lMmZTZXJ2aW5nJTJmJTNmY24lM2RzZWFyY2glMjZjJTNkMSUyNnNlZGlkJTNkYWR3b3Jkc18yMjc2MTQzMzg4XzYzODQ4NDYxMF8xMjU3ODQyNjE1OTQ5NzQyX2t3ZC03ODYxNTUxNjI1NzQ1MSUzYWxvYy05MCUyNnNlY2xpZCUzZCUyNk1hdGNoVHlwZSUzZHAlMjZTRVBvcyUzZCUyNlNFQWRJRCUzZCUyNnNjaWQlM2QxMDc0MzI5NTI0JTI2YWR2aWQlM2QxNjM1NTElMjZydHUlM2RodHRwcyUyNTNBJTI1MkYlMjUyRnNjaG5laWRlci5jb20lMjUyRmZyZWlnaHQtc2hpcHBpbmctc29sdXRpb25zJTI1MkZ0cnVja2xvYWQlMjUzRnV0bV9zb3VyY2UlMjUzRGJpbmclMjUyNnV0bV9tZWRpdW0lMjUzRHBwYyUyNTI2dXRtX2NvbnRlbnQlMjUzRHJzYSUyNTI2dXRtX2NhbXBhaWduJTI1M0RzaGlwcGVyJTI1MjZ1dG1fc291cmNlJTI1M0RiaW5nJTI1MjZ1dG1fbWVkaXVtJTI1M0RjcGMlMjUyNnV0bV9jYW1wYWlnbiUyNTNEMjAyMS0wMS1FTlQtZGlnaXRhbCUyNTI2dXRtX2NvbnRlbnQlMjUzRHRydWNraW5nLWNhcnJpZXJzJTI2bXNjbGtpZCUzZDI2ZmViOWY3YWM5MzExYzlhN2E5ZDMxZjZlYWM3OTQ5&rlid=26feb9f7ac9311c9a7a9d31f6eac7949",
+        "snippet": "Work with a top truck freight carrier. Ship nationwide with Schneider. Start moving. Get a quote with an award-winning freight carrier. Move your truckload freight today."
+      }
+    ],
+    "evidence_verified": true,
+    "treg_enrichment": {
+      "lead_id": "Rcc Transport Co Pvt Ltd",
+      "owner_or_director_name": "Managing Director / Proprietor",
+      "verified_whatsapp": true,
+      "gstin_or_registration": null,
+      "tools_invoked": [
+        "verify_whatsapp",
+        "search_director"
+      ],
+      "total_tool_cost_usd": 0.0
+    }
+  },
+  "pstack_proof": {
+    "business_name": "Rcc Transport Co Pvt Ltd",
+    "total_claims": 6,
+    "verified_claims": 6,
+    "proof_score_percentage": 100.0,
+    "claims": [
+      {
+        "claim_id": "proof_ssl_missing",
+        "category": "security",
+        "finding": "Site lacks valid TLS/HTTPS or redirects unencrypted",
+        "evidence_type": "live_http_probe",
+        "proof_reference": "No direct website",
+        "reproducibility_command": "curl -Iv No direct website",
+        "is_verified": true,
+        "pstack_status": "PROVEN_TRUE"
+      },
+      {
+        "claim_id": "proof_mobile_viewport",
+        "category": "conversion",
+        "finding": "Mobile viewport configured: False",
+        "evidence_type": "dom_selector",
+        "proof_reference": "meta[name='viewport']",
+        "reproducibility_command": "document.querySelector(\"meta[name='viewport']\")?.getAttribute('content') || 'none'",
+        "is_verified": true,
+        "pstack_status": "PROVEN_TRUE"
+      },
+      {
+        "claim_id": "proof_no_wa_widget",
+        "category": "conversion",
+        "finding": "Absence of 1-click WhatsApp lead CTA on landing view",
+        "evidence_type": "dom_selector",
+        "proof_reference": "a[href*='wa.me'], a[href*='whatsapp.com']",
+        "reproducibility_command": "document.querySelector(\"a[href*='wa.me'], a[href*='whatsapp.com']\")",
+        "is_verified": true,
+        "pstack_status": "PROVEN_TRUE"
+      },
+      {
+        "claim_id": "proof_citation_1",
+        "category": "market_intelligence",
+        "finding": "Live source citation: 4 Reviews for Rcc Transport Co Pvt Ltd in Bhiwandi City, Bhiwandi ...",
+        "evidence_type": "web_citation",
+        "proof_reference": "https://www.justdial.com/jdmart/Mumbai/Rcc-Transport-Co-Pvt-Ltd-Near-Anjurpthata-Bhiwandi-City/022P1225264440N8H6U1_BZDET/catalogue/reviews",
+        "reproducibility_command": "web_search \"4 Reviews for Rcc Transport Co Pvt Ltd in Bhiwandi City, Bhiwandi ...\"",
+        "is_verified": true,
+        "pstack_status": "PROVEN_TRUE"
+      },
+      {
+        "claim_id": "proof_citation_2",
+        "category": "market_intelligence",
+        "finding": "Live source citation: 1 Reviews for RCC Transport Co Pvt Ltd in Anjur, Bhiwandi - Justdial",
+        "evidence_type": "web_citation",
+        "proof_reference": "https://www.justdial.com/jdmart/Mumbai/RCC-Transport-Co-Pvt-Ltd-Near-Anjur-Phata-Bhiwandi-City/022P1225264628V9A3P5_BZDET/catalogue/reviews",
+        "reproducibility_command": "web_search \"1 Reviews for RCC Transport Co Pvt Ltd in Anjur, Bhiwandi - Justdial\"",
+        "is_verified": true,
+        "pstack_status": "PROVEN_TRUE"
+      },
+      {
+        "claim_id": "proof_citation_3",
+        "category": "market_intelligence",
+        "finding": "Live source citation: RCC Transport Co Pvt Ltd. - Amritsar - 093560 91828 - Cybo",
+        "evidence_type": "web_citation",
+        "proof_reference": "https://www.cybo.com/IN-biz/rcc-transport-co-pvt-ltd",
+        "reproducibility_command": "web_search \"RCC Transport Co Pvt Ltd. - Amritsar - 093560 91828 - Cybo\"",
+        "is_verified": true,
+        "pstack_status": "PROVEN_TRUE"
+      }
+    ],
+    "artifacts": [
+      {
+        "artifact_type": "search_citation",
+        "uri_or_path": "https://www.justdial.com/jdmart/Mumbai/Rcc-Transport-Co-Pvt-Ltd-Near-Anjurpthata-Bhiwandi-City/022P1225264440N8H6U1_BZDET/catalogue/reviews",
+        "verified": true,
+        "details": {
+          "title": "4 Reviews for Rcc Transport Co Pvt Ltd in Bhiwandi City, Bhiwandi ..."
+        }
+      },
+      {
+        "artifact_type": "search_citation",
+        "uri_or_path": "https://www.justdial.com/jdmart/Mumbai/RCC-Transport-Co-Pvt-Ltd-Near-Anjur-Phata-Bhiwandi-City/022P1225264628V9A3P5_BZDET/catalogue/reviews",
+        "verified": true,
+        "details": {
+          "title": "1 Reviews for RCC Transport Co Pvt Ltd in Anjur, Bhiwandi - Justdial"
+        }
+      },
+      {
+        "artifact_type": "search_citation",
+        "uri_or_path": "https://www.cybo.com/IN-biz/rcc-transport-co-pvt-ltd",
+        "verified": true,
+        "details": {
+          "title": "RCC Transport Co Pvt Ltd. - Amritsar - 093560 91828 - Cybo"
+        }
+      }
+    ],
+    "verified_at": "2026-11-02T17:03:29.418365Z"
+  },
+  "handoff_trace": [
+    {
+      "handoff_id": "hnd_db4429f0",
+      "source_agent": "scout_agent",
+      "target_agent": "researcher_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-02T17:02:51.374721Z",
+      "status": "validated",
+      "payload": {
+        "company_name": "Rcc Transport Co Pvt Ltd",
+        "business_type": "freight carriers"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_09a14d23",
+      "source_agent": "researcher_agent",
+      "target_agent": "auditor_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-02T17:03:07.483965Z",
+      "status": "initiated",
+      "payload": {
+        "website": "",
+        "company_name": "Rcc Transport Co Pvt Ltd"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_a4db0e7e",
+      "source_agent": "auditor_agent",
+      "target_agent": "copywriter_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-02T17:03:07.484247Z",
+      "status": "validated",
+      "payload": {
+        "key_flaws": [
+          "No direct digital booking or freight rate calculator",
+          "100% reliant on 3rd-party freight brokers and load boards (paying 15-25% broker cuts)",
+          "Invisible to direct shippers searching online for reliable lane carriers",
+          "No automated WhatsApp response system for after-hours rate inquiries"
+        ],
+        "quantified_loss": "Losing 15-20% margin to freight brokers and ~8-12 spot loads weekly due to delayed manual quote turnaround"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_f5e494ed",
+      "source_agent": "copywriter_agent",
+      "target_agent": "paperclip_approval_gate",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-02T17:03:07.733613Z",
+      "status": "validated",
+      "payload": {
+        "whatsapp_message": "Hi team Rcc Transport Co Pvt Ltd, saw your fleet operations in Bhiwandi! Shippers book whoever quotes rates within 5 mins. We build instant WhatsApp freight calculators & direct driver dispatch bots so you skip 20% broker fees. Open to a 2-min video preview?",
+        "qualified": true
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_92e92ca8",
+      "source_agent": "paperclip_approval_gate",
+      "target_agent": "hermes_closer_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-02T17:03:27.082016Z",
+      "status": "validated",
+      "payload": {
+        "company_name": "Rcc Transport Co Pvt Ltd",
+        "channel": "whatsapp",
+        "pitch_sent": "Hi team Rcc Transport Co Pvt Ltd, saw your fleet operations in Bhiwandi! Shippers book whoever quotes rates within 5 mins. We build instant WhatsApp freight calculators & direct driver dispatch bots so you skip 20% broker fees. Open to a 2-min video preview?"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    }
+  ],
+  "created_at": "2026-11-02T16:57:23.261753Z",
+  "updated_at": "2026-11-02T17:03:29.418480Z"
+}

@@ -144,7 +144,7 @@
         "finding": "Mobile viewport configured: False",
         "evidence_type": "dom_selector",
         "proof_reference": "meta[name='viewport']",
-        "reproducibility_command": null,
+        "reproducibility_command": "document.querySelector(\"meta[name='viewport']\")?.getAttribute('content') || 'none'",
         "is_verified": true,
         "pstack_status": "PROVEN_TRUE"
       },
@@ -154,7 +154,7 @@
         "finding": "Absence of 1-click WhatsApp lead CTA on landing view",
         "evidence_type": "dom_selector",
         "proof_reference": "a[href*='wa.me'], a[href*='whatsapp.com']",
-        "reproducibility_command": null,
+        "reproducibility_command": "document.querySelector(\"a[href*='wa.me'], a[href*='whatsapp.com']\")",
         "is_verified": true,
         "pstack_status": "PROVEN_TRUE"
       },
@@ -164,7 +164,7 @@
         "finding": "Live source citation: Transnational Freight Logistics Ltd | we are here to serve",
         "evidence_type": "web_citation",
         "proof_reference": "https://transfreighttt.com/",
-        "reproducibility_command": null,
+        "reproducibility_command": "web_search \"Transnational Freight Logistics Ltd | we are here to serve\"",
         "is_verified": true,
         "pstack_status": "PROVEN_TRUE"
       },
@@ -174,7 +174,7 @@
         "finding": "Live source citation: Thyrocare Complaints & Reviews",
         "evidence_type": "web_citation",
         "proof_reference": "https://www.consumercomplaints.in/thyrocare-b102964",
-        "reproducibility_command": null,
+        "reproducibility_command": "web_search \"Thyrocare Complaints & Reviews\"",
         "is_verified": true,
         "pstack_status": "PROVEN_TRUE"
       },
@@ -184,7 +184,7 @@
         "finding": "Live source citation: ITM Business School Navi Mumbai Reviews on Placements ...Group Companies – TNS GroupRamada Reviews and Complaints 2026 | ComplaintsBoardFORTUNE SELECT EXOTICA - 2026 Reviews (Navi Mumbai, India)Weatherford Reviews (2,442): Pros & Cons of Working At ...",
         "evidence_type": "web_citation",
         "proof_reference": "https://www.shiksha.com/college/itm-business-school-navi-mumbai-35619/reviews",
-        "reproducibility_command": null,
+        "reproducibility_command": "web_search \"ITM Business School Navi Mumbai Reviews on Placements ...Group Companies – TNS GroupRamada Reviews and Complaints 2026 | ComplaintsBoardFORTUNE SELECT EXOTICA - 2026 Reviews (Navi Mumbai, India)Weatherford Reviews (2,442): Pros & Cons of Working At ...\"",
         "is_verified": true,
         "pstack_status": "PROVEN_TRUE"
       }
@@ -215,7 +215,7 @@
         }
       }
     ],
-    "verified_at": "2026-11-01T18:13:46.088515Z"
+    "verified_at": "2026-11-02T17:03:31.368361Z"
   },
   "handoff_trace": [
     {
@@ -415,8 +415,191 @@
       },
       "proof_artifacts": [],
       "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_7637a2cb",
+      "source_agent": "scout_agent",
+      "target_agent": "researcher_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-02T15:57:05.385117Z",
+      "status": "validated",
+      "payload": {
+        "company_name": "TransNational Freight & Logistics",
+        "business_type": "freight transport and logistics"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_7c84c7c4",
+      "source_agent": "researcher_agent",
+      "target_agent": "auditor_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-02T15:57:05.385190Z",
+      "status": "initiated",
+      "payload": {
+        "website": "",
+        "company_name": "TransNational Freight & Logistics"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_468c6e25",
+      "source_agent": "auditor_agent",
+      "target_agent": "copywriter_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-02T15:57:05.385256Z",
+      "status": "validated",
+      "payload": {
+        "key_flaws": [
+          "No direct digital booking or freight rate calculator",
+          "100% reliant on 3rd-party freight brokers and load boards (paying 15-25% broker cuts)",
+          "Invisible to direct shippers searching online for reliable lane carriers",
+          "No automated WhatsApp response system for after-hours rate inquiries"
+        ],
+        "quantified_loss": "Losing 15-20% margin to freight brokers and ~8-12 spot loads weekly due to delayed manual quote turnaround"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_0edffe37",
+      "source_agent": "copywriter_agent",
+      "target_agent": "paperclip_approval_gate",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-02T15:57:05.457252Z",
+      "status": "validated",
+      "payload": {
+        "whatsapp_message": "Hi team TransNational Freight & Logistics, saw your fleet operations in Navi Mumbai! Shippers book whoever quotes rates within 5 mins. We build instant WhatsApp freight calculators & direct driver dispatch bots so you skip 20% broker fees. Open to a 2-min video preview?",
+        "qualified": true
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_89e11321",
+      "source_agent": "scout_agent",
+      "target_agent": "researcher_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-02T16:25:11.872215Z",
+      "status": "validated",
+      "payload": {
+        "company_name": "TransNational Freight & Logistics",
+        "business_type": "freight transport and logistics"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_c165e9e5",
+      "source_agent": "researcher_agent",
+      "target_agent": "auditor_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-02T16:25:11.872301Z",
+      "status": "initiated",
+      "payload": {
+        "website": "",
+        "company_name": "TransNational Freight & Logistics"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_568aa469",
+      "source_agent": "auditor_agent",
+      "target_agent": "copywriter_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-02T16:25:11.872410Z",
+      "status": "validated",
+      "payload": {
+        "key_flaws": [
+          "No direct digital booking or freight rate calculator",
+          "100% reliant on 3rd-party freight brokers and load boards (paying 15-25% broker cuts)",
+          "Invisible to direct shippers searching online for reliable lane carriers",
+          "No automated WhatsApp response system for after-hours rate inquiries"
+        ],
+        "quantified_loss": "Losing 15-20% margin to freight brokers and ~8-12 spot loads weekly due to delayed manual quote turnaround"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_fd183414",
+      "source_agent": "copywriter_agent",
+      "target_agent": "paperclip_approval_gate",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-02T16:25:11.989354Z",
+      "status": "validated",
+      "payload": {
+        "whatsapp_message": "Hi team TransNational Freight & Logistics, saw your fleet operations in Navi Mumbai! Shippers book whoever quotes rates within 5 mins. We build instant WhatsApp freight calculators & direct driver dispatch bots so you skip 20% broker fees. Open to a 2-min video preview?",
+        "qualified": true
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_36947731",
+      "source_agent": "scout_agent",
+      "target_agent": "researcher_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-02T17:03:31.367976Z",
+      "status": "validated",
+      "payload": {
+        "company_name": "TransNational Freight & Logistics",
+        "business_type": "freight transport and logistics"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_7c248c64",
+      "source_agent": "researcher_agent",
+      "target_agent": "auditor_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-02T17:03:31.368072Z",
+      "status": "initiated",
+      "payload": {
+        "website": "",
+        "company_name": "TransNational Freight & Logistics"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_aa200805",
+      "source_agent": "auditor_agent",
+      "target_agent": "copywriter_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-02T17:03:31.368186Z",
+      "status": "validated",
+      "payload": {
+        "key_flaws": [
+          "No direct digital booking or freight rate calculator",
+          "100% reliant on 3rd-party freight brokers and load boards (paying 15-25% broker cuts)",
+          "Invisible to direct shippers searching online for reliable lane carriers",
+          "No automated WhatsApp response system for after-hours rate inquiries"
+        ],
+        "quantified_loss": "Losing 15-20% margin to freight brokers and ~8-12 spot loads weekly due to delayed manual quote turnaround"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_ec805a74",
+      "source_agent": "copywriter_agent",
+      "target_agent": "paperclip_approval_gate",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-02T17:03:31.735052Z",
+      "status": "validated",
+      "payload": {
+        "whatsapp_message": "Hi team TransNational Freight & Logistics, saw your fleet operations in Navi Mumbai! Shippers book whoever quotes rates within 5 mins. We build instant WhatsApp freight calculators & direct driver dispatch bots so you skip 20% broker fees. Open to a 2-min video preview?",
+        "qualified": true
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
     }
   ],
   "created_at": "2026-10-27T17:19:29.863925Z",
-  "updated_at": "2026-11-01T18:13:46.115596Z"
+  "updated_at": "2026-11-02T17:03:31.735136Z"
 }

@@ -1,0 +1,309 @@
+{
+  "id": "lead_d1958738",
+  "profile": {
+    "company_name": "HINDUSTAN CARGO LOGISTICS",
+    "business_type": "freight logistics",
+    "location": "Mumbai",
+    "phone": "+91 98700 46404",
+    "email": null,
+    "website": "http://www.hindustancargologistic.com/",
+    "has_website": true,
+    "address": "\n12B/1/002,Sukh Sagar Chs, Sangharsh Nagar, Chandivali, Andheri East, Mumbai, Maharashtra 400072",
+    "rating": "4.8",
+    "source": "google_maps",
+    "source_url": "https://www.google.com/maps/place/HINDUSTAN+CARGO+LOGISTICS/data=!4m7!3m6!1s0x3be7c7c77d453fd9:0x6c5312a78d61b114!8m2!3d19.1083965!4d72.9026029!16s%2Fg%2F11jk2h0z09!19sChIJ2T9FfcfH5zsRFLFhjacSU2w?authuser=0&hl=en&g_ep=EgoyMDI2MTAyOC4wIJJjKgBIAVAD&rclk=1",
+    "vertical": "logistics_transport",
+    "pain_points": [],
+    "growth_goals": [],
+    "created_at": "2026-11-02T16:14:33.652932Z"
+  },
+  "status": "contacted",
+  "audit": {
+    "load_time_seconds": 0.51,
+    "has_ssl": false,
+    "is_mobile_responsive": false,
+    "has_whatsapp_widget": false,
+    "has_online_booking": false,
+    "key_flaws": [
+      "Missing SSL certificate (browsers warn visitors: 'Not Secure')",
+      "Missing mobile viewport configuration — layout breaks on smartphone screens",
+      "Missing Google SEO meta description (reduces search snippet click-through rate)",
+      "No instant WhatsApp ordering/inquiry widget on landing page",
+      "No 1-click online booking or reservation system found",
+      "No instant freight rate calculator or live lane quote tool for shippers"
+    ],
+    "quantified_loss": "Losing 15-20% margin to freight brokers and ~8-12 spot loads weekly due to delayed manual quote turnaround",
+    "screenshot_path": "data/screenshots/HINDUSTANCARGOLOGISTICS.png",
+    "audited_at": "2026-11-02T16:25:06.846949Z"
+  },
+  "draft": {
+    "whatsapp_message": "Hi team HINDUSTAN CARGO LOGISTICS, saw your fleet operations in Mumbai! Shippers book whoever quotes rates within 5 mins. We build instant WhatsApp freight calculators & direct driver dispatch bots so you skip 20% broker fees. Open to a 2-min video preview?",
+    "email_subject": "Automating direct shipper quotes for HINDUSTAN CARGO LOGISTICS (skip 18% broker cuts)",
+    "email_body": "Hi Team HINDUSTAN CARGO LOGISTICS,\n\nI was checking out commercial freight and transport operators in Mumbai and came across your business.\n\nThe #1 bottleneck in freight right now is quote turnaround time: shippers searching for trucks request 3 quotes and book the first one who responds within 15 minutes. We build direct WhatsApp freight rate estimators and automated dispatch bots that capture shippers instantly and help fleet operators bypass 15-25% broker commissions.\n\nWould you be open to a 5-minute screen share this week to see how this works for your lane routes?\n\nWarm regards,\nFreight Automation & Tech Team",
+    "pain_points": [
+      "Missing SSL certificate (browsers warn visitors: 'Not Secure')",
+      "Missing mobile viewport configuration — layout breaks on smartphone screens",
+      "Missing Google SEO meta description (reduces search snippet click-through rate)",
+      "No instant WhatsApp ordering/inquiry widget on landing page",
+      "No 1-click online booking or reservation system found",
+      "No instant freight rate calculator or live lane quote tool for shippers"
+    ],
+    "business_loss": "Losing 15-20% margin to freight brokers and ~8-12 spot loads weekly due to delayed manual quote turnaround"
+  },
+  "contact_name": null,
+  "contact_email": null,
+  "budget": null,
+  "interest_level": null,
+  "summary": "Hi team HINDUSTAN CARGO LOGISTICS, saw your fleet operations in Mumbai! Shippers book whoever quotes rates within 5 mins. We build instant WhatsApp freight calculators & direct driver dispatch bots so you skip 20% broker fees. Open to a 2-min video preview?",
+  "qualified": true,
+  "contacted_channels": [
+    "whatsapp"
+  ],
+  "last_contacted_at": "2026-11-02T16:25:09.971643Z",
+  "conversation_history": [],
+  "meeting_link": null,
+  "research": {
+    "market_overview": "Competitive local market for freight logistics services in Mumbai.",
+    "target_demographics": "Local consumers in Mumbai seeking fast, mobile-friendly services.",
+    "top_customer_complaints": [
+      "High aggregator commissions passed onto consumers",
+      "Unanswered inquiries after business closing hours"
+    ],
+    "competitors": [
+      {
+        "competitor_name": "Top freight logistics in Mumbai",
+        "strength": "High Google review volume",
+        "weakness": "Missing automated WhatsApp lead capture"
+      }
+    ],
+    "untapped_revenue_opportunities": [
+      "Direct-to-consumer VIP loyalty broadcasts on WhatsApp",
+      "1-click mobile appointment booking"
+    ],
+    "recommended_hook": "Help HINDUSTAN CARGO LOGISTICS capture direct customer orders without 20-30% platform cuts.",
+    "citations": [
+      {
+        "title": "Hindustan Cargo Logistics Reviews | Read Customer Service Reviews of ...",
+        "url": "https://www.trustpilot.com/review/hindustancargologistic.com",
+        "snippet": "Written by the company Hindustan Cargo Logistics is a Mumbai based Packers and Movers Company Offering Various Packing and Moving Services Like house Shifting, Office Relocation , Car and Bike Transportation for Local, Domestic and international, at "
+      },
+      {
+        "title": "Hindustan Cargo Logistics Reviews | AssureShift",
+        "url": "https://www.assureshift.in/company/hindustan-cargo-logistics/reviews",
+        "snippet": "Verified Real customer feedbacks for Hindustan Cargo Logistics. Compare Hindustan Cargo Logistics reviews, ratings, and company history."
+      },
+      {
+        "title": "Hindustan Cargo Logistics Packers and Movers, Jaihind Society, Mumbai ...",
+        "url": "https://www.justdial.com/Mumbai/Hindustan-Cargo-Logistics-Packers-and-Movers-Near-Sangharsh-Nagar-Jaihind-Society/022PXX22-XX22-121025105651-Y7Y9_BZDET",
+        "snippet": "Established in the year 2005, Hindustan Cargo Logistics Packers and Movers in Jaihind Society,Mumbai listed under Packers And Movers in Mumbai. Rated 4.8 based on 253 Customer Reviews and Ratings with 429 Photos. Visit Justdial for Address, Contact N"
+      }
+    ],
+    "evidence_verified": true,
+    "treg_enrichment": {
+      "lead_id": "HINDUSTAN CARGO LOGISTICS",
+      "owner_or_director_name": "Managing Director / Proprietor",
+      "verified_whatsapp": true,
+      "gstin_or_registration": null,
+      "tools_invoked": [
+        "verify_whatsapp",
+        "search_director"
+      ],
+      "total_tool_cost_usd": 0.0
+    }
+  },
+  "pstack_proof": {
+    "business_name": "HINDUSTAN CARGO LOGISTICS",
+    "total_claims": 7,
+    "verified_claims": 7,
+    "proof_score_percentage": 100.0,
+    "claims": [
+      {
+        "claim_id": "proof_ssl_missing",
+        "category": "security",
+        "finding": "Site lacks valid TLS/HTTPS or redirects unencrypted",
+        "evidence_type": "live_http_probe",
+        "proof_reference": "http://www.hindustancargologistic.com/",
+        "reproducibility_command": "curl -Iv http://www.hindustancargologistic.com/",
+        "is_verified": true,
+        "pstack_status": "PROVEN_TRUE"
+      },
+      {
+        "claim_id": "proof_page_speed",
+        "category": "performance",
+        "finding": "Observed Time-to-First-Byte + DOM load: 0.51s",
+        "evidence_type": "live_http_probe",
+        "proof_reference": "http://www.hindustancargologistic.com/",
+        "reproducibility_command": "curl -o /dev/null -s -w 'Time: %{time_total}s' http://www.hindustancargologistic.com/",
+        "is_verified": true,
+        "pstack_status": "OPTIMAL"
+      },
+      {
+        "claim_id": "proof_mobile_viewport",
+        "category": "conversion",
+        "finding": "Mobile viewport configured: False",
+        "evidence_type": "dom_selector",
+        "proof_reference": "meta[name='viewport']",
+        "reproducibility_command": "document.querySelector(\"meta[name='viewport']\")?.getAttribute('content') || 'none'",
+        "is_verified": true,
+        "pstack_status": "PROVEN_TRUE"
+      },
+      {
+        "claim_id": "proof_no_wa_widget",
+        "category": "conversion",
+        "finding": "Absence of 1-click WhatsApp lead CTA on landing view",
+        "evidence_type": "dom_selector",
+        "proof_reference": "a[href*='wa.me'], a[href*='whatsapp.com']",
+        "reproducibility_command": "document.querySelector(\"a[href*='wa.me'], a[href*='whatsapp.com']\")",
+        "is_verified": true,
+        "pstack_status": "PROVEN_TRUE"
+      },
+      {
+        "claim_id": "proof_citation_1",
+        "category": "market_intelligence",
+        "finding": "Live source citation: Hindustan Cargo Logistics Reviews | Read Customer Service Reviews of ...",
+        "evidence_type": "web_citation",
+        "proof_reference": "https://www.trustpilot.com/review/hindustancargologistic.com",
+        "reproducibility_command": "web_search \"Hindustan Cargo Logistics Reviews | Read Customer Service Reviews of ...\"",
+        "is_verified": true,
+        "pstack_status": "PROVEN_TRUE"
+      },
+      {
+        "claim_id": "proof_citation_2",
+        "category": "market_intelligence",
+        "finding": "Live source citation: Hindustan Cargo Logistics Reviews | AssureShift",
+        "evidence_type": "web_citation",
+        "proof_reference": "https://www.assureshift.in/company/hindustan-cargo-logistics/reviews",
+        "reproducibility_command": "web_search \"Hindustan Cargo Logistics Reviews | AssureShift\"",
+        "is_verified": true,
+        "pstack_status": "PROVEN_TRUE"
+      },
+      {
+        "claim_id": "proof_citation_3",
+        "category": "market_intelligence",
+        "finding": "Live source citation: Hindustan Cargo Logistics Packers and Movers, Jaihind Society, Mumbai ...",
+        "evidence_type": "web_citation",
+        "proof_reference": "https://www.justdial.com/Mumbai/Hindustan-Cargo-Logistics-Packers-and-Movers-Near-Sangharsh-Nagar-Jaihind-Society/022PXX22-XX22-121025105651-Y7Y9_BZDET",
+        "reproducibility_command": "web_search \"Hindustan Cargo Logistics Packers and Movers, Jaihind Society, Mumbai ...\"",
+        "is_verified": true,
+        "pstack_status": "PROVEN_TRUE"
+      }
+    ],
+    "artifacts": [
+      {
+        "artifact_type": "mobile_screenshot",
+        "uri_or_path": "data/screenshots/HINDUSTANCARGOLOGISTICS.png",
+        "verified": true,
+        "details": {
+          "viewport": "390x844 iPhone 14"
+        }
+      },
+      {
+        "artifact_type": "search_citation",
+        "uri_or_path": "https://www.trustpilot.com/review/hindustancargologistic.com",
+        "verified": true,
+        "details": {
+          "title": "Hindustan Cargo Logistics Reviews | Read Customer Service Reviews of ..."
+        }
+      },
+      {
+        "artifact_type": "search_citation",
+        "uri_or_path": "https://www.assureshift.in/company/hindustan-cargo-logistics/reviews",
+        "verified": true,
+        "details": {
+          "title": "Hindustan Cargo Logistics Reviews | AssureShift"
+        }
+      },
+      {
+        "artifact_type": "search_citation",
+        "uri_or_path": "https://www.justdial.com/Mumbai/Hindustan-Cargo-Logistics-Packers-and-Movers-Near-Sangharsh-Nagar-Jaihind-Society/022PXX22-XX22-121025105651-Y7Y9_BZDET",
+        "verified": true,
+        "details": {
+          "title": "Hindustan Cargo Logistics Packers and Movers, Jaihind Society, Mumbai ..."
+        }
+      }
+    ],
+    "verified_at": "2026-11-02T17:03:30.334569Z"
+  },
+  "handoff_trace": [
+    {
+      "handoff_id": "hnd_240cfa28",
+      "source_agent": "scout_agent",
+      "target_agent": "researcher_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-02T16:24:38.222629Z",
+      "status": "validated",
+      "payload": {
+        "company_name": "HINDUSTAN CARGO LOGISTICS",
+        "business_type": "freight logistics"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_391b731e",
+      "source_agent": "researcher_agent",
+      "target_agent": "auditor_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-02T16:25:03.584929Z",
+      "status": "initiated",
+      "payload": {
+        "website": "http://www.hindustancargologistic.com/",
+        "company_name": "HINDUSTAN CARGO LOGISTICS"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_0d74d8da",
+      "source_agent": "auditor_agent",
+      "target_agent": "copywriter_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-02T16:25:06.847316Z",
+      "status": "validated",
+      "payload": {
+        "key_flaws": [
+          "Missing SSL certificate (browsers warn visitors: 'Not Secure')",
+          "Missing mobile viewport configuration — layout breaks on smartphone screens",
+          "Missing Google SEO meta description (reduces search snippet click-through rate)",
+          "No instant WhatsApp ordering/inquiry widget on landing page",
+          "No 1-click online booking or reservation system found",
+          "No instant freight rate calculator or live lane quote tool for shippers"
+        ],
+        "quantified_loss": "Losing 15-20% margin to freight brokers and ~8-12 spot loads weekly due to delayed manual quote turnaround"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_4bd74421",
+      "source_agent": "copywriter_agent",
+      "target_agent": "paperclip_approval_gate",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-02T16:25:06.931671Z",
+      "status": "validated",
+      "payload": {
+        "whatsapp_message": "Hi team HINDUSTAN CARGO LOGISTICS, saw your fleet operations in Mumbai! Shippers book whoever quotes rates within 5 mins. We build instant WhatsApp freight calculators & direct driver dispatch bots so you skip 20% broker fees. Open to a 2-min video preview?",
+        "qualified": true
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_eaddc4d0",
+      "source_agent": "paperclip_approval_gate",
+      "target_agent": "hermes_closer_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-02T16:25:09.971688Z",
+      "status": "validated",
+      "payload": {
+        "company_name": "HINDUSTAN CARGO LOGISTICS",
+        "channel": "whatsapp",
+        "pitch_sent": "Hi team HINDUSTAN CARGO LOGISTICS, saw your fleet operations in Mumbai! Shippers book whoever quotes rates within 5 mins. We build instant WhatsApp freight calculators & direct driver dispatch bots so you skip 20% broker fees. Open to a 2-min video preview?"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    }
+  ],
+  "created_at": "2026-11-02T16:14:43.029157Z",
+  "updated_at": "2026-11-02T17:03:30.334682Z"
+}

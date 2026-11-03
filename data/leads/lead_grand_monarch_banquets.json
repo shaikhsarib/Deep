@@ -144,7 +144,7 @@
         "finding": "Mobile viewport configured: False",
         "evidence_type": "dom_selector",
         "proof_reference": "meta[name='viewport']",
-        "reproducibility_command": null,
+        "reproducibility_command": "document.querySelector(\"meta[name='viewport']\")?.getAttribute('content') || 'none'",
         "is_verified": true,
         "pstack_status": "PROVEN_TRUE"
       },
@@ -154,7 +154,7 @@
         "finding": "Absence of 1-click WhatsApp lead CTA on landing view",
         "evidence_type": "dom_selector",
         "proof_reference": "a[href*='wa.me'], a[href*='whatsapp.com']",
-        "reproducibility_command": null,
+        "reproducibility_command": "document.querySelector(\"a[href*='wa.me'], a[href*='whatsapp.com']\")",
         "is_verified": true,
         "pstack_status": "PROVEN_TRUE"
       },
@@ -164,7 +164,7 @@
         "finding": "Live source citation: The Monarch, Banquet Halls in Indirapuram, Delhi-NCR - Partykaro",
         "evidence_type": "web_citation",
         "proof_reference": "https://www.partykaro.com/Delhi/Indirapuram/Banquet-Hall/The-Monarch/DetailPage.aspx",
-        "reproducibility_command": null,
+        "reproducibility_command": "web_search \"The Monarch, Banquet Halls in Indirapuram, Delhi-NCR - Partykaro\"",
         "is_verified": true,
         "pstack_status": "PROVEN_TRUE"
       },
@@ -174,7 +174,7 @@
         "finding": "Live source citation: Monarch Banquet Palwal - Instagram",
         "evidence_type": "web_citation",
         "proof_reference": "https://www.instagram.com/popular/monarch-banquet-palwal/",
-        "reproducibility_command": null,
+        "reproducibility_command": "web_search \"Monarch Banquet Palwal - Instagram\"",
         "is_verified": true,
         "pstack_status": "PROVEN_TRUE"
       },
@@ -184,7 +184,7 @@
         "finding": "Live source citation: The Monarch - wedding venue, Delhi NCRCM Jan Sunwai PortalNCR Monarch Reviews, Complaints, Owners Group and Mailing ListReviews for The Grand Affair Events | Wedding Planners in ...Top 10 Event Management Companies in Delhi 2026 | Expert Reviews",
         "evidence_type": "web_citation",
         "proof_reference": "https://delhi.wedding.net/venues/444607/",
-        "reproducibility_command": null,
+        "reproducibility_command": "web_search \"The Monarch - wedding venue, Delhi NCRCM Jan Sunwai PortalNCR Monarch Reviews, Complaints, Owners Group and Mailing ListReviews for The Grand Affair Events | Wedding Planners in ...Top 10 Event Management Companies in Delhi 2026 | Expert Reviews\"",
         "is_verified": true,
         "pstack_status": "PROVEN_TRUE"
       }
@@ -215,7 +215,7 @@
         }
       }
     ],
-    "verified_at": "2026-11-01T18:13:46.146213Z"
+    "verified_at": "2026-11-02T17:03:31.802792Z"
   },
   "handoff_trace": [
     {
@@ -415,8 +415,191 @@
       },
       "proof_artifacts": [],
       "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_a04bb31d",
+      "source_agent": "scout_agent",
+      "target_agent": "researcher_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-02T15:57:05.489869Z",
+      "status": "validated",
+      "payload": {
+        "company_name": "Grand Monarch Banquets & Event Planners",
+        "business_type": "wedding venue and event management"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_437d3077",
+      "source_agent": "researcher_agent",
+      "target_agent": "auditor_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-02T15:57:05.489946Z",
+      "status": "initiated",
+      "payload": {
+        "website": "",
+        "company_name": "Grand Monarch Banquets & Event Planners"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_7f7fe9a0",
+      "source_agent": "auditor_agent",
+      "target_agent": "copywriter_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-02T15:57:05.490027Z",
+      "status": "validated",
+      "payload": {
+        "key_flaws": [
+          "No direct digital booking or date availability presence",
+          "100% reliant on 3rd-party aggregators and directories (paying 20-30% platform cuts)",
+          "Invisible to event planners searching late evening for venue confirmation",
+          "No automated WhatsApp response system for after-hours inquiries"
+        ],
+        "quantified_loss": "Losing 40-50% of high-intent wedding and corporate event inquiries arriving after-hours without instant date & package confirmation"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_2c79ca8a",
+      "source_agent": "copywriter_agent",
+      "target_agent": "paperclip_approval_gate",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-02T15:57:05.672382Z",
+      "status": "validated",
+      "payload": {
+        "whatsapp_message": "Hi team Grand Monarch Banquets & Event Planners, love your events in Delhi NCR! Over 65% of event planners search venues after 8 PM. We build automated WhatsApp date-checkers & instant package quote bots that double site visit bookings. Can I share a 1-min live demo?",
+        "qualified": true
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_648bd1f2",
+      "source_agent": "scout_agent",
+      "target_agent": "researcher_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-02T16:25:12.020040Z",
+      "status": "validated",
+      "payload": {
+        "company_name": "Grand Monarch Banquets & Event Planners",
+        "business_type": "wedding venue and event management"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_bdc5a642",
+      "source_agent": "researcher_agent",
+      "target_agent": "auditor_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-02T16:25:12.020124Z",
+      "status": "initiated",
+      "payload": {
+        "website": "",
+        "company_name": "Grand Monarch Banquets & Event Planners"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_3edabeb0",
+      "source_agent": "auditor_agent",
+      "target_agent": "copywriter_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-02T16:25:12.020215Z",
+      "status": "validated",
+      "payload": {
+        "key_flaws": [
+          "No direct digital booking or date availability presence",
+          "100% reliant on 3rd-party aggregators and directories (paying 20-30% platform cuts)",
+          "Invisible to event planners searching late evening for venue confirmation",
+          "No automated WhatsApp response system for after-hours inquiries"
+        ],
+        "quantified_loss": "Losing 40-50% of high-intent wedding and corporate event inquiries arriving after-hours without instant date & package confirmation"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_0831e01f",
+      "source_agent": "copywriter_agent",
+      "target_agent": "paperclip_approval_gate",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-02T16:25:12.128931Z",
+      "status": "validated",
+      "payload": {
+        "whatsapp_message": "Hi team Grand Monarch Banquets & Event Planners, love your events in Delhi NCR! Over 65% of event planners search venues after 8 PM. We build automated WhatsApp date-checkers & instant package quote bots that double site visit bookings. Can I share a 1-min live demo?",
+        "qualified": true
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_56adc649",
+      "source_agent": "scout_agent",
+      "target_agent": "researcher_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-02T17:03:31.802398Z",
+      "status": "validated",
+      "payload": {
+        "company_name": "Grand Monarch Banquets & Event Planners",
+        "business_type": "wedding venue and event management"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_a2d50ab8",
+      "source_agent": "researcher_agent",
+      "target_agent": "auditor_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-02T17:03:31.802511Z",
+      "status": "initiated",
+      "payload": {
+        "website": "",
+        "company_name": "Grand Monarch Banquets & Event Planners"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_eec71f60",
+      "source_agent": "auditor_agent",
+      "target_agent": "copywriter_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-02T17:03:31.802623Z",
+      "status": "validated",
+      "payload": {
+        "key_flaws": [
+          "No direct digital booking or date availability presence",
+          "100% reliant on 3rd-party aggregators and directories (paying 20-30% platform cuts)",
+          "Invisible to event planners searching late evening for venue confirmation",
+          "No automated WhatsApp response system for after-hours inquiries"
+        ],
+        "quantified_loss": "Losing 40-50% of high-intent wedding and corporate event inquiries arriving after-hours without instant date & package confirmation"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_eb0a67a6",
+      "source_agent": "copywriter_agent",
+      "target_agent": "paperclip_approval_gate",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-02T17:03:32.105529Z",
+      "status": "validated",
+      "payload": {
+        "whatsapp_message": "Hi team Grand Monarch Banquets & Event Planners, love your events in Delhi NCR! Over 65% of event planners search venues after 8 PM. We build automated WhatsApp date-checkers & instant package quote bots that double site visit bookings. Can I share a 1-min live demo?",
+        "qualified": true
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
     }
   ],
   "created_at": "2026-10-27T17:19:44.795130Z",
-  "updated_at": "2026-11-01T18:13:46.180237Z"
+  "updated_at": "2026-11-02T17:03:32.105623Z"
 }

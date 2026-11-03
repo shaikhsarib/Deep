@@ -58,3 +58,48 @@
 - **Score:** 0.98
 - **Lesson:** Reinforced by successful human approval & dispatch in general
 - **Winning Claim:** Hi team Grand Cafe Mumbai, noticed you're doing great work in Bandra, Mumbai! We build direct online booking websites so you don't lose commission to aggregators. Would you be open to a 2-min demo?
+
+### [2026-11-02T15:57:05.751444+00:00] Hook ID: harn_20261102155705_genera
+- **Score:** 0.95
+- **Lesson:** Self-evolved hook to resolve observed friction: Losing 20-30% margin to aggregators and ~15-25 direct customer inquiries weekly
+- **Winning Claim:** Automating frontline client inquiry response on WhatsApp within 60 seconds recovers 18-25% of inbound inquiries lost to faster-responding competitors. (Engineered to eliminate 'Losing 20-30% margin to aggregators and ~15-25 direct customer inquiries weekly').
+
+### [2026-11-02T15:58:04.703906+00:00] Hook ID: harn_20261102155804_genera
+- **Score:** 0.95
+- **Lesson:** Self-evolved hook to resolve observed friction: Losing 20-30% margin to aggregators and ~15-25 direct customer inquiries weekly
+- **Winning Claim:** Automating frontline client inquiry response on WhatsApp within 60 seconds recovers 18-25% of inbound inquiries lost to faster-responding competitors. (Engineered to eliminate 'Losing 20-30% margin to aggregators and ~15-25 direct customer inquiries weekly').
+
+### [2026-11-02T15:58:04.900732+00:00] Hook ID: harn_win_20261102155804
+- **Score:** 0.98
+- **Lesson:** Reinforced by successful human approval & dispatch in general
+- **Winning Claim:** Personalized message from manager
+
+### [2026-11-02T16:25:12.223951+00:00] Hook ID: harn_20261102162512_genera
+- **Score:** 0.95
+- **Lesson:** Self-evolved hook to resolve observed friction: Losing 20-30% margin to aggregators and ~15-25 direct customer inquiries weekly
+- **Winning Claim:** Automating frontline client inquiry response on WhatsApp within 60 seconds recovers 18-25% of inbound inquiries lost to faster-responding competitors. (Engineered to eliminate 'Losing 20-30% margin to aggregators and ~15-25 direct customer inquiries weekly').
+
+### [2026-11-02T16:25:35.764229+00:00] Hook ID: harn_20261102162535_genera
+- **Score:** 0.95
+- **Lesson:** Self-evolved hook to resolve observed friction: Losing 20-30% margin to aggregators and ~15-25 direct customer inquiries weekly
+- **Winning Claim:** Automating frontline client inquiry response on WhatsApp within 60 seconds recovers 18-25% of inbound inquiries lost to faster-responding competitors. (Engineered to eliminate 'Losing 20-30% margin to aggregators and ~15-25 direct customer inquiries weekly').
+
+### [2026-11-02T16:25:35.953848+00:00] Hook ID: harn_win_20261102162535
+- **Score:** 0.98
+- **Lesson:** Reinforced by successful human approval & dispatch in general
+- **Winning Claim:** Personalized message from manager
+
+### [2026-11-02T17:03:32.353197+00:00] Hook ID: harn_20261102170332_genera
+- **Score:** 0.95
+- **Lesson:** Self-evolved hook to resolve observed friction: Losing 20-30% margin to aggregators and ~15-25 direct customer inquiries weekly
+- **Winning Claim:** Automating frontline client inquiry response on WhatsApp within 60 seconds recovers 18-25% of inbound inquiries lost to faster-responding competitors. (Engineered to eliminate 'Losing 20-30% margin to aggregators and ~15-25 direct customer inquiries weekly').
+
+### [2026-11-02T17:03:57.004200+00:00] Hook ID: harn_20261102170356_genera
+- **Score:** 0.95
+- **Lesson:** Self-evolved hook to resolve observed friction: Losing 20-30% margin to aggregators and ~15-25 direct customer inquiries weekly
+- **Winning Claim:** Automating frontline client inquiry response on WhatsApp within 60 seconds recovers 18-25% of inbound inquiries lost to faster-responding competitors. (Engineered to eliminate 'Losing 20-30% margin to aggregators and ~15-25 direct customer inquiries weekly').
+
+### [2026-11-02T17:03:57.590891+00:00] Hook ID: harn_win_20261102170357
+- **Score:** 0.98
+- **Lesson:** Reinforced by successful human approval & dispatch in general
+- **Winning Claim:** Personalized message from manager

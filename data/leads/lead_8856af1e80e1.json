@@ -113,7 +113,7 @@
         "finding": "Valid HTTPS encryption verified",
         "evidence_type": "live_http_probe",
         "proof_reference": "https://www.gati.com/",
-        "reproducibility_command": null,
+        "reproducibility_command": "curl -Iv --tlsv1.3 https://www.gati.com/ || openssl s_client -connect www.gati.com:443",
         "is_verified": true,
         "pstack_status": "PROVEN_TRUE"
       },
@@ -133,7 +133,7 @@
         "finding": "Mobile viewport configured: True",
         "evidence_type": "dom_selector",
         "proof_reference": "meta[name='viewport']",
-        "reproducibility_command": null,
+        "reproducibility_command": "document.querySelector(\"meta[name='viewport']\")?.getAttribute('content') || 'none'",
         "is_verified": true,
         "pstack_status": "PROVEN_TRUE"
       },
@@ -143,7 +143,7 @@
         "finding": "Live source citation: Customer Service Reviews of GATI Courier - TrackingMoreAllcargo Gati Ltd. (Formerly Gati Courier) - Locations ...GATI Transport Mumbai, Logistics Call +91 9728439852 ...Gati Xpress Cargo Packers & Movers - movingsolutions.inGati Packers and Movers | Best Packers Movers India | Gati ...List of Gati Logistics Contact Numbers by LocationTiles Art Reviews, Kalamboli, Mumbai - 11 Ratings - Justdial",
         "evidence_type": "web_citation",
         "proof_reference": "https://www.trackingmore.com/review-gaticn.html",
-        "reproducibility_command": null,
+        "reproducibility_command": "web_search \"Customer Service Reviews of GATI Courier - TrackingMoreAllcargo Gati Ltd. (Formerly Gati Courier) - Locations ...GATI Transport Mumbai, Logistics Call +91 9728439852 ...Gati Xpress Cargo Packers & Movers - movingsolutions.inGati Packers and Movers | Best Packers Movers India | Gati ...List of Gati Logistics Contact Numbers by LocationTiles Art Reviews, Kalamboli, Mumbai - 11 Ratings - Justdial\"",
         "is_verified": true,
         "pstack_status": "PROVEN_TRUE"
       },
@@ -153,7 +153,7 @@
         "finding": "Live source citation: Allcargo Gati Ltd. (Formerly Gati Courier) - Locations ...",
         "evidence_type": "web_citation",
         "proof_reference": "https://trackcourier.in/gati.php",
-        "reproducibility_command": null,
+        "reproducibility_command": "web_search \"Allcargo Gati Ltd. (Formerly Gati Courier) - Locations ...\"",
         "is_verified": true,
         "pstack_status": "PROVEN_TRUE"
       },
@@ -163,7 +163,7 @@
         "finding": "Live source citation: GATI Transport Mumbai, Logistics Call +91 9728439852 ...",
         "evidence_type": "web_citation",
         "proof_reference": "https://packersmoverslead.com/listing/gati-transport-mumbai/",
-        "reproducibility_command": null,
+        "reproducibility_command": "web_search \"GATI Transport Mumbai, Logistics Call +91 9728439852 ...\"",
         "is_verified": true,
         "pstack_status": "PROVEN_TRUE"
       }
@@ -202,7 +202,7 @@
         }
       }
     ],
-    "verified_at": "2026-11-01T18:13:45.250391Z"
+    "verified_at": "2026-11-02T17:03:30.308412Z"
   },
   "handoff_trace": [
     {
@@ -352,5 +352,5 @@
     }
   ],
   "created_at": "2026-10-27T16:04:41.932529Z",
-  "updated_at": "2026-11-01T18:13:45.250499Z"
+  "updated_at": "2026-11-02T17:03:30.313139Z"
 }

@@ -15,7 +15,7 @@
     "vertical": "general",
     "pain_points": [],
     "growth_goals": [],
-    "created_at": "2026-11-01T18:14:52.044025Z"
+    "created_at": "2026-11-02T17:03:57.757460Z"
   },
   "status": "replied",
   "audit": {
@@ -30,7 +30,7 @@
     ],
     "quantified_loss": null,
     "screenshot_path": null,
-    "audited_at": "2026-11-01T18:14:52.044069Z"
+    "audited_at": "2026-11-02T17:03:57.757518Z"
   },
   "draft": null,
   "contact_name": null,
@@ -45,19 +45,19 @@
     {
       "sender": "prospect",
       "message": "Kitna charge karte ho monthly?",
-      "timestamp": "2026-11-01T18:14:52.060231+00:00",
+      "timestamp": "2026-11-02T17:03:57.785893+00:00",
       "intent": "price_objection"
     },
     {
       "sender": "closer_agent",
       "message": "Great question! Our setup pays for itself within the first month. Most salon owners in Mumbai lose 20-30% on aggregator commissions. With direct WhatsApp ordering, retaining just 2-3 extra customers covers the entire cost.\n\nLet's hop on a quick 5-min screen share to see live numbers: https://calendly.com/agency-demo/15min",
-      "timestamp": "2026-11-01T18:14:52.060231+00:00"
+      "timestamp": "2026-11-02T17:03:57.785893+00:00"
     }
   ],
   "meeting_link": null,
   "research": null,
   "pstack_proof": null,
   "handoff_trace": [],
-  "created_at": "2026-11-01T18:14:52.044054Z",
-  "updated_at": "2026-11-01T18:14:52.060266Z"
+  "created_at": "2026-11-02T17:03:57.757499Z",
+  "updated_at": "2026-11-02T17:03:57.785923Z"
 }

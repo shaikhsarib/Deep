@@ -128,7 +128,7 @@
         "finding": "Valid HTTPS encryption verified",
         "evidence_type": "live_http_probe",
         "proof_reference": "https://www.vlccwellness.com/",
-        "reproducibility_command": null,
+        "reproducibility_command": "curl -Iv --tlsv1.3 https://www.vlccwellness.com/ || openssl s_client -connect www.vlccwellness.com:443",
         "is_verified": true,
         "pstack_status": "PROVEN_TRUE"
       },
@@ -148,7 +148,7 @@
         "finding": "Mobile viewport configured: True",
         "evidence_type": "dom_selector",
         "proof_reference": "meta[name='viewport']",
-        "reproducibility_command": null,
+        "reproducibility_command": "document.querySelector(\"meta[name='viewport']\")?.getAttribute('content') || 'none'",
         "is_verified": true,
         "pstack_status": "PROVEN_TRUE"
       },
@@ -158,7 +158,7 @@
         "finding": "Live source citation: VLCC, Mumbai Reviews: Customer Reviews & Ratings | MouthShutVLCC Health Care Reviews and Complaints 2026Review On VLCC Mumbai by MouthShut UserVLCC Wellness Center, Mumbai, IN | Company InformationFind list of Vlcc Wellness in Juhu Koliwada, Mumbai near me ...Discover VLCC Wellness Centre Products, Reviews ... - LBBVLCC Health Care Ltd Reviews, Bandra West, Mumbai - 791 ...",
         "evidence_type": "web_citation",
         "proof_reference": "https://www.mouthshut.com/product-reviews/vlcc-mumbai-reviews-925602152",
-        "reproducibility_command": null,
+        "reproducibility_command": "web_search \"VLCC, Mumbai Reviews: Customer Reviews & Ratings | MouthShutVLCC Health Care Reviews and Complaints 2026Review On VLCC Mumbai by MouthShut UserVLCC Wellness Center, Mumbai, IN | Company InformationFind list of Vlcc Wellness in Juhu Koliwada, Mumbai near me ...Discover VLCC Wellness Centre Products, Reviews ... - LBBVLCC Health Care Ltd Reviews, Bandra West, Mumbai - 791 ...\"",
         "is_verified": true,
         "pstack_status": "PROVEN_TRUE"
       },
@@ -168,7 +168,7 @@
         "finding": "Live source citation: VLCC Health Care Reviews and Complaints 2026Review On VLCC Mumbai by MouthShut UserVLCC Wellness Center, Mumbai, IN | Company InformationFind list of Vlcc Wellness in Juhu Koliwada, Mumbai near me ...Discover VLCC Wellness Centre Products, Reviews ... - LBBVLCC Health Care Ltd Reviews, Bandra West, Mumbai - 791 ...",
         "evidence_type": "web_citation",
         "proof_reference": "https://www.complaintsboard.com/vlcc-health-care-b123173",
-        "reproducibility_command": null,
+        "reproducibility_command": "web_search \"VLCC Health Care Reviews and Complaints 2026Review On VLCC Mumbai by MouthShut UserVLCC Wellness Center, Mumbai, IN | Company InformationFind list of Vlcc Wellness in Juhu Koliwada, Mumbai near me ...Discover VLCC Wellness Centre Products, Reviews ... - LBBVLCC Health Care Ltd Reviews, Bandra West, Mumbai - 791 ...\"",
         "is_verified": true,
         "pstack_status": "PROVEN_TRUE"
       },
@@ -178,7 +178,7 @@
         "finding": "Live source citation: Review On VLCC Mumbai by MouthShut User",
         "evidence_type": "web_citation",
         "proof_reference": "https://www.mouthshut.com/review/vlcc-mumbai-review-rstruplppmp",
-        "reproducibility_command": null,
+        "reproducibility_command": "web_search \"Review On VLCC Mumbai by MouthShut User\"",
         "is_verified": true,
         "pstack_status": "PROVEN_TRUE"
       }
@@ -217,7 +217,7 @@
         }
       }
     ],
-    "verified_at": "2026-11-01T18:13:45.252844Z"
+    "verified_at": "2026-11-02T17:03:30.315064Z"
   },
   "handoff_trace": [
     {
@@ -367,5 +367,5 @@
     }
   ],
   "created_at": "2026-10-27T16:07:08.035169Z",
-  "updated_at": "2026-11-01T18:13:45.252953Z"
+  "updated_at": "2026-11-02T17:03:30.315234Z"
 }

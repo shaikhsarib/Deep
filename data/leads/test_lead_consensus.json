@@ -1,0 +1,80 @@
+{
+  "id": "test_lead_consensus",
+  "profile": {
+    "company_name": "Target Prospect",
+    "business_type": "logistics_transport",
+    "location": "Unknown",
+    "phone": null,
+    "email": null,
+    "website": null,
+    "has_website": false,
+    "address": null,
+    "rating": null,
+    "source": "manual",
+    "source_url": null,
+    "vertical": "general",
+    "pain_points": [],
+    "growth_goals": [],
+    "created_at": "2026-11-02T16:05:21.048324Z"
+  },
+  "status": "replied",
+  "audit": null,
+  "draft": null,
+  "contact_name": null,
+  "contact_email": null,
+  "budget": null,
+  "interest_level": null,
+  "summary": null,
+  "qualified": false,
+  "contacted_channels": [],
+  "last_contacted_at": null,
+  "conversation_history": [
+    {
+      "sender": "prospect",
+      "message": "We already have brokers on contract",
+      "timestamp": "2026-11-02T16:05:21.062260+00:00",
+      "intent": "agency_objection"
+    },
+    {
+      "sender": "closer_agent",
+      "message": "Understood! Keep your existing broker network for baseline volume. Our automated WhatsApp rate bot is designed to capture 100% of direct repeat shippers who search for Target Prospect online—giving you direct freight at full margin without giving away 18%.\n\nGrab a quick 5-min slot to see live carrier demo: https://calendly.com/agency-demo/15min",
+      "timestamp": "2026-11-02T16:05:21.062260+00:00"
+    },
+    {
+      "sender": "prospect",
+      "message": "We already have brokers on contract",
+      "timestamp": "2026-11-02T16:25:11.018291+00:00",
+      "intent": "agency_objection"
+    },
+    {
+      "sender": "closer_agent",
+      "message": "Understood! Keep your existing broker network for baseline volume. Our automated WhatsApp rate bot is designed to capture 100% of direct repeat shippers who search for Target Prospect online—giving you direct freight at full margin without giving away 18%.\n\nGrab a quick 5-min slot to see live carrier demo: https://calendly.com/agency-demo/15min",
+      "timestamp": "2026-11-02T16:25:11.018291+00:00"
+    },
+    {
+      "sender": "prospect",
+      "message": "We already have brokers on contract",
+      "timestamp": "2026-11-02T17:03:28.904032+00:00",
+      "intent": "agency_objection"
+    },
+    {
+      "sender": "closer_agent",
+      "message": "Understood! Keep your existing broker network for baseline volume. Our automated WhatsApp rate bot is designed to capture 100% of direct repeat shippers who search for Target Prospect online—giving you direct freight at full margin without giving away 18%.\n\nGrab a quick 5-min slot to see live carrier demo: https://calendly.com/agency-demo/15min",
+      "timestamp": "2026-11-02T17:03:28.904032+00:00"
+    }
+  ],
+  "meeting_link": null,
+  "research": null,
+  "pstack_proof": {
+    "business_name": "Target Prospect",
+    "total_claims": 0,
+    "verified_claims": 0,
+    "proof_score_percentage": 100.0,
+    "claims": [],
+    "artifacts": [],
+    "verified_at": "2026-11-02T17:03:29.404395Z"
+  },
+  "handoff_trace": [],
+  "created_at": "2026-11-02T16:05:21.048359Z",
+  "updated_at": "2026-11-02T17:03:29.404501Z"
+}

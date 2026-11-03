@@ -113,7 +113,7 @@
         "finding": "Valid HTTPS encryption verified",
         "evidence_type": "live_http_probe",
         "proof_reference": "https://sabkadentist.com/",
-        "reproducibility_command": null,
+        "reproducibility_command": "curl -Iv --tlsv1.3 https://sabkadentist.com/ || openssl s_client -connect sabkadentist.com:443",
         "is_verified": true,
         "pstack_status": "PROVEN_TRUE"
       },
@@ -133,7 +133,7 @@
         "finding": "Mobile viewport configured: True",
         "evidence_type": "dom_selector",
         "proof_reference": "meta[name='viewport']",
-        "reproducibility_command": null,
+        "reproducibility_command": "document.querySelector(\"meta[name='viewport']\")?.getAttribute('content') || 'none'",
         "is_verified": true,
         "pstack_status": "PROVEN_TRUE"
       },
@@ -143,7 +143,7 @@
         "finding": "Absence of 1-click WhatsApp lead CTA on landing view",
         "evidence_type": "dom_selector",
         "proof_reference": "a[href*='wa.me'], a[href*='whatsapp.com']",
-        "reproducibility_command": null,
+        "reproducibility_command": "document.querySelector(\"a[href*='wa.me'], a[href*='whatsapp.com']\")",
         "is_verified": true,
         "pstack_status": "PROVEN_TRUE"
       },
@@ -153,7 +153,7 @@
         "finding": "Live source citation: Best Dentists in Bandra West, Mumbai - Top BEST Dentists near me | Justdial",
         "evidence_type": "web_citation",
         "proof_reference": "https://www.justdial.com/Mumbai/Dentists-in-Bandra-West/nct-10156331",
-        "reproducibility_command": null,
+        "reproducibility_command": "web_search \"Best Dentists in Bandra West, Mumbai - Top BEST Dentists near me | Justdial\"",
         "is_verified": true,
         "pstack_status": "PROVEN_TRUE"
       },
@@ -163,7 +163,7 @@
         "finding": "Live source citation: Best CGHS Empanelled Dental Clinics in Bandra West, Mumbai - Book ...",
         "evidence_type": "web_citation",
         "proof_reference": "https://www.justdial.com/Mumbai/CGHS-Empanelled-Dental-Clinics-in-Bandra-West/nct-12225796",
-        "reproducibility_command": null,
+        "reproducibility_command": "web_search \"Best CGHS Empanelled Dental Clinics in Bandra West, Mumbai - Book ...\"",
         "is_verified": true,
         "pstack_status": "PROVEN_TRUE"
       },
@@ -173,7 +173,7 @@
         "finding": "Live source citation: Best Dental Clinics Near Me in Bandra West, Mumbai - Practo",
         "evidence_type": "web_citation",
         "proof_reference": "https://www.practo.com/mumbai/clinics/dental-clinics/bandra-west",
-        "reproducibility_command": null,
+        "reproducibility_command": "web_search \"Best Dental Clinics Near Me in Bandra West, Mumbai - Practo\"",
         "is_verified": true,
         "pstack_status": "PROVEN_TRUE"
       }
@@ -212,7 +212,7 @@
         }
       }
     ],
-    "verified_at": "2026-11-01T18:13:45.262112Z"
+    "verified_at": "2026-11-02T17:03:30.323175Z"
   },
   "handoff_trace": [
     {
@@ -290,5 +290,5 @@
     }
   ],
   "created_at": "2026-10-27T16:37:19.760768Z",
-  "updated_at": "2026-11-01T18:13:45.262236Z"
+  "updated_at": "2026-11-02T17:03:30.323296Z"
 }

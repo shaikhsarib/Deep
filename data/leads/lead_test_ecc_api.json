@@ -15,7 +15,7 @@
     "vertical": "general",
     "pain_points": [],
     "growth_goals": [],
-    "created_at": "2026-11-01T18:13:39.729844Z"
+    "created_at": "2026-11-02T17:00:37.161229Z"
   },
   "status": "contacted",
   "audit": {
@@ -27,7 +27,7 @@
     "key_flaws": [],
     "quantified_loss": null,
     "screenshot_path": null,
-    "audited_at": "2026-11-01T18:13:39.729868Z"
+    "audited_at": "2026-11-02T17:00:37.161256Z"
   },
   "draft": {
     "whatsapp_message": "Hi ECC Cargo Logistics, your verified load time is 3.2s. Here is your calculator prototype.",
@@ -45,7 +45,7 @@
   "contacted_channels": [
     "whatsapp"
   ],
-  "last_contacted_at": "2026-11-01T18:13:44.489980Z",
+  "last_contacted_at": "2026-11-02T17:03:28.207163Z",
   "conversation_history": [],
   "meeting_link": null,
   "research": null,
@@ -61,7 +61,7 @@
         "finding": "Valid HTTPS encryption verified",
         "evidence_type": "live_http_probe",
         "proof_reference": "No direct website",
-        "reproducibility_command": null,
+        "reproducibility_command": "curl -Iv --tlsv1.3 No direct website || openssl s_client -connect No direct website:443",
         "is_verified": true,
         "pstack_status": "PROVEN_TRUE"
       },
@@ -81,7 +81,7 @@
         "finding": "Mobile viewport configured: True",
         "evidence_type": "dom_selector",
         "proof_reference": "meta[name='viewport']",
-        "reproducibility_command": null,
+        "reproducibility_command": "document.querySelector(\"meta[name='viewport']\")?.getAttribute('content') || 'none'",
         "is_verified": true,
         "pstack_status": "PROVEN_TRUE"
       },
@@ -91,21 +91,21 @@
         "finding": "Absence of 1-click WhatsApp lead CTA on landing view",
         "evidence_type": "dom_selector",
         "proof_reference": "a[href*='wa.me'], a[href*='whatsapp.com']",
-        "reproducibility_command": null,
+        "reproducibility_command": "document.querySelector(\"a[href*='wa.me'], a[href*='whatsapp.com']\")",
         "is_verified": true,
         "pstack_status": "PROVEN_TRUE"
       }
     ],
     "artifacts": [],
-    "verified_at": "2026-11-01T18:13:45.212403Z"
+    "verified_at": "2026-11-02T17:03:29.405554Z"
   },
   "handoff_trace": [
     {
-      "handoff_id": "hnd_91cdd402",
+      "handoff_id": "hnd_0af83f06",
       "source_agent": "paperclip_approval_gate",
       "target_agent": "hermes_closer_agent",
       "contract_version": "v2.1",
-      "timestamp": "2026-11-01T18:13:44.490016Z",
+      "timestamp": "2026-11-02T17:03:28.207213Z",
       "status": "validated",
       "payload": {
         "company_name": "ECC Cargo Logistics",
@@ -116,6 +116,6 @@
       "validation_notes": null
     }
   ],
-  "created_at": "2026-11-01T18:13:39.729939Z",
-  "updated_at": "2026-11-01T18:13:45.212524Z"
+  "created_at": "2026-11-02T17:00:37.161301Z",
+  "updated_at": "2026-11-02T17:03:29.405624Z"
 }

@@ -15,7 +15,7 @@
     "vertical": "local_services",
     "pain_points": [],
     "growth_goals": [],
-    "created_at": "2026-11-01T18:13:46.304890Z"
+    "created_at": "2026-11-02T17:03:32.602228Z"
   },
   "status": "contacted",
   "audit": {
@@ -32,7 +32,7 @@
     ],
     "quantified_loss": "Losing 20-30% margin to aggregators and ~15-25 direct customer inquiries weekly",
     "screenshot_path": null,
-    "audited_at": "2026-11-01T18:14:51.883539Z"
+    "audited_at": "2026-11-02T17:03:56.832046Z"
   },
   "draft": {
     "whatsapp_message": "Personalized message from manager",
@@ -55,7 +55,7 @@
   "contacted_channels": [
     "whatsapp"
   ],
-  "last_contacted_at": "2026-11-01T18:14:51.986167Z",
+  "last_contacted_at": "2026-11-02T17:03:57.368610Z",
   "conversation_history": [],
   "meeting_link": null,
   "research": {
@@ -77,8 +77,24 @@
       "1-click mobile appointment booking"
     ],
     "recommended_hook": "Help Grand Cafe Mumbai capture direct customer orders without 20-30% platform cuts.",
-    "citations": [],
-    "evidence_verified": false,
+    "citations": [
+      {
+        "title": "10+ Best Cafes in Bandra: Bandra Famous Cafe - theirlifestyle.com",
+        "url": "https://theirlifestyle.com/best-cafes-in-bandra/",
+        "snippet": "Discover best cafes in Bandra for coffee, breakfast & work-friendly vibes. Explore must-visit spots, celebrity-favorite cafes, and cozy coffee shops in Bandra."
+      },
+      {
+        "title": "20 Best Cafes in Bandra for Good Food & Conversations | LBB",
+        "url": "https://lbb.in/mumbai/cafes-in-bandra/",
+        "snippet": "Here are the 20 top cafes in Bandra for when you're looking for good coffee, good food and multiple cuisines. These cafes are loved by all and make the perfect hangout"
+      },
+      {
+        "title": "20 Cafes in Bandra That Are Perfect Hangout Spots In 2026",
+        "url": "https://www.holidify.com/pages/cafes-in-bandra-858.html",
+        "snippet": "The list of Cafes in Bandra below will pretty much help you cover different areas at Bandra while satiating your hunger pangs and leaving you asking for more! Candies, Pali Hill Blue Tokai Coffee Roasters Pali Village Café The Bagel Shop Taj Mahal Te"
+      }
+    ],
+    "evidence_verified": true,
     "treg_enrichment": {
       "lead_id": "Grand Cafe Mumbai",
       "owner_or_director_name": "Managing Director / Proprietor",
@@ -93,8 +109,8 @@
   },
   "pstack_proof": {
     "business_name": "Grand Cafe Mumbai",
-    "total_claims": 3,
-    "verified_claims": 3,
+    "total_claims": 6,
+    "verified_claims": 6,
     "proof_score_percentage": 100.0,
     "claims": [
       {
@@ -113,7 +129,7 @@
         "finding": "Mobile viewport configured: False",
         "evidence_type": "dom_selector",
         "proof_reference": "meta[name='viewport']",
-        "reproducibility_command": null,
+        "reproducibility_command": "document.querySelector(\"meta[name='viewport']\")?.getAttribute('content') || 'none'",
         "is_verified": true,
         "pstack_status": "PROVEN_TRUE"
       },
@@ -123,21 +139,76 @@
         "finding": "Absence of 1-click WhatsApp lead CTA on landing view",
         "evidence_type": "dom_selector",
         "proof_reference": "a[href*='wa.me'], a[href*='whatsapp.com']",
-        "reproducibility_command": null,
+        "reproducibility_command": "document.querySelector(\"a[href*='wa.me'], a[href*='whatsapp.com']\")",
+        "is_verified": true,
+        "pstack_status": "PROVEN_TRUE"
+      },
+      {
+        "claim_id": "proof_citation_1",
+        "category": "market_intelligence",
+        "finding": "Live source citation: 10+ Best Cafes in Bandra: Bandra Famous Cafe - theirlifestyle.com",
+        "evidence_type": "web_citation",
+        "proof_reference": "https://theirlifestyle.com/best-cafes-in-bandra/",
+        "reproducibility_command": "web_search \"10+ Best Cafes in Bandra: Bandra Famous Cafe - theirlifestyle.com\"",
+        "is_verified": true,
+        "pstack_status": "PROVEN_TRUE"
+      },
+      {
+        "claim_id": "proof_citation_2",
+        "category": "market_intelligence",
+        "finding": "Live source citation: 20 Best Cafes in Bandra for Good Food & Conversations | LBB",
+        "evidence_type": "web_citation",
+        "proof_reference": "https://lbb.in/mumbai/cafes-in-bandra/",
+        "reproducibility_command": "web_search \"20 Best Cafes in Bandra for Good Food & Conversations | LBB\"",
+        "is_verified": true,
+        "pstack_status": "PROVEN_TRUE"
+      },
+      {
+        "claim_id": "proof_citation_3",
+        "category": "market_intelligence",
+        "finding": "Live source citation: 20 Cafes in Bandra That Are Perfect Hangout Spots In 2026",
+        "evidence_type": "web_citation",
+        "proof_reference": "https://www.holidify.com/pages/cafes-in-bandra-858.html",
+        "reproducibility_command": "web_search \"20 Cafes in Bandra That Are Perfect Hangout Spots In 2026\"",
         "is_verified": true,
         "pstack_status": "PROVEN_TRUE"
       }
     ],
-    "artifacts": [],
-    "verified_at": "2026-11-01T18:14:51.883826Z"
+    "artifacts": [
+      {
+        "artifact_type": "search_citation",
+        "uri_or_path": "https://theirlifestyle.com/best-cafes-in-bandra/",
+        "verified": true,
+        "details": {
+          "title": "10+ Best Cafes in Bandra: Bandra Famous Cafe - theirlifestyle.com"
+        }
+      },
+      {
+        "artifact_type": "search_citation",
+        "uri_or_path": "https://lbb.in/mumbai/cafes-in-bandra/",
+        "verified": true,
+        "details": {
+          "title": "20 Best Cafes in Bandra for Good Food & Conversations | LBB"
+        }
+      },
+      {
+        "artifact_type": "search_citation",
+        "uri_or_path": "https://www.holidify.com/pages/cafes-in-bandra-858.html",
+        "verified": true,
+        "details": {
+          "title": "20 Cafes in Bandra That Are Perfect Hangout Spots In 2026"
+        }
+      }
+    ],
+    "verified_at": "2026-11-02T17:03:56.832434Z"
   },
   "handoff_trace": [
     {
-      "handoff_id": "hnd_878ff383",
+      "handoff_id": "hnd_8e279c8d",
       "source_agent": "scout_agent",
       "target_agent": "researcher_agent",
       "contract_version": "v2.1",
-      "timestamp": "2026-11-01T18:13:46.306379Z",
+      "timestamp": "2026-11-02T17:03:32.603936Z",
       "status": "validated",
       "payload": {
         "company_name": "Grand Cafe Mumbai",
@@ -147,11 +218,11 @@
       "validation_notes": null
     },
     {
-      "handoff_id": "hnd_74d059e3",
+      "handoff_id": "hnd_7cfcaec2",
       "source_agent": "researcher_agent",
       "target_agent": "auditor_agent",
       "contract_version": "v2.1",
-      "timestamp": "2026-11-01T18:14:51.883420Z",
+      "timestamp": "2026-11-02T17:03:56.831908Z",
       "status": "initiated",
       "payload": {
         "website": "",
@@ -161,11 +232,11 @@
       "validation_notes": null
     },
     {
-      "handoff_id": "hnd_9e16ea69",
+      "handoff_id": "hnd_243ded58",
       "source_agent": "auditor_agent",
       "target_agent": "copywriter_agent",
       "contract_version": "v2.1",
-      "timestamp": "2026-11-01T18:14:51.883646Z",
+      "timestamp": "2026-11-02T17:03:56.832161Z",
       "status": "validated",
       "payload": {
         "key_flaws": [
@@ -180,11 +251,11 @@
       "validation_notes": null
     },
     {
-      "handoff_id": "hnd_5f1d6a02",
+      "handoff_id": "hnd_6559fe15",
       "source_agent": "copywriter_agent",
       "target_agent": "paperclip_approval_gate",
       "contract_version": "v2.1",
-      "timestamp": "2026-11-01T18:14:51.918158Z",
+      "timestamp": "2026-11-02T17:03:57.190357Z",
       "status": "validated",
       "payload": {
         "whatsapp_message": "Hi team Grand Cafe Mumbai, noticed you're doing great work in Bandra, Mumbai! We build direct online booking websites so you don't lose commission to aggregators. Would you be open to a 2-min demo?",
@@ -194,11 +265,11 @@
       "validation_notes": null
     },
     {
-      "handoff_id": "hnd_5fa5a801",
+      "handoff_id": "hnd_15815075",
       "source_agent": "paperclip_approval_gate",
       "target_agent": "hermes_closer_agent",
       "contract_version": "v2.1",
-      "timestamp": "2026-11-01T18:14:51.986212Z",
+      "timestamp": "2026-11-02T17:03:57.368661Z",
       "status": "validated",
       "payload": {
         "company_name": "Grand Cafe Mumbai",
@@ -209,6 +280,6 @@
       "validation_notes": null
     }
   ],
-  "created_at": "2026-11-01T18:13:46.304915Z",
-  "updated_at": "2026-11-01T18:14:52.024989Z"
+  "created_at": "2026-11-02T17:03:32.602253Z",
+  "updated_at": "2026-11-02T17:03:57.718837Z"
 }

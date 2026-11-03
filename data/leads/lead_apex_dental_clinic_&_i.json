@@ -129,7 +129,7 @@
         "finding": "Mobile viewport configured: False",
         "evidence_type": "dom_selector",
         "proof_reference": "meta[name='viewport']",
-        "reproducibility_command": null,
+        "reproducibility_command": "document.querySelector(\"meta[name='viewport']\")?.getAttribute('content') || 'none'",
         "is_verified": true,
         "pstack_status": "PROVEN_TRUE"
       },
@@ -139,7 +139,7 @@
         "finding": "Absence of 1-click WhatsApp lead CTA on landing view",
         "evidence_type": "dom_selector",
         "proof_reference": "a[href*='wa.me'], a[href*='whatsapp.com']",
-        "reproducibility_command": null,
+        "reproducibility_command": "document.querySelector(\"a[href*='wa.me'], a[href*='whatsapp.com']\")",
         "is_verified": true,
         "pstack_status": "PROVEN_TRUE"
       },
@@ -149,7 +149,7 @@
         "finding": "Live source citation: Best Dental Implant Clinics Near Me in Bandra, Mumbai ...",
         "evidence_type": "web_citation",
         "proof_reference": "https://www.practo.com/mumbai/clinics/dental-implant-clinics/bandra",
-        "reproducibility_command": null,
+        "reproducibility_command": "web_search \"Best Dental Implant Clinics Near Me in Bandra, Mumbai ...\"",
         "is_verified": true,
         "pstack_status": "PROVEN_TRUE"
       },
@@ -159,7 +159,7 @@
         "finding": "Live source citation: Best Dental Clinics in Bandra West, Mumbai - Top Crooked ...",
         "evidence_type": "web_citation",
         "proof_reference": "https://www.justdial.com/Mumbai/Dental-Clinics-in-Bandra-West/nct-10156036",
-        "reproducibility_command": null,
+        "reproducibility_command": "web_search \"Best Dental Clinics in Bandra West, Mumbai - Top Crooked ...\"",
         "is_verified": true,
         "pstack_status": "PROVEN_TRUE"
       },
@@ -169,7 +169,7 @@
         "finding": "Live source citation: Best Dentists in Bandra West, Mumbai - Top BEST Dentists near ...",
         "evidence_type": "web_citation",
         "proof_reference": "https://www.justdial.com/Mumbai/Dentists-in-Bandra-West/nct-10156331",
-        "reproducibility_command": null,
+        "reproducibility_command": "web_search \"Best Dentists in Bandra West, Mumbai - Top BEST Dentists near ...\"",
         "is_verified": true,
         "pstack_status": "PROVEN_TRUE"
       }
@@ -200,7 +200,7 @@
         }
       }
     ],
-    "verified_at": "2026-11-01T18:13:46.209001Z"
+    "verified_at": "2026-11-02T17:03:32.169565Z"
   },
   "handoff_trace": [
     {
@@ -400,8 +400,191 @@
       },
       "proof_artifacts": [],
       "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_0c9fe654",
+      "source_agent": "scout_agent",
+      "target_agent": "researcher_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-02T15:57:05.703967Z",
+      "status": "validated",
+      "payload": {
+        "company_name": "Apex Dental Clinic & Implant Care",
+        "business_type": "dental clinic and implant care"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_5a9d7ee1",
+      "source_agent": "researcher_agent",
+      "target_agent": "auditor_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-02T15:57:05.704034Z",
+      "status": "initiated",
+      "payload": {
+        "website": "",
+        "company_name": "Apex Dental Clinic & Implant Care"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_d714eddc",
+      "source_agent": "auditor_agent",
+      "target_agent": "copywriter_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-02T15:57:05.704105Z",
+      "status": "validated",
+      "payload": {
+        "key_flaws": [
+          "No direct digital booking or ordering presence",
+          "100% reliant on 3rd-party aggregators (paying 20-30% platform cuts)",
+          "Invisible to high-intent Google searchers looking for official website",
+          "No automated WhatsApp response system for after-hours inquiries"
+        ],
+        "quantified_loss": "Losing 20-30% margin to aggregators and ~15-25 direct customer inquiries weekly"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_fe71fd89",
+      "source_agent": "copywriter_agent",
+      "target_agent": "paperclip_approval_gate",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-02T15:57:05.787862Z",
+      "status": "validated",
+      "payload": {
+        "whatsapp_message": "Hi team Apex Dental Clinic & Implant Care, noticed you're doing great work in Bandra, Mumbai! We build direct online booking websites so you don't lose commission to aggregators. Would you be open to a 2-min demo?",
+        "qualified": true
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_1d195428",
+      "source_agent": "scout_agent",
+      "target_agent": "researcher_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-02T16:25:12.161055Z",
+      "status": "validated",
+      "payload": {
+        "company_name": "Apex Dental Clinic & Implant Care",
+        "business_type": "dental clinic and implant care"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_6e5f7023",
+      "source_agent": "researcher_agent",
+      "target_agent": "auditor_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-02T16:25:12.161125Z",
+      "status": "initiated",
+      "payload": {
+        "website": "",
+        "company_name": "Apex Dental Clinic & Implant Care"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_a1bb62a8",
+      "source_agent": "auditor_agent",
+      "target_agent": "copywriter_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-02T16:25:12.161197Z",
+      "status": "validated",
+      "payload": {
+        "key_flaws": [
+          "No direct digital booking or ordering presence",
+          "100% reliant on 3rd-party aggregators (paying 20-30% platform cuts)",
+          "Invisible to high-intent Google searchers looking for official website",
+          "No automated WhatsApp response system for after-hours inquiries"
+        ],
+        "quantified_loss": "Losing 20-30% margin to aggregators and ~15-25 direct customer inquiries weekly"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_a44fd6c7",
+      "source_agent": "copywriter_agent",
+      "target_agent": "paperclip_approval_gate",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-02T16:25:12.270014Z",
+      "status": "validated",
+      "payload": {
+        "whatsapp_message": "Hi team Apex Dental Clinic & Implant Care, noticed you're doing great work in Bandra, Mumbai! We build direct online booking websites so you don't lose commission to aggregators. Would you be open to a 2-min demo?",
+        "qualified": true
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_5a1a81ab",
+      "source_agent": "scout_agent",
+      "target_agent": "researcher_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-02T17:03:32.168834Z",
+      "status": "validated",
+      "payload": {
+        "company_name": "Apex Dental Clinic & Implant Care",
+        "business_type": "dental clinic and implant care"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_095c3118",
+      "source_agent": "researcher_agent",
+      "target_agent": "auditor_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-02T17:03:32.168986Z",
+      "status": "initiated",
+      "payload": {
+        "website": "",
+        "company_name": "Apex Dental Clinic & Implant Care"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_a2e19e98",
+      "source_agent": "auditor_agent",
+      "target_agent": "copywriter_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-02T17:03:32.169330Z",
+      "status": "validated",
+      "payload": {
+        "key_flaws": [
+          "No direct digital booking or ordering presence",
+          "100% reliant on 3rd-party aggregators (paying 20-30% platform cuts)",
+          "Invisible to high-intent Google searchers looking for official website",
+          "No automated WhatsApp response system for after-hours inquiries"
+        ],
+        "quantified_loss": "Losing 20-30% margin to aggregators and ~15-25 direct customer inquiries weekly"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_153d1a3c",
+      "source_agent": "copywriter_agent",
+      "target_agent": "paperclip_approval_gate",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-02T17:03:32.490367Z",
+      "status": "validated",
+      "payload": {
+        "whatsapp_message": "Hi team Apex Dental Clinic & Implant Care, noticed you're doing great work in Bandra, Mumbai! We build direct online booking websites so you don't lose commission to aggregators. Would you be open to a 2-min demo?",
+        "qualified": true
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
     }
   ],
   "created_at": "2026-10-27T17:20:07.333351Z",
-  "updated_at": "2026-11-01T18:13:46.240193Z"
+  "updated_at": "2026-11-02T17:03:32.490459Z"
 }

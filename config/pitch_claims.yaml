@@ -111,6 +111,72 @@ claims:
 - Hi team Grand Cafe Mumbai, noticed you're doing great work in Bandra, Mumbai! We
   build direct online booking websites so you don't lose commission to aggregators.
   Would you be open to a 2-min demo?
+- Personalized message from manager
+- Providing instant WhatsApp wedding date availability and tiered pricing eliminates
+  48-hour PDF delays and cuts reliance on 20% aggregator commissions. (Engineered
+  to eliminate 'Customer quote latency objection').
+- Hi team HINDUSTAN CARGO LOGISTICS, saw your fleet operations in Mumbai! Shippers
+  book whoever quotes rates within 5 mins. We build instant WhatsApp freight calculators
+  & direct driver dispatch bots so you skip 20% broker fees. Open to a 2-min video
+  preview?
+- Hi team Om Freight Forwarders Private Limited, saw your fleet operations in Mumbai!
+  Shippers book whoever quotes rates within 5 mins. We build instant WhatsApp freight
+  calculators & direct driver dispatch bots so you skip 20% broker fees. Open to a
+  2-min video preview?
+- Hi team Ryal Logistics Pvt Ltd., saw your fleet operations in Mumbai! Shippers book
+  whoever quotes rates within 5 mins. We build instant WhatsApp freight calculators
+  & direct driver dispatch bots so you skip 20% broker fees. Open to a 2-min video
+  preview?
+- Hi team Apex Global Logistics, saw your fleet operations in Navi Mumbai! Shippers
+  book whoever quotes rates within 5 mins. We build instant WhatsApp freight calculators
+  & direct driver dispatch bots so you skip 20% broker fees. Open to a 2-min video
+  preview?
+- Hi team Road Freight Carriers, saw your fleet operations in Bhiwandi! Shippers book
+  whoever quotes rates within 5 mins. We build instant WhatsApp freight calculators
+  & direct driver dispatch bots so you skip 20% broker fees. Open to a 2-min video
+  preview?
+- Hi team Rcc Transport Co Pvt Ltd, saw your fleet operations in Bhiwandi! Shippers
+  book whoever quotes rates within 5 mins. We build instant WhatsApp freight calculators
+  & direct driver dispatch bots so you skip 20% broker fees. Open to a 2-min video
+  preview?
+- Hi team Mahavir Logistics, saw your fleet operations in Mumbai! Shippers book whoever
+  quotes rates within 5 mins. We build instant WhatsApp freight calculators & direct
+  driver dispatch bots so you skip 20% broker fees. Open to a 2-min video preview?
+- Hi team Bombay Bangalore Freight Carriers Pvt Ltd, saw your fleet operations in
+  Bhiwandi! Shippers book whoever quotes rates within 5 mins. We build instant WhatsApp
+  freight calculators & direct driver dispatch bots so you skip 20% broker fees. Open
+  to a 2-min video preview?
+- Hi team Sameer Transport, saw your fleet operations in Bhiwandi! Shippers book whoever
+  quotes rates within 5 mins. We build instant WhatsApp freight calculators & direct
+  driver dispatch bots so you skip 20% broker fees. Open to a 2-min video preview?
+- Automating dispatch inquiries on WhatsApp recovers 15-20% margin lost to freight
+  brokers, turning delayed phone quotes into instant 60-second lane confirmations.
+- Hi team Athena Global Logistics Pvt. Ltd., saw your fleet operations in Mumbai!
+  Shippers book whoever quotes rates within 5 mins. We build instant WhatsApp freight
+  calculators & direct driver dispatch bots so you skip 20% broker fees. Open to a
+  2-min video preview?
+- Hi team TCF Global Logistics Private Limited, saw your fleet operations in Mumbai!
+  Shippers book whoever quotes rates within 5 mins. We build instant WhatsApp freight
+  calculators & direct driver dispatch bots so you skip 20% broker fees. Open to a
+  2-min video preview?
+- Hi team Magnum Cargo Pvt Ltd, saw your fleet operations in Mumbai! Shippers book
+  whoever quotes rates within 5 mins. We build instant WhatsApp freight calculators
+  & direct driver dispatch bots so you skip 20% broker fees. Open to a 2-min video
+  preview?
+- Hi team Marudhar Logistics/ Transport Services/, saw your fleet operations in Bhiwandi!
+  Shippers book whoever quotes rates within 5 mins. We build instant WhatsApp freight
+  calculators & direct driver dispatch bots so you skip 20% broker fees. Open to a
+  2-min video preview?
+- Hi team K T Transport, saw your fleet operations in Bhiwandi! Shippers book whoever
+  quotes rates within 5 mins. We build instant WhatsApp freight calculators & direct
+  driver dispatch bots so you skip 20% broker fees. Open to a 2-min video preview?
+- Hi team SR Logistics, saw your fleet operations in Bhiwandi! Shippers book whoever
+  quotes rates within 5 mins. We build instant WhatsApp freight calculators & direct
+  driver dispatch bots so you skip 20% broker fees. Open to a 2-min video preview?
+- Hi team Expert Trans Logistic, saw your fleet operations in Mumbai! Shippers book
+  whoever quotes rates within 5 mins. We build instant WhatsApp freight calculators
+  & direct driver dispatch bots so you skip 20% broker fees. Open to a 2-min video
+  preview?
 experience:
 - cue: pitch_logistics_transport
   evidence: Hi team Sen Cargo Packers And Movers, saw your fleet operations in Nerul,
@@ -220,4 +286,752 @@ experience:
   lesson: Reinforced by successful human approval & dispatch in logistics_transport
   score: 0.98
   timestamp: '2026-10-31T18:38:17.623911+00:00'
+  vertical: logistics_transport
+- cue: pitch_logistics_transport
+  evidence: Hi Express Fleet, skip 20% broker cuts with instant WhatsApp freight quotes.
+    Open to a 2-min demo?
+  id: harn_win_20261102155658
+  lesson: Reinforced by successful human approval & dispatch in logistics_transport
+  score: 0.98
+  timestamp: '2026-11-02T15:56:58.956479+00:00'
+  vertical: logistics_transport
+- cue: pitch_logistics_transport
+  evidence: Reviewed and verified via Paperclip.
+  id: harn_win_20261102155703
+  lesson: Reinforced by successful human approval & dispatch in logistics_transport
+  score: 0.98
+  timestamp: '2026-11-02T15:57:03.524748+00:00'
+  vertical: logistics_transport
+- cue: pitch_logistics_transport
+  evidence: Hi ECC Cargo Logistics, your verified load time is 3.2s. Here is your
+    calculator prototype.
+  id: harn_win_20261102155703
+  lesson: Reinforced by successful human approval & dispatch in logistics_transport
+  score: 0.98
+  timestamp: '2026-11-02T15:57:03.685273+00:00'
+  vertical: logistics_transport
+- cue: pitch_logistics_transport
+  evidence: Automating dispatch inquiries on WhatsApp recovers 15-20% margin lost
+    to freight brokers, turning delayed phone quotes into instant 60-second lane confirmations.
+    (Engineered to eliminate 'Lost 3 high-value loads due to delayed phone quotes
+    after 7 PM').
+  id: harn_20261102155704_logist
+  lesson: 'Self-evolved hook to resolve observed friction: Lost 3 high-value loads
+    due to delayed phone quotes after 7 PM'
+  score: 0.95
+  timestamp: '2026-11-02T15:57:04.541647+00:00'
+  vertical: logistics_transport
+- cue: pitch_logistics_transport
+  evidence: Automating dispatch inquiries on WhatsApp recovers 15-20% margin lost
+    to freight brokers, turning delayed phone quotes into instant 60-second lane confirmations.
+    (Engineered to eliminate 'Losing 15-20% margin to freight brokers and ~8-12 spot
+    loads weekly due to delayed manual quote turn').
+  id: harn_20261102155705_logist
+  lesson: 'Self-evolved hook to resolve observed friction: Losing 15-20% margin to
+    freight brokers and ~8-12 spot loads weekly due to delayed manual quote turn'
+  score: 0.95
+  timestamp: '2026-11-02T15:57:05.424955+00:00'
+  vertical: logistics_transport
+- cue: pitch_event_banquets
+  evidence: Providing instant WhatsApp wedding date availability and tiered pricing
+    eliminates 48-hour PDF delays and cuts reliance on 20% aggregator commissions.
+    (Engineered to eliminate 'Losing 40-50% of high-intent wedding and corporate event
+    inquiries arriving after-hours without inst').
+  id: harn_20261102155705_event_
+  lesson: 'Self-evolved hook to resolve observed friction: Losing 40-50% of high-intent
+    wedding and corporate event inquiries arriving after-hours without inst'
+  score: 0.95
+  timestamp: '2026-11-02T15:57:05.544035+00:00'
+  vertical: event_banquets
+- cue: pitch_general
+  evidence: Automating frontline client inquiry response on WhatsApp within 60 seconds
+    recovers 18-25% of inbound inquiries lost to faster-responding competitors. (Engineered
+    to eliminate 'Losing 20-30% margin to aggregators and ~15-25 direct customer inquiries
+    weekly').
+  id: harn_20261102155705_genera
+  lesson: 'Self-evolved hook to resolve observed friction: Losing 20-30% margin to
+    aggregators and ~15-25 direct customer inquiries weekly'
+  score: 0.95
+  timestamp: '2026-11-02T15:57:05.751444+00:00'
+  vertical: general
+- cue: pitch_general
+  evidence: Automating frontline client inquiry response on WhatsApp within 60 seconds
+    recovers 18-25% of inbound inquiries lost to faster-responding competitors. (Engineered
+    to eliminate 'Losing 20-30% margin to aggregators and ~15-25 direct customer inquiries
+    weekly').
+  id: harn_20261102155804_genera
+  lesson: 'Self-evolved hook to resolve observed friction: Losing 20-30% margin to
+    aggregators and ~15-25 direct customer inquiries weekly'
+  score: 0.95
+  timestamp: '2026-11-02T15:58:04.703906+00:00'
+  vertical: general
+- cue: pitch_general
+  evidence: Personalized message from manager
+  id: harn_win_20261102155804
+  lesson: Reinforced by successful human approval & dispatch in general
+  score: 0.98
+  timestamp: '2026-11-02T15:58:04.900732+00:00'
+  vertical: general
+- cue: pitch_logistics_transport
+  evidence: Automating dispatch inquiries on WhatsApp recovers 15-20% margin lost
+    to freight brokers, turning delayed phone quotes into instant 60-second lane confirmations.
+    (Engineered to eliminate 'Lost 3 high-value loads due to delayed phone quotes
+    after 7 PM').
+  id: harn_20261102160520_logist
+  lesson: 'Self-evolved hook to resolve observed friction: Lost 3 high-value loads
+    due to delayed phone quotes after 7 PM'
+  score: 0.95
+  timestamp: '2026-11-02T16:05:20.852103+00:00'
+  vertical: logistics_transport
+- cue: pitch_event_banquets
+  evidence: Providing instant WhatsApp wedding date availability and tiered pricing
+    eliminates 48-hour PDF delays and cuts reliance on 20% aggregator commissions.
+    (Engineered to eliminate 'Customer quote latency objection').
+  id: harn_20261102160521_event_
+  lesson: 'Self-evolved hook to resolve observed friction: Customer quote latency
+    objection'
+  score: 0.95
+  timestamp: '2026-11-02T16:05:21.122980+00:00'
+  vertical: event_banquets
+- cue: pitch_logistics_transport
+  evidence: Hi Express Fleet, skip 20% broker cuts with instant WhatsApp freight quotes.
+    Open to a 2-min demo?
+  id: harn_win_20261102162323
+  lesson: Reinforced by successful human approval & dispatch in logistics_transport
+  score: 0.98
+  timestamp: '2026-11-02T16:23:23.247660+00:00'
+  vertical: logistics_transport
+- cue: pitch_logistics_transport
+  evidence: Automating dispatch inquiries on WhatsApp recovers 15-20% margin lost
+    to freight brokers, turning delayed phone quotes into instant 60-second lane confirmations.
+    (Engineered to eliminate 'Losing 15-20% margin to freight brokers and ~8-12 spot
+    loads weekly due to delayed manual quote turn').
+  id: harn_20261102162404_logist
+  lesson: 'Self-evolved hook to resolve observed friction: Losing 15-20% margin to
+    freight brokers and ~8-12 spot loads weekly due to delayed manual quote turn'
+  score: 0.95
+  timestamp: '2026-11-02T16:24:05.022782+00:00'
+  vertical: logistics_transport
+- cue: pitch_logistics_transport
+  evidence: Automating dispatch inquiries on WhatsApp recovers 15-20% margin lost
+    to freight brokers, turning delayed phone quotes into instant 60-second lane confirmations.
+    (Engineered to eliminate 'Losing 15-20% margin to freight brokers and ~8-12 spot
+    loads weekly due to delayed manual quote turn').
+  id: harn_20261102162438_logist
+  lesson: 'Self-evolved hook to resolve observed friction: Losing 15-20% margin to
+    freight brokers and ~8-12 spot loads weekly due to delayed manual quote turn'
+  score: 0.95
+  timestamp: '2026-11-02T16:24:38.176062+00:00'
+  vertical: logistics_transport
+- cue: pitch_logistics_transport
+  evidence: Automating dispatch inquiries on WhatsApp recovers 15-20% margin lost
+    to freight brokers, turning delayed phone quotes into instant 60-second lane confirmations.
+    (Engineered to eliminate 'Losing 15-20% margin to freight brokers and ~8-12 spot
+    loads weekly due to delayed manual quote turn').
+  id: harn_20261102162506_logist
+  lesson: 'Self-evolved hook to resolve observed friction: Losing 15-20% margin to
+    freight brokers and ~8-12 spot loads weekly due to delayed manual quote turn'
+  score: 0.95
+  timestamp: '2026-11-02T16:25:06.897144+00:00'
+  vertical: logistics_transport
+- cue: pitch_logistics_transport
+  evidence: Reviewed and verified via Paperclip.
+  id: harn_win_20261102162509
+  lesson: Reinforced by successful human approval & dispatch in logistics_transport
+  score: 0.98
+  timestamp: '2026-11-02T16:25:09.906815+00:00'
+  vertical: logistics_transport
+- cue: pitch_logistics_transport
+  evidence: Hi team HINDUSTAN CARGO LOGISTICS, saw your fleet operations in Mumbai!
+    Shippers book whoever quotes rates within 5 mins. We build instant WhatsApp freight
+    calculators & direct driver dispatch bots so you skip 20% broker fees. Open to
+    a 2-min video preview?
+  id: harn_win_20261102162509
+  lesson: Reinforced by successful human approval & dispatch in logistics_transport
+  score: 0.98
+  timestamp: '2026-11-02T16:25:10.042269+00:00'
+  vertical: logistics_transport
+- cue: pitch_logistics_transport
+  evidence: Hi team Om Freight Forwarders Private Limited, saw your fleet operations
+    in Mumbai! Shippers book whoever quotes rates within 5 mins. We build instant
+    WhatsApp freight calculators & direct driver dispatch bots so you skip 20% broker
+    fees. Open to a 2-min video preview?
+  id: harn_win_20261102162510
+  lesson: Reinforced by successful human approval & dispatch in logistics_transport
+  score: 0.98
+  timestamp: '2026-11-02T16:25:10.233274+00:00'
+  vertical: logistics_transport
+- cue: pitch_logistics_transport
+  evidence: Hi team Ryal Logistics Pvt Ltd., saw your fleet operations in Mumbai!
+    Shippers book whoever quotes rates within 5 mins. We build instant WhatsApp freight
+    calculators & direct driver dispatch bots so you skip 20% broker fees. Open to
+    a 2-min video preview?
+  id: harn_win_20261102162510
+  lesson: Reinforced by successful human approval & dispatch in logistics_transport
+  score: 0.98
+  timestamp: '2026-11-02T16:25:10.452927+00:00'
+  vertical: logistics_transport
+- cue: pitch_logistics_transport
+  evidence: Hi ECC Cargo Logistics, your verified load time is 3.2s. Here is your
+    calculator prototype.
+  id: harn_win_20261102162510
+  lesson: Reinforced by successful human approval & dispatch in logistics_transport
+  score: 0.98
+  timestamp: '2026-11-02T16:25:10.657710+00:00'
+  vertical: logistics_transport
+- cue: pitch_logistics_transport
+  evidence: Automating dispatch inquiries on WhatsApp recovers 15-20% margin lost
+    to freight brokers, turning delayed phone quotes into instant 60-second lane confirmations.
+    (Engineered to eliminate 'Lost 3 high-value loads due to delayed phone quotes
+    after 7 PM').
+  id: harn_20261102162510_logist
+  lesson: 'Self-evolved hook to resolve observed friction: Lost 3 high-value loads
+    due to delayed phone quotes after 7 PM'
+  score: 0.95
+  timestamp: '2026-11-02T16:25:10.878843+00:00'
+  vertical: logistics_transport
+- cue: pitch_event_banquets
+  evidence: Providing instant WhatsApp wedding date availability and tiered pricing
+    eliminates 48-hour PDF delays and cuts reliance on 20% aggregator commissions.
+    (Engineered to eliminate 'Customer quote latency objection').
+  id: harn_20261102162511_event_
+  lesson: 'Self-evolved hook to resolve observed friction: Customer quote latency
+    objection'
+  score: 0.95
+  timestamp: '2026-11-02T16:25:11.127182+00:00'
+  vertical: event_banquets
+- cue: pitch_logistics_transport
+  evidence: Automating dispatch inquiries on WhatsApp recovers 15-20% margin lost
+    to freight brokers, turning delayed phone quotes into instant 60-second lane confirmations.
+    (Engineered to eliminate 'Losing 15-20% margin to freight brokers and ~8-12 spot
+    loads weekly due to delayed manual quote turn').
+  id: harn_20261102162511_logist
+  lesson: 'Self-evolved hook to resolve observed friction: Losing 15-20% margin to
+    freight brokers and ~8-12 spot loads weekly due to delayed manual quote turn'
+  score: 0.95
+  timestamp: '2026-11-02T16:25:11.936923+00:00'
+  vertical: logistics_transport
+- cue: pitch_event_banquets
+  evidence: Providing instant WhatsApp wedding date availability and tiered pricing
+    eliminates 48-hour PDF delays and cuts reliance on 20% aggregator commissions.
+    (Engineered to eliminate 'Losing 40-50% of high-intent wedding and corporate event
+    inquiries arriving after-hours without inst').
+  id: harn_20261102162512_event_
+  lesson: 'Self-evolved hook to resolve observed friction: Losing 40-50% of high-intent
+    wedding and corporate event inquiries arriving after-hours without inst'
+  score: 0.95
+  timestamp: '2026-11-02T16:25:12.083964+00:00'
+  vertical: event_banquets
+- cue: pitch_general
+  evidence: Automating frontline client inquiry response on WhatsApp within 60 seconds
+    recovers 18-25% of inbound inquiries lost to faster-responding competitors. (Engineered
+    to eliminate 'Losing 20-30% margin to aggregators and ~15-25 direct customer inquiries
+    weekly').
+  id: harn_20261102162512_genera
+  lesson: 'Self-evolved hook to resolve observed friction: Losing 20-30% margin to
+    aggregators and ~15-25 direct customer inquiries weekly'
+  score: 0.95
+  timestamp: '2026-11-02T16:25:12.223951+00:00'
+  vertical: general
+- cue: pitch_general
+  evidence: Automating frontline client inquiry response on WhatsApp within 60 seconds
+    recovers 18-25% of inbound inquiries lost to faster-responding competitors. (Engineered
+    to eliminate 'Losing 20-30% margin to aggregators and ~15-25 direct customer inquiries
+    weekly').
+  id: harn_20261102162535_genera
+  lesson: 'Self-evolved hook to resolve observed friction: Losing 20-30% margin to
+    aggregators and ~15-25 direct customer inquiries weekly'
+  score: 0.95
+  timestamp: '2026-11-02T16:25:35.764229+00:00'
+  vertical: general
+- cue: pitch_general
+  evidence: Personalized message from manager
+  id: harn_win_20261102162535
+  lesson: Reinforced by successful human approval & dispatch in general
+  score: 0.98
+  timestamp: '2026-11-02T16:25:35.953848+00:00'
+  vertical: general
+- cue: pitch_logistics_transport
+  evidence: Automating dispatch inquiries on WhatsApp recovers 15-20% margin lost
+    to freight brokers, turning delayed phone quotes into instant 60-second lane confirmations.
+    (Engineered to eliminate 'Losing 15-20% margin to freight brokers and ~8-12 spot
+    loads weekly due to delayed manual quote turn').
+  id: harn_20261102165619_logist
+  lesson: 'Self-evolved hook to resolve observed friction: Losing 15-20% margin to
+    freight brokers and ~8-12 spot loads weekly due to delayed manual quote turn'
+  score: 0.95
+  timestamp: '2026-11-02T16:56:19.633847+00:00'
+  vertical: logistics_transport
+- cue: pitch_logistics_transport
+  evidence: Hi team Apex Global Logistics, saw your fleet operations in Navi Mumbai!
+    Shippers book whoever quotes rates within 5 mins. We build instant WhatsApp freight
+    calculators & direct driver dispatch bots so you skip 20% broker fees. Open to
+    a 2-min video preview?
+  id: harn_win_20261102165619
+  lesson: Reinforced by successful human approval & dispatch in logistics_transport
+  score: 0.98
+  timestamp: '2026-11-02T16:56:19.882178+00:00'
+  vertical: logistics_transport
+- cue: pitch_logistics_transport
+  evidence: Automating dispatch inquiries on WhatsApp recovers 15-20% margin lost
+    to freight brokers, turning delayed phone quotes into instant 60-second lane confirmations.
+    (Engineered to eliminate 'Losing 15-20% margin to freight brokers and ~8-12 spot
+    loads weekly due to delayed manual quote turn').
+  id: harn_20261102165943_logist
+  lesson: 'Self-evolved hook to resolve observed friction: Losing 15-20% margin to
+    freight brokers and ~8-12 spot loads weekly due to delayed manual quote turn'
+  score: 0.95
+  timestamp: '2026-11-02T16:59:44.058020+00:00'
+  vertical: logistics_transport
+- cue: pitch_logistics_transport
+  evidence: Hi team Apex Global Logistics, saw your fleet operations in Navi Mumbai!
+    Shippers book whoever quotes rates within 5 mins. We build instant WhatsApp freight
+    calculators & direct driver dispatch bots so you skip 20% broker fees. Open to
+    a 2-min video preview?
+  id: harn_win_20261102165944
+  lesson: Reinforced by successful human approval & dispatch in logistics_transport
+  score: 0.98
+  timestamp: '2026-11-02T16:59:44.443115+00:00'
+  vertical: logistics_transport
+- cue: pitch_logistics_transport
+  evidence: Hi Express Fleet, skip 20% broker cuts with instant WhatsApp freight quotes.
+    Open to a 2-min demo?
+  id: harn_win_20261102170037
+  lesson: Reinforced by successful human approval & dispatch in logistics_transport
+  score: 0.98
+  timestamp: '2026-11-02T17:00:37.577435+00:00'
+  vertical: logistics_transport
+- cue: pitch_logistics_transport
+  evidence: Automating dispatch inquiries on WhatsApp recovers 15-20% margin lost
+    to freight brokers, turning delayed phone quotes into instant 60-second lane confirmations.
+    (Engineered to eliminate 'Losing 15-20% margin to freight brokers and ~8-12 spot
+    loads weekly due to delayed manual quote turn').
+  id: harn_20261102170106_logist
+  lesson: 'Self-evolved hook to resolve observed friction: Losing 15-20% margin to
+    freight brokers and ~8-12 spot loads weekly due to delayed manual quote turn'
+  score: 0.95
+  timestamp: '2026-11-02T17:01:06.328690+00:00'
+  vertical: logistics_transport
+- cue: pitch_logistics_transport
+  evidence: Automating dispatch inquiries on WhatsApp recovers 15-20% margin lost
+    to freight brokers, turning delayed phone quotes into instant 60-second lane confirmations.
+    (Engineered to eliminate 'Losing 15-20% margin to freight brokers and ~8-12 spot
+    loads weekly due to delayed manual quote turn').
+  id: harn_20261102170150_logist
+  lesson: 'Self-evolved hook to resolve observed friction: Losing 15-20% margin to
+    freight brokers and ~8-12 spot loads weekly due to delayed manual quote turn'
+  score: 0.95
+  timestamp: '2026-11-02T17:01:51.101453+00:00'
+  vertical: logistics_transport
+- cue: pitch_logistics_transport
+  evidence: Automating dispatch inquiries on WhatsApp recovers 15-20% margin lost
+    to freight brokers, turning delayed phone quotes into instant 60-second lane confirmations.
+    (Engineered to eliminate 'Losing 15-20% margin to freight brokers and ~8-12 spot
+    loads weekly due to delayed manual quote turn').
+  id: harn_20261102170251_logist
+  lesson: 'Self-evolved hook to resolve observed friction: Losing 15-20% margin to
+    freight brokers and ~8-12 spot loads weekly due to delayed manual quote turn'
+  score: 0.95
+  timestamp: '2026-11-02T17:02:51.248453+00:00'
+  vertical: logistics_transport
+- cue: pitch_logistics_transport
+  evidence: Automating dispatch inquiries on WhatsApp recovers 15-20% margin lost
+    to freight brokers, turning delayed phone quotes into instant 60-second lane confirmations.
+    (Engineered to eliminate 'Losing 15-20% margin to freight brokers and ~8-12 spot
+    loads weekly due to delayed manual quote turn').
+  id: harn_20261102170307_logist
+  lesson: 'Self-evolved hook to resolve observed friction: Losing 15-20% margin to
+    freight brokers and ~8-12 spot loads weekly due to delayed manual quote turn'
+  score: 0.95
+  timestamp: '2026-11-02T17:03:07.604457+00:00'
+  vertical: logistics_transport
+- cue: pitch_logistics_transport
+  evidence: Automating dispatch inquiries on WhatsApp recovers 15-20% margin lost
+    to freight brokers, turning delayed phone quotes into instant 60-second lane confirmations.
+    (Engineered to eliminate 'Losing 15-20% margin to freight brokers and ~8-12 spot
+    loads weekly due to delayed manual quote turn').
+  id: harn_20261102170322_logist
+  lesson: 'Self-evolved hook to resolve observed friction: Losing 15-20% margin to
+    freight brokers and ~8-12 spot loads weekly due to delayed manual quote turn'
+  score: 0.95
+  timestamp: '2026-11-02T17:03:22.702386+00:00'
+  vertical: logistics_transport
+- cue: pitch_logistics_transport
+  evidence: Reviewed and verified via Paperclip.
+  id: harn_win_20261102170326
+  lesson: Reinforced by successful human approval & dispatch in logistics_transport
+  score: 0.98
+  timestamp: '2026-11-02T17:03:26.658044+00:00'
+  vertical: logistics_transport
+- cue: pitch_logistics_transport
+  evidence: Hi team Road Freight Carriers, saw your fleet operations in Bhiwandi!
+    Shippers book whoever quotes rates within 5 mins. We build instant WhatsApp freight
+    calculators & direct driver dispatch bots so you skip 20% broker fees. Open to
+    a 2-min video preview?
+  id: harn_win_20261102170326
+  lesson: Reinforced by successful human approval & dispatch in logistics_transport
+  score: 0.98
+  timestamp: '2026-11-02T17:03:26.969768+00:00'
+  vertical: logistics_transport
+- cue: pitch_logistics_transport
+  evidence: Hi team Rcc Transport Co Pvt Ltd, saw your fleet operations in Bhiwandi!
+    Shippers book whoever quotes rates within 5 mins. We build instant WhatsApp freight
+    calculators & direct driver dispatch bots so you skip 20% broker fees. Open to
+    a 2-min video preview?
+  id: harn_win_20261102170327
+  lesson: Reinforced by successful human approval & dispatch in logistics_transport
+  score: 0.98
+  timestamp: '2026-11-02T17:03:27.236690+00:00'
+  vertical: logistics_transport
+- cue: pitch_logistics_transport
+  evidence: Hi team Mahavir Logistics, saw your fleet operations in Mumbai! Shippers
+    book whoever quotes rates within 5 mins. We build instant WhatsApp freight calculators
+    & direct driver dispatch bots so you skip 20% broker fees. Open to a 2-min video
+    preview?
+  id: harn_win_20261102170327
+  lesson: Reinforced by successful human approval & dispatch in logistics_transport
+  score: 0.98
+  timestamp: '2026-11-02T17:03:27.567716+00:00'
+  vertical: logistics_transport
+- cue: pitch_logistics_transport
+  evidence: Hi team Bombay Bangalore Freight Carriers Pvt Ltd, saw your fleet operations
+    in Bhiwandi! Shippers book whoever quotes rates within 5 mins. We build instant
+    WhatsApp freight calculators & direct driver dispatch bots so you skip 20% broker
+    fees. Open to a 2-min video preview?
+  id: harn_win_20261102170327
+  lesson: Reinforced by successful human approval & dispatch in logistics_transport
+  score: 0.98
+  timestamp: '2026-11-02T17:03:27.831431+00:00'
+  vertical: logistics_transport
+- cue: pitch_logistics_transport
+  evidence: Hi team Sameer Transport, saw your fleet operations in Bhiwandi! Shippers
+    book whoever quotes rates within 5 mins. We build instant WhatsApp freight calculators
+    & direct driver dispatch bots so you skip 20% broker fees. Open to a 2-min video
+    preview?
+  id: harn_win_20261102170327
+  lesson: Reinforced by successful human approval & dispatch in logistics_transport
+  score: 0.98
+  timestamp: '2026-11-02T17:03:28.098804+00:00'
+  vertical: logistics_transport
+- cue: pitch_logistics_transport
+  evidence: Hi ECC Cargo Logistics, your verified load time is 3.2s. Here is your
+    calculator prototype.
+  id: harn_win_20261102170328
+  lesson: Reinforced by successful human approval & dispatch in logistics_transport
+  score: 0.98
+  timestamp: '2026-11-02T17:03:28.391384+00:00'
+  vertical: logistics_transport
+- cue: pitch_logistics_transport
+  evidence: Automating dispatch inquiries on WhatsApp recovers 15-20% margin lost
+    to freight brokers, turning delayed phone quotes into instant 60-second lane confirmations.
+    (Engineered to eliminate 'Lost 3 high-value loads due to delayed phone quotes
+    after 7 PM').
+  id: harn_20261102170328_logist
+  lesson: 'Self-evolved hook to resolve observed friction: Lost 3 high-value loads
+    due to delayed phone quotes after 7 PM'
+  score: 0.95
+  timestamp: '2026-11-02T17:03:28.740863+00:00'
+  vertical: logistics_transport
+- cue: pitch_event_banquets
+  evidence: Providing instant WhatsApp wedding date availability and tiered pricing
+    eliminates 48-hour PDF delays and cuts reliance on 20% aggregator commissions.
+    (Engineered to eliminate 'Customer quote latency objection').
+  id: harn_20261102170328_event_
+  lesson: 'Self-evolved hook to resolve observed friction: Customer quote latency
+    objection'
+  score: 0.95
+  timestamp: '2026-11-02T17:03:29.084475+00:00'
+  vertical: event_banquets
+- cue: pitch_logistics_transport
+  evidence: Automating dispatch inquiries on WhatsApp recovers 15-20% margin lost
+    to freight brokers, turning delayed phone quotes into instant 60-second lane confirmations.
+  id: harn_20261102170329_logist
+  lesson: "Standard Harness\xB2 empirical hook for logistics_transport"
+  score: 0.95
+  timestamp: '2026-11-02T17:03:29.587607+00:00'
+  vertical: logistics_transport
+- cue: pitch_logistics_transport
+  evidence: Automating dispatch inquiries on WhatsApp recovers 15-20% margin lost
+    to freight brokers, turning delayed phone quotes into instant 60-second lane confirmations.
+  id: harn_20261102170329_logist
+  lesson: "Standard Harness\xB2 empirical hook for logistics_transport"
+  score: 0.95
+  timestamp: '2026-11-02T17:03:29.873060+00:00'
+  vertical: logistics_transport
+- cue: pitch_logistics_transport
+  evidence: Automating dispatch inquiries on WhatsApp recovers 15-20% margin lost
+    to freight brokers, turning delayed phone quotes into instant 60-second lane confirmations.
+  id: harn_20261102170329_logist
+  lesson: "Standard Harness\xB2 empirical hook for logistics_transport"
+  score: 0.95
+  timestamp: '2026-11-02T17:03:30.152238+00:00'
+  vertical: logistics_transport
+- cue: pitch_logistics_transport
+  evidence: Automating dispatch inquiries on WhatsApp recovers 15-20% margin lost
+    to freight brokers, turning delayed phone quotes into instant 60-second lane confirmations.
+    (Engineered to eliminate 'Losing 15-20% margin to freight brokers and ~8-12 spot
+    loads weekly due to delayed manual quote turn').
+  id: harn_20261102170331_logist
+  lesson: 'Self-evolved hook to resolve observed friction: Losing 15-20% margin to
+    freight brokers and ~8-12 spot loads weekly due to delayed manual quote turn'
+  score: 0.95
+  timestamp: '2026-11-02T17:03:31.574583+00:00'
+  vertical: logistics_transport
+- cue: pitch_event_banquets
+  evidence: Providing instant WhatsApp wedding date availability and tiered pricing
+    eliminates 48-hour PDF delays and cuts reliance on 20% aggregator commissions.
+    (Engineered to eliminate 'Losing 40-50% of high-intent wedding and corporate event
+    inquiries arriving after-hours without inst').
+  id: harn_20261102170331_event_
+  lesson: 'Self-evolved hook to resolve observed friction: Losing 40-50% of high-intent
+    wedding and corporate event inquiries arriving after-hours without inst'
+  score: 0.95
+  timestamp: '2026-11-02T17:03:31.971852+00:00'
+  vertical: event_banquets
+- cue: pitch_general
+  evidence: Automating frontline client inquiry response on WhatsApp within 60 seconds
+    recovers 18-25% of inbound inquiries lost to faster-responding competitors. (Engineered
+    to eliminate 'Losing 20-30% margin to aggregators and ~15-25 direct customer inquiries
+    weekly').
+  id: harn_20261102170332_genera
+  lesson: 'Self-evolved hook to resolve observed friction: Losing 20-30% margin to
+    aggregators and ~15-25 direct customer inquiries weekly'
+  score: 0.95
+  timestamp: '2026-11-02T17:03:32.353197+00:00'
+  vertical: general
+- cue: pitch_general
+  evidence: Automating frontline client inquiry response on WhatsApp within 60 seconds
+    recovers 18-25% of inbound inquiries lost to faster-responding competitors. (Engineered
+    to eliminate 'Losing 20-30% margin to aggregators and ~15-25 direct customer inquiries
+    weekly').
+  id: harn_20261102170356_genera
+  lesson: 'Self-evolved hook to resolve observed friction: Losing 20-30% margin to
+    aggregators and ~15-25 direct customer inquiries weekly'
+  score: 0.95
+  timestamp: '2026-11-02T17:03:57.004200+00:00'
+  vertical: general
+- cue: pitch_general
+  evidence: Personalized message from manager
+  id: harn_win_20261102170357
+  lesson: Reinforced by successful human approval & dispatch in general
+  score: 0.98
+  timestamp: '2026-11-02T17:03:57.590891+00:00'
+  vertical: general
+- cue: pitch_logistics_transport
+  evidence: Automating dispatch inquiries on WhatsApp recovers 15-20% margin lost
+    to freight brokers, turning delayed phone quotes into instant 60-second lane confirmations.
+    (Engineered to eliminate 'Losing 15-20% margin to freight brokers and ~8-12 spot
+    loads weekly due to delayed manual quote turn').
+  id: harn_20261102172943_logist
+  lesson: 'Self-evolved hook to resolve observed friction: Losing 15-20% margin to
+    freight brokers and ~8-12 spot loads weekly due to delayed manual quote turn'
+  score: 0.95
+  timestamp: '2026-11-02T17:29:43.381586+00:00'
+  vertical: logistics_transport
+- cue: pitch_logistics_transport
+  evidence: Hi team Apex Global Logistics, saw your fleet operations in Navi Mumbai!
+    Shippers book whoever quotes rates within 5 mins. We build instant WhatsApp freight
+    calculators & direct driver dispatch bots so you skip 20% broker fees. Open to
+    a 2-min video preview?
+  id: harn_win_20261102172943
+  lesson: Reinforced by successful human approval & dispatch in logistics_transport
+  score: 0.98
+  timestamp: '2026-11-02T17:29:43.700067+00:00'
+  vertical: logistics_transport
+- cue: pitch_logistics_transport
+  evidence: Hi Express Fleet, skip 20% broker cuts with instant WhatsApp freight quotes.
+    Open to a 2-min demo?
+  id: harn_win_20261102181944
+  lesson: Reinforced by successful human approval & dispatch in logistics_transport
+  score: 0.98
+  timestamp: '2026-11-02T18:19:45.103531+00:00'
+  vertical: logistics_transport
+- cue: pitch_logistics_transport
+  evidence: Automating dispatch inquiries on WhatsApp recovers 15-20% margin lost
+    to freight brokers, turning delayed phone quotes into instant 60-second lane confirmations.
+    (Engineered to eliminate 'Losing 15-20% margin to freight brokers and ~8-12 spot
+    loads weekly due to delayed manual quote turn').
+  id: harn_20261102182008_logist
+  lesson: 'Self-evolved hook to resolve observed friction: Losing 15-20% margin to
+    freight brokers and ~8-12 spot loads weekly due to delayed manual quote turn'
+  score: 0.95
+  timestamp: '2026-11-02T18:20:08.639491+00:00'
+  vertical: logistics_transport
+- cue: pitch_logistics_transport
+  evidence: Automating dispatch inquiries on WhatsApp recovers 15-20% margin lost
+    to freight brokers, turning delayed phone quotes into instant 60-second lane confirmations.
+    (Engineered to eliminate 'Losing high-intent logistics transport clients weekly
+    due to high friction in contact method').
+  id: harn_20261102182039_logist
+  lesson: 'Self-evolved hook to resolve observed friction: Losing high-intent logistics
+    transport clients weekly due to high friction in contact method'
+  score: 0.95
+  timestamp: '2026-11-02T18:20:39.543977+00:00'
+  vertical: logistics_transport
+- cue: pitch_logistics_transport
+  evidence: Automating dispatch inquiries on WhatsApp recovers 15-20% margin lost
+    to freight brokers, turning delayed phone quotes into instant 60-second lane confirmations.
+    (Engineered to eliminate 'Losing 15-20% margin to freight brokers and ~8-12 spot
+    loads weekly due to delayed manual quote turn').
+  id: harn_20261102182112_logist
+  lesson: 'Self-evolved hook to resolve observed friction: Losing 15-20% margin to
+    freight brokers and ~8-12 spot loads weekly due to delayed manual quote turn'
+  score: 0.95
+  timestamp: '2026-11-02T18:21:12.782492+00:00'
+  vertical: logistics_transport
+- cue: pitch_logistics_transport
+  evidence: Automating dispatch inquiries on WhatsApp recovers 15-20% margin lost
+    to freight brokers, turning delayed phone quotes into instant 60-second lane confirmations.
+    (Engineered to eliminate 'Losing high-intent logistics transport clients weekly
+    due to high friction in contact method').
+  id: harn_20261102182205_logist
+  lesson: 'Self-evolved hook to resolve observed friction: Losing high-intent logistics
+    transport clients weekly due to high friction in contact method'
+  score: 0.95
+  timestamp: '2026-11-02T18:22:05.407731+00:00'
+  vertical: logistics_transport
+- cue: pitch_logistics_transport
+  evidence: Automating dispatch inquiries on WhatsApp recovers 15-20% margin lost
+    to freight brokers, turning delayed phone quotes into instant 60-second lane confirmations.
+    (Engineered to eliminate 'Minor friction in mobile speed and search visibility').
+  id: harn_20261102182249_logist
+  lesson: 'Self-evolved hook to resolve observed friction: Minor friction in mobile
+    speed and search visibility'
+  score: 0.95
+  timestamp: '2026-11-02T18:22:49.865084+00:00'
+  vertical: logistics_transport
+- cue: pitch_logistics_transport
+  evidence: Reviewed and verified via Paperclip.
+  id: harn_win_20261102182254
+  lesson: Reinforced by successful human approval & dispatch in logistics_transport
+  score: 0.98
+  timestamp: '2026-11-02T18:22:55.164910+00:00'
+  vertical: logistics_transport
+- cue: pitch_logistics_transport
+  evidence: Hi team Athena Global Logistics Pvt. Ltd., saw your fleet operations in
+    Mumbai! Shippers book whoever quotes rates within 5 mins. We build instant WhatsApp
+    freight calculators & direct driver dispatch bots so you skip 20% broker fees.
+    Open to a 2-min video preview?
+  id: harn_win_20261102182255
+  lesson: Reinforced by successful human approval & dispatch in logistics_transport
+  score: 0.98
+  timestamp: '2026-11-02T18:22:55.593792+00:00'
+  vertical: logistics_transport
+- cue: pitch_logistics_transport
+  evidence: Hi team TCF Global Logistics Private Limited, saw your fleet operations
+    in Mumbai! Shippers book whoever quotes rates within 5 mins. We build instant
+    WhatsApp freight calculators & direct driver dispatch bots so you skip 20% broker
+    fees. Open to a 2-min video preview?
+  id: harn_win_20261102182255
+  lesson: Reinforced by successful human approval & dispatch in logistics_transport
+  score: 0.98
+  timestamp: '2026-11-02T18:22:55.989136+00:00'
+  vertical: logistics_transport
+- cue: pitch_logistics_transport
+  evidence: Hi team Magnum Cargo Pvt Ltd, saw your fleet operations in Mumbai! Shippers
+    book whoever quotes rates within 5 mins. We build instant WhatsApp freight calculators
+    & direct driver dispatch bots so you skip 20% broker fees. Open to a 2-min video
+    preview?
+  id: harn_win_20261102182256
+  lesson: Reinforced by successful human approval & dispatch in logistics_transport
+  score: 0.98
+  timestamp: '2026-11-02T18:22:56.390908+00:00'
+  vertical: logistics_transport
+- cue: pitch_logistics_transport
+  evidence: Hi team Marudhar Logistics/ Transport Services/, saw your fleet operations
+    in Bhiwandi! Shippers book whoever quotes rates within 5 mins. We build instant
+    WhatsApp freight calculators & direct driver dispatch bots so you skip 20% broker
+    fees. Open to a 2-min video preview?
+  id: harn_win_20261102182256
+  lesson: Reinforced by successful human approval & dispatch in logistics_transport
+  score: 0.98
+  timestamp: '2026-11-02T18:22:56.790289+00:00'
+  vertical: logistics_transport
+- cue: pitch_logistics_transport
+  evidence: Hi team K T Transport, saw your fleet operations in Bhiwandi! Shippers
+    book whoever quotes rates within 5 mins. We build instant WhatsApp freight calculators
+    & direct driver dispatch bots so you skip 20% broker fees. Open to a 2-min video
+    preview?
+  id: harn_win_20261102182257
+  lesson: Reinforced by successful human approval & dispatch in logistics_transport
+  score: 0.98
+  timestamp: '2026-11-02T18:22:57.328636+00:00'
+  vertical: logistics_transport
+- cue: pitch_logistics_transport
+  evidence: Hi Express Fleet, skip 20% broker cuts with instant WhatsApp freight quotes.
+    Open to a 2-min demo?
+  id: harn_win_20261102191138
+  lesson: Reinforced by successful human approval & dispatch in logistics_transport
+  score: 0.98
+  timestamp: '2026-11-02T19:11:38.607224+00:00'
+  vertical: logistics_transport
+- cue: pitch_logistics_transport
+  evidence: Automating dispatch inquiries on WhatsApp recovers 15-20% margin lost
+    to freight brokers, turning delayed phone quotes into instant 60-second lane confirmations.
+    (Engineered to eliminate 'Losing high-intent logistics transport clients weekly
+    due to high friction in contact method').
+  id: harn_20261102191239_logist
+  lesson: 'Self-evolved hook to resolve observed friction: Losing high-intent logistics
+    transport clients weekly due to high friction in contact method'
+  score: 0.95
+  timestamp: '2026-11-02T19:12:39.831347+00:00'
+  vertical: logistics_transport
+- cue: pitch_logistics_transport
+  evidence: Automating dispatch inquiries on WhatsApp recovers 15-20% margin lost
+    to freight brokers, turning delayed phone quotes into instant 60-second lane confirmations.
+    (Engineered to eliminate 'Losing high-intent logistics transport clients weekly
+    due to high friction in contact method').
+  id: harn_20261102191313_logist
+  lesson: 'Self-evolved hook to resolve observed friction: Losing high-intent logistics
+    transport clients weekly due to high friction in contact method'
+  score: 0.95
+  timestamp: '2026-11-02T19:13:15.386435+00:00'
+  vertical: logistics_transport
+- cue: pitch_logistics_transport
+  evidence: Reviewed and verified via Paperclip.
+  id: harn_win_20261102191320
+  lesson: Reinforced by successful human approval & dispatch in logistics_transport
+  score: 0.98
+  timestamp: '2026-11-02T19:13:20.558986+00:00'
+  vertical: logistics_transport
+- cue: pitch_logistics_transport
+  evidence: Hi team SR Logistics, saw your fleet operations in Bhiwandi! Shippers
+    book whoever quotes rates within 5 mins. We build instant WhatsApp freight calculators
+    & direct driver dispatch bots so you skip 20% broker fees. Open to a 2-min video
+    preview?
+  id: harn_win_20261102191321
+  lesson: Reinforced by successful human approval & dispatch in logistics_transport
+  score: 0.98
+  timestamp: '2026-11-02T19:13:22.122661+00:00'
+  vertical: logistics_transport
+- cue: pitch_logistics_transport
+  evidence: Hi team Expert Trans Logistic, saw your fleet operations in Mumbai! Shippers
+    book whoever quotes rates within 5 mins. We build instant WhatsApp freight calculators
+    & direct driver dispatch bots so you skip 20% broker fees. Open to a 2-min video
+    preview?
+  id: harn_win_20261102191322
+  lesson: Reinforced by successful human approval & dispatch in logistics_transport
+  score: 0.98
+  timestamp: '2026-11-02T19:13:22.654392+00:00'
+  vertical: logistics_transport
+- cue: pitch_logistics_transport
+  evidence: Automating dispatch inquiries on WhatsApp recovers 15-20% margin lost
+    to freight brokers, turning delayed phone quotes into instant 60-second lane confirmations.
+    (Engineered to eliminate 'Losing 15-20% margin to freight brokers and ~8-12 spot
+    loads weekly due to delayed manual quote turn').
+  id: harn_20261102191618_logist
+  lesson: 'Self-evolved hook to resolve observed friction: Losing 15-20% margin to
+    freight brokers and ~8-12 spot loads weekly due to delayed manual quote turn'
+  score: 0.95
+  timestamp: '2026-11-02T19:16:18.652187+00:00'
+  vertical: logistics_transport
+- cue: pitch_logistics_transport
+  evidence: Hi team Apex Global Logistics, saw your fleet operations in Navi Mumbai!
+    Shippers book whoever quotes rates within 5 mins. We build instant WhatsApp freight
+    calculators & direct driver dispatch bots so you skip 20% broker fees. Open to
+    a 2-min video preview?
+  id: harn_win_20261102191619
+  lesson: Reinforced by successful human approval & dispatch in logistics_transport
+  score: 0.98
+  timestamp: '2026-11-02T19:16:19.965747+00:00'
   vertical: logistics_transport

@@ -128,7 +128,7 @@
         "finding": "Valid HTTPS encryption verified",
         "evidence_type": "live_http_probe",
         "proof_reference": "https://www.krahejacorp.com/",
-        "reproducibility_command": null,
+        "reproducibility_command": "curl -Iv --tlsv1.3 https://www.krahejacorp.com/ || openssl s_client -connect www.krahejacorp.com:443",
         "is_verified": true,
         "pstack_status": "PROVEN_TRUE"
       },
@@ -148,7 +148,7 @@
         "finding": "Mobile viewport configured: True",
         "evidence_type": "dom_selector",
         "proof_reference": "meta[name='viewport']",
-        "reproducibility_command": null,
+        "reproducibility_command": "document.querySelector(\"meta[name='viewport']\")?.getAttribute('content') || 'none'",
         "is_verified": true,
         "pstack_status": "PROVEN_TRUE"
       },
@@ -158,7 +158,7 @@
         "finding": "Absence of 1-click WhatsApp lead CTA on landing view",
         "evidence_type": "dom_selector",
         "proof_reference": "a[href*='wa.me'], a[href*='whatsapp.com']",
-        "reproducibility_command": null,
+        "reproducibility_command": "document.querySelector(\"a[href*='wa.me'], a[href*='whatsapp.com']\")",
         "is_verified": true,
         "pstack_status": "PROVEN_TRUE"
       },
@@ -168,7 +168,7 @@
         "finding": "Live source citation: K Raheja Corp - Wikipedia",
         "evidence_type": "web_citation",
         "proof_reference": "https://en.wikipedia.org/wiki/K_Raheja_Corp",
-        "reproducibility_command": null,
+        "reproducibility_command": "web_search \"K Raheja Corp - Wikipedia\"",
         "is_verified": true,
         "pstack_status": "PROVEN_TRUE"
       },
@@ -178,7 +178,7 @@
         "finding": "Live source citation: K Raheja Corp: Find New & Upcoming Projects by K Raheja Corp",
         "evidence_type": "web_citation",
         "proof_reference": "https://www.magicbricks.com/K-Raheja-Corp-buid-4d423530313938",
-        "reproducibility_command": null,
+        "reproducibility_command": "web_search \"K Raheja Corp: Find New & Upcoming Projects by K Raheja Corp\"",
         "is_verified": true,
         "pstack_status": "PROVEN_TRUE"
       },
@@ -188,7 +188,7 @@
         "finding": "Live source citation: K Raheja Corp Projects in Mumbai - Square Yards",
         "evidence_type": "web_citation",
         "proof_reference": "https://www.squareyards.com/projects-by-k-raheja-corp-in-mumbai",
-        "reproducibility_command": null,
+        "reproducibility_command": "web_search \"K Raheja Corp Projects in Mumbai - Square Yards\"",
         "is_verified": true,
         "pstack_status": "PROVEN_TRUE"
       }
@@ -227,7 +227,7 @@
         }
       }
     ],
-    "verified_at": "2026-11-01T18:13:45.256818Z"
+    "verified_at": "2026-11-02T17:03:30.319511Z"
   },
   "handoff_trace": [
     {
@@ -377,5 +377,5 @@
     }
   ],
   "created_at": "2026-10-27T16:08:15.402430Z",
-  "updated_at": "2026-11-01T18:13:45.256940Z"
+  "updated_at": "2026-11-02T17:03:30.319643Z"
 }

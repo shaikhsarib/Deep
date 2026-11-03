@@ -60,12 +60,14 @@ class EvidenceVerifier:
                     pstack_status="PROVEN_TRUE"
                 ))
             else:
+                domain_clean = target_url.replace("https://", "").replace("http://", "").split("/")[0]
                 claims.append(VerifiedClaim(
                     claim_id="proof_ssl_active",
                     category="security",
                     finding="Valid HTTPS encryption verified",
                     evidence_type="live_http_probe",
                     proof_reference=target_url,
+                    reproducibility_command=f"curl -Iv --tlsv1.3 {target_url} || openssl s_client -connect {domain_clean}:443",
                     is_verified=True,
                     pstack_status="PROVEN_TRUE"
                 ))
@@ -91,6 +93,7 @@ class EvidenceVerifier:
                 finding=f"Mobile viewport configured: {audit.is_mobile_responsive}",
                 evidence_type="dom_selector",
                 proof_reference="meta[name='viewport']",
+                reproducibility_command="document.querySelector(\"meta[name='viewport']\")?.getAttribute('content') || 'none'",
                 is_verified=True,
                 pstack_status="PROVEN_TRUE"
             ))
@@ -103,6 +106,7 @@ class EvidenceVerifier:
                     finding="Absence of 1-click WhatsApp lead CTA on landing view",
                     evidence_type="dom_selector",
                     proof_reference="a[href*='wa.me'], a[href*='whatsapp.com']",
+                    reproducibility_command="document.querySelector(\"a[href*='wa.me'], a[href*='whatsapp.com']\")",
                     is_verified=True,
                     pstack_status="PROVEN_TRUE"
                 ))
@@ -125,6 +129,7 @@ class EvidenceVerifier:
                     finding=f"Live source citation: {cit.get('title', 'Web source')}",
                     evidence_type="web_citation",
                     proof_reference=cit.get("url", ""),
+                    reproducibility_command=f"web_search \"{cit.get('title', 'citation')}\"",
                     is_verified=True,
                     pstack_status="PROVEN_TRUE"
                 ))

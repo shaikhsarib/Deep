@@ -115,7 +115,7 @@
         "finding": "Valid HTTPS encryption verified",
         "evidence_type": "live_http_probe",
         "proof_reference": "https://www.tciexpress.in/",
-        "reproducibility_command": null,
+        "reproducibility_command": "curl -Iv --tlsv1.3 https://www.tciexpress.in/ || openssl s_client -connect www.tciexpress.in:443",
         "is_verified": true,
         "pstack_status": "PROVEN_TRUE"
       },
@@ -135,7 +135,7 @@
         "finding": "Mobile viewport configured: True",
         "evidence_type": "dom_selector",
         "proof_reference": "meta[name='viewport']",
-        "reproducibility_command": null,
+        "reproducibility_command": "document.querySelector(\"meta[name='viewport']\")?.getAttribute('content') || 'none'",
         "is_verified": true,
         "pstack_status": "PROVEN_TRUE"
       },
@@ -145,7 +145,7 @@
         "finding": "Absence of 1-click WhatsApp lead CTA on landing view",
         "evidence_type": "dom_selector",
         "proof_reference": "a[href*='wa.me'], a[href*='whatsapp.com']",
-        "reproducibility_command": null,
+        "reproducibility_command": "document.querySelector(\"a[href*='wa.me'], a[href*='whatsapp.com']\")",
         "is_verified": true,
         "pstack_status": "PROVEN_TRUE"
       },
@@ -155,7 +155,7 @@
         "finding": "Live source citation: TCI Express Limited - IndiaMART",
         "evidence_type": "web_citation",
         "proof_reference": "https://www.indiamart.com/tci-expre-navi-mumbai/",
-        "reproducibility_command": null,
+        "reproducibility_command": "web_search \"TCI Express Limited - IndiaMART\"",
         "is_verified": true,
         "pstack_status": "PROVEN_TRUE"
       },
@@ -165,7 +165,7 @@
         "finding": "Live source citation: Tci Express Limited, Sector 1, Nerul, Navi Mumbai - magicpin",
         "evidence_type": "web_citation",
         "proof_reference": "https://magicpin.in/Navi-Mumbai/Sector-1/Travel-Agency/Tci-Express-Limited/store/b6ac7b",
-        "reproducibility_command": null,
+        "reproducibility_command": "web_search \"Tci Express Limited, Sector 1, Nerul, Navi Mumbai - magicpin\"",
         "is_verified": true,
         "pstack_status": "PROVEN_TRUE"
       },
@@ -175,7 +175,7 @@
         "finding": "Live source citation: TCI EXPRESS LIMITED - Transportation service - Mumbai - Maharashtra ...",
         "evidence_type": "web_citation",
         "proof_reference": "https://yappe.in/maharashtra/mumbai/tci-express-limited/1377126",
-        "reproducibility_command": null,
+        "reproducibility_command": "web_search \"TCI EXPRESS LIMITED - Transportation service - Mumbai - Maharashtra ...\"",
         "is_verified": true,
         "pstack_status": "PROVEN_TRUE"
       }
@@ -214,7 +214,7 @@
         }
       }
     ],
-    "verified_at": "2026-11-01T18:13:45.225878Z"
+    "verified_at": "2026-11-02T17:03:30.298321Z"
   },
   "handoff_trace": [
     {
@@ -366,5 +366,5 @@
     }
   ],
   "created_at": "2026-10-27T16:03:58.194790Z",
-  "updated_at": "2026-11-01T18:13:45.227135Z"
+  "updated_at": "2026-11-02T17:03:30.298458Z"
 }

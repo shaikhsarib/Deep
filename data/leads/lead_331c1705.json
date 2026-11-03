@@ -1,0 +1,302 @@
+{
+  "id": "lead_331c1705",
+  "profile": {
+    "company_name": "Expert Trans Logistic",
+    "business_type": "freight logistics",
+    "location": "Mumbai",
+    "phone": "+91 89760 67620",
+    "email": null,
+    "website": "http://www.experttranslogistic.com/",
+    "has_website": true,
+    "address": "\nGala no, 07, 90 Feet Rd, near Mumbai Metro transport, opp. ganesh mandir, Lokmanya Tilak Nagar, Saki Naka, Mumbai, Maharashtra 400072",
+    "rating": "4.9",
+    "source": "google_maps",
+    "source_url": "https://www.google.com/maps/place/Expert+Trans+Logistic/data=!4m7!3m6!1s0x3be7c9e0fc07f923:0x9be2bfe75c393bbe!8m2!3d19.1019323!4d72.8881447!16s%2Fg%2F11j2xjt4_8!19sChIJI_kH_ODJ5zsRvjs5XOe_4ps?authuser=0&hl=en&g_ep=EgoyMDI2MTAyOC4wIJJjKgBIAVAD&rclk=1",
+    "vertical": "logistics_transport",
+    "pain_points": [],
+    "growth_goals": [],
+    "created_at": "2026-11-02T16:34:15.625295Z"
+  },
+  "status": "contacted",
+  "audit": {
+    "load_time_seconds": 1.93,
+    "has_ssl": false,
+    "is_mobile_responsive": true,
+    "has_whatsapp_widget": true,
+    "has_online_booking": false,
+    "key_flaws": [
+      "Missing SSL certificate (browsers warn visitors: 'Not Secure')",
+      "No 1-click online booking or reservation system found"
+    ],
+    "quantified_loss": "Losing high-intent logistics transport clients weekly due to high friction in contact method",
+    "screenshot_path": "data/screenshots/ExpertTransLogistic.png",
+    "audited_at": "2026-11-02T19:12:39.235646Z"
+  },
+  "draft": {
+    "whatsapp_message": "Hi team Expert Trans Logistic, saw your fleet operations in Mumbai! Shippers book whoever quotes rates within 5 mins. We build instant WhatsApp freight calculators & direct driver dispatch bots so you skip 20% broker fees. Open to a 2-min video preview?",
+    "email_subject": "Automating direct shipper quotes for Expert Trans Logistic (skip 18% broker cuts)",
+    "email_body": "Hi Team Expert Trans Logistic,\n\nI was checking out commercial freight and transport operators in Mumbai and came across your business.\n\nThe #1 bottleneck in freight right now is quote turnaround time: shippers searching for trucks request 3 quotes and book the first one who responds within 15 minutes. We build direct WhatsApp freight rate estimators and automated dispatch bots that capture shippers instantly and help fleet operators bypass 15-25% broker commissions.\n\nWould you be open to a 5-minute screen share this week to see how this works for your lane routes?\n\nWarm regards,\nFreight Automation & Tech Team",
+    "pain_points": [
+      "Missing SSL certificate (browsers warn visitors: 'Not Secure')",
+      "No 1-click online booking or reservation system found"
+    ],
+    "business_loss": "Losing 15-20% margin to freight brokers and ~8-12 spot loads weekly due to delayed manual quote turnaround"
+  },
+  "contact_name": null,
+  "contact_email": null,
+  "budget": null,
+  "interest_level": null,
+  "summary": "Hi team Expert Trans Logistic, saw your fleet operations in Mumbai! Shippers book whoever quotes rates within 5 mins. We build instant WhatsApp freight calculators & direct driver dispatch bots so you skip 20% broker fees. Open to a 2-min video preview?",
+  "qualified": true,
+  "contacted_channels": [
+    "whatsapp"
+  ],
+  "last_contacted_at": "2026-11-02T19:13:22.341234Z",
+  "conversation_history": [],
+  "meeting_link": null,
+  "research": {
+    "market_overview": "Competitive local market for freight logistics services in Mumbai.",
+    "target_demographics": "Local consumers in Mumbai seeking fast, mobile-friendly services.",
+    "top_customer_complaints": [
+      "High aggregator commissions passed onto consumers",
+      "Unanswered inquiries after business closing hours"
+    ],
+    "competitors": [
+      {
+        "competitor_name": "Top freight logistics in Mumbai",
+        "strength": "High Google review volume",
+        "weakness": "Missing automated WhatsApp lead capture"
+      }
+    ],
+    "untapped_revenue_opportunities": [
+      "Direct-to-consumer VIP loyalty broadcasts on WhatsApp",
+      "1-click mobile appointment booking"
+    ],
+    "recommended_hook": "Help Expert Trans Logistic capture direct customer orders without 20-30% platform cuts.",
+    "citations": [
+      {
+        "title": "Expert Trans Logistic Reviews, Sakinaka, Mumbai - Justdial",
+        "url": "https://www.justdial.com/Mumbai/Expert-Trans-Logistic-Near-Sai-Parcel-Service-Next-to-Prema-Tea-Opp-Tohfa-Hotel-Sakinaka/022PXX22-XX22-200911161316-D4M5_BZDET/reviews",
+        "snippet": "Continuous feedback also helps companies improve services and stay aligned with customer needs. Expert Trans Logistic has received ratings from 4.9 users. These insights may help you evaluate Expert Trans Logistic and understand its services better i"
+      },
+      {
+        "title": "Expert Trans Logistic - Moving Solutions",
+        "url": "https://www.movingsolutions.in/company/expert-trans-logistic",
+        "snippet": "About Company Expert Trans Logistic, based in Mumbai, is a leading logistics company that has established itself as a reliable and efficient partner in the transportation industry. With a strong foothold in the bustling commercial landscape of Mumbai"
+      },
+      {
+        "title": "Expert Trans Logistic - Transporters In Mumbai - Mumbai Directory",
+        "url": "https://www.mumbai-directory.in/mumbai/expert-trans-logistic",
+        "snippet": "Expert Trans Logistic - Transporters In Mumbai. I recently transported my BMW G310RR from Mumbai to Udupi, and the entire experience was smooth and hassle-free. The vehicle was handled with great care, ensuring proper safety throughout the journey. I"
+      },
+      {
+        "title": "Freight Forwarder Platform - Freight Forwarders Platform",
+        "url": "https://www.bing.com/aclick?ld=e8X1q49dmiSBZlCPnTPE8pkDVUCUx0XtnlZcpokL4uhFC9n5mAF40ZMgfRrfMCFkHZ6-qZocS-kXnC3ez3ucl7h5WbUELB15itb9ZoJwz-o7yiIWJWRgd18rYHMDIyg1a_kxnErjci0AZZA4TN5ezITRyevEBvYJ5snRd50HJxmYwQjC5UetAa_45i8PmJMJ6p1EtUv2b0oH7Rf7kApIWcA5K9uS8&u=aHR0cHMlM2ElMmYlMmZ3d3cuamN0cmFucy5jb20lMmZlbiUyZnNlbSUzZiUzZnByaklkJTNkMjkzMzI0JTI2bXNjbGtpZCUzZGJkMDNiNjIwODFiYzEzMzgxZmI0ZGNjODYxYzgzMzA1&rlid=bd03b62081bc13381fb4dcc861c83305",
+        "snippet": "We provides reliable freight forwarders directory to global partners. JCtrans attract 10,000 customers engaging in online business negotiations everyday. Service Categories, Freight Forwarding, Dispute Resolution, Payment Solutions and more"
+      },
+      {
+        "title": "Top 10 best Logistics Companies in Mumbai [2026 list]",
+        "url": "https://godamwale.com/logistics-companies-in-mumbai/",
+        "snippet": "Aug 3, 2026 · The best logistics companies according to all your logistics needs and challenges are— Godamwale and others are frequently ranked among the best for warehousing, 3PL, express delivery, and freight forwarding."
+      },
+      {
+        "title": "15 Best Logistics Companies in Mumbai (2026) Compared List",
+        "url": "https://7knetwork.com/logistics-companies-in-mumbai/",
+        "snippet": "Jul 29, 2026 · Looking for logistics companies in Mumbai? Compare 15 top firms in 2026 by cargo type, warehousing capability & last-mile coverage area."
+      }
+    ],
+    "evidence_verified": true,
+    "treg_enrichment": {
+      "lead_id": "Expert Trans Logistic",
+      "owner_or_director_name": "Managing Director / Proprietor",
+      "verified_whatsapp": true,
+      "gstin_or_registration": null,
+      "tools_invoked": [
+        "verify_whatsapp",
+        "search_director"
+      ],
+      "total_tool_cost_usd": 0.0
+    }
+  },
+  "pstack_proof": {
+    "business_name": "Expert Trans Logistic",
+    "total_claims": 6,
+    "verified_claims": 6,
+    "proof_score_percentage": 100.0,
+    "claims": [
+      {
+        "claim_id": "proof_ssl_missing",
+        "category": "security",
+        "finding": "Site lacks valid TLS/HTTPS or redirects unencrypted",
+        "evidence_type": "live_http_probe",
+        "proof_reference": "http://www.experttranslogistic.com/",
+        "reproducibility_command": "curl -Iv http://www.experttranslogistic.com/",
+        "is_verified": true,
+        "pstack_status": "PROVEN_TRUE"
+      },
+      {
+        "claim_id": "proof_page_speed",
+        "category": "performance",
+        "finding": "Observed Time-to-First-Byte + DOM load: 1.93s",
+        "evidence_type": "live_http_probe",
+        "proof_reference": "http://www.experttranslogistic.com/",
+        "reproducibility_command": "curl -o /dev/null -s -w 'Time: %{time_total}s' http://www.experttranslogistic.com/",
+        "is_verified": true,
+        "pstack_status": "OPTIMAL"
+      },
+      {
+        "claim_id": "proof_mobile_viewport",
+        "category": "conversion",
+        "finding": "Mobile viewport configured: True",
+        "evidence_type": "dom_selector",
+        "proof_reference": "meta[name='viewport']",
+        "reproducibility_command": "document.querySelector(\"meta[name='viewport']\")?.getAttribute('content') || 'none'",
+        "is_verified": true,
+        "pstack_status": "PROVEN_TRUE"
+      },
+      {
+        "claim_id": "proof_citation_1",
+        "category": "market_intelligence",
+        "finding": "Live source citation: Expert Trans Logistic Reviews, Sakinaka, Mumbai - Justdial",
+        "evidence_type": "web_citation",
+        "proof_reference": "https://www.justdial.com/Mumbai/Expert-Trans-Logistic-Near-Sai-Parcel-Service-Next-to-Prema-Tea-Opp-Tohfa-Hotel-Sakinaka/022PXX22-XX22-200911161316-D4M5_BZDET/reviews",
+        "reproducibility_command": "web_search \"Expert Trans Logistic Reviews, Sakinaka, Mumbai - Justdial\"",
+        "is_verified": true,
+        "pstack_status": "PROVEN_TRUE"
+      },
+      {
+        "claim_id": "proof_citation_2",
+        "category": "market_intelligence",
+        "finding": "Live source citation: Expert Trans Logistic - Moving Solutions",
+        "evidence_type": "web_citation",
+        "proof_reference": "https://www.movingsolutions.in/company/expert-trans-logistic",
+        "reproducibility_command": "web_search \"Expert Trans Logistic - Moving Solutions\"",
+        "is_verified": true,
+        "pstack_status": "PROVEN_TRUE"
+      },
+      {
+        "claim_id": "proof_citation_3",
+        "category": "market_intelligence",
+        "finding": "Live source citation: Expert Trans Logistic - Transporters In Mumbai - Mumbai Directory",
+        "evidence_type": "web_citation",
+        "proof_reference": "https://www.mumbai-directory.in/mumbai/expert-trans-logistic",
+        "reproducibility_command": "web_search \"Expert Trans Logistic - Transporters In Mumbai - Mumbai Directory\"",
+        "is_verified": true,
+        "pstack_status": "PROVEN_TRUE"
+      }
+    ],
+    "artifacts": [
+      {
+        "artifact_type": "mobile_screenshot",
+        "uri_or_path": "data/screenshots/ExpertTransLogistic.png",
+        "verified": true,
+        "details": {
+          "viewport": "390x844 iPhone 14"
+        }
+      },
+      {
+        "artifact_type": "search_citation",
+        "uri_or_path": "https://www.justdial.com/Mumbai/Expert-Trans-Logistic-Near-Sai-Parcel-Service-Next-to-Prema-Tea-Opp-Tohfa-Hotel-Sakinaka/022PXX22-XX22-200911161316-D4M5_BZDET/reviews",
+        "verified": true,
+        "details": {
+          "title": "Expert Trans Logistic Reviews, Sakinaka, Mumbai - Justdial"
+        }
+      },
+      {
+        "artifact_type": "search_citation",
+        "uri_or_path": "https://www.movingsolutions.in/company/expert-trans-logistic",
+        "verified": true,
+        "details": {
+          "title": "Expert Trans Logistic - Moving Solutions"
+        }
+      },
+      {
+        "artifact_type": "search_citation",
+        "uri_or_path": "https://www.mumbai-directory.in/mumbai/expert-trans-logistic",
+        "verified": true,
+        "details": {
+          "title": "Expert Trans Logistic - Transporters In Mumbai - Mumbai Directory"
+        }
+      }
+    ],
+    "verified_at": "2026-11-02T19:12:39.271758Z"
+  },
+  "handoff_trace": [
+    {
+      "handoff_id": "hnd_fb44f7a3",
+      "source_agent": "scout_agent",
+      "target_agent": "researcher_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-02T19:11:39.095456Z",
+      "status": "validated",
+      "payload": {
+        "company_name": "Expert Trans Logistic",
+        "business_type": "freight logistics"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_a4d81f50",
+      "source_agent": "researcher_agent",
+      "target_agent": "auditor_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-02T19:12:09.810482Z",
+      "status": "initiated",
+      "payload": {
+        "website": "http://www.experttranslogistic.com/",
+        "company_name": "Expert Trans Logistic"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_9d10528c",
+      "source_agent": "auditor_agent",
+      "target_agent": "copywriter_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-02T19:12:39.260530Z",
+      "status": "validated",
+      "payload": {
+        "key_flaws": [
+          "Missing SSL certificate (browsers warn visitors: 'Not Secure')",
+          "No 1-click online booking or reservation system found"
+        ],
+        "quantified_loss": "Losing high-intent logistics transport clients weekly due to high friction in contact method"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_8cf01638",
+      "source_agent": "copywriter_agent",
+      "target_agent": "paperclip_approval_gate",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-02T19:12:40.041530Z",
+      "status": "validated",
+      "payload": {
+        "whatsapp_message": "Hi team Expert Trans Logistic, saw your fleet operations in Mumbai! Shippers book whoever quotes rates within 5 mins. We build instant WhatsApp freight calculators & direct driver dispatch bots so you skip 20% broker fees. Open to a 2-min video preview?",
+        "qualified": true
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_d8e8325a",
+      "source_agent": "paperclip_approval_gate",
+      "target_agent": "hermes_closer_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-02T19:13:22.341288Z",
+      "status": "validated",
+      "payload": {
+        "company_name": "Expert Trans Logistic",
+        "channel": "whatsapp",
+        "pitch_sent": "Hi team Expert Trans Logistic, saw your fleet operations in Mumbai! Shippers book whoever quotes rates within 5 mins. We build instant WhatsApp freight calculators & direct driver dispatch bots so you skip 20% broker fees. Open to a 2-min video preview?"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    }
+  ],
+  "created_at": "2026-11-02T16:34:33.880163Z",
+  "updated_at": "2026-11-02T19:13:22.885096Z"
+}

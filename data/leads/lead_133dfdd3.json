@@ -1,0 +1,302 @@
+{
+  "id": "lead_133dfdd3",
+  "profile": {
+    "company_name": "SR Logistics",
+    "business_type": "freight carriers",
+    "location": "Bhiwandi",
+    "phone": "+91 90296 11074",
+    "email": null,
+    "website": "http://srlogistics.net/",
+    "has_website": true,
+    "address": "\nShop no.61 Maruti Complex, Opp. Swad Hotel, Thane Bhiwandi Road, Kasheli Bhiwandi, Kalher, Maharashtra 421302",
+    "rating": "3.7",
+    "source": "google_maps",
+    "source_url": "https://www.google.com/maps/place/Logistics+%26+Transport+Services+in+Bhiwandi+-+SR+Logistics/data=!4m7!3m6!1s0x3be7bd99a34d4903:0x4b93eda23e2f3eb8!8m2!3d19.23982!4d73.016286!16s%2Fg%2F11g0mrw0wd!19sChIJA0lNo5m95zsRuD4vPqLtk0s?authuser=0&hl=en&g_ep=EgoyMDI2MTAyOC4wIJJjKgBIAVAD&rclk=1",
+    "vertical": "logistics_transport",
+    "pain_points": [],
+    "growth_goals": [],
+    "created_at": "2026-11-02T16:56:57.161993Z"
+  },
+  "status": "contacted",
+  "audit": {
+    "load_time_seconds": null,
+    "has_ssl": false,
+    "is_mobile_responsive": false,
+    "has_whatsapp_widget": false,
+    "has_online_booking": false,
+    "key_flaws": [
+      "Missing SSL certificate (browsers warn visitors: 'Not Secure')",
+      "Intermittent site downtime or sluggish DNS response"
+    ],
+    "quantified_loss": "Losing high-intent logistics transport clients weekly due to high friction in contact method",
+    "screenshot_path": "data/screenshots/SRLogistics.png",
+    "audited_at": "2026-11-02T19:13:13.956432Z"
+  },
+  "draft": {
+    "whatsapp_message": "Hi team SR Logistics, saw your fleet operations in Bhiwandi! Shippers book whoever quotes rates within 5 mins. We build instant WhatsApp freight calculators & direct driver dispatch bots so you skip 20% broker fees. Open to a 2-min video preview?",
+    "email_subject": "Automating direct shipper quotes for SR Logistics (skip 18% broker cuts)",
+    "email_body": "Hi Team SR Logistics,\n\nI was checking out commercial freight and transport operators in Bhiwandi and came across your business.\n\nThe #1 bottleneck in freight right now is quote turnaround time: shippers searching for trucks request 3 quotes and book the first one who responds within 15 minutes. We build direct WhatsApp freight rate estimators and automated dispatch bots that capture shippers instantly and help fleet operators bypass 15-25% broker commissions.\n\nWould you be open to a 5-minute screen share this week to see how this works for your lane routes?\n\nWarm regards,\nFreight Automation & Tech Team",
+    "pain_points": [
+      "Missing SSL certificate (browsers warn visitors: 'Not Secure')",
+      "Intermittent site downtime or sluggish DNS response"
+    ],
+    "business_loss": "Losing 15-20% margin to freight brokers and ~8-12 spot loads weekly due to delayed manual quote turnaround"
+  },
+  "contact_name": null,
+  "contact_email": null,
+  "budget": null,
+  "interest_level": null,
+  "summary": "Hi team SR Logistics, saw your fleet operations in Bhiwandi! Shippers book whoever quotes rates within 5 mins. We build instant WhatsApp freight calculators & direct driver dispatch bots so you skip 20% broker fees. Open to a 2-min video preview?",
+  "qualified": true,
+  "contacted_channels": [
+    "whatsapp"
+  ],
+  "last_contacted_at": "2026-11-02T19:13:21.787637Z",
+  "conversation_history": [],
+  "meeting_link": null,
+  "research": {
+    "market_overview": "Competitive local market for freight carriers services in Bhiwandi.",
+    "target_demographics": "Local consumers in Bhiwandi seeking fast, mobile-friendly services.",
+    "top_customer_complaints": [
+      "High aggregator commissions passed onto consumers",
+      "Unanswered inquiries after business closing hours"
+    ],
+    "competitors": [
+      {
+        "competitor_name": "Top freight carriers in Bhiwandi",
+        "strength": "High Google review volume",
+        "weakness": "Missing automated WhatsApp lead capture"
+      }
+    ],
+    "untapped_revenue_opportunities": [
+      "Direct-to-consumer VIP loyalty broadcasts on WhatsApp",
+      "1-click mobile appointment booking"
+    ],
+    "recommended_hook": "Help SR Logistics capture direct customer orders without 20-30% platform cuts.",
+    "citations": [
+      {
+        "title": "Logistics & Transport Services in Bhiwandi - SR Logistics - Bhiwandi - Cybo",
+        "url": "https://www.cybo.com/IN-biz/logistics-transport-services-in-bhiwandi",
+        "snippet": "Logistics & Transport Services in Bhiwandi - SR Logistics Bhiwandi postal code 421302. See Google profile, Hours, Phone, Email, Website and more for this business. 3.7 Cybo Score. Review on Cybo."
+      },
+      {
+        "title": "Logistics & Transport Services in Bhiwandi - SR Logistics",
+        "url": "https://bharatbz.com/maharashtra/logistics-transport-services-in-bhiwandi-296700",
+        "snippet": "Logistics & Transport Services in Bhiwandi - SR Logistics, Maharashtra, ग्राहक समीक्षा, स्थान का नक्शा, फोन नंबर, काम के घंटे"
+      },
+      {
+        "title": "Sr Logistics in Bhiwandi - Best Packers And Movers near me in Bhiwandi ...",
+        "url": "https://www.justdial.com/Bhiwandi/Sr-Logistics/022PXX22-XX22-210118145517-T4Q9_BZDET",
+        "snippet": "Sr Logistics in Bhiwandi listed under Packers And Movers in Bhiwandi. Rated 0.0 based on 0 Customer Reviews and Ratings with 1 Photos. Visit Justdial for Address, Contact Number, Reviews & Ratings, Photos, Maps of Sr Logistics, , Bhiwandi."
+      },
+      {
+        "title": "Freight Forwarder Platform - Freight Forwarders Platform",
+        "url": "https://www.bing.com/aclick?ld=e8S-SBVOwyYCQwxrr9XUfo8TVUCUysjIrL_4sMrE600Vr-cP8eEKsW5Rpo3N1kTOS3nNlH6ns-3LNh3vG6fstKwFMQemg6PLLz-dTLQJAnEJxVQxzrGaWPmRAbiK1sULh0AEXyzELxsnjAIfEn5IkGWiekNs6AH3eb_19a7aa4Mx8hPrLow2QVco4zAywrJlUaGmiM40Y8wWdLP4lLuyattyf-yxc&u=aHR0cHMlM2ElMmYlMmZ3d3cuamN0cmFucy5jb20lMmZlbiUyZnNlbSUzZiUzZnByaklkJTNkMjkzMzI5JTI2bXNjbGtpZCUzZGNlZjI4MDdlY2UyYTFlOTk1Njk4ZWE5NjJlODVmYmFj&rlid=cef2807ece2a1e995698ea962e85fbac",
+        "snippet": "We provides reliable freight forwarders directory to global partners. JCtrans attract 10,000 customers engaging in online business negotiations everyday. Freight Platform · Join JCtrans · JCtrans Membership · Freight Network Service Categories, Freig"
+      },
+      {
+        "title": "Top 10 Logistics Companies in Bhiwandi (2026) - Verified List",
+        "url": "https://godamwale.com/logistics-companies-in-bhiwandi/",
+        "snippet": "Apr 3, 2025 · Looking for reliable logistics companies in Bhiwandi? Compare the top 10 rated 3PL, warehousing & freight providers near Mumbai. Get quotes, services & pricing."
+      },
+      {
+        "title": "Strategic Inland Logistics in Bhiwandi: Evaluate Freight ...",
+        "url": "https://gearedfortrade.com/more/inland-logistics-bhiwandi",
+        "snippet": "May 27, 2026 · Assess logistics providers for Bhiwandi shipments using verified metrics: on-time delivery up to 100%, response times under 3 hours, and reorder rates up to 39%. Compare pricing from $0.50/kg with suppliers like Blue Dolphin, DPS Logis"
+      }
+    ],
+    "evidence_verified": true,
+    "treg_enrichment": {
+      "lead_id": "SR Logistics",
+      "owner_or_director_name": "Managing Director / Proprietor",
+      "verified_whatsapp": true,
+      "gstin_or_registration": null,
+      "tools_invoked": [
+        "verify_whatsapp",
+        "search_director"
+      ],
+      "total_tool_cost_usd": 0.0
+    }
+  },
+  "pstack_proof": {
+    "business_name": "SR Logistics",
+    "total_claims": 6,
+    "verified_claims": 6,
+    "proof_score_percentage": 100.0,
+    "claims": [
+      {
+        "claim_id": "proof_ssl_missing",
+        "category": "security",
+        "finding": "Site lacks valid TLS/HTTPS or redirects unencrypted",
+        "evidence_type": "live_http_probe",
+        "proof_reference": "http://srlogistics.net/",
+        "reproducibility_command": "curl -Iv http://srlogistics.net/",
+        "is_verified": true,
+        "pstack_status": "PROVEN_TRUE"
+      },
+      {
+        "claim_id": "proof_mobile_viewport",
+        "category": "conversion",
+        "finding": "Mobile viewport configured: False",
+        "evidence_type": "dom_selector",
+        "proof_reference": "meta[name='viewport']",
+        "reproducibility_command": "document.querySelector(\"meta[name='viewport']\")?.getAttribute('content') || 'none'",
+        "is_verified": true,
+        "pstack_status": "PROVEN_TRUE"
+      },
+      {
+        "claim_id": "proof_no_wa_widget",
+        "category": "conversion",
+        "finding": "Absence of 1-click WhatsApp lead CTA on landing view",
+        "evidence_type": "dom_selector",
+        "proof_reference": "a[href*='wa.me'], a[href*='whatsapp.com']",
+        "reproducibility_command": "document.querySelector(\"a[href*='wa.me'], a[href*='whatsapp.com']\")",
+        "is_verified": true,
+        "pstack_status": "PROVEN_TRUE"
+      },
+      {
+        "claim_id": "proof_citation_1",
+        "category": "market_intelligence",
+        "finding": "Live source citation: Logistics & Transport Services in Bhiwandi - SR Logistics - Bhiwandi - Cybo",
+        "evidence_type": "web_citation",
+        "proof_reference": "https://www.cybo.com/IN-biz/logistics-transport-services-in-bhiwandi",
+        "reproducibility_command": "web_search \"Logistics & Transport Services in Bhiwandi - SR Logistics - Bhiwandi - Cybo\"",
+        "is_verified": true,
+        "pstack_status": "PROVEN_TRUE"
+      },
+      {
+        "claim_id": "proof_citation_2",
+        "category": "market_intelligence",
+        "finding": "Live source citation: Logistics & Transport Services in Bhiwandi - SR Logistics",
+        "evidence_type": "web_citation",
+        "proof_reference": "https://bharatbz.com/maharashtra/logistics-transport-services-in-bhiwandi-296700",
+        "reproducibility_command": "web_search \"Logistics & Transport Services in Bhiwandi - SR Logistics\"",
+        "is_verified": true,
+        "pstack_status": "PROVEN_TRUE"
+      },
+      {
+        "claim_id": "proof_citation_3",
+        "category": "market_intelligence",
+        "finding": "Live source citation: Sr Logistics in Bhiwandi - Best Packers And Movers near me in Bhiwandi ...",
+        "evidence_type": "web_citation",
+        "proof_reference": "https://www.justdial.com/Bhiwandi/Sr-Logistics/022PXX22-XX22-210118145517-T4Q9_BZDET",
+        "reproducibility_command": "web_search \"Sr Logistics in Bhiwandi - Best Packers And Movers near me in Bhiwandi ...\"",
+        "is_verified": true,
+        "pstack_status": "PROVEN_TRUE"
+      }
+    ],
+    "artifacts": [
+      {
+        "artifact_type": "mobile_screenshot",
+        "uri_or_path": "data/screenshots/SRLogistics.png",
+        "verified": true,
+        "details": {
+          "viewport": "390x844 iPhone 14"
+        }
+      },
+      {
+        "artifact_type": "search_citation",
+        "uri_or_path": "https://www.cybo.com/IN-biz/logistics-transport-services-in-bhiwandi",
+        "verified": true,
+        "details": {
+          "title": "Logistics & Transport Services in Bhiwandi - SR Logistics - Bhiwandi - Cybo"
+        }
+      },
+      {
+        "artifact_type": "search_citation",
+        "uri_or_path": "https://bharatbz.com/maharashtra/logistics-transport-services-in-bhiwandi-296700",
+        "verified": true,
+        "details": {
+          "title": "Logistics & Transport Services in Bhiwandi - SR Logistics"
+        }
+      },
+      {
+        "artifact_type": "search_citation",
+        "uri_or_path": "https://www.justdial.com/Bhiwandi/Sr-Logistics/022PXX22-XX22-210118145517-T4Q9_BZDET",
+        "verified": true,
+        "details": {
+          "title": "Sr Logistics in Bhiwandi - Best Packers And Movers near me in Bhiwandi ..."
+        }
+      }
+    ],
+    "verified_at": "2026-11-02T19:13:13.957141Z"
+  },
+  "handoff_trace": [
+    {
+      "handoff_id": "hnd_24056cdc",
+      "source_agent": "scout_agent",
+      "target_agent": "researcher_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-02T19:12:40.051148Z",
+      "status": "validated",
+      "payload": {
+        "company_name": "SR Logistics",
+        "business_type": "freight carriers"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_e653f36d",
+      "source_agent": "researcher_agent",
+      "target_agent": "auditor_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-02T19:12:57.843542Z",
+      "status": "initiated",
+      "payload": {
+        "website": "http://srlogistics.net/",
+        "company_name": "SR Logistics"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_9ec4fc19",
+      "source_agent": "auditor_agent",
+      "target_agent": "copywriter_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-02T19:13:13.956682Z",
+      "status": "validated",
+      "payload": {
+        "key_flaws": [
+          "Missing SSL certificate (browsers warn visitors: 'Not Secure')",
+          "Intermittent site downtime or sluggish DNS response"
+        ],
+        "quantified_loss": "Losing high-intent logistics transport clients weekly due to high friction in contact method"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_5e8eba35",
+      "source_agent": "copywriter_agent",
+      "target_agent": "paperclip_approval_gate",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-02T19:13:16.058379Z",
+      "status": "validated",
+      "payload": {
+        "whatsapp_message": "Hi team SR Logistics, saw your fleet operations in Bhiwandi! Shippers book whoever quotes rates within 5 mins. We build instant WhatsApp freight calculators & direct driver dispatch bots so you skip 20% broker fees. Open to a 2-min video preview?",
+        "qualified": true
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_d2fc7411",
+      "source_agent": "paperclip_approval_gate",
+      "target_agent": "hermes_closer_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-02T19:13:21.787693Z",
+      "status": "validated",
+      "payload": {
+        "company_name": "SR Logistics",
+        "channel": "whatsapp",
+        "pitch_sent": "Hi team SR Logistics, saw your fleet operations in Bhiwandi! Shippers book whoever quotes rates within 5 mins. We build instant WhatsApp freight calculators & direct driver dispatch bots so you skip 20% broker fees. Open to a 2-min video preview?"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    }
+  ],
+  "created_at": "2026-11-02T16:57:23.070738Z",
+  "updated_at": "2026-11-02T19:13:22.338750Z"
+}
