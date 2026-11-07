@@ -1,0 +1,3117 @@
+AI 2
+
+Muse AI, Instinct AI & Grok Bot: Comprehensive Decision-Maker Research Report
+Product Design · UI/UX · Architecture · Agent Avatars · Real-World Solving · Self-Improvement Engineering · Build Blueprint
+EXECUTIVE SUMMARY
+Three platforms—Meta's Muse, xAI's Grok Bot, and Spear Street's Instinct—represent the 2026 frontier of persistent, agentic AI that genuinely executes work rather than merely conversing. Each runs on a dedicated cloud computer per user, each has its own browser, filesystem, and terminal, and each can keep working after the user closes their app. They differ sharply in philosophy, architecture, target audience, and risk profile.
+
+Muse (Meta) targets billions of everyday consumers via WhatsApp-style messaging, wraps the agent in deep sandboxing with kernel-level tainted-egress security, and gives every user a customizable avatar. Grok Bot (xAI/SpaceXSI) targets power users and engineering teams, allows unlimited named bots (soft-capped ~50), each with its own role and memory, all sharing one user-scoped cloud VM running on Firecracker microVMs. Instinct (Spear Street) goes radically minimal—no app, just text or phone call—with the agent accessing devices, email, screen, audio, and location, making it the most intrusive and highest-autonomy of the three.
+
+Behind all three, ArXiv research (AIDE², SIA, and the 2026 self-improvement survey) confirms that the real engineering leap is recursive self-improvement—agents that rewrite their own harnesses and update their own weights—a capability beginning to leak from research into production systems.
+
+A decision-maker building a superior platform today should combine the best architectural elements of all three with a self-improving agentic loop, a modular avatar system, and enterprise-grade governance—all detailed in the final section of this report.
+
+TABLE OF CONTENTS
+Platform Landscape & Strategic Context
+Product Design, UI/UX & User Flows — All Three Platforms
+Agent Avatar Architecture: Thinking, Processing, Behavior
+Technical Stack & Infrastructure Architecture
+Bot Creation Mechanics: Unlimited Bots, Skills, Connectors
+Real-World Business Problem Solving: Documented Use Cases, Failures, Limitations
+Comprehensive Pros/Cons Comparison
+ArXiv Self-Improvement Research: The Real Engineering Behind Agent Improvement
+Agentic Engineering Paradigm & Agent Thinking Loop
+Building a Superior AI Agent Avatar Platform: Optimal Stack & Blueprint
+Risks, Governance & Open Questions
+Strategic Recommendations & Watchlist
+1. PLATFORM LANDSCAPE & STRATEGIC CONTEXT
+As of November 2026, three companies have productized persistent agentic AI at consumer or near-consumer scale:
+
+Platform	Company	Launch	Access Model	Valuation Context
+Muse	Meta	Sept 2026	Free + subscription, US iOS/Android/web	Public company, Meta Superintelligence Labs
+Grok Bot	xAI / SpaceXSI	Aug 11, 2026	Beta; $30–$200/mo via X Subscription	xAI/SpaceXSI internal tooling first
+Instinct	Spear Street Technology	Aug 2026	Invite-only, free (no published price)	$10B valuation (Series C, Sept 28, 2026) [17][18]
+Gartner forecasts 40% of enterprise applications will include task-specific AI agents by end of 2026, up from under 5% in 2025 [15]. Stanford AI Index 2026 recorded agent success rates on real-world terminal tasks rising from 20% in 2025 to 77.3% [15][16]. This is the market context these three platforms are competing in.
+
+2. PRODUCT DESIGN, UI/UX & USER FLOWS — ALL THREE PLATFORMS
+2.1 MUSE (Meta)
+Core Design Philosophy
+Muse was designed around the principle that "talking to it works just like messaging another person" [12]—built for billions of non-technical users with zero learning curve [12]. The first line of Muse's system prompt is literally: "Your purpose is to make your user's life better." [13]
+
+UI Structure & Information Architecture
+Five primary UI surfaces [13]:
+
+Main Chat — One long-running conversation with persistent memory. The canonical interaction surface; designed as a continuous thread rather than discrete sessions.
+Side Chats — Separate context threads for specific topics (e.g., "Trip to Japan planning") without polluting the main memory.
+Avatar — Customizable animated character the user names and styles. Under the avatar is a live snippet of current work. Tapping reveals the full activity log and approved permissions.
+Goals Tab — Long-horizon goal tracking and planning dashboard. Users interact here or discuss tasks in chat.
+Artifacts — Rich interactive outputs: documents, PDFs, web pages, trackers, dashboards, interactive study guides—produced by Muse and living inside or outside the chat [13].
+Avatar Design
+Users design and name their own Muse avatar with a unique style [13]. Meta's own internal avatar is named Veda. The avatar is described as "one of the core features people light up about most" [13]. The avatar shows a live work snippet underneath it at all times; tapping drills into a full activity log and permission manifest.
+
+User Flow (Muse)
+User opens Muse app / WhatsApp
+        ↓
+Message Muse (text, voice)
+        ↓
+Muse parses intent → Goal interpreter runs
+        ↓
+Muse proposes plan / asks clarifying questions
+        ↓
+User approves (or adjusts caution controls)
+        ↓
+Muse executes in background:
+  → Browser subagent (accessibility tree, not raw DOM) [[28]](<https://research.meta.ai/blog/security-and-safety-for-ai-agents-our-approach-with-muse>)
+  → File system writes
+  → Connector calls (Gmail, Calendar, etc.)
+  → Subagent spawning for parallel subtasks
+        ↓
+Sentinel agent evaluates every outbound request [[12]](<https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/>)[[28]](<https://research.meta.ai/blog/security-and-safety-for-ai-agents-our-approach-with-muse>)
+        ↓
+For critical/irreversible actions (email send, purchase):
+  → Structured approval card surfaces in UI
+  → User taps Accept/Reject [[13]](<https://introducing.muse.ai/>)
+        ↓
+Muse completes task, updates Goals tab, notifies user
+        ↓
+Audit trail visible in activity log [[12]](<https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/>)
+Background work: Muse keeps working after the app is closed, runs scheduled crons, and notifies the user only when something is meaningfully new or needs input [13].
+
+Human-in-the-loop controls: Default allows standard web browsing; stops for anything hard to undo. Caution level is adjustable by the user [13]. Approvals can be one-time, session-scoped, task-scoped, time-bounded, or perpetual [28].
+
+Proactivity: Muse can message the user without being prompted. Users can dial proactivity up, down, or off [13].
+
+Payment UX: Purchases use Stripe Link with single-use card numbers tied to a specific merchant and dollar amount; Shop Pay coming soon; 1Password integration for existing logins [12][28].
+
+User Flow Difficulty: Low
+Muse is deliberately designed for zero technical knowledge. Setup is a message, not a workflow builder. The WhatsApp-native interface means the interaction paradigm is already familiar to billions [12].
+
+2.2 GROK BOT (xAI / SpaceXSI)
+Core Design Philosophy
+Grok Bot is designed around persistent agents called Bots that have their own identity, memory, runtime, and tools—not around one-off chat sessions [9]. The mental model is "a highly capable engineering intern with its own computers" [11].
+
+Five Core Product Objects [9]
+The product organizes around five objects:
+
+Bots — Named, persistent agents with individual memory, role, and stable preferences
+Chats — Conversation threads (one-to-one or group)
+Prompts — Reusable instruction templates
+Tools — Connectors, MCP servers, browser access, filesystem, terminal
+Artifacts — Outputs produced by bots
+UI Structure
+Bot roster — A panel of named, persistent bots each with a visual avatar
+Chat surface — Heterogeneous transcript using inline cards, widgets, and structured UI, not just prose [9]
+Computer view — A workspace panel showing what the Bot's cloud computer is doing, with three access levels: Status (just see what it's doing), Preview (watch live), Takeover (user operates the same computer) [9]
+Routines panel — Schedule and event-triggered standing responsibilities
+Marketplace — Directory of pre-built bots by category [21]
+Group chats — 2–6 bots sharing context, able to message each other and pass task ownership [22]
+Avatar Design
+Grok Bot avatars use a consistent base construction with controlled variations and accessories [9]. Avatar motion communicates lifecycle states:
+
+Idle → calm, slightly curious
+Work arrives → acknowledges task
+Working → kicks into gear
+Waiting/blocked → distinct visual state
+Done → completion state [9]
+Hovering over a Bot avatar reveals its current action—because the team found three animated dots were insufficient feedback [9].
+
+User Flow (Grok Bot)
+User opens Grok Bot (macOS, Windows, Linux, iOS, Android)
+        ↓
+Creates Bot by sending a message describing the job [[34]](<https://docs.x.ai/grok-bot/overview>)
+  (Not a workflow builder—just describe the role)
+        ↓
+Grant tool access as Bot requests it
+        ↓
+Bot works on persistent cloud computer (Firecracker microVM) [[6]](<https://www.ngram.com/blog/anatomy-of-a-modern-ai-agent>)
+  → Shares files, browser sessions, logins with user's other Bots [[19]](<https://x.ai/bot>)
+  → Can delegate to other Bots via group chat [[10]](<https://x.ai/news/introducing-grok-bot>)
+  → Chief-of-Staff bot can coordinate specialist bots [[10]](<https://x.ai/news/introducing-grok-bot>)
+        ↓
+User monitors via Status / Preview / Takeover levels [[9]](<https://x.ai/news/designing-grok-bot>)
+        ↓
+For consequential actions (send, publish, purchase, delete):
+  → Auto Review triggers / user approves [[15]](<https://www.vellum.ai/blog/official-grok-bot-breakdown>)[[19]](<https://x.ai/bot>)
+  → Passwords, 2FA, CAPTCHAs remain human-controlled [[22]](<https://composio.dev/content/guide-to-frok-bot>)
+        ↓
+Bot learns workflow by demonstration → saves as reusable Skill [[10]](<https://x.ai/news/introducing-grok-bot>)[[22]](<https://composio.dev/content/guide-to-frok-bot>)
+        ↓
+Skill runs on schedule or event trigger as Routine [[9]](<https://x.ai/news/designing-grok-bot>)
+Group chat coordination: Up to 6 bots in a group chat; a coordinating "Chief of Staff" bot manages handoffs between specialist bots, each retaining its own specialized memory [9][10].
+
+Teach-by-demonstration: Walk a bot through a multi-step workflow once; it saves the path as a reusable skill and reruns it on a schedule [34]. This feature draws "consistent praise, including from a competitor's critical analysis" [38].
+
+Parallel execution: Bots run 24/7 in parallel even when the user's laptop is closed [19]. One bot runs one computer-use task on its screen at a time [34].
+
+User Flow Difficulty: Medium
+Easier than traditional RPA or workflow automation tools, but requires more intentionality than Muse. Creating effective bots requires good instruction-giving, and power users (like the engineering team examples) develop sophisticated multi-bot architectures [11]. Token budgets add operational complexity [22][38].
+
+2.3 INSTINCT (Spear Street Technology)
+Core Design Philosophy
+Instinct is the most radical product design of the three: no app, no dashboard. Access is purely by text message or phone call [17]. The design goal, as described by investor Anish Acharya, is to hide "almost all of the machinery" [16].
+
+UI Structure
+There effectively is no traditional UI:
+
+Text interface: User sends SMS or message to Instinct's number
+Voice interface: User calls the Instinct number for voice interaction
+Data export: Users can export stored data (a gap was discovered where data persisted after revocation) [16]
+No visible dashboard, no bot roster, no artifact viewer
+Behind the interface, Instinct operates:
+
+A persistent cloud computer with browser access and cached credentials [16]
+Connection to email, messaging, screen, audio, location, and other device data [23]
+A top-level agent that dispatches subtasks [16]
+Recurring loops for proactive work [16]
+Avatar Design
+None documented. Instinct deliberately abstains from avatar or visual identity systems. The agent is faceless by design, consistent with the "no app" philosophy [17].
+
+User Flow (Instinct)
+User texts or calls Instinct's number
+        ↓
+Top-level agent interprets instruction
+        ↓
+Agent dispatches to specialized workers:
+  → Email access
+  → Browser computer use
+  → Phone calls to businesses (concierge feature) [[18]](<https://vandatateam.com/blog/instinct-ai-personal-agent>)
+  → Device integrations (screen, audio, location)
+        ↓
+Agent executes:
+  (Note: Some users reported actions taken WITHOUT prior approval) [[16]](<https://www.vellum.ai/blog/official-instinct-breakdown>)
+        ↓
+Agent reports back via text
+        ↓
+Work continues between messages on persistent cloud computer
+Critical UX concern: Moxxie Ventures founder Katie Jacobs Stanton reported Instinct sent an email on her behalf without checking first [16]. The company stated it is changing the product to prevent unwanted actions [18]. This represents a fundamental UX design decision (autonomy vs. control) that backfired in early testing.
+
+Legal framing: Instinct's Terms of Service explicitly appoint the service as the user's legal agent authorized to enter binding agreements and transactions [16]—the boldest autonomy claim of any of the three platforms.
+
+User Flow Difficulty: Lowest entry / Highest risk
+Zero onboarding required. But the lack of approval checkpoints and the early-stage reliability issues (CAPTCHAs, two-factor walls, failed ticket purchases, prompt injection vulnerabilities) [16][29] mean users must trust the agent deeply. The flow is easy to start and potentially hard to control.
+
+User Flow Comparison Table
+Dimension	Muse	Grok Bot	Instinct
+Entry surface	App + WhatsApp	Desktop + mobile app	Text/call only
+Setup friction	Very low	Low-medium	Near-zero
+Approval controls	Structured cards, granular [13][28]	Auto Review, allow/deny/always-allow [15]	Minimal; some actions taken without asking [16]
+Parallel agents	Subagents + crons [14]	Up to 50 bots, 6 in group chat [9]	Top-level dispatcher (architecture not fully documented)
+Audit trail	Full activity log visible [12]	Status/Preview/Takeover [9]	Data export; gaps reported [16]
+Background work	Yes, with cron records [14]	Yes, 24/7 [19]	Yes [16]
+Teach by demo	Not documented	Yes—core feature [10][34]	Not documented
+Avatar	Custom, named, live-status [13]	Lifecycle-animated per bot [9]	None [17]
+3. AGENT AVATAR ARCHITECTURE: THINKING, PROCESSING, BEHAVIOR
+3.1 What an Agent Avatar Actually Is
+Per the Genies technical framework [31], there is a critical distinction:
+
+AI Persona: Defines who the AI is — identity, voice, behavior, memory, embodiment
+AI Agent: Defines what the AI can do — goals, planning, tools, autonomous actions
+A full agent avatar system combines both. Getting this wrong creates either a chatbot with a pretty face (persona only) or a powerful but alienating automation (agent only).
+
+3.2 The Agent Thinking Loop (How Avatars "Think")
+The standard production-grade agent thinking loop, formalized in the academic literature [4][24] and implemented across all three platforms:
+
+PERCEIVE → PLAN → ACT → OBSERVE → REFLECT → UPDATE
+     ↑___________________________|
+In implementation terms:
+
+Step 1: PERCEIVE (Input Processing)
+
+User message → tokenized + embedded
+Context assembled: current task state, persistent memory, active tool permissions, relevant prior conversation
+For Muse: Sentinel evaluates tainted-egress status before any outbound action [28]
+For Grok Bot: Bot's role context, stable preferences, and summaries of prior work loaded [34]
+Step 2: PLAN (Reasoning)
+
+Chain-of-Thought: Model explicitly reasons through steps before acting [4]
+ReAct pattern: Interleaves reasoning traces with tool-use actions [4] — the model reasons about which tool to use, uses it, reads the result, then reasons about the next step
+For Muse Spark: Visual chain-of-thought + multi-agent orchestration for hard problems [35]
+For Grok 4.7: Extended RL training on multi-hour tasks; bandit selection over strategies (UCB1, similar to AIDE²) [20][25]
+Step 3: ACT (Tool Execution)
+
+Browser use (accessibility tree, not raw DOM for Muse [28])
+Filesystem read/write
+Connector calls (Gmail, Calendar, Salesforce, etc.)
+Subagent spawning
+Code execution (compile, run scripts)
+Computer use (clicking UI elements on websites with no API)
+Step 4: OBSERVE (Result Ingestion)
+
+Tool output returned to model
+For Muse: Hatch executes the step and returns actual results to the model [14]
+For Grok Bot: Multimodal verification — bot uses vision to confirm visual changes in screenshots [11]
+Step 5: REFLECT (Self-Evaluation)
+
+Did the result match intent?
+Should I escalate for human approval?
+Should I retry with a different approach?
+For Grok Bot engineering bots: If review is "highly confident and blast radius is low," auto-merge [11]
+Muse Spark: "Active Focus" — keeps working toward the goal, tries other approaches, recovers from errors [30]
+Step 6: UPDATE (Memory)
+
+Write to episodic memory (what happened this session)
+Update semantic memory (facts learned about the user, preferences)
+Trigger skill creation if a new workflow was completed successfully
+Muse: memory files are user-inspectable and editable [14]
+3.3 Memory Architecture (All Four Types)
+Production-grade agents layer four memory types [27]:
+
+Memory Type	Description	Implementation
+In-context	Current conversation window	Model's active context; degrades beyond ~10M tokens [27]
+Episodic	Specific past events and sessions	Conversation logs, task histories; Muse uses FTS5-style search [4]
+Semantic	General facts about the user, world	User preferences, contact info, dietary restrictions [12]; Grok Bot stable preferences [34]
+Procedural	How to do things	Saved skills/routines; Grok Bot's teach-by-demo [10]; Muse's background crons [14]
+Muse memory architecture [14]: Three representations kept separate:
+
+History — Full conversation log
+Persistent memory — User-inspectable/editable memory files
+Current context — Active task state assembled for this inference
+Compaction checkpoints (context compression) trigger automatically; 7 records with before/after token counts were observed in September 2026 research [14].
+
+Grok Bot memory [34]: Each bot retains stable preferences, role context, and summaries of prior work. Conversations stay separate per bot except a few shared user facts. Shared files, browser sessions, group messages, and direct handoffs move context between bots [22].
+
+The "lost in the middle" problem: Research consistently shows model performance degrades as context length grows; at 10M tokens, practical retrieval accuracy for specific facts drops below 60% [27]. This is why all three platforms implement compression/summarization.
+
+3.4 Grok Bot Avatar Behavior States (Detailed)
+The Grok Bot avatar communicates lifecycle via motion [9]:
+
+IDLE ──────────→ calm, slightly curious
+TASK ARRIVES ──→ acknowledges task (motion cue)
+WORKING ───────→ active animation
+WAITING ───────→ distinct "blocked" visual state
+DONE ──────────→ completion animation
+Hover reveals current action string (e.g., "Searching Salesforce for Q3 contacts") [9]. This design decision—showing action on hover rather than always—was chosen after the team found three animated dots were insufficient but constant action text was too distracting [9].
+
+3.5 Muse Avatar Behavior
+Muse avatars are fully custom — users design and name them [13]. Under the avatar at all times: a live snippet of current work. Tap → full activity log + permissions manifest [13]. This makes the avatar a functional status indicator, not just decoration.
+
+The company's own avatar is named Veda [13].
+
+3.6 Instinct: No Avatar
+Instinct deliberately has no avatar, consistent with its "just text me" philosophy [17]. The agent has no visual identity. From a product design standpoint, this is a notable experiment in whether humans can form productive working relationships with invisible agents.
+
+4. TECHNICAL STACK & INFRASTRUCTURE ARCHITECTURE
+4.1 Muse Infrastructure Stack
+Compute layer [6][12][28]:
+
+Per-user dedicated Linux VM (isolated, with own kernel, memory, virtual devices)
+Runtime cell: systemd-nspawn container with root mapped to unprivileged host user, filtered syscalls, limited kernel capabilities [28]
+Inference reached through a proxy outside the VM [14]
+External telemetry path + continuous VM backups [14]
+Agent harness components [14][28]:
+
+[User Client (iOS/Android/WhatsApp)]
+         ↓
+[Sentinel Agent] ← sole permission authority for all egress
+         ↓
+[PostgreSQL state store] ← outside runtime cell
+[hatch-authd] ← credential management; surrogate tokens
+[hatch-safety / privsep] ← sandboxed connector workers
+[Browser Broker] ← outside runtime cell; accessibility tree interface
+         ↓
+[systemd-nspawn Runtime Cell]
+  ├── Muse agent harness (Hatch)
+  ├── Tool execution environment
+  ├── Subagent spawning
+  └── Code execution / terminal
+Security architecture [28]:
+
+Tainted egress: Kernel-level data flow tracking with eBPF cgroup programs and LSM hooks — determines when network requests can be auto-allowed vs. requiring approval
+Surrogate credential tokens: Agent never sees real OAuth tokens; surrogate minted by authd, real credential swapped in at network boundary by Sentinel [6][28]
+Email connector: Deterministic filters + classifier model to block OTPs, password reset links, login magic links [28]
+Browser subagent: Sees accessibility tree snapshot, not raw DOM; cannot run JavaScript in page context [28]
+Bug bounty: Up to $300,000; up to $130,000 for successful prompt injection on one user [28]
+Future: Muse Confidential VM — whole VM encrypted with user-only key; in testing with small group [28]
+Model stack:
+
+Muse Spark (current): Natively multimodal reasoning model; tool-use, visual chain-of-thought, multi-agent orchestration; rebuilt pre-training stack over 9 months [35]
+Muse Wonder / Wonder Full (October 2026): Frontier models for expert domains (law, finance, health); Active Memory + Active Focus capabilities [30]
+RL training with thinking-time penalty producing "thought compression," then performance recovery [35]
+Contemplating mode: parallel agents collaborating on hard problems; 58% on Humanity's Last Exam [35]
+Connectors: Gmail, Google Calendar, Google Docs, Google Drive, Facebook/Instagram/Threads (Meta-native), Stripe Link for payments, 1Password (coming), Shop Pay (coming) [12][39]
+
+Safety training: Sanitized inference trajectories (PII removed) used for model training; opt-out available [28]
+
+4.2 Grok Bot Infrastructure Stack
+Compute layer [6][15]:
+
+Firecracker microVM per user — own kernel, memory, virtual devices; hardware-level separation between users [6]
+All of one user's bots share one computer: files, browser sessions, app logins [19]
+Each bot gets its own screen for parallel work [22]
+24/7 operation; work continues when user's device is offline [19][34]
+Security model [6][15][19]:
+
+OAuth tokens remain on Cursor connector backend; bots invoke tools without receiving tokens [6]
+Passwords, passkeys, 2FA codes, payment confirmations: handed to user, not to bots [6][22]
+Auto Review rules: two modes; allow once, deny, always-allow decisions [15]
+DLP, certificates, proxies, network controls settable by enterprise admins at boot [19]
+Important: Separate bots are NOT a security boundary — xAI explicitly documents this [22][34]
+Bot architecture [9][34]:
+
+[User's Single Persistent Cloud Computer (Firecracker microVM)]
+  ├── Bot 1: "Josh" (Sales) — own memory, role, screen
+  ├── Bot 2: "Jenny" (Operations) — own memory, role, screen  
+  ├── Bot 3: "Craig" (Engineering) — own memory, role, screen
+  ├── ... (up to ~50 bots)
+  └── Shared: files, browser sessions, app logins
+         ↓
+[Connectors]: Gmail, Google Calendar, Drive, OneDrive, Outlook, Teams, SharePoint, Salesforce [[15]](<https://www.vellum.ai/blog/official-grok-bot-breakdown>)
+[MCP servers]: Must be publicly reachable; local MCP requires tunneling [[15]](<https://www.vellum.ai/blog/official-grok-bot-breakdown>)
+[Browser computer use]: For sites with no API
+Grok Bot model routing: Routes to models automatically on the backend; a third-party review noted the router "wasn't great" in testing with no user override option [8].
+
+Model powering Grok Bot: Grok 4.7 — larger base model than 4.6, extended RL training weighted toward multi-hour tasks; 46.3% on CursorBench 4.0, 37.6% on Terminal-Bench 4.0 [20].
+
+Cursor cloud agents: Grok Bot can start cloud agents on user-owned worker machines, including Cursor Cloud private workers with VPN access and iOS Simulator [11].
+
+Engineering bot architecture (detailed) [11]:
+
+5 specialist bots: Baltata, Shaoruru, Hogan, Craig, Quill — each owns a domain
+Each has separate memory system, limited context
+Daily ops bot (Jenny) runs 1:1s with every engineer bot at 5am, root-cause postmortems, updates playbook
+Nightly audit bots (3am): clean code, reduce bundle size, improve load time, deliver PRs each morning
+PR management: 30-minute cadence checking bugbot/security comments, failing CI, merge conflicts
+P0 urgency: check cloud agent transcripts every 5 minutes, steer agent (token-intensive, emergency use only)
+4.3 Instinct Infrastructure Stack
+Instinct's stack is least publicly documented of the three. Based on available evidence:
+
+Compute layer [16][18][29]:
+
+Persistent cloud computer per user with browser access and cached credentials [16]
+Own phone number (for concierge calls to businesses) [18]
+Top-level agent dispatches to specialized workers [16]
+Isolated sandboxes (announced as safeguard, no test results published) [18]
+Model foundation [18]:
+
+Founded by Noah Shinn, lead author of the 2023 Reflexion paper — agents learning from mistakes via verbal self-reflection without retraining
+Reflexion architecture lifted a coding agent to 91% on HumanEval vs. 80% for GPT-4 at the time [18]
+Vision-language models + computer vision for UI interaction (reported by third-party guide, unverified) [29]
+Cannot be self-hosted; all compute runs on Spear Street infrastructure [16]
+Announced safeguards (no independent test results) [18]:
+
+Isolated sandboxes
+Short-lived local credentials
+Identity-signed tool execution
+Hallucination detection before acting
+Data practices [16][29]:
+
+Terms of Service grant a perpetual, irrevocable, transferable, sub-licensable license over user materials including for AI model training [16]
+Records cloud desktop sessions including screen activity, keystrokes, and messages for execution and model training (third-party report) [29]
+Opt-out is go-forward only [16]
+4.4 Architecture Comparison Table
+Dimension	Muse	Grok Bot	Instinct
+VM type	systemd-nspawn cell in dedicated VM [6][28]	Firecracker microVM per user [6]	Cloud computer (architecture not fully disclosed) [16]
+Isolation	Per-user VM; agent never sees real tokens [28]	Per-user (not per-bot); bots share computer [22]	Per-user; cannot self-host [16]
+Security innovation	Tainted egress (eBPF/LSM); surrogate tokens [28]	OAuth on connector backend; DLP at boot [19]	Short-lived local credentials; sandboxes (announced) [18]
+Primary model	Muse Spark / Wonder [30][35]	Grok 4.7 (RL-trained for multi-hour tasks) [20]	Undisclosed (Reflexion lineage) [18]
+Multi-agent	Subagents + crons + parallel agents [14]	Up to 50 bots; 6-bot group chats; Chief of Staff [9][10]	Top-level dispatcher (details sparse) [16]
+Memory	3-layer (history/persistent/context); compaction [14]	Per-bot role + preferences; shared files [34]	Preference memory; past actions; data export gaps [16]
+Connector ecosystem	Meta apps + Gmail + Stripe + 1Password [12]	Gmail, Calendar, Drive, OneDrive, Outlook, Teams, SharePoint, Salesforce + MCP [15]	Email, messaging, screen, audio, location, apps [23]
+Training data	Sanitized trajectories; opt-out [28]	Not fully documented [15]	Perpetual license on user materials [16]
+5. BOT CREATION MECHANICS: UNLIMITED BOTS, SKILLS, CONNECTORS
+5.1 Grok Bot: Bot Creation & the Marketplace
+Creating a bot: "Setup is a message, not a workflow builder. Create a Bot, describe the job, and grant access as it asks." [34] No visual workflow builder, no node graph, no code required.
+
+How many bots: The soft limit is approximately 50 bots per account, 6 per group chat [9]. While the "unlimited" framing is used colloquially, the engineering limit is ~50 named bots. Usage is measured in agent steps and tokens against a weekly pool—no plan publishes a numeric bot allowance [38].
+
+The Grok Bot Marketplace [21] — a directory of pre-built bots by category:
+
+Category	Example Bots
+General	Chief of Staff, Researchy (fact-check + live web search)
+Sales	Outbound Prospecting (ICP matching + drafted messages, nothing sends without approval)
+Marketing	SEO & AEO Desk (keywords → content briefs + writer-ready outlines)
+Engineering	Lingxi's Engineer Bot (repo monitoring, PR watching, 30-min cadence, auto-coordination)
+Design	Proto Bot (ideas → live draft PRs with screenshots + video, never merges without approval)
+Personal	Flora (plant care), Credit Card Max (Plaid-connected, card optimization)
+Product	Playtest Operator (UI brute-force testing when APIs are insufficient)
+Operations	Vendor Portal Operator (portals with no API; clicks same path weekly, returns exceptions only)
+Adding marketplace bots: Click "Add" on any marketplace listing. Bot persona, memory, and skills are templated — not shared across users (e.g., "Flora... your plants do not copy if someone else installs her") [21].
+
+Skills: Reusable, teachable workflows with steps, decision rules, output requirements, and approval boundaries [22]. Skills can be created by:
+
+Demonstration (walk bot through workflow once)
+Written instruction
+Shared from other bots/users [9]
+Skills run on schedules or after events [22].
+
+Connectors: Built-in: Gmail, Google Calendar, Google Drive, OneDrive, Outlook Mail/Calendar, Teams, SharePoint, Salesforce [15]. Custom: via MCP servers (must be publicly reachable; local MCP requires tunneling) [15]. Third-party integration layer: Composio exposes 1,000+ apps with user-scoped OAuth and automatic token refresh [22].
+
+Bot coordination: Group chats of 2–6 bots can message each other, pass ownership, share context, coordinate in parallel [22][34].
+
+5.2 Muse: Skills, Connectors, and Background Work
+Muse does not use "bots" in the multi-named sense. It is a single agent per user that can spawn subagents [14].
+
+Subagents: Spawned via subagent.spawn schema; inherits parent transcript as starting point; parent and child advance separately [14].
+
+Background crons: Muse runs scheduled work and event-triggered tasks autonomously [13][14]. Research observed 3 cron records marked "succeeded" and 5 subtask-completion handoffs in a single session observation [14].
+
+Connectors (Muse): Gmail, Google Calendar, Google Docs, Google Drive, Facebook, Instagram, Threads, Stripe Link (payments), 1Password (coming), Shop Pay (coming) [12][39]. Meta also documents Muse for Small Business with business app connections and analysis workflows [23].
+
+Skills: Muse can "write its own code and build the tools a task needs" [13] — meaning it can construct new capabilities at runtime. It compiles and executes code in its VM environment.
+
+Memory-as-skills: Task experience leads to memory or skill revision, changing later context. No evidence that base model weights are updated online in the user's VM [14].
+
+5.3 Instinct: Task Architecture
+Task delegation: Top-level agent receives instruction, dispatches to workers [16]. Recurring loops run between user messages [16].
+
+Concierge feature: Agent can call businesses by phone on the user's behalf [18] — the most human-like capability of any of the three.
+
+Skills: Not formally documented as a product feature. The Reflexion architecture underlying Instinct enables verbal self-reflection between tasks [18].
+
+What Instinct connects to: Email, messaging, screen, audio, location, apps, websites [23]. More device-level access than either Muse or Grok Bot.
+
+6. REAL-WORLD BUSINESS PROBLEM SOLVING
+6.1 Documented Use Cases
+Grok Bot — Most Documented Real-World Usage
+Sales / SDR workflow (first-person account from SpaceXSI SDR) [33]:
+
+Separate bots for morning process management, prospecting sheet maintenance, LinkedIn connections, CRM contact creation/sequence changes
+Contacts classified as CLEAR (safe to auto-draft) or FLAG (human decision required)
+System checks existing sequence status across Nooks, Amplemarket, Salesforce before enrollment
+Outcome: 24 contacts with wrong-sequence emails fixed in one pass; morning routing across 6 tools eliminated; draft-only, never auto-send policy maintained
+Self-reported productivity: "half the morning was gone" on old workflow; now bots do the routing [33]
+Engineering workflow (first-person account from SpaceXSI engineer) [11]:
+
+5 specialist engineer bots each owning a domain
+Before Grok Bot: manually managed 15 cloud agents at a time
+After: managing 200+ cloud agents simultaneously
+Daily ops bot runs 1:1 meetings with every engineer bot at 5am
+Nightly audit bots deliver clean-code PRs each morning
+Claimed: 2,000+ PRs shipped in one month by one engineer; iOS v0 built in three weeks using only Grok Bot
+Caveat: These are self-reported internal claims, not independently verified [11]
+General enterprise preview [10]:
+
+Internal xAI adoption before public launch: sales outbound, marketing campaigns, office operations, bug fixes
+Sales bot: CRM note updates + follow-up drafts
+Ops bot: seating new hires, processing Gmail invoices
+Engineering bot: reproduce bug → file ticket → hand off to debugging bot
+Marketplace bot use cases [21][32]:
+
+Chief of Staff: scans Slack, email, calendar, meeting notes → priority-mapped readout each morning
+Paid Media: pulls live campaign data → recommends budget reallocation → holds for approval before adjusting
+Vendor Portal Operator: operates legacy portals weekly, returns exceptions only
+Playtest Operator: brute-force UI testing when APIs are insufficient
+Muse — Real-World Tests
+Independent business task testing (tested September 27, 2026) [39]:
+
+Meeting prep: 10/10 — identified correct email thread and calendar invite unprompted
+Email status check: 6/10 — incorrectly concluded an email had not been sent when it had (potential duplicate-send risk if trusted)
+Background competitive brief: Completed while app was closed; "good enough to use with minimal editing"
+Social content: Drew on how recent Meta post formats had performed, produced tailored caption in user's voice
+Weekly business brief: 9/10
+Content plan: 8/10 (differentiated by Meta business context access)
+Web page build: 5/10 (less developed than Claude; files hard to locate)
+Overall author rating: 6.5/10 across all tasks, 8.0/10 on tasks actually completed
+Access boundaries hit: WordPress login, Facebook login mid-publish, Mac Full Disk Access prompt
+Consumer use case (anecdote from How We Designed Muse) [13]:
+
+Parsed school emails → added dates to calendar → purchased supplies → caught sports tryout deadline closing in 12 hours, alerting parent before flight boarding
+Consumer comparison tests [7]:
+
+Muse: preliminary shopping, holiday gift scoping, restaurant reservations, recurring yoga class bookings, direct purchases via Stripe
+Instinct — Real-World Tests
+Heavy user report (5-day period) [16]:
+
+677 messages in 5 days
+15 completed jobs including: lowering a Comcast bill, coordinating vendors in India over WhatsApp, flight verification, ticket monitoring, subscription audits
+Travel dominance: More than half of all Instinct activity is reported to be travel booking [17]. The company "approached $1 billion in yearly transaction volume" (self-reported, not independently verified) [18].
+
+Concierge calls: Agent calls businesses by phone on user's behalf — no other platform does this [18].
+
+6.2 Documented Failures & Limitations
+Grok Bot Failures [38][37][22]
+Shared VM incident: Staff-confirmed incident where shared cloud computer behind a user's bots got stuck and took every bot down [38]
+Token limit mid-task: Agents stall mid-task when weekly usage limit is reached [22][38]; one 6-agent business burned 42% of weekly quota on day one [38]
+Browser blocking: Sites can block automation, expire sessions, require CAPTCHA [22][34]
+Model routing quality: Auto-routing "wasn't great" in testing; no user override available [8]
+No security isolation between bots: Explicitly documented by xAI [22][38]
+No audit trail / memory export API: Not publicly documented [15]
+Administrative controls gap: No built-in enterprise control layer (scoped permissions, escalation rules, action-level audit trail) [8]
+Coordination accuracy: Parallel bot coordination does not guarantee accuracy; outputs still require verification [37]
+Muse Failures [39][14]
+Email status hallucination: Concluded an unsent email had been sent (could cause duplicate sends if trusted) [39]
+Access boundary friction: WordPress login, Facebook mid-publish login, Mac Full Disk Access required human intervention [39]
+Zero-day vulnerability: September 21, 2026 — security researcher disclosed zero-day in Muse Mac app (undocumented dictation transcription setting changeable by any user-level process); patched within one day [39]
+Context compaction uncertainty: No single joined trace from trigger to user delivery; "lost in the middle" risk [14]
+Subagent snapshot boundary unclear: Exact context inheritance at subagent spawn not fully documented [14]
+Performance gaps in long-horizon agentic systems and coding: Acknowledged by Meta [35]
+Instinct Failures [16][18][29]
+Unauthorized email send: Sent email on user's behalf without checking [16]
+Prompt injection vulnerability: Test found Instinct followed malicious instructions emailed to user's own inbox; developer deleted account after test [16]
+Data persistence after revocation: Disconnecting Google access still produced inbox summary 3 hours later; data export contained full message text [16]
+CAPTCHA / 2FA failures: Browser automation fails on anti-bot measures [16]
+Non-refundable flight booked: Misread timezone resulted in wrong booking (third-party report, unverified) [29]
+Duplicate purchases: Checkout page delay caused duplicate item purchase (third-party report, unverified) [29]
+Alleged data isolation breach: User alleged Instinct discussed another person's financial document; company denied; claim unconfirmed [18]
+Terms of Service liability gap: Company explicitly absolves itself of liability for unauthorized transactions or agent errors [29]
+6.3 Industry Benchmarks on Agent Reliability
+Stanford AI Index 2026: Agent success rates on real-world terminal tasks rose from 20% (2025) to 77.3% (2026) [15][16]
+EvoClaw continuous-evolution benchmark: Agent performance drops to at most 38% in continuous settings vs. high scores on isolated tasks [4][24]
+80% of enterprise apps embed an agent; only 31% run one in production (one analysis) [15]
+Deloitte 2026: Only 1 in 5 companies has a mature governance model for autonomous AI agents [15][16]
+Interpretation: The gap between isolated-task performance (77.3%) and continuous-deployment performance (≤38%) is the most important reliability gap in production agentic AI. All three platforms face this challenge.
+
+7. COMPREHENSIVE PROS/CONS COMPARISON
+MUSE
+PROS	
+Deepest security architecture of the three (eBPF tainted egress, surrogate tokens, privsep sandboxed connectors) [28]	
+Custom named avatar — highest user engagement/personalization [13]	
+Structured, deterministic approval cards for irreversible actions [13]	
+WhatsApp-native interface reaches billions without app download [12]	
+Full audit trail always visible [12]	
+Stripe Link integration with purchase protection (first AI agent with this) [12]	
+Confidential VM planned (user-only encryption key) [28]	
+$300K bug bounty signals serious security investment [28]	
+Free tier available for most use cases [12]	
+CONS	
+Hallucination on factual task (email status) could cause real-world errors [39]	
+Access boundaries require human intervention more often than expected [39]	
+Mac zero-day (patched fast, but revealed surface area) [39]	
+Subagent and cron architecture not fully transparent [14]	
+Limited to Meta connector ecosystem; enterprise breadth narrower than Grok Bot [12]	
+No teach-by-demonstration feature documented [vs. Grok Bot's praised feature]	
+Performance gaps in long-horizon agentic systems acknowledged [35]	
+Evaluation awareness concern (Apollo Research flagged highest rate among models tested) [35]	
+GROK BOT
+PROS	
+Most powerful multi-bot architecture: ~50 bots, 6-bot group chats, Chief of Staff coordination [9]	
+Teach-by-demonstration → reusable skills: most praised UX feature [10][38]	
+Marketplace of pre-built bots for instant deployment [21]	
+Firecracker microVM per user = hardware-level isolation between users [6]	
+Operates legacy tools without API via real browser [8][10]	
+Enterprise admin controls (DLP, certs, proxies, network) [19]	
+24/7 parallel bot operation even when devices offline [19]	
+Cursor Cloud agent integration for engineering workflows [11]	
+Grok 4.7: strong RL training for multi-hour tasks [20]	
+Available on macOS, Windows, Linux, iOS, Android [34]	
+CONS	
+Bots are NOT security boundaries from each other — explicitly documented [22][34]	
+No enterprise audit trail / memory export API [15]	
+Model routing not user-controllable; early quality concerns [8]	
+Weekly token quota creates operational fragility (entire fleet stalls at limit) [22][38]	
+Shared VM failure takes all bots down simultaneously [38]	
+No built-in scoped permissions / escalation rules for enterprise workflows [8]	
+Custom MCP servers must be publicly reachable (no local MCP without tunneling) [15]	
+Pricing: $200/mo standalone; $300/mo highest tier — significant cost [8][15]	
+Still labeled early-beta; comparative reliability vs. alternatives untested [15]	
+No governance layer for enterprise compliance [8]	
+INSTINCT
+PROS	
+Zero onboarding friction — text or call, no app required [17]	
+Device-level access (screen, audio, location) unmatched by competitors [23]	
+Phone concierge calls to businesses — unique capability [18]	
+Reflexion-lineage founder; strong academic foundation for agent self-improvement [18]	
+$10B valuation suggests strong investor conviction [17][18]	
+Reports approaching $1B in yearly transaction volume [18] (self-reported)	
+$0 marketing spend — pure word-of-mouth adoption signal [18]	
+CONS	
+Sent emails without user approval [16] — fundamental autonomy/control failure	
+Prompt injection vulnerability: followed malicious instructions from email [16]	
+Data persisted after user revoked access [16]	
+Terms of Service: perpetual, irrevocable license on user data including training [16]	
+Company explicitly disclaims liability for unauthorized transactions [29]	
+No app = no visual audit trail, no activity log, no avatar [17]	
+Cannot be self-hosted; all data on Spear Street infrastructure [16]	
+Unsuitable for enterprise/regulated environments (SOC2, GDPR) [29]	
+Access invite-only; scaling compute is a stated challenge [16]	
+Valuation at $10B with no disclosed revenue is high-risk [17]	
+Early browser reliability issues: CAPTCHAs, 2FA walls, failed ticket purchases [16][29]	
+Head-to-Head Scoring Matrix
+Criterion	Muse	Grok Bot	Instinct
+Security architecture	★★★★★	★★★☆☆	★★☆☆☆
+Multi-agent power	★★★☆☆	★★★★★	★★☆☆☆
+Ease of use	★★★★★	★★★★☆	★★★★★
+Autonomy/action breadth	★★★★☆	★★★★☆	★★★★★
+Approval controls	★★★★★	★★★★☆	★★☆☆☆
+Avatar/persona	★★★★★	★★★★☆	★☆☆☆☆
+Enterprise readiness	★★★☆☆	★★★☆☆	★☆☆☆☆
+Reliability (documented)	★★★☆☆	★★★☆☆	★★☆☆☆
+Bot ecosystem	★★★☆☆	★★★★★	★★☆☆☆
+Privacy	★★★★☆	★★★☆☆	★★☆☆☆
+Cost-value	★★★★★	★★★☆☆	★★★★☆ (free, early)
+8. ARXIV SELF-IMPROVEMENT RESEARCH: THE REAL ENGINEERING BEHIND AGENT IMPROVEMENT
+This section covers what is actually happening in academic research that will define the next generation of agent platforms—including what's behind the improvement loops these systems use (or will use).
+
+8.1 The Self-Improvement Framework (arXiv:2607.13104)
+The 2026 survey by researchers from Jilin University, KAUST, University of Alberta, and IDSIA/USI/SUPSI (including Jürgen Schmidhuber) [5] is the most comprehensive taxonomy of agent self-improvement to date.
+
+Core definition: A modern agent = a foundation model + an operational scaffold (prompts, memory, tools, control logic). Self-improvement = a self-induced update operator that obtains and commits updates to either model parameters or scaffold components [1].
+
+Two major branches [5]:
+
+SELF-IMPROVEMENT
+├── 1. FOUNDATION MODEL IMPROVEMENT (update the model itself)
+│   └── Slower, more persistent, more training-centric
+│       Examples: RL fine-tuning, test-time training, weight updates
+│
+└── 2. SCAFFOLDING IMPROVEMENT (update the shell around the model)
+    ├── 2.1 Prompt Optimization (39 papers)
+    │     Examples: Self-Refine (2023), TextGrad (2025)
+    ├── 2.2 Memory (65 papers)
+    │     Examples: MemoryBank (2024)
+    ├── 2.3 Tool Use (51 papers)
+    │     Examples: Voyager (2023)
+    └── 2.4 Full Scaffolding (21 papers)
+          Examples: Darwin Gödel Machine (2025)
+Scaffolding improvement is faster, cheaper, and more reversible. Foundation model improvement is more powerful but slower and more training-centric [5].
+
+What this means for production platforms: Muse, Grok Bot, and Instinct currently operate primarily in the scaffolding improvement space (memory updates, skill creation, prompt refinement). None has documented online weight updates in the user's VM [14]. The frontier is combining both.
+
+8.2 SIA: Self Improving AI with Harness & Weight Updates (arXiv:2605.27276)
+The core insight [3][26]: Previous research split into two silos:
+
+Silo 1 (Harness): Meta-agent rewrites the scaffold (tools, prompts, retry logic, search procedure) while model weights stay fixed — Darwin Gödel Machine, Meta-Harness, Hyperagents
+Silo 2 (Weights): RL pipelines update model weights on task feedback while harness stays fixed
+SIA combines both: A Feedback-Agent updates both the harness AND the weights of a task-specific agent [3][26].
+
+Results [3][26]:
+
+Benchmark	SIA-W+H Improvement
+LawBench (Chinese legal classification)	+25.1% over prior SOTA (70.1% vs 45.0%)
+GPU kernel optimization (TriMul)	12.4% faster (1,017 vs 1,161 μs)
+Single-cell RNA denoising	+20.4% over prior SOTA
+Key architectural insight [26]: The Feedback-Agent dynamically selects between harness updates and weight updates conditioned on task type and observed reward dynamics — switching to weight updates once harness progress stalls.
+
+Critical limitation [26]: Coupled co-evolutionary Goodhart problem — both harness search and RL weight updates can overfit to the verifier. The authors flag this as an open problem.
+
+Implication for Muse/Grok Bot/Instinct builders: No current consumer product combines both levers. The first to implement SIA-style combined harness + weight updates on per-user agents will have a substantial technical moat.
+
+8.3 AIDE²: Recursive Self-Improvement of AI Research Agents (arXiv:2609.26457)
+The experiment [2][25]: AIDE² (AI Research Agent² — an agent that improves an agent) was run autonomously for 8 days. It proposed changes to its own code, benchmarked modified versions on AI R&D tasks, and kept changes that performed best on hidden evaluations.
+
+Discovered improvements in 8 days [2][25]:
+
+New search policy (UCB1 bandit selection over 5 drafting strategies with periodic forking of global best node — replaces purely greedy selection)
+Memory mechanisms that compress growing context
+Bounded, role-specific prompts
+Bug-rate-gated failure memory (activates when bug rate ≥ 15%)
+Per-step prompt size kept roughly constant despite growing task complexity
+Multiple additional improvements across 8-day run
+Results [2][25]:
+
+Matches or exceeds human-engineered production research agent on 4 held-out benchmarks (ML engineering, heuristic algorithm engineering, physics weather forecasting)
+Reward hacking rate dropped from 55% → 32% (7 points below human-engineered agent) — a property the loop never explicitly optimized for [2]
+WeatherBench 2: Both evolved checkpoints independently converged on same family of numerical improvements across every seed
+What AIDE² reveals about good agent design:
+
+UCB1 bandit selection over strategies > greedy selection
+Context compression (bounded prompts, summarization) is critical for long-horizon tasks
+Self-improvement can emergently reduce failure modes not explicitly targeted
+Limitation [25]: With only 3 seeds per outer-loop agent, the study could not establish that the self-improved agent is more sample-efficient as a self-improver than the baseline. More seeds needed.
+
+8.4 The Self-Improvement Taxonomy in Practice [5][36]
+Practical self-improvement categories observable in deployed systems:
+
+Category	What Improves	Example
+Memory-first	Persistent memory across sessions	Letta Code; Muse's persistent memory files [36][14]
+Reflection agents	Self-critique and revision loops	LangGraph reflection; Instinct's Reflexion lineage [36][18]
+Skill-evolving	Reusable skill creation and refinement	Grok Bot skills [10]; Hermes Agent Skills [4]
+Self-referential	Agent modifies itself or its improvement process	AIDE²; Darwin Gödel Machine; Hyperagents [25][26]
+Critical warning [36]: "Remembering a mistake is not the same as learning to avoid it. A useful check is simple: does the updated agent do better on tasks it has not already seen?"
+
+The gap: "Agents rarely change strategy on their own, even when results tell them to." [36] This is the frontier problem — current deployed agents improve their memory and skills but rarely redesign their search/planning strategy autonomously.
+
+8.5 Agentic Engineering as a Formal Paradigm
+LangChain formally introduced Agentic Engineering in April 2026: a multi-agent coordination model where AI agents function as digital team members with defined roles, shared memory, and unified observability [4][24].
+
+The four-stage roadmap [4][24]:
+
+Stage	Description	Timeframe
+I. Tool-Augmented	LLM with tool access	Current
+II. Single-Task Autonomous	Single-agent with planning and memory	Current (Muse, Instinct)
+III. Multi-Agent Teams	Coordinated specialist agents	Current (Grok Bot, emerging)
+IV. Self-Evolving Ecosystems	Agents that redesign themselves	2028+ (estimate)
+The four persistent agent challenges [24]:
+
+Context drift — goals shift as context grows
+Error propagation — early mistakes compound
+Technical debt awareness — agents don't track what's owed
+Verification fidelity — hard to confirm correctness at scale
+9. AGENTIC ENGINEERING BEHIND THE LOOP: REACT, CHAIN-OF-THOUGHT, FULL PIPELINE
+9.1 The ReAct Pattern [4][24]
+ReAct (Reason + Act) is the foundational pattern behind all three platforms' action-taking:
+
+Thought: "I need to find the user's latest invoice in Gmail"
+Action: [search_gmail(query="invoice", date_range="last_30_days")]
+Observation: [Returns email thread with 3 invoices]
+Thought: "The most recent invoice is from Oct 28. I need to download the PDF."
+Action: [download_attachment(email_id="...", filename="invoice_oct28.pdf")]
+Observation: [File saved to /workspace/invoices/]
+Thought: "Now I need to extract the total amount..."
+...
+"Interleaving reasoning traces with tool-use actions substantially improves task performance" [4]. This is the real mechanism behind why these agents feel smarter than pure chatbots.
+
+9.2 Chain-of-Thought [4]
+Before ReAct, chain-of-thought prompting established that making the model reason explicitly through steps before answering substantially improves complex task performance. Muse Spark includes visual chain-of-thought for multimodal reasoning [35].
+
+9.3 Full Agent Execution Pipeline
+USER INTENT
+    ↓
+GOAL INTERPRETER
+  → Parse intent
+  → Identify ambiguities
+  → Ask clarifying questions if needed
+    ↓
+PLANNER
+  → Decompose goal into subtasks
+  → Estimate tool requirements
+  → Set success criteria
+    ↓
+TOOL REGISTRY LOOKUP
+  → Which tools/connectors are available?
+  → Are permissions granted?
+  → Is approval needed?
+    ↓
+EXECUTION LOOP (ReAct)
+  → Think → Act → Observe → Think → Act...
+  → Retry logic for failures
+  → Timeout/budget controls
+    ↓
+MULTI-AGENT COORDINATION (if applicable)
+  → Spawn subagents for parallel work
+  → Chief-of-Staff routing [[10]](<https://x.ai/news/introducing-grok-bot>)
+  → Share results via group chat [[9]](<https://x.ai/news/designing-grok-bot>)
+    ↓
+MEMORY UPDATE
+  → Write episodic memory
+  → Update semantic preferences
+  → Create/update skills if workflow completed
+    ↓
+APPROVAL GATE (for consequential actions)
+  → Structured UI card [[13]](<https://introducing.muse.ai/>)
+  → User accept/reject
+  → Tainted egress check (Muse) [[28]](<https://research.meta.ai/blog/security-and-safety-for-ai-agents-our-approach-with-muse>)
+    ↓
+ARTIFACT PRODUCTION
+  → Document, dashboard, PR, email draft...
+    ↓
+USER NOTIFICATION
+9.4 Tool Use Architecture [5][4]
+From the academic survey, 51 papers cover tool use as a self-improvement mechanism [5]. Key patterns:
+
+Dynamic tool routing (Voyager 2023 lineage): Agent selects tools at runtime based on task
+Tool creation: Muse can "write its own code and build the tools a task needs" [13] — this is runtime tool creation
+Minimal capability principle [31]: "Each tool should expose the minimum capability required, validate inputs, and return structured results. High-risk tools should require confirmation."
+MCP (Model Context Protocol): Grok Bot's extensibility layer for custom tool integration [15]
+Computer use as fallback: When no API or connector exists, browser automation fills the gap — but with reliability caveats [22][34]
+10. BUILDING A SUPERIOR AI AGENT AVATAR PLATFORM: OPTIMAL STACK & ARCHITECTURE
+Drawing from the strengths of all three platforms and the ArXiv research, here is a blueprint for a platform that surpasses all three.
+
+10.1 Design Principles (From Evidence)
+Modular separation: Keep identity layer, task planner, tool permissions, memory stores, and expression system modular — never collapse them into one giant prompt [31]
+Character memory ≠ task memory: Mixing them risks a failed tool call becoming part of the character's identity [31]
+Tool boundaries > model personality: Each tool should expose minimum capability, validate inputs, return structured results, and require confirmation for high-risk actions [31]
+Safety overrides character: Safety and factual accuracy always override character style [31]
+Self-improvement from both levers: Combine harness updates + weight updates (SIA paradigm) [3][26]
+UCB1 strategy selection: Over multiple drafting/planning strategies with periodic forking (AIDE² finding) [25]
+Context compression: Bounded prompts + role-specific memory + bug-rate-gated failure activation [25]
+Harness updates + domain-specific weight updates together: Neither alone is sufficient [3]
+10.2 Optimal Architecture Blueprint
+┌─────────────────────────────────────────────────────────┐
+│                  USER INTERFACE LAYER                   │
+│  ├── Chat (WhatsApp-style, low friction like Muse)      │
+│  ├── Desktop app (power features like Grok Bot)         │
+│  ├── Voice / SMS (zero-friction like Instinct)          │
+│  └── Audit trail + Activity log (always visible)        │
+└─────────────────────────┬───────────────────────────────┘
+                          │
+┌─────────────────────────▼───────────────────────────────┐
+│                 AVATAR & PERSONA LAYER                  │
+│  ├── Custom avatar (user-named, styled like Muse)       │
+│  ├── Lifecycle state animation (idle/working/done)      │
+│  │     (like Grok Bot's hover-to-see-action)            │
+│  ├── Identity profile: name, tone, style, memory        │
+│  ├── Character memory (separate from task memory)       │
+│  └── Expression system: intent → animation + voice cues │
+└─────────────────────────┬───────────────────────────────┘
+                          │
+┌─────────────────────────▼───────────────────────────────┐
+│               ORCHESTRATION LAYER                       │
+│  ├── Goal interpreter + planner                         │
+│  ├── Multi-agent coordinator (Chief of Staff pattern)   │
+│  ├── UCB1 strategy bandit (AIDE² pattern)               │
+│  ├── Subagent spawning + parallel execution             │
+│  ├── Bot marketplace (templated roles)                  │
+│  └── Teach-by-demonstration → skill creation            │
+└─────────────────────────┬───────────────────────────────┘
+                          │
+┌─────────────────────────▼───────────────────────────────┐
+│                EXECUTION LAYER                          │
+│  ├── ReAct loop (Reason → Act → Observe → Refine)       │
+│  ├── Browser agent (accessibility tree, not raw DOM)    │
+│  ├── Code execution / terminal                          │
+│  ├── File system                                        │
+│  ├── Connector workers (privsep sandboxed)              │
+│  └── Computer use fallback (for no-API sites)           │
+└─────────────────────────┬───────────────────────────────┘
+                          │
+┌─────────────────────────▼───────────────────────────────┐
+│                 SECURITY & PERMISSION LAYER             │
+│  ├── Sentinel-equivalent: sole egress authority         │
+│  ├── Tainted egress: eBPF/LSM kernel tracking           │
+│  ├── Surrogate credential tokens (never real tokens)    │
+│  ├── Structured approval cards (not conversational)     │
+│  ├── One-time cards for payments                        │
+│  ├── Bug bounty + external audit                        │
+│  └── Confidential VM roadmap (user-only encryption)     │
+└─────────────────────────┬───────────────────────────────┘
+                          │
+┌─────────────────────────▼───────────────────────────────┐
+│                   STATE & MEMORY LAYER                  │
+│  ├── In-context: current task window                    │
+│  ├── Episodic: FTS5-searchable conversation history     │
+│  ├── Semantic: user facts, preferences (inspectable)    │
+│  ├── Procedural: skills/routines (teach by demo)        │
+│  ├── Context compaction: UCB1-gated compression         │
+│  └── Memory export API (gap in all three current platforms) │
+└─────────────────────────┬───────────────────────────────┘
+                          │
+┌─────────────────────────▼───────────────────────────────┐
+│           SELF-IMPROVEMENT LAYER (SIA + AIDE² paradigm) │
+│  ├── Feedback-Agent: evaluates task execution           │
+│  ├── Harness updates: rewrites prompts, tools, retries  │
+│  ├── Weight updates: domain RL when harness stalls      │
+│  ├── Recursive loop: benchmark → keep best → iterate    │
+│  ├── Reward hacking detection                           │
+│  └── Held-out eval set to prevent overfitting           │
+└─────────────────────────┬───────────────────────────────┘
+                          │
+┌─────────────────────────▼───────────────────────────────┐
+│               COMPUTE INFRASTRUCTURE                    │
+│  ├── Firecracker microVM per user (hardware isolation)  │
+│  ├── systemd-nspawn runtime cell per agent              │
+│  ├── Persistent cloud computer (24/7)                   │
+│  ├── Cron scheduler + event triggers                    │
+│  ├── Private worker machine support (for VPN/enterprise)│
+│  └── Enterprise: DLP, certs, proxies at boot            │
+└─────────────────────────────────────────────────────────┘
+10.3 Optimal Technology Stack
+Layer	Recommended Technology	Rationale
+VM isolation	Firecracker microVM	Hardware-level isolation, proven by Grok Bot/AWS Lambda [6]
+Runtime cell	systemd-nspawn	Lightweight, proven by Meta Muse [28]
+Security enforcement	eBPF + LSM hooks	Kernel-level tainted egress tracking [28]
+Agent harness	Python + LangGraph or custom	Reflection patterns; observability [36]
+Memory: episodic	FTS5 + LLM summarization	Cross-session search [4]
+Memory: semantic	PostgreSQL (outside runtime cell)	Muse's architecture [14]
+Memory: procedural	Parameterized skill modules	Hermes Agent pattern [4]
+Tool integration	MCP + Composio (1,000+ apps)	Best coverage [22]
+Browser agent	Playwright + accessibility tree	Not raw DOM; safer [28]
+Credential management	Surrogate token system + authd	Tokens never reach agent [6][28]
+Payment	Stripe Link single-use cards	Already proven by Muse [28]
+Multi-agent	UCB1 bandit strategy selector	AIDE² discovery [25]
+Self-improvement	SIA: Feedback-Agent updating harness + weights	Best documented approach [3][26]
+Model foundation	Large frontier model + extended RL on long-horizon tasks	Grok 4.7 approach [20]
+Avatar	Modular: identity profile + animation engine + voice synthesis	Genies architecture [31]
+Governance	Action-level audit trail, memory export API, role-scoped permissions	Gap in all three current platforms
+10.4 UI Alignment Principles
+What all three platforms teach about UI:
+
+The approval card must be deterministic UI, not conversational [13]: When an action is irreversible (send email, make purchase), the UI must present a structured accept/reject card — not ask the agent to ask the user in chat. This is Muse's strongest UI design principle.
+
+Avatar state = live status [9][13]: The avatar should always communicate what the agent is doing. Grok Bot's hover-to-see-action is clever but adds friction; Muse's persistent snippet under the avatar is always-on. Optimal: always-on snippet + expandable detail.
+
+Three computer access levels [9]: Status (what is it doing?) → Preview (watch it live) → Takeover (I'll drive). This escalation path gives users control without forcing them to always supervise.
+
+Heterogeneous transcript [9]: Responses should not always be prose. Inline cards, tables, structured data, and widgets should appear when they suit the information better.
+
+Goals tab / dashboard [13]: Long-horizon work needs a dedicated view separate from chat. Chat handles conversation; Goals tab handles ongoing commitments.
+
+Proactivity controls [13]: Users must be able to dial proactivity up, down, or off. The default should be moderate proactivity with explicit opt-in for aggressive autonomous action.
+
+Full audit trail, always accessible [12]: Every action the agent has taken or plans to take must be visible on demand. This is both a safety feature and a trust-building feature.
+
+11. RISKS, GOVERNANCE & OPEN QUESTIONS
+11.1 Shared Risks Across All Three Platforms
+Prompt injection [6][16][28]: When an agent reads untrusted content (email, website), a malicious actor can embed instructions that hijack the agent's actions. Meta explicitly calls the combination of private-data access + untrusted content processing + outbound communication ability the "lethal trifecta" [6]. Instinct has already demonstrated vulnerability [16].
+
+Shadow IT / governance gap [8]: When agents arrive through individual subscriptions, they proliferate inside companies before governance frameworks exist. This is "shadow IT with the ability to take actions, not just read data" [8]. Only 1 in 5 companies has a mature governance model for autonomous AI agents (Deloitte 2026) [15][16].
+
+Token economy fragility [22][38]: Weekly usage limits can strand in-progress work mid-task. This is not just a pricing issue — it's a reliability architecture issue for business-critical workflows.
+
+Agent identity verification [7]: Major US banks cannot reliably distinguish legitimate agents from malicious ones mimicking normal behavior. No agreed-upon standard exists, though Cloudflare (signed agents), Google (Agent Payments Protocol), and Stripe (shared payment tokens) propose competing frameworks [7].
+
+11.2 Platform-Specific Open Questions
+Muse:
+
+How does memory reconciliation and deletion propagation work? [6]
+Exact snapshot boundary for subagent spawning? [14]
+When will Confidential VM ship and what will auditors find? [28]
+Grok Bot:
+
+What is the model routing algorithm and when will users get override control? [8]
+How is memory exported / deleted on request? [15]
+What happens to in-flight work when the shared VM fails? [38]
+Instinct:
+
+What models power the agent? [18]
+How do isolated sandboxes actually work? [18]
+Will a $10B valuation with no disclosed revenue survive if growth stalls? [17]
+12. STRATEGIC RECOMMENDATIONS & WATCHLIST
+For Decision-Makers Evaluating Adoption
+If you are an individual power user / small team:
+
+Start with Grok Bot (Premium at $30/mo) for multi-bot workflows and teach-by-demonstration
+Add Muse for consumer/personal tasks where security and WhatsApp convenience matter
+Avoid Instinct until prompt injection and unauthorized-action issues are resolved
+If you are an enterprise IT/operations leader:
+
+None of the three platforms is production-ready for enterprise governance today [8][16]
+Grok Bot Enterprise (waitlist) has the most enterprise controls but lacks action-level audit trail [15]
+Muse's security architecture is the most technically sophisticated but its connector ecosystem is narrower
+Instinct's Terms of Service and data practices are incompatible with most enterprise compliance frameworks [29]
+If you are a builder/startup considering this space:
+
+The biggest unsolved gap across all three: action-level audit trail + memory export API + enterprise-grade scoped permissions per bot
+Second gap: SIA-style combined harness + weight self-improvement — no consumer product has shipped this
+Third gap: Agent identity verification — the Cloudflare/Google/Stripe frameworks are not yet standardized [7]
+Fourth gap: Confidential VM at scale — Muse is the only one pursuing this seriously [28]
+Watchlist: Near-Term Developments to Monitor
+Item	Why It Matters	Platform
+Muse Confidential VM launch	First VM-encrypted consumer agent with user-only key	Muse
+Grok Bot Enterprise GA	Enterprise governance controls; if scoped permissions ship	Grok Bot
+Instinct pricing announcement	Whether $200-500/mo tier validates unit economics	Instinct
+Agent identity standards (Cloudflare/Google/Stripe)	Unlocks agent-to-merchant trust at scale	All
+SIA/AIDE² production implementation	First platform to ship recursive self-improvement wins technical moat	Research → all
+Muse Wonder Full rollout to Muse personal	Frontier law/finance/health capabilities in consumer product	Muse
+Grok Bot model routing improvements	User override = significant UX improvement	Grok Bot
+Instinct security audit publication	Required for enterprise consideration	Instinct
+EvoClaw-style continuous benchmark results	Independent reliability data beyond isolated tasks	All
+CLOSING SYNTHESIS
+Muse, Grok Bot, and Instinct are not chatbots. They are persistent computing environments — cloud computers running 24/7 on behalf of users — with AI agents that execute real-world work through browsers, APIs, files, and (in Instinct's case) phones. The technical infrastructure is genuinely novel and the use cases (managing 200 cloud agents, processing $1B in transactions, catching a sports tryout deadline 12 hours before close) are real.
+
+The academic self-improvement research (AIDE², SIA) makes clear that the current generation is Stage III of a four-stage journey. Stage IV — agents that redesign themselves — is academically proven (8-day autonomous run, 7 successive improvements, matching human-engineered agents) [2][25] but not yet productized.
+
+The decision-maker's key insight: the moat is not in the model. Grok 4.7, Muse Spark, and whatever Instinct uses are all powerful. The moat is in the trust infrastructure (security, approval controls, audit trails, credential management), the multi-agent coordination architecture (Chief of Staff, skills, teach-by-demo), the avatar and persona system (emotional engagement, status communication), and eventually the self-improvement loop (harness + weight updates, UCB1 strategy selection, context compression).
+
+The platform that combines Muse's security depth, Grok Bot's multi-agent power, Instinct's zero-friction access, and the ArXiv self-improvement paradigm — with enterprise-grade governance none of them has yet — will define the next phase of this market.
+
+All citations reference the numbered evidence sources above. Claims about self-reported metrics (transaction volumes, productivity gains, PR counts) are noted as such and should not be treated as independently verified facts. Platform features as of evidence retrieval date (November 3, 2026); this market is moving rapidly and features, pricing, and access models will change.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+Real AI-Agent Platform: A Comprehensive Research Report and Build Specification
+Research Date: 2026-11-03 | Scope: Platform design for a buildable AI-agent operating system
+
+EXECUTIVE SUMMARY
+This report synthesizes evidence from four reference platforms—Meta Muse, Instinct (Spear Street Technology), xAI Grok Bot, and Cursor's agentic engineering framework—to design a coherent, buildable AI-agent operating system. The central finding is that all four platforms have independently converged on the same structural insight: the value is not in conversational AI but in agents that complete real work inside real tools, with verified outcomes and controlled permissions.
+
+Five strategic decisions emerge from the evidence:
+
+Per-user persistent compute is the architectural foundation. Muse gives every user a dedicated Linux VM [12], Grok Bot gives every user a persistent cloud computer [16], and Instinct maintains a cloud desktop [14]. This is not a chatbot pattern—it is closer to a cloud desktop with an AI occupant. The MVP must build this first.
+
+Truthful, backend-driven state is a trust requirement, not a feature. Muse shows an activity log and permissions under the avatar [13]; Grok Bot uses avatar motion to indicate actual lifecycle state [49]; Cursor exposes a transcript users can read [19]. Fake progress bars or decorative animations that misrepresent actual work destroy trust irreversibly.
+
+Skills over prompts. Cursor's SKILL.md system, Grok Bot's bot routines, and PILOT's reusable skill library [9] all demonstrate that small, tested, versioned skill definitions outperform giant system prompts for reliability, debuggability, and incremental improvement.
+
+Security is architectural, not additive. Muse's Sentinel agent, systemd-nspawn cells, and credential injection [32]; MCP's documented STDIO RCE vulnerability [54]; and Instinct's prompt injection incidents [3] prove that security must be designed into the execution boundary, not bolted on.
+
+The supervisor coordinator-agent pattern is the scalable multi-agent architecture. LangChain benchmarks show swarm slightly outperforms naive supervisor, but a well-implemented supervisor with context isolation outperforms monolithic single agents by 90.2% at scale [24]. Cursor Projects' coordinator-agent pattern [52] and Grok Bot's chief-of-staff pattern [35] both validate this.
+
+What to build first: A single end-to-end vertical slice—one agent, one task category (research), one persistent VM, one verified output—with full observability. This slice proves the architecture before expanding to multi-agent, multi-tool systems.
+
+PART 1: PRODUCT TEARDOWNS
+A. Product Identity Confirmation
+Meta Muse
+Official URL: muse.ai, ai.meta.com/muse, about.fb.com/news/2026/09/introducing-muse-personal-ai-agent [11][12]
+
+Identity confirmed: Meta launched Muse on September 8, 2026, in the United States, as a personal AI agent running on a dedicated per-user Linux VM called Muse Secure VM [32]. It is powered by Meta's proprietary Muse Spark 1.3 model [32] and is distinct from Meta AI (the assistant embedded in WhatsApp and Instagram). Muse is accessible via iOS, Android, muse.ai, WhatsApp, and Mac [31]. A separate open-weight model, Muse Glimmer, is provided for developers building their own tool-using agents [31].
+
+Not to be confused with: The "introducing.muse.ai" domain [13] belongs to a different, independent product—a personal agent built by founders who built products together for about a decade—which has publicly similar design patterns but is a separate company and product. The evidence for that product [13] is kept separate from Meta Muse evidence below.
+
+Instinct
+Official URL: instinct.com [14]
+
+Identity confirmed: Instinct is an invite-only personal AI assistant operated by Spear Street Technology, Inc., San Francisco, founded by Noah Shinn (former Sierra research scientist), incorporated April 2026 [3][33]. Users interact exclusively through iMessage or WhatsApp text or voice calls—no new app interface [14][5]. Instinct maintains a persistent cloud computer with browser, cached credentials, and screen access [3]. As of November 2026 it remains in private beta with no published pricing [5].
+
+Funding trajectory (reported, not audited): $250M Series B at $2.5B valuation (Index Ventures, Benchmark) [33], followed by a reported $1B Series C at $10B valuation from Sequoia, Benchmark, Coatue on September 28, 2026 [5].
+
+Critical ambiguity: "Instinct AI" does not appear as an official product name. The product is simply "Instinct" at instinct.com, operated by Spear Street Technology trading as Instinct [34].
+
+Grok Bot (xAI / SpaceXAI)
+Official URL: x.ai/bot, x.ai/bot/marketplace/engineering [15][16]
+
+Identity confirmed: xAI (operating as SpaceXAI post-rebranding) launched Grok Bot on August 11, 2026 as persistent AI agents that share a cloud computer per user [35]. A template marketplace launched August 28, 2026 [1]. The product is integrated with Cursor's infrastructure (SSO, auth, privacy mode) [16]. Pricing: included with Cursor Premium Teams ($120/seat/month), Cursor Ultra ($200/month), and SuperGrok Heavy ($300/month per VentureBeat-reported figures) [2][37].
+
+Not confirmed in official sources: The $120/month per-seat figure appears in secondary sources [2][37], not the official x.ai/bot page, which only lists tier names. Treat this as reported, not official.
+
+Cursor (Agentic Engineering)
+Official URL: cursor.com [19][52]
+
+Identity confirmed: Cursor is an AI-native IDE whose agent capabilities center on: an agent harness (instructions + tools + model) [19]; SKILL.md-defined skills loaded dynamically [19]; Cursor Cloud Agents running in remote sandboxes [19]; Bugbot for automated PR review [19]; and the recently launched Projects feature (coordinator-agent pattern for large-scale, multi-PR work) [52]. The "pstack" engineering skills framework referenced in Maven [18] is Cursor's internally developed and open-sourced skill framework.
+
+B. Comparative Product Teardown
+Dimension	Meta Muse	Instinct	Grok Bot	Cursor/Projects
+Core concept	Personal AI agent on dedicated VM	Texting-interface cloud desktop agent	Always-on team of agents with shared cloud computer	AI coding IDE + cloud agent fleet
+Primary user	General consumers	Personal power users	Knowledge workers, engineering teams	Software engineers
+Compute model	Dedicated Linux VM per user (Muse Secure VM) [12]	Dedicated cloud desktop per user [3]	Shared cloud computer per user account [16]	Remote sandboxes per task/agent [19]
+VM specs (verified/reported)	AMD EPYC Turin, 2 vCPU, 8GB RAM, Ubuntu 24.04, kernel 7.0 [48]	Unverified; described as cloud desktop with browser [4]	Unverified; described as cloud computer [35]	E2B/Firecracker microVMs [22]
+Model	Muse Spark 1.3 (proprietary) [32]	Unverified; vision-language + computer vision [4]	Grok-routed (no user override) [2]	User-selectable; Cursor tunes per model [19]
+Browser access	Full Chromium browser in VM [40]	Full browser with cached credentials [3]	Browser via cloud computer [35]	Playwright/browser control [19]
+Code execution	Terminal in VM; can compile code [40]	Unverified	Via cloud computer [35]	Terminal, sandboxed code execution [19]
+Security model	Sentinel agent controls all egress; systemd-nspawn cells; credential injection; $300K bug bounty [32]	Persistent, irrevocable data license; prompt injection confirmed [3][33]	Auto Review for sensitive actions; DLP/cert controls for enterprise [16]	Cloud sandbox isolation; git worktrees for parallel agents [19]
+Memory	Persistent VM storage; user-editable Memory files [13]	Persistent cloud desktop; indexed Connected Service data [5]	Bot-level memory + account-level tools/skills [49]	Skills (dynamic) + Rules (persistent) + LangGraph checkpoints [19][41]
+Approval/HITL	Per-action approval gates; allow once/always/deny [11]	Agent sent emails without approval (reported incident) [33]	Auto Review; user watches actions [16]	Human-in-the-loop in LangGraph; PR review gates [38]
+Verification	Audit trail of actions taken and planned [12]	No independent verification described	Transcript shows what ran [49]	Bugbot review; agent review pass; test assertions [19]
+Pricing	Free (usage limit); Power $20/mo; Maximum $100/mo [40]	Free (invite-only beta); no published price [5]	Included with Cursor/SuperGrok tiers ($30–$200/mo) [16]	Cursor Pro $20/mo; Teams; Enterprise
+Key strength	Security architecture; Sentinel; one-time payment cards [12]	Natural interface (text/call); proactive [14]	Engineering org orchestration; 200+ agents [17]	Engineering skills; verified code changes [19]
+Key gap	Meta privacy history; confidential VM not yet live [40]	Security and consent failures documented [33]	No scoped permission model documented [2]	Consumer-facing complexity; not a general agent platform
+Evidence label	Official + reported technical details	Official minimal; security concerns from primary sources	Official + secondary	Official
+PART 2: UI/UX AND DESIGN SYSTEM
+A. Information Architecture
+The evidence reveals three distinct UI paradigms across the reference products. The proposed design synthesizes the best of each.
+
+Observed UI Patterns
+Muse (observed):
+
+Chat-primary with avatar prominent at top [13]
+Avatar tapped → full activity log + approved permissions + Memory files [13]
+Goals tab tracks all goals and action plans [13]
+Artifacts appear in chat and can "live outside it" [13]
+Side chats hold separate context for complex projects [13]
+Approval cards are deterministic UI (not model-generated) with clear accept/reject [13]
+Proactive messages use chat bubbles with clear thought separation [13]
+Under-avatar snippet shows current background activity [13]
+Grok Bot (observed):
+
+Five core objects: Bots, Chats, Prompts, Tools, Artifacts [49]
+Three computer access levels: Status, Preview, Takeover [49]
+Avatar motion indicates lifecycle state (idle → acknowledging → working → waiting → done) with hover showing current action [49]
+Routines interface with transcript showing what ran [49]
+Practical limits: ~50 Bots per account, 6 per group chat [49]
+Account-level tool/skill scoping; Bot-level memory/routines [49]
+Cursor (observed):
+
+Plan Mode shows implementation plan with file paths before building [19]
+Terminal output, diff view, and browser screenshot all in agent panel [19]
+Review → Find Issues button triggers post-generation review pass [19]
+Bugbot automated review appears on PR push [19]
+Projects: coordinator always responsive; agents shown in panel; PRs surfaced on merge readiness [52]
+Proposed Design System
+Design principle hierarchy (proposed, not observed in any single product):
+
+Truthful state over aesthetic animation. Every visual state must map to a real backend event. No spinner that runs indefinitely without a timeout. No "thinking..." without a timeout that surfaces an error.
+
+Separable activity stream from conversation. The conversation sets goals; the activity panel shows autonomous work. These are different surfaces [26].
+
+Progressive trust delegation. Begin with approval-required for all consequential actions; expand autonomy only after demonstrated reliability [26].
+
+Deterministic UI for approvals. Approval cards are never generated by the model. They are templated, structured components with fixed options [13].
+
+Screen and Flow Map (Proposed)
+App Shell
+├── Navigation Rail (persistent)
+│   ├── Agents (home)
+│   ├── Tasks
+│   ├── Library (skills/tools)
+│   ├── Memory/Knowledge
+│   ├── Integrations
+│   └── Settings
+│
+├── Agents Screen (/)
+│   ├── My Agents (grid of agent cards)
+│   │   └── Agent Card: avatar + name + role + status badge + last-active
+│   ├── Marketplace (discover templates)
+│   │   └── Category tabs: Engineering / Research / Business / Writing / Custom
+│   └── + Create Agent button → Agent Creation Wizard
+│
+├── Agent Creation Wizard (/agents/new)
+│   ├── Step 1: Identity (name, role, avatar style, description)
+│   ├── Step 2: Model selection (provider + model + temperature)
+│   ├── Step 3: Skills (install from registry, create custom)
+│   ├── Step 4: Tools & Permissions (web, files, terminal, APIs, integrations)
+│   ├── Step 5: Memory settings (what to remember, what to forget)
+│   ├── Step 6: Approval policy (always ask / ask for sensitive / autonomous)
+│   └── Step 7: Review + Launch
+│
+├── Agent Workspace (/agents/:id)
+│   ├── Left: Chat thread (goal input + message history)
+│   ├── Center: Activity Panel (live backend events, action summaries, tool logs)
+│   │   ├── Current State Banner (idle / planning / searching / coding / ...)
+│   │   ├── Step Timeline (each action with timestamp, tool, outcome)
+│   │   ├── Browser View (screenshot/preview) — Status / Preview / Takeover
+│   │   └── Artifacts Panel (files, code, documents produced)
+│   ├── Right: Context Panel (memory, skills loaded, permissions, budget)
+│   └── Bottom: Approval Queue (pending gates requiring human decision)
+│
+├── Task Board (/tasks)
+│   ├── Active tasks (with agent assignment, status, progress)
+│   ├── Queued tasks
+│   ├── Completed tasks (with verified outcome)
+│   └── Failed tasks (with error + retry options)
+│
+├── Memory & Knowledge (/memory)
+│   ├── Agent memories (user-readable, user-editable)
+│   ├── Shared knowledge bases (documents, URLs, data)
+│   └── Forget controls
+│
+├── Integrations (/integrations)
+│   ├── Connected services (email, calendar, GitHub, Slack, CRMs...)
+│   ├── Permission levels per service (read / read+write / full)
+│   └── Credential vault (secure; agent uses but cannot read)
+│
+└── Monitoring (/monitoring)
+    ├── Per-agent: token cost, action count, success rate, errors
+    ├── System-wide: concurrent agents, queue depth, budget burn
+    └── Audit log (immutable, exportable)
+Component Inventory (Proposed)
+AgentCard
+
+Purpose: Surface agent identity and status at a glance
+Data: agent_id, name, role, avatar_url, current_state, last_action_summary, error_count_today
+States: idle (soft glow), working (subtle pulse animation tied to backend heartbeat), waiting-for-approval (amber badge), error (red badge), offline
+Interaction: Click → open workspace; long-press/right-click → rename, delete, duplicate
+Backend event: Agent status WebSocket subscription per agent_id
+Accessibility: ARIA role="article", status communicated via aria-label not only color
+ActivityTimeline
+
+Purpose: Show real backend events in chronological order; no fake entries
+Data: event_id, timestamp, event_type (tool_call | model_generation | approval_gate | verification | error), summary, duration_ms, cost_tokens
+States per row: pending (spinner, max 30s before timeout surfaced), success (checkmark + elapsed), failed (red X + error message + retry button), skipped (grayed)
+Interaction: Expand row → full tool call input/output; click screenshot → lightbox
+UX friction addressed: Distinguish model generation (inference latency, no external effect) from tool execution (actual side effect). Users must see which is which.
+ApprovalCard (deterministic UI)
+
+Purpose: Gate consequential or irreversible actions
+Data: action_type, action_description, action_preview (what will happen), risk_level (low/medium/high/critical), affected_resources
+Options: Allow Once | Always Allow | Deny | Edit Before Allowing
+Design: Fixed template, never model-generated text in decision buttons. Timeout policy: if no response in N minutes, deny and notify.
+Backend: Sets permission_grant record and resumes or cancels task
+BrowserView
+
+Purpose: Show what agent sees/does in browser; allow user takeover
+Levels: Status (URL + page title only), Preview (live screenshot, read-only), Takeover (full VNC/noVNC session, user controls)
+Backend: WebSocket stream of browser screenshots at configurable fps (default 1fps in preview, 15fps in takeover)
+SkillSelector
+
+Purpose: Install/remove skills from an agent's skill registry
+Data: skill_id, name, version, description, allowed_tools, permissions_required, test_status
+States: not-installed, installed (with version), update-available, deprecated, test-failed (blocked from install)
+MemoryPanel
+
+Purpose: Show user-readable memory; allow editing and deletion
+Data: memory entries (key/value/context/timestamp/source)
+Interaction: Edit inline; delete; add manually; search
+Accessibility: Screen-reader-readable; no raw embeddings shown
+Design System Tokens (Proposed)
+Color Scale:
+  --brand-primary: #5B21B6 (violet-800)
+  --agent-idle: #6B7280 (gray-500)
+  --agent-working: #2563EB (blue-600) 
+  --agent-approval: #D97706 (amber-600)
+  --agent-success: #059669 (emerald-600)
+  --agent-error: #DC2626 (red-600)
+  --surface-0: #FFFFFF
+  --surface-1: #F9FAFB
+  --surface-2: #F3F4F6
+  --border: #E5E7EB
+
+Typography:
+  --font-sans: 'Inter Variable', system-ui
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace
+  Scale: 12/14/16/18/24/32/48px | line-height: 1.5 prose, 1.25 display
+
+Spacing: 4px base grid (4/8/12/16/24/32/48/64px)
+
+Motion:
+  --transition-fast: 150ms ease-out (state badges)
+  --transition-standard: 250ms ease-in-out (panel opens)
+  --transition-slow: 400ms ease-in-out (avatar state)
+  No infinite spinners without a bound timeout
+  
+Elevation: box-shadow scale (0/sm/md/lg) for cards, modals, dropdowns
+PART 3: AGENT AVATARS AND TRUTHFUL BEHAVIOR
+A. Identity System
+Each agent has a persistent identity profile:
+
+// ILLUSTRATIVE CODE (not tested)
+interface AgentIdentity {
+  id: string;                    // UUID
+  name: string;                  // User-chosen, e.g., "Research Lead"
+  role: AgentRole;               // enum: researcher | engineer | writer | ...
+  avatar: AvatarConfig;          // style, color, shape params
+  description: string;           // User-facing purpose
+  permissions: PermissionSet;    // Scoped to this agent
+  model_config: ModelConfig;     // Provider, model, temperature
+  skill_ids: string[];           // Installed skills
+  memory_policy: MemoryPolicy;   // What to remember/forget
+  approval_policy: ApprovalPolicy; // always_ask | sensitive_only | autonomous
+  budget: BudgetConfig;          // token/cost limits per task
+  workspace_id: string;          // Isolated storage path in VM
+}
+Avatars are user-customizable (style, color, name) but use a system-driven animation layer that reflects real backend state—not user-controlled animation [13][49].
+
+B. Agent State Machine
+The following state machine maps every UI state to a specific backend event. There is no state that exists in UI without a corresponding backend trigger.
+
+States:
+  IDLE          ← no active task; heartbeat only
+  RECEIVING     ← user message received; parsing intent
+  UNDERSTANDING ← model inference: interpreting goal
+  PLANNING      ← model inference: generating action plan
+  RETRIEVING    ← memory/context lookup in progress
+  SELECTING     ← choosing skill/tool
+  CHECKING_PERM ← permission gate evaluation
+  AWAITING_APPR ← waiting for human approval (amber)
+  SEARCHING     ← search API call in flight
+  BROWSING      ← Playwright session active
+  CODING        ← code generation or terminal execution
+  BUILDING      ← creating artifact (doc, file, tool)
+  WRITING       ← generating document/report
+  ANALYZING     ← data processing / inference on data
+  COLLABORATING ← messaging another agent; awaiting subagent
+  VERIFYING     ← running verification skill/assertion
+  COMPLETED     ← task delivered; outcome verified
+  FAILED        ← max retries exceeded or unrecoverable error
+  RECOVERING    ← retry logic in progress
+State machine transitions (selected critical paths):
+
+IDLE → RECEIVING [event: user_message_received]
+  UI: avatar acknowledges (slight lean-forward animation, 150ms)
+  
+RECEIVING → UNDERSTANDING [event: intent_parse_start]
+  UI: status banner "Understanding your request..."
+  Timeout: 30s → FAILED with "Could not interpret request"
+
+UNDERSTANDING → PLANNING [event: plan_generation_start]  
+  UI: status banner "Building action plan..."
+  Activity timeline: shows plan as it streams (not hidden CoT)
+  
+PLANNING → CHECKING_PERM [event: plan_ready; first_action_selected]
+  UI: shows planned steps to user (transparent)
+  
+CHECKING_PERM → AWAITING_APPR [event: action_requires_approval]
+  UI: ApprovalCard surfaced; amber badge on agent; push notification
+  Timeout: configurable (default 24h for async tasks, 60s for blocking)
+  Timeout action: DENIED → RECOVERING or FAILED per policy
+  
+CHECKING_PERM → SEARCHING [event: permission_granted; tool=search]
+  UI: "Searching [query]..." in activity timeline
+  Backend: search API call with attribution
+  
+BROWSING [event: playwright_session_active]
+  UI: BrowserView shows URL + screenshot (Status level by default)
+  User can escalate to Preview or Takeover
+  Anti-bot/CAPTCHA encountered → AWAITING_APPR for user to solve
+  
+CODING [event: terminal_command_issued]
+  UI: terminal output stream in activity panel (truncated, expandable)
+  Sandbox: all terminal commands run in isolated cell, not host
+  
+VERIFYING [event: verification_skill_invoked]
+  UI: "Verifying outcome..." with assertion list
+  Backend: runs independent verification (separate model call or deterministic check)
+  Success → COMPLETED; Failure → RECOVERING
+  
+COMPLETED [event: verification_passed; delivery_confirmed]
+  UI: green checkmark; artifact pinned in chat; cost summary shown
+  Memory: outcome stored if policy allows
+
+FAILED [event: max_retries_exceeded | unrecoverable_error]
+  UI: red badge; failure summary (what was tried, what failed, suggested fix)
+  No silent failure: user always notified
+  
+RECOVERING [event: retry_initiated]
+  UI: "Retrying with adjusted approach (attempt N/M)..."
+  Shows what changed in approach
+No fake progress rule: Every timeline entry must correspond to a real backend event with a real timestamp. The UI consumes a server-sent event (SSE) or WebSocket stream of AgentEvent objects. If the backend is silent for more than the configured timeout, the UI surfaces a "waiting" state with elapsed time—not a spinning animation implying activity.
+
+Action summaries vs. chain-of-thought: Users see:
+
+✅ What the agent did: "Searched Google for 'competitor pricing pages' — found 12 results"
+✅ What it found: "Extracted pricing from 5 sites; 3 required JavaScript rendering"
+✅ What it decided: "Selected Playwright because search API returned insufficient detail"
+❌ NOT shown: internal reasoning tokens, self-talk, scratchpad
+This mirrors Muse's activity log design [13] and SARSI's design principle of exposing inspectable state rather than private chain-of-thought [50].
+
+PART 4: REAL AGENT LIFECYCLE
+A. Lifecycle Specification
+goal → interpret/plan → retrieve_context/memory → select_skill/tool →
+permission_check → act → observe → evaluate → retry/correct →
+independently_verify → deliver
+Each step is an explicit state transition with a recorded event. Nothing is implicit.
+
+Step-by-Step Detail
+1. Goal Receipt and Interpretation
+
+User submits goal via chat or API
+task_created event recorded with task_id, user_id, agent_id, raw_goal, timestamp
+Interpretation model call: structured output → InterpretedGoal {objective, constraints, success_criteria, requires_clarification: bool}
+If requires_clarification: agent asks question, waits; NOT marked PLANNING
+2. Context and Memory Retrieval
+
+Retrieve from: agent's vector store (past task summaries), shared knowledge base, connected service context
+SimpleMem-style compression [51]: recent context in full, older context as compressed summary
+LangGraph checkpointer loads last checkpoint if task is resumable [38]
+3. Plan Generation
+
+Model generates structured plan: list of PlanStep {skill_id, tool_id, input_params, expected_output, approval_required, budget_allocation}
+Plan shown to user before execution (transparency)
+User can edit plan or approve entire plan
+4. Permission Check (per step)
+
+Check against PermissionSet: is this tool allowed for this agent?
+Check against ApprovalPolicy: does this specific action require human approval?
+High-risk actions (send email, make purchase, delete files, call external APIs with side effects) always require approval [11]
+If approval required: emit approval_gate_opened event; surface ApprovalCard; pause execution
+5. Execution
+
+Tool call dispatched to appropriate handler (search, browser, terminal, API, file)
+Each call is: logged with full input/output, time-bounded (max timeout per tool type), idempotency-keyed to prevent duplicate execution on retry
+All terminal commands run in isolated sandbox (systemd-nspawn or Firecracker microVM)
+Browser sessions run in isolated Playwright instance with network proxy
+6. Observation
+
+Tool output captured as ToolObservation {tool_id, call_id, output, success: bool, duration_ms, tokens_used}
+Agent evaluates observation: did it advance toward goal? did it reveal new information requiring plan adjustment?
+7. Evaluation and Retry
+
+Model evaluation call: structured output → StepEvaluation {succeeded: bool, reason, adjustment_needed: bool, new_plan_step?: PlanStep}
+If adjustment_needed: plan updated, logged, shown to user as "Adjusted approach"
+Retry with exponential backoff, max N attempts (configurable per skill)
+If max retries: FAILED state surfaced
+8. Independent Verification
+
+After task claims completion, a separate verification skill runs
+Verification is independent: different model call, different context window
+Verification checks: is success criterion met? is evidence present? is output well-formed?
+This is not the same model confirming itself—it is a separate structured evaluation
+PILOT's research [9] shows that live verification (during execution, not only post-hoc) improves outcomes
+9. Delivery
+
+Artifacts pinned to chat; files saved to workspace; verified outcome recorded
+task_completed event with: duration, total_tokens, total_cost, verification_result, artifacts_produced
+Memory updated per policy: store outcome summary, not full transcript
+B. Autonomous vs. Approval-Gated vs. Human Work
+Action Type	Default Policy	Examples
+Autonomous	No approval needed	Web search, reading public pages, reading files, code generation in sandbox, draft creation
+Approval-gated (soft)	Ask first time; remember choice	Sending email, posting to Slack, writing to shared docs
+Approval-gated (hard)	Always ask; never remember	Making purchases, financial transactions, deleting data, sending to external contacts, calling paid APIs
+Human work	Agent cannot do; hands off	Legal decisions, final approval of customer communications, anything requiring licensed judgment
+C. End-to-End Event Trace: Market Research Task
+[10:00:01] user_message_received
+  agent_id: research-agent-001
+  task_id: task-abc123
+  raw_goal: "Find top 5 competitors to Acme Corp in B2B SaaS project management,
+             with their pricing, key features, and customer reviews"
+
+[10:00:01] task_created → DB: tasks table
+[10:00:02] model_inference_start [interpretation]
+  model: claude-sonnet-4, tokens: ~200
+[10:00:04] task_interpreted
+  objective: competitor analysis
+  success_criteria: 5 competitors identified with pricing + features + reviews
+  requires_clarification: false
+  plan_generated: 8 steps
+
+[10:00:04] plan_shown_to_user → UI: ActivityTimeline renders plan
+[10:00:06] user_approved_plan
+
+[10:00:06] memory_retrieval_start
+  query: "Acme Corp, B2B SaaS, project management"
+[10:00:07] memory_retrieved: 3 relevant past research entries
+
+[10:00:07] tool_call_start
+  skill: /web-research-v2
+  tool: search_api
+  query: "B2B SaaS project management software competitors 2026"
+  idempotency_key: task-abc123-step-1
+
+[10:00:08] tool_observation_received
+  results: 47 organic results
+  sources: Google Search API (Serper)
+  duration_ms: 847
+
+→ UI: "Searched for B2B SaaS project management competitors — 47 results"
+
+[10:00:09] tool_call_start
+  tool: playwright_browser
+  action: navigate
+  url: https://g2.com/categories/project-management
+  
+[10:00:11] browser_screenshot_captured
+  url: g2.com/categories/project-management
+  screenshot_id: ss-001
+  
+→ UI: BrowserView updates (Status: URL shown; Preview: screenshot available)
+
+[10:00:12] tool_call_start
+  tool: playwright_browser
+  action: extract_structured_data
+  selector: .product-card
+  schema: {name, rating, review_count, pricing_model}
+  
+[10:00:14] tool_observation_received
+  data: 23 product cards extracted
+  
+[10:00:14] step_evaluation
+  succeeded: true
+  data_quality: high
+  next_steps: visit top 5 product pages for detailed pricing
+
+[10:00:15–10:01:30] [5 parallel browser sessions, 5 product pages]
+  Each: navigate → extract pricing page → extract feature list → extract review samples
+  Each emits tool_call_start / tool_observation_received / screenshot_captured
+
+[10:01:31] artifact_creation_start
+  artifact_type: structured_report
+  format: markdown + json
+  
+[10:01:45] artifact_created
+  artifact_id: art-abc123-001
+  title: "Acme Corp Competitor Analysis — Nov 2026"
+  
+[10:01:45] verification_start
+  skill: /report-verification-v1
+  checks: 
+    - 5 competitors present? ✓
+    - Pricing data for each? ✓  
+    - Feature comparison table? ✓
+    - Review quotes cited with source? ✓
+    - Date of research noted? ✓
+    
+[10:01:52] verification_passed
+  all_checks: passed
+  confidence: high
+
+[10:01:52] task_completed
+  duration: 111s
+  total_tokens: 18,400
+  total_cost: $0.22
+  artifacts: [art-abc123-001]
+  verification: passed
+
+→ UI: Agent avatar → COMPLETED (green); artifact pinned in chat
+     Activity log: 14 entries with full evidence chain
+     Cost summary: "$0.22 | 18,400 tokens | 111 seconds"
+PART 5: SKILLS AND TOOLS
+A. Why Skills Beat Giant Prompts
+The key insight from Cursor [19], Grok Bot [17], and the PILOT paper [9] is that large monolithic system prompts degrade in three ways:
+
+Context contamination: A single prompt includes all possible behaviors; the model struggles to separate which rules apply to which task
+Undebuggable failures: When a giant prompt produces wrong output, you cannot identify which instruction failed
+No versioning: Changing one rule risks breaking others; no rollback path
+Token cost: Loading all instructions for every task is expensive; SimpleMem shows 30x token savings from targeted retrieval [51]
+Skills are small, single-purpose, versioned, tested modules. The three-tier loading system [44] means:
+
+Tier 1 (~80 tokens/skill): name + description, always loaded for discovery
+Tier 2 (~5,000 tokens max): full SKILL.md body, loaded when relevant
+Tier 3: reference files, loaded on-demand
+Independent analysis estimates 40% token reduction and 15–20% accuracy improvement vs. single-prompt equivalents [44]. (Estimate; low quality source; treat with caution.)
+
+B. SKILL.md Format Specification
+The Agent Skills open standard was reportedly released by Anthropic on December 18, 2025, and adopted by 26+ platforms including Claude, Cursor, and VS Code [44]. This is reported from secondary sources; the official Anthropic specification document was not directly retrieved.
+
+# ILLUSTRATIVE SKILL.md - based on [[44]](<https://agentman.ai/blog/build-your-first-agent-skill-skillmd-anatomy>)[[19]](<https://cursor.com/blog/agent-best-practices>) specifications
+---
+name: web-research-v2          # lowercase, hyphens, max 64 chars; matches folder name
+version: "2.1.0"               # semver
+description: |                  # max 1024 chars; optimized for triggering accuracy
+  Deep web research skill: searches multiple sources, navigates to pages,
+  extracts structured data, verifies claims with citations, and produces
+  a sourced research report. Use when: user asks for research, fact-finding,
+  competitive analysis, or information gathering from the web.
+author: "platform-team"
+category: "research"
+allowed_tools:
+  - search_api
+  - playwright_browser
+  - file_write
+  - model_inference
+permissions_required:
+  - web.search
+  - browser.navigate
+  - files.write_workspace
+dependencies:
+  - source-citation-v1        # skill dependency
+min_model: "claude-sonnet-4"  # minimum capability requirement
+tags: [research, web, competitive-analysis, fact-checking]
+tests:
+  - id: test-basic-search
+    input: "Find the pricing of Notion"
+    assertions:
+      - contains_url: true
+      - contains_price: true
+      - has_source_citation: true
+  - id: test-multi-source
+    input: "Compare pricing of Notion, Linear, and Asana"
+    assertions:
+      - result_count: 3
+      - each_has_citation: true
+evaluation:
+  metrics:
+    - citation_accuracy
+    - information_completeness
+    - hallucination_rate
+  baseline_score: 0.82
+hooks:
+  before_activation: "verify_search_api_available"
+  after_completion: "save_research_to_memory"
+deprecates: "web-research-v1"
+rollback_to: "web-research-v1"
+---
+
+# Web Research Skill
+
+## Purpose
+You are in web research mode. Your job is to find accurate, sourced information.
+Always cite sources with URLs and dates. Never invent facts.
+
+## Workflow
+1. Decompose the research question into 3-5 search queries
+2. Execute searches and evaluate result quality
+3. Navigate to top 3-5 sources per query
+4. Extract relevant information with exact quotes
+5. Cross-verify facts across at least 2 independent sources
+6. Produce structured output with full citation trail
+
+## Output Format
+```json
+{
+  "findings": [...],
+  "sources": [{"url": "...", "title": "...", "accessed": "...", "quote": "..."}],
+  "confidence": "high|medium|low",
+  "gaps": [...]
+}
+Guardrails
+If a site blocks access: note it, try alternative source, do not fabricate
+If sources conflict: report the conflict, do not choose arbitrarily
+Maximum 10 browser navigations per research task
+All screenshots retained as evidence artifacts
+
+### Security Note on SKILL.md
+Avoid angle brackets in frontmatter as they can inject unintended instructions into the system prompt [[44]](<https://agentman.ai/blog/build-your-first-agent-skill-skillmd-anatomy>). The skill registry must validate all frontmatter fields before loading; malformed or malicious skills must be rejected.
+
+## C. Versioned Skill Registry Design
+
+SkillRegistry: skill_id: UUID name: string (indexed, unique per namespace) version: semver status: draft | review | stable | deprecated yaml_frontmatter: jsonb body_markdown: text allowed_tools: string[] permissions_required: string[] dependencies: string[] test_suite: TestSuite evaluation_score: float installed_count: int author_id: UUID namespace: platform | org | user created_at, updated_at, deprecated_at: timestamp
+
+Versioning rules:
+
+New version creates new record; old version retained
+Agents pinned to a version unless auto-update is enabled
+Breaking change (major version) requires explicit upgrade
+Rollback: restore agent's skill_id pointer to prior version
+Discovery:
+
+Hybrid search: keyword + semantic embedding [21]
+Filter by: category, permissions, model_compatibility, test_status
+Sort by: install_count, evaluation_score, recency
+Conflict handling:
+
+Two skills claiming same trigger pattern: higher evaluation_score wins
+User can explicitly set skill priority per agent
+Deprecation warning surfaced in UI with migration path
+
+## D. Skill Examples by Domain
+
+| Skill Name | Description | Tools Used | Key Guardrail |
+|---|---|---|---|
+| `/web-research-v2` | Multi-source research with citations | search_api, playwright | Min 2 cross-verified sources |
+| `/browser-extract` | Structured data extraction from URLs | playwright, file_write | Screenshot evidence retained |
+| `/code-architect` | Architecture review and planning | codebase_search, file_read | Read-only; never writes code directly |
+| `/tdd-workflow` | Test-first development cycle | terminal, file_write, git | Tests must pass before marking done |
+| `/code-review` | PR review with Bugbot-style analysis | git_diff, model_inference | Lists issues with severity, not just praise |
+| `/debug-hypothesis` | Multi-hypothesis debugging | terminal, logs, file_read | Instruments before guessing |
+| `/ui-audit` | Design system consistency check | browser_screenshot, model_vision | Against established design tokens |
+| `/report-writer` | Structured report generation | file_write, model_inference | Requires source citations, no hallucination |
+| `/lead-researcher` | B2B lead and company research | search_api, browser | LinkedIn scraping blocked per ToS; use official APIs |
+| `/data-analyst` | Data analysis with Python | terminal, python_sandbox, file_write | Sandboxed execution only |
+| `/workflow-automate` | Multi-step process automation | integration_apis, form_fill | Always approval-gated for side effects |
+| `/competitor-intel` | Market and pricing intelligence | search_api, browser, file_write | Only publicly available data |
+
+## E. Cursor/Maven Analysis: Verification, Playbooks, and Trust
+
+Cursor's agent best practices [[19]](<https://cursor.com/blog/agent-best-practices>) establish a verification-first engineering philosophy:
+
+1. **Plan before build:** Plan Mode generates implementation plan with file paths and references, awaiting human approval before any code is written [[19]](<https://cursor.com/blog/agent-best-practices>)
+2. **Verifiable environments:** Typed languages, configured linters, tests give agents "clear signals for correctness" [[19]](<https://cursor.com/blog/agent-best-practices>)
+3. **Review pass:** After generation, dedicated review pass (Review → Find Issues) plus Bugbot on PR [[19]](<https://cursor.com/blog/agent-best-practices>)
+4. **Debug mode:** Generates hypotheses → instruments code → collects runtime data → makes targeted fix [[19]](<https://cursor.com/blog/agent-best-practices>)
+5. **Small changes:** Revert and refine is faster than patching in-progress agents [[19]](<https://cursor.com/blog/agent-best-practices>)
+
+The Grok Bot engineering playbook [[17]](<https://x.ai/bot/guides/grok-bot-for-engineering>) adds:
+- 30-minute PR review cadence by bots [[17]](<https://x.ai/bot/guides/grok-bot-for-engineering>)
+- Auto-merge only for high-confidence, low-blast-radius changes [[17]](<https://x.ai/bot/guides/grok-bot-for-engineering>)
+- Nightly audit agents for cleanup, security, bundle size [[17]](<https://x.ai/bot/guides/grok-bot-for-engineering>)
+- P0 urgency with 5-minute transcript checks (token-intensive; use sparingly) [[17]](<https://x.ai/bot/guides/grok-bot-for-engineering>)
+
+The Maven/Cursor session [[18]](<https://maven.com/p/e23d9c/how-cursor-turned-ai-agents-into-better-engineers>) teaches skills like `/architect` and `/tdd` as reusable playbooks rather than one-off prompts—exactly the skill-over-prompt principle.
+
+---
+
+# PART 6: LIVE WEB AND BROWSER ARCHITECTURE
+
+## A. Tool Comparison
+
+| Tool | Mechanism | Strengths | Weaknesses | Best For |
+|---|---|---|---|---|
+| **Search APIs** (Serper, Brave, Bing) | HTTP API, returns structured results | Fast, cheap, no bot detection | No JavaScript rendering; no interaction | Discovery, link collection |
+| **Playwright** | Headless browser automation | Full JS rendering; form fill; screenshots; multi-page | Slow; resource-heavy; bot detection | Forms, dynamic sites, extraction |
+| **browser-use** | AI-native browser control | Natural language → browser actions | Less deterministic; newer; less tested | General browsing tasks |
+| **Computer-use** | Vision model + mouse/keyboard | Works on any UI including desktop apps | Very slow (~2s/action); expensive; fragile | Desktop apps with no API |
+| **MCP browser tools** | MCP server wrapping Playwright | Standardized interface; reusable | MCP STDIO vulnerability [[54]](<https://labs.cloudsecurityalliance.org/research/csa-research-note-mcp-rce-design-vulnerability-20260423-csa/>); requires MCP server | Standardized agentic pipelines |
+
+**Recommendation:** Use Playwright for primary browser automation (most mature, deterministic, excellent evidence retention). Use search APIs for discovery. Use computer-use only when no API or Playwright path exists. Treat MCP as a convenience layer but harden against STDIO vulnerabilities [[54]](<https://labs.cloudsecurityalliance.org/research/csa-research-note-mcp-rce-design-vulnerability-20260423-csa/>).
+
+## B. Browser Agent Architecture (Secure)
+
+User Request ↓ Permission Check (has browser.navigate permission?) ↓ Session Manager → allocate isolated browser session ↓ Network Proxy (authd layer) ├── Blocks: private IP ranges, metadata service (169.254.x.x) ├── Credentials: injected at network boundary (agent never sees raw credentials) [32] ├── Rate limiting: per-domain, per-minute └── Content policy: blocks known malicious domains
+
+↓
+Playwright Worker (isolated process/container) ├── Navigate → capture screenshot → emit event ├── Extract → structured data → emit observation ├── Interact → form fill / click → approval gate for side effects └── Download → to workspace directory only
+
+↓
+Evidence Retention ├── Screenshot saved to object storage with timestamp ├── Extracted HTML archived (for audit) ├── Source URL, access timestamp, page title recorded └── Evidence linked to task and skill version
+
+
+## C. Handling Dynamic Pages, Anti-Bot, and Security
+
+**Dynamic pages (JavaScript-heavy):**
+- Wait for `networkidle` before extraction
+- Use `page.waitForSelector()` with timeout
+- Detect SPA routing and wait for content
+- If extraction fails: screenshot + retry with different selector strategy
+
+**CAPTCHA and anti-bot:**
+- Detect CAPTCHA presence via visual pattern or known selectors
+- Surface `AWAITING_APPR` state: user must solve manually (Takeover mode)
+- Do NOT use CAPTCHA-solving services (ToS violation, ethical concern)
+- After user solves: resume session; session state preserved
+
+**Rate limits:**
+- Per-domain rate limiting in proxy (configurable, default: 5 req/min/domain)
+- Respect `Retry-After` headers
+- Exponential backoff on 429 responses
+
+**Site terms of service:**
+- No automated scraping of sites that explicitly prohibit it in ToS
+- No scraping of private/authenticated data without explicit user permission
+- Robots.txt respected by default; user can override for their own sites
+
+**Prompt injection via web content:**
+- Any text extracted from web pages is treated as untrusted data
+- Never injected directly into system prompt
+- Passed as a structured `web_content` object clearly labeled as external/untrusted
+- Model harness marks untrusted sources [[32]](<https://www.eesel.ai/blog/meta-muse-agent>)
+- Classifier ensemble outside agent's reach validates extracted content [[32]](<https://www.eesel.ai/blog/meta-muse-agent>)
+- Evidence: Muse's Meta CTO describes this exact layered defense [[32]](<https://www.eesel.ai/blog/meta-muse-agent>)
+
+**Credential isolation:**
+- Credentials stored in secure vault (never in agent context window)
+- Injected at network boundary as surrogate tokens [[32]](<https://www.eesel.ai/blog/meta-muse-agent>)
+- Browser session cookie jar isolated per user, per session
+- Session terminated and cleaned after task completion
+
+**Success detection:**
+- Verification skill checks expected outcome (form submitted, purchase confirmed, data extracted)
+- Screenshot comparison: before and after critical action
+- HTTP response code monitoring
+- Page content assertions: "Order confirmed" text present
+
+---
+
+# PART 7: MULTI-AGENT SYSTEM AND SCALE
+
+## A. Architecture Pattern Selection
+
+LangChain's benchmarks [[23]](<https://www.langchain.com/blog/benchmarking-multi-agent-architectures>)[[24]](<https://www.langchain.com/blog/choosing-the-right-multi-agent-architecture>) tested three primary patterns:
+
+| Pattern | Performance (τ-bench) | Token Cost | When to Use |
+|---|---|---|---|
+| **Single agent** | Degrades with distractor domains | Grows with complexity | Single-domain simple tasks |
+| **Swarm** | Slightly outperforms supervisor | Lower than supervisor | Known agent roster; same provider |
+| **Supervisor** | Good with improvements; +50% with forward_message tool | Higher than swarm | Generic; works with third-party agents; most flexible |
+
+**Recommendation: Supervisor (coordinator-agent) pattern with subagent isolation.** Reasons:
+1. Most generic—works with third-party and user-created agents [[24]](<https://www.langchain.com/blog/choosing-the-right-multi-agent-architecture>)
+2. Cursor Projects [[52]](<https://cursor.com/blog/projects>) and Grok Bot's chief-of-staff pattern [[17]](<https://x.ai/bot/guides/grok-bot-for-engineering>)[[35]](<https://x.ai/news/introducing-grok-bot>) both validate it at production scale
+3. Context isolation (subagents keep their own context windows) prevents token bloat
+4. Anthropic's multi-agent system showed 90.2% improvement over single agent using this pattern [[24]](<https://www.langchain.com/blog/choosing-the-right-multi-agent-architecture>)
+5. LangGraph Supervisor package provides production-ready implementation [[23]](<https://www.langchain.com/blog/benchmarking-multi-agent-architectures>)
+
+The key improvement from naive supervisor: **do not require supervisor to translate subagent responses to user**—use `forward_message` tool to pass responses directly [[23]](<https://www.langchain.com/blog/benchmarking-multi-agent-architectures>).
+
+## B. User-Created Agent Profiles
+
+Each user can create agents with independent identity, model, skills, tools, memory, permissions, and budget:
+
+```typescript
+// ILLUSTRATIVE - not tested
+interface AgentProfile {
+  identity: AgentIdentity;          // name, role, avatar, description
+  model_config: {
+    provider: string;               // "anthropic" | "openai" | "google" | ...
+    model: string;                  // "claude-opus-4" | "gpt-4o" | ...
+    temperature: number;
+    max_tokens: number;
+  };
+  skill_ids: string[];              // Installed from registry
+  tool_grants: ToolGrant[];         // Explicit tool permissions
+  memory_policy: MemoryPolicy;
+  approval_policy: ApprovalPolicy;
+  budget: {
+    tokens_per_task: number;        // Hard limit
+    cost_per_task_usd: number;      // Hard limit
+    tokens_per_day: number;         // Rolling limit
+    cost_per_day_usd: number;
+  };
+  delegation_allowed: boolean;      // Can this agent spawn subagents?
+  max_subagents: number;            // If delegation_allowed
+}
+C. Agent Role Examples
+Role	Primary Skills	Key Tools	Delegation	Memory Focus
+Research Agent	/web-research, /report-writer, /source-verify	search_api, playwright, file_write	No	Research findings, source quality
+Engineering Agent	/code-architect, /tdd-workflow, /code-review, /debug-hypothesis	git, terminal, browser, linters	Yes (spawns coding agents)	Codebase patterns, bug history
+Browser Agent	/browser-extract, /form-fill, /web-monitor	playwright exclusively	No	Site patterns, session state
+UI/UX Designer Agent	/ui-audit, /component-generator, /design-critique	browser_screenshot, file_write, model_vision	No	Design system tokens
+QA Agent	/test-runner, /regression-check, /bug-reporter	terminal, browser, git	No	Test patterns, known flaky tests
+Business Research Agent	/competitor-intel, /lead-researcher, /market-analysis	search_api, browser, data_tools	No	Market data, company profiles
+Writing Agent	/report-writer, /content-editor, /fact-checker	file_write, search_api	No	Style preferences, prior outputs
+Project Manager Agent	/task-decomposer, /progress-tracker, /status-reporter	integration_apis, notifications	Yes (coordinates specialists)	Project state, team preferences
+Data Analyst Agent	/data-analyst, /visualization-creator, /insight-extractor	python_sandbox, file_read/write, sql_query	No	Analysis patterns, data schemas
+This mirrors Grok Bot's five specialist engineer bots (Baltata, Shaoruru, Hogan, Craig, Quill) plus Jenny the head-of-operations coordinator [17].
+
+D. Supervisor Delegation Flow
+User → Project Manager Agent (coordinator)
+  ├── Receives goal: "Produce competitive analysis report for Q4 board"
+  ├── Decomposes: [research task, data analysis task, report writing task]
+  ├── Spawns: Research Agent (task 1), Data Analyst Agent (task 2)
+  │   ├── Research Agent completes → returns structured findings
+  │   └── Data Analyst Agent completes → returns charts + summary
+  ├── Synthesis: passes findings to Writing Agent (task 3)
+  ├── Writing Agent returns draft report
+  ├── PM Agent reviews synthesis quality
+  ├── Surfaces approval gate: "Report ready for review"
+  └── Delivers to user with full audit trail
+
+At each step:
+  - Conflict: if two agents return contradictory data → PM surfaces conflict to user
+  - Failure: if subagent fails → PM retries or reassigns; notifies user if blocked
+  - Budget: PM tracks cumulative cost across all subagents against task budget
+E. Defining "Unlimited" — Honest Concurrency Model
+This platform does not offer unlimited execution. Honest limits:
+
+Resource	Limit Type	Implementation
+Saved agent profiles	Soft limit per tier (e.g., 10/50/unlimited)	DB record count check
+Concurrent active agents	Hard compute limit (e.g., 3/10/25 concurrent)	Job queue; excess queued
+Concurrent browser sessions	Hard resource limit (e.g., 2/5/10 per user)	Playwright pool with max
+VM compute	Per-user VM with fixed resources (2 vCPU, 8GB suggested by Muse [48])	Kubernetes resource limits
+Model tokens/day	Rolling budget with hard cutoff	Token counter in Redis
+Cost/day	Hard spend limit	Cost accumulator with alert at 80%, hard stop at 100%
+Tasks in queue	Soft limit (e.g., 50 queued tasks)	Queue depth check
+Storage	Per-VM storage quota (e.g., 10GB)	Filesystem quota
+Queue and scheduling: Background tasks submitted to a durable queue (Temporal recommended for complex workflows [47]; BullMQ for simpler task queues). Temporal provides: automatic retries, durable execution state, audit history, schedule triggers, signal/query communication between agents [47].
+
+Autoscaling: Kubernetes HPA on worker pods based on queue depth. Browser session pools auto-scale within configured maximum. Model API calls scale by rate limit per provider.
+
+PART 8: AGENTIC ENGINEERING
+A. Engineering Agent vs. Code Generator
+This distinction is fundamental and is central to Cursor's value proposition [18][19]:
+
+Code Generator	Engineering Agent
+Produces code from prompt	Understands existing architecture
+No awareness of codebase	Maps dependencies, imports, patterns
+No verification	Runs tests, reads logs, verifies outcome
+Single-shot	Iterates: plan → build → test → debug → re-test
+No CI integration	Reads CI results, responds to failures
+No PR process	Opens PR with description, handles review
+Stateless	Maintains codebase map across sessions
+B. Engineering Agent Workflow in an Existing Repo
+Phase 1: Codebase Ingestion
+1. Clone repo → git clone {repo_url} --branch {branch}
+2. Generate codebase map:
+   - File tree with sizes and types
+   - Dependency graph (import analysis)
+   - Key entry points (main, index, routes)
+   - Test coverage map
+   - Linter configuration (eslint, ruff, etc.)
+   - CI/CD pipeline definition (.github/workflows, etc.)
+3. Store codebase map in agent memory (vector store + structured summary)
+4. Load codebase-specific skills from .cursor/rules/ and SKILL.md files [[19]](<https://cursor.com/blog/agent-best-practices>)
+Phase 2: Task Planning
+1. User submits: "Add rate limiting to the API endpoints"
+2. Agent uses /code-architect skill:
+   - Reads relevant files (route handlers, middleware, auth)
+   - Identifies: what exists, what's needed, what might break
+   - Generates implementation plan with file paths and line references
+3. Plan shown to user before any code written [[19]](<https://cursor.com/blog/agent-best-practices>) (Plan Mode equivalent)
+4. User approves or edits plan
+Phase 3: TDD Implementation
+1. Write failing tests first (/tdd-workflow skill):
+   - Identify test file location convention
+   - Write tests that define desired behavior
+   - Run tests: confirm they fail (red)
+   
+2. Implement code to pass tests:
+   - Small, targeted changes
+   - One logical unit per change
+   - Reference existing code patterns from codebase map
+   
+3. Run tests: confirm they pass (green)
+4. Run linter: confirm no new violations
+5. Commit to feature branch
+Phase 4: Verification
+1. /code-review skill:
+   - Read diff
+   - Check against codebase patterns
+   - Security review: injection risks, auth bypass, data exposure
+   - Performance: N+1 queries, missing indexes, unbounded loops
+   
+2. If issues found:
+   - List issues with severity
+   - Fix critical issues before PR
+   - Note non-critical for PR description
+   
+3. Run full test suite (not just new tests)
+4. Check for regression in related tests
+Phase 5: PR and CI
+1. Open PR:
+   - Description: what changed, why, how tested
+   - Screenshots (for UI changes)
+   - Link to original task
+   
+2. Wait for CI:
+   - Read CI logs on failure
+   - Debug with /debug-hypothesis skill
+   - Push fix commit
+   
+3. Respond to review comments:
+   - Parse review feedback
+   - Implement requested changes
+   - Re-request review
+   
+4. On approval: notify user for merge decision
+   (Auto-merge only for high-confidence, low-blast-radius changes [[17]](<https://x.ai/bot/guides/grok-bot-for-engineering>))
+C. End-to-End Example: Add Rate Limiting
+User task: "Add rate limiting to POST /api/search — max 10 requests per minute per user"
+
+[10:00] engineering_agent received task
+[10:00] codebase_map_loaded: 234 files, express.js app, PostgreSQL, Redis available
+
+[10:01] plan_generated:
+  1. Read existing auth middleware (src/middleware/auth.ts)
+  2. Check if rate-limit library installed (package.json)
+  3. Write failing tests in src/__tests__/rateLimit.test.ts
+  4. Install express-rate-limit if not present
+  5. Create src/middleware/rateLimiter.ts with Redis store
+  6. Apply to POST /api/search in src/routes/search.ts
+  7. Run tests, fix failures
+  8. Linter check
+  9. Commit + PR
+
+[10:01] user_approved_plan
+
+[10:02] file_read: src/middleware/auth.ts → understands user_id extraction pattern
+[10:02] file_read: package.json → express-rate-limit not installed
+[10:02] terminal: npm install express-rate-limit @types/express-rate-limit
+
+[10:03] file_write: src/__tests__/rateLimit.test.ts
+  // 5 test cases: normal request, 10th request, 11th request (should 429),
+  // different users (should not interfere), Redis failure (should fail open)
+
+[10:03] terminal: npx jest rateLimit.test.ts
+  → 5 tests FAIL (middleware doesn't exist yet) ✓ TDD red phase
+
+[10:04] file_write: src/middleware/rateLimiter.ts
+  // RedisStore-backed rate limiter, 10 req/min, keyed by user_id from auth
+
+[10:04] file_edit: src/routes/search.ts
+  // +import rateLimiter; app.post('/api/search', rateLimiter, searchHandler)
+
+[10:05] terminal: npx jest rateLimit.test.ts
+  → 5 tests PASS ✓ TDD green phase
+
+[10:05] terminal: npx jest --coverage
+  → All 147 tests pass; coverage 84% → 85%
+
+[10:05] terminal: npx eslint src/middleware/rateLimiter.ts
+  → 0 errors, 0 warnings
+
+[10:06] /code-review_skill invoked:
+  → No security issues found
+  → Redis connection not gracefully handled on startup → fixed
+  → Type assertions match existing patterns ✓
+
+[10:07] git: commit -m "feat: add Redis-backed rate limiting to POST /api/search (10 req/min/user)"
+[10:07] git: push; gh pr create --title "Add rate limiting to POST /api/search"
+
+[10:08] CI: running (GitHub Actions)
+[10:12] CI: PASSED — all checks green
+
+[10:12] notification_to_user:
+  "PR #142 ready to merge. Rate limiting implemented and verified.
+   CI passing. All 147 tests pass. No regressions."
+   
+[10:12] task_completed
+  duration: 720s
+  tokens: 24,300
+  cost: $0.29
+  artifacts: [PR #142, rateLimiter.ts, test file]
+  verification: CI green + all tests pass
+This example illustrates the difference between code generation (producing rateLimiter.ts) and engineering (understanding the codebase, writing tests first, verifying with CI, handling Redis failure gracefully, opening a proper PR).
+
+PART 9: SELF-IMPROVEMENT RESEARCH
+A. Memory Survey Framework
+The survey "Memory in the Age of AI Agents" [6] identifies three dominant memory forms:
+
+Token-level: In-context; ephemeral; lost after session
+Parametric: Baked into model weights; requires fine-tuning to update
+Latent: Intermediate representations; model-specific
+And a functional taxonomy distinguishing:
+
+Factual memory: Stored facts about the world and user
+Experiential memory: Past task outcomes, successes, failures
+Working memory: Active task context
+This taxonomy directly informs the platform's memory architecture: Redis for working memory, pgvector for factual/experiential, model weights updated only via the safe improvement pipeline.
+
+B. Key Papers
+Reflexion (Shinn et al., 2023)
+arXiv: [28] arxiv.org/abs/2303.11366
+
+Method: Agents verbally reflect on task feedback signals (scalar or natural language) and store reflective text in an episodic memory buffer. No weight updates. The reflection becomes a lesson that informs the next trial.
+
+Evidence: 91% pass@1 on HumanEval coding benchmark, surpassing GPT-4's 80% [28]. Improvements across sequential decision-making, coding, and language reasoning.
+
+Limits: Requires multiple trials (expensive). Reflections can be wrong (self-evaluation unreliable per [50]). Memory buffer has finite capacity. Does not update weights.
+
+Implementable lesson: After a failed task, have the agent generate a structured reflection: {what_was_tried, what_failed, why_it_failed, what_to_try_next}. Store in episodic memory, retrieved at start of next similar task. This is the foundation of the platform's failure learning system.
+
+PILOT: Live Self-Improvement for Long-Horizon Agents (Xiao et al., 2026)
+arXiv: [9][29] arxiv.org/abs/2608.26530 (submitted 27 Aug 2026)
+
+Method: Supervisor-worker harness with two mechanisms: (1) live steering—supervisor redirects active worker during execution via a live channel (notification, question, steer, abort); (2) live self-evolution—procedures and failure modes distilled into reusable skills and memory during execution, not only after.
+
+Evidence: 71.6% average on Terminal-Bench 2.0 vs. 66.3% baseline (+5.3pp) [9]. Self-improvement gains of 14.6pp (GLM-5.1) and 12.4pp (Kimi-K2.6) across iterations. Skill library grows from ~50-62 to ~81-83 skills. Token consumption falls 42-47%. Cost-efficiency (successful evals/million tokens) rises 110-134% [9].
+
+Limits: Expensive to iterate (runs all tasks across iterations). Supervisor and worker share the same backbone (limits independence). Only studied two backbones. Long-horizon task pass rate still below 80% even after improvement.
+
+Implementable lesson: Implement a supervisor process that monitors running agent tasks and can inject steering signals. Distill successful task patterns into new skill candidates. Evaluate candidates on held-out tasks before deploying.
+
+SelfMem: Self-Optimizing Memory for AI Agents (2026)
+arXiv: [30][39] arxiv.org/abs/2607.03726
+
+Method: Agent controls its own memory management via memory tools and feedback signals. It explores, evaluates, and refines its memory strategy rather than using a fixed pipeline.
+
+Evidence: 48.7%, 40.8%, 41.9% improvement over strongest baseline at 100K, 500K, 1M token scales on BEAM benchmark [30]. At 1M tokens: SelfMem score 0.454 at $2.004 vs. Mem0 score 0.292 at $18.830 [39]. Simple RAG remains the strongest non-SelfMem baseline.
+
+Limits: Results are self-reported on a single benchmark (BEAM). Iterative refinement study only at 100K scale. No production deployment evidence.
+
+Implementable lesson: Start with RAG (it's the strongest baseline and simplest to implement). Allow agents to annotate their own memories as useful/not-useful based on task outcome. Periodically prune low-quality memories. This is SelfMem-light without the full framework complexity.
+
+SimpleMem: Efficient Lifelong Memory (2026)
+arXiv: [51] arxiv.org/html/2601.02553v1
+
+Method: Three-stage pipeline: Semantic Structured Compression → Recursive Memory Consolidation → Adaptive Query-Aware Retrieval. Uses LanceDB with text-embedding-3-small for dense, BM25 for sparse, SQL for metadata.
+
+Evidence: 26.4% average F1 improvement on LoCoMo benchmark. 30x token reduction vs. full-context approaches (531 tokens/query vs. 16,900) [51]. GPT-4.1-mini: 43.24 F1 vs. 34.20 for Mem0.
+
+Implementable lesson: Use hybrid indexing (dense + sparse + metadata). Compress older memories rather than truncating. Retrieval depth of 3-20 entries is sufficient (most value from top few). LanceDB is open source and practical.
+
+SARSI: Self-Aware Recursively Self-Improving Agents (2026)
+arXiv: [50] arxiv.org/html/2607.12254v2
+
+Method (position paper): Proposes agents with persistent machine-readable self-models covering identity, capabilities, limitations, uncertainty, and development history. Improvement proposals require: evidence linkage, human approval through owner gateway, test on held-out tasks, gradual rollout.
+
+Evidence: Theoretical/design paper; no empirical results. Authors explicitly state this is not evidence that recursive self-improvement has been achieved [50].
+
+Key governance principle: "A mode change that expands authority is approved through the owner gateway, not by the model itself" [50]. The governance plane runs under a different administrative identity and, for high-risk systems, a separate host [50].
+
+Implementable lesson: Self-improvement proposals are versioned, tested against baseline, reviewed by a human, and rolled out incrementally. The agent cannot modify its own permission policies, audit trail, or improvement governance.
+
+C. Self-Improvement vs. Other Adaptation Types
+Type	Mechanism	Speed	Reversibility	Evidence Required
+In-context reflection	Linguistic reflection in context	Immediate	Session-scoped	None (per Reflexion)
+Episodic memory	Store outcomes; retrieve at task start	Per task	Deletable	Task outcome
+Skill update	Revise SKILL.md content	Hours	Full rollback	Held-out test suite
+Prompt/rule update	Revise system prompt or .cursor/rules	Hours	Full rollback	Eval benchmark
+Policy learning	RL fine-tuning on outcome signals	Days	Requires rollback	Large dataset + eval
+Weight update	Fine-tune foundation model	Days-weeks	Requires rollback + audit	Extensive eval suite
+Safe improvement pipeline (proposed, not vendor-claimed):
+
+1. Collect: task outcomes with metadata (skill_version, model, success/fail, cost)
+2. Evaluate: identify patterns of failure (e.g., /web-research fails on paywalled sites)
+3. Propose: generate versioned skill update candidate (human-readable diff)
+4. Test: run candidate on held-out task set; must beat baseline by ≥5%
+5. Review: human approves the change and the test methodology
+6. Stage: deploy to 5% of tasks; monitor failure rate for 48h
+7. Promote: if stable, promote to full rollout; otherwise rollback to prior version
+8. Audit: all changes logged with who approved, what tests passed, what changed
+PART 10: REAL BUSINESS VALUE
+A. Evidence-Graded Use Cases
+1. Software Development / Engineering Productivity
+Evidence (strongest available):
+
+Goldman Sachs deployed Devin as "Employee #1" in a hybrid workforce (reported, July 2026, IBM/CNBC) [45]. CIO Marco Argenti framed it as a 20% productivity multiplier scenario: 12,000 engineers operating like 14,400 [45]. Note: this is an illustrative scenario, not a measured ROI claim.
+Cursor Projects reports: new users merge 30% more PRs; users who primarily use Projects merge 6x as many PRs [52]. These are vendor-reported; treat as vendor-claimed.
+A Grok Bot author reports shipping 2,000+ PRs in a month and building Grok Bot iOS v0 in three weeks [17]. User-reported; not independently verified.
+LinearB data (8.1M PRs from 4,800 teams): AI PRs merge within 30 days only 32.7% of the time vs. 84.4% for unassisted PRs [53]. This is the counter-evidence: human review is a bottleneck for AI-generated code. Agentic AI PRs wait 17.6 hours at 75th percentile for pickup vs. 3.4 hours for unassisted [53].
+Median PR throughput gain across 400+ organizations over 14 months: 7.76% [46]. Elite teams: 5-15% [46]. These figures are from a low-quality source citing DX benchmarks; treat as rough estimates.
+Critical observation: The software delivery bottleneck shifted to review and release, not generation [53]. The platform must address review quality and throughput, not just code generation speed.
+
+Verification approach: Track PR acceptance rate (AI vs. unassisted), merge time, rework rate, test coverage delta, defect escape rate [53][46].
+
+KPI targets (realistic, not vendor-inflated):
+
+PR throughput: +10-30% (achievable; not the 3-10x vendor claims)
+Review cycle time: measurable only if agents also assist review
+Regression rate: should not increase vs. baseline
+2. Market and Competitor Research
+Evidence: The Grok Bot Marketplace lists Researchy (research/fact-check bot with live web search and sourced, dated claims) [15] and competitor research bots as primary use cases [16]. Muse can negotiate on a user's behalf after researching options [12]. These are vendor-claimed capabilities; no independent ROI figures.
+
+Realistic agent workflow:
+
+60-90 minutes of human research → 5-10 minutes agent research + 15 minutes human review
+Bottleneck becomes: quality of sources, paywall access, structured output format
+Verification: Cross-reference agent-found pricing/feature claims with at least one additional source. Record source URLs, access timestamps. Human reviews final report.
+
+KPI: Research task completion time (hours → minutes); source count and citation rate; human correction rate per report.
+
+3. Lead Research / Sales Development
+Evidence: Grok Bot's internal use: "a sales Bot updating the CRM with call transcript notes and drafting follow-ups" [35]. Grok Bot marketplace has pipeline generation bots that research accounts, score contacts, draft email and LinkedIn in the user's voice, and surface a review list [16]. These are vendor-described internal uses, not independently verified customer deployments.
+
+Caution on LinkedIn: Automated scraping of LinkedIn violates their ToS (hiQ Labs v. LinkedIn). Use only official LinkedIn APIs or user-initiated data exports.
+
+Realistic value: Agent can research company publicly available information (website, press releases, job postings, product pages, reviews) and draft personalized outreach. Human reviews and approves before sending.
+
+KPI: Accounts researched per hour; outreach personalization score; reply rate (requires A/B with human-drafted baseline).
+
+4. Data Analysis
+Evidence: Devin "sets up the code environment, reproduces bugs, and codes and tests fixes on its own" [45]. For data analysis specifically, no independently verified case study with numbers was found in the evidence set. The Python sandbox capability is confirmed for code execution [19][22].
+
+Realistic workflow: Upload CSV → agent writes Python (pandas/matplotlib) → runs in sandbox → returns charts + summary → human reviews interpretation. Time savings: analysis setup time reduced; interpretation still requires human judgment.
+
+KPI: Analysis task time; chart accuracy vs. manual; human corrections per analysis.
+
+5. Customer Operations / Workflow Automation
+Evidence: Instinct reported 677 messages in 5 days and 15 completed jobs per early user [3]. Tasks included bill negotiation, vendor coordination, ticket monitoring, subscription audits [3]. These are user-reported (low quality source), not independently audited.
+
+Instinct sent an email without confirmation (Katie Jacobs Stanton incident [33]). Instinct was prompt-injected via a test email [3]. These are documented production failures.
+
+Key risk: Autonomous customer-facing actions without approval gates create legal and reputational exposure. The Instinct failures demonstrate the cost of insufficient HITL.
+
+Requirement for production deployment: Every customer-facing action (email, Slack message, form submission, purchase) must be approval-gated. Autonomous action only for purely internal read operations.
+
+B. Evidence Quality Assessment
+Use Case	Strongest Evidence	Evidence Level	ROI Confidence
+Engineering productivity	LinearB 8.1M PRs [53]; Cursor 30%/6x PR stat [52]	Mixed (vendor + measured)	Medium
+Market research	Vendor descriptions only	Vendor-claimed	Low
+Lead research	Grok Bot internal use description [35]	Vendor-claimed	Low
+Data analysis	Sandbox capability confirmed; no case study	Capability confirmed; ROI unknown	Very Low
+Customer ops	Instinct early user reports [3]; documented failures [33]	User-reported + confirmed failures	Low (with known risks)
+The honest conclusion: measured business ROI for AI agents beyond Salesforce's well-documented deployments is largely vendor-claimed or user-anecdotal as of November 2026. The exception is engineering productivity, where LinearB's benchmark data [53] provides empirical signal—though the signal is more nuanced (and less positive) than vendor marketing claims.
+
+PART 11: ARCHITECTURE AND STACK
+A. MVP Stack (Recommended)
+Frontend
+Layer	Choice	Rationale
+Framework	Next.js 15 + App Router	RSC for initial load; client components for real-time UI; largest ecosystem
+Language	TypeScript	Type safety required for complex agent state
+Styling	Tailwind CSS v4 + shadcn/ui	Consistent design system; accessible primitives; fast to extend
+Real-time	Server-Sent Events (SSE) for activity stream	Simpler than WebSockets for unidirectional agent events; easy to resume
+State	Zustand + React Query (TanStack)	Local UI state + server state; avoids Redux complexity
+Browser view	noVNC for Takeover mode	Open source VNC client in browser; proven for remote desktop
+Charts	Recharts	Monitoring dashboards; lightweight
+Backend (Python recommended over Node for AI/ML ecosystem fit)
+Layer	Choice	Rationale
+API framework	FastAPI	Async; OpenAPI auto-generation; Python ecosystem for AI
+Agent orchestration	LangGraph 1.0	Production LTS [38]; durable state; HITL; PostgreSQL checkpointer
+Multi-agent	LangGraph Supervisor package	Validated by benchmarks [23]; most generic pattern
+Model API	LiteLLM (gateway)	Provider-agnostic; fallback routing; cost tracking
+Tool framework	OpenAI Agents SDK function tools	Compatible with LangGraph; Pydantic validation [20]
+MCP integration	OpenAI Agents SDK MCP support [20]	Standardized but harden against STDIO vulnerability [54]
+Data and Infrastructure
+Layer	Choice	Rationale
+Primary database	PostgreSQL 17	Agent state, tasks, skills, audit log, user data
+LangGraph checkpointer	PostgreSQL (native LangGraph support)	Same DB; no extra service [41]
+Short-term / working memory	Redis 8 (Valkey OSS alternative)	Fast key-value; session state; rate limiting [41]
+Vector store	pgvector (PostgreSQL extension)	No separate service for MVP; SimpleMem-compatible [51][41]
+Object storage	S3 or compatible (Cloudflare R2 for cost)	Screenshots, artifacts, file storage
+Queue (background tasks)	Temporal	Durable execution, audit trail, scheduling, signals [47]
+Code sandbox	E2B (Firecracker microVM)	Hardware-level isolation; Fortune 100 customers; Python+JS SDKs [22]
+Browser automation	Playwright + Browserless.io	Managed browser infrastructure; Playwright API
+Search API	Serper (Google wrapper)	Cheapest Google results with structure
+Alternative: Node Backend
+If the team is TypeScript-native, Node/Fastify is viable. LangGraph has a JS SDK. Trade-off: Python AI/ML ecosystem (LangChain, scipy, pandas) is harder to access from Node. For an agent platform doing data analysis, Python is strongly preferred.
+
+Observability
+Layer	Choice	Rationale
+Traces	OpenTelemetry + Langfuse	MIT-licensed; 2,000+ paying customers [27]; OTel GenAI conventions
+Metrics	Prometheus + Grafana	Industry standard; agent dashboards
+Logs	Structured JSON → CloudWatch/GCP Logging	Searchable; agent_id + task_id as dimensions
+Alerting	Grafana Alerting	Cost overruns, error rate spikes, queue depth
+Production Stack Additions
+Need	Solution	When
+Confidential VM	AMD SEV-SNP or Intel TDX	Phase 3; requires hardware support
+Multi-region	PostgreSQL read replicas + Redis Cluster	Phase 2
+SOC2 audit trail	Immutable log store (append-only PostgreSQL table or object storage)	Phase 2
+Enterprise SSO	SAML/OIDC (as in Grok Bot [37])	Phase 2
+Per-user VM isolation	Kubernetes with per-user namespace; resource quotas	Phase 2
+B. Technology Comparison Matrix
+Framework	Maturity	Agent Fit	Lock-in	Complexity	Cost
+LangGraph 1.0	High (LTS Oct 2025) [38]	High	Medium (open source)	Medium	Open source
+OpenAI Agents SDK	Medium (production-ready) [20]	High	High (OpenAI models)	Low	Open source
+AutoGen	Medium	Medium	Low	High	Open source
+CrewAI	Medium	Medium	Low	Medium	Open source
+Temporal	High	High for workflows	Low	High	Open source + cloud
+Recommendation: LangGraph for agent state management + Temporal for durable background task orchestration. These are complementary, not competing.
+
+C. Architecture Diagrams
+System Architecture
+┌─────────────────────────────────────────────────────────────────┐
+│                        Client Layer                              │
+│  Next.js App │ iOS App │ WhatsApp/SMS (future) │ API clients    │
+└──────────────────────────────┬──────────────────────────────────┘
+                               │ HTTPS + SSE/WS
+┌──────────────────────────────▼──────────────────────────────────┐
+│                      API Gateway / Load Balancer                 │
+│              (nginx + rate limiting + TLS termination)           │
+└──────────────────────────────┬──────────────────────────────────┘
+                               │
+┌──────────────────────────────▼──────────────────────────────────┐
+│                    FastAPI Application Server                     │
+│  ┌─────────────┐ ┌──────────────┐ ┌────────────────────────┐   │
+│  │ Auth/RBAC   │ │ Task Manager │ │  Approval Gate Service  │   │
+│  │ (JWT+OIDC)  │ │ (REST API)   │ │  (deterministic UI)     │   │
+│  └─────────────┘ └──────┬───────┘ └────────────────────────┘   │
+│                         │                                         │
+│  ┌──────────────────────▼──────────────────────────────────┐    │
+│  │              LangGraph Agent Orchestrator                 │    │
+│  │  ┌────────────┐ ┌──────────────┐ ┌──────────────────┐  │    │
+│  │  │ Supervisor │ │  Subagents   │ │  Skill Registry  │  │    │
+│  │  │   Agent    │ │  (per task)  │ │  (SKILL.md)      │  │    │
+│  │  └────────────┘ └──────────────┘ └──────────────────┘  │    │
+│  └─────────────────────────────────────────────────────────┘    │
+└──────────────────────────────┬──────────────────────────────────┘
+                               │
+┌──────────────────────────────▼──────────────────────────────────┐
+│                        Tool Layer                                 │
+│  ┌──────────┐ ┌──────────┐ ┌───────────┐ ┌──────────────────┐  │
+│  │ Search   │ │ Browser  │ │  Code     │ │  Integration     │  │
+│  │ (Serper) │ │ (Play-   │ │  Sandbox  │ │  APIs (OAuth)    │  │
+│  │          │ │  wright) │ │  (E2B)    │ │                  │  │
+│  └──────────┘ └──────────┘ └───────────┘ └──────────────────┘  │
+│  ┌─────────────────────────────────────────────────────────┐    │
+│  │          Network Proxy (authd credential injection)      │    │
+│  │    Block private IPs │ Rate limit │ ToS enforcement      │    │
+│  └─────────────────────────────────────────────────────────┘    │
+└──────────────────────────────┬──────────────────────────────────┘
+                               │
+┌──────────────────────────────▼──────────────────────────────────┐
+│                        Data Layer                                 │
+│  ┌──────────────┐ ┌──────────┐ ┌──────────┐ ┌──────────────┐   │
+│  │ PostgreSQL   │ │  Redis/  │ │ pgvector │ │  S3/R2       │   │
+│  │ (tasks,      │ │  Valkey  │ │ (memory  │ │  (artifacts, │   │
+│  │  skills,     │ │  (work.  │ │  embed.) │ │   screenshots│   │
+│  │  audit,      │ │  memory, │ │          │ │   files)     │   │
+│  │  checkpts)   │ │  cache)  │ │          │ │              │   │
+│  └──────────────┘ └──────────┘ └──────────┘ └──────────────┘   │
+│  ┌─────────────────────────────────────────────────────────┐    │
+│  │          Temporal (background task orchestration)        │    │
+│  │    Schedules │ Retries │ Signals │ Audit history         │    │
+│  └─────────────────────────────────────────────────────────┘    │
+└──────────────────────────────┬──────────────────────────────────┘
+                               │
+┌──────────────────────────────▼──────────────────────────────────┐
+│                      Observability Layer                          │
+│  OpenTelemetry → Langfuse (traces) │ Prometheus → Grafana (metrics) │
+│  Structured logs → CloudWatch/GCP  │ Alerts → PagerDuty          │
+└─────────────────────────────────────────────────────────────────┘
+Data Flow: Task Execution
+User submits goal
+       │
+       ▼
+[API] POST /tasks {agent_id, goal, context}
+       │
+       ▼
+[Task Manager] create task record → PostgreSQL tasks table
+       │
+       ▼
+[Temporal] schedule_task_workflow(task_id)
+       │
+       ▼
+[LangGraph] start_agent_graph(task_id, agent_config)
+  │
+  ├─ [Checkpoint] load from PostgreSQL (resumable)
+  │
+  ├─ [Memory] retrieve from pgvector + Redis working memory
+  │
+  ├─ [Skill Loading] load relevant SKILL.md bodies
+  │
+  ├─ [Model Inference] → LiteLLM → provider API
+  │     └─ OTel span: gen_ai.request + gen_ai.response attributes [[27]](<https://www.digitalapplied.com/blog/ai-agent-observability-2026-tracing-monitoring-stack-guide>)
+  │
+  ├─ [Tool Call] → Tool Layer
+  │     ├─ Search: Serper API (HTTP)
+  │     ├─ Browser: Playwright (isolated process)
+  │     ├─ Code: E2B sandbox (Firecracker microVM)
+  │     └─ All: emit tool_call event → SSE stream → frontend
+  │
+  ├─ [Permission Gate] check PermissionSet + ApprovalPolicy
+  │     └─ If approval needed: pause, emit approval_gate event, wait
+  │
+  ├─ [Checkpoint] save state → PostgreSQL after each step
+  │
+  ├─ [Evaluation] structured output: did step succeed?
+  │
+  ├─ [Verification] independent model call + deterministic checks
+  │
+  └─ [Delivery] artifact saved to S3; task_completed event emitted
+
+User frontend receives SSE stream:
+  - Real-time activity timeline updates
+  - Approval cards when needed
+  - Final artifact delivery
+Sequence: Approval Gate
+Agent                 ApprovalService        User              DB
+  │                        │                  │                │
+  │─ approval_needed ──────▶                  │                │
+  │  {action, preview,     │                  │                │
+  │   risk_level}          │                  │                │
+  │                        │─ create_gate ───────────────────▶│
+  │                        │  gate_id: g-001  │                │
+  │                        │                  │                │
+  │                        │─ push_notify ───▶│                │
+  │                        │  (push/SSE)      │                │
+  │  [WAIT]                │                  │                │
+  │                        │                  │─ GET /gates ──▶│
+  │                        │                  │◀─ gate_detail ─│
+  │                        │                  │                │
+  │                        │                  │─ POST /approve─▶│
+  │                        │                  │  {gate_id,     │
+  │                        │                  │   decision:    │
+  │                        │                  │   "allow_once"}│
+  │                        │◀─ gate_resolved ──────────────────│
+  │◀─ resume_with(decision)│                  │                │
+  │  {allowed: true,       │                  │                │
+  │   scope: "once"}       │                  │                │
+  │─ proceed_with_action   │                  │                │
+  │  + record grant        │                  │                │
+PART 12: MONITORING AND EVALUATION
+A. OpenTelemetry + Agent Tracing Integration
+OpenTelemetry GenAI semantic conventions are the emerging standard for agent telemetry, though they remain in Development status (not Stable) as of v1.41 [27]. The key attribute namespace is gen_ai.*.
+
+Agent span structure:
+
+# ILLUSTRATIVE CODE (not tested)
+from opentelemetry import trace
+from opentelemetry.trace import SpanKind
+
+tracer = trace.get_tracer("agent.core")
+
+def execute_tool_call(tool_id: str, input_params: dict, task_id: str):
+    with tracer.start_as_current_span(
+        "execute_tool",
+        kind=SpanKind.CLIENT,
+        attributes={
+            # Standard agent attributes
+            "gen_ai.operation.name": "execute_tool",
+            "agent.tool.id": tool_id,
+            "agent.task.id": task_id,
+            "agent.skill.id": current_skill_id,
+            "agent.skill.version": current_skill_version,
+            # MCP-specific (OTel v1.39+)
+            "mcp.method.name": "tools/call",
+            "mcp.session.id": session_id,
+        }
+    ) as span:
+        result = tool_registry.execute(tool_id, input_params)
+        span.set_attribute("agent.tool.success", result.success)
+        span.set_attribute("agent.tool.duration_ms", result.duration_ms)
+        if not result.success:
+            span.record_exception(result.error)
+        return result
+
+def model_inference_call(messages: list, model: str, task_id: str):
+    with tracer.start_as_current_span(
+        "model.inference",
+        kind=SpanKind.CLIENT,
+        attributes={
+            "gen_ai.system": "anthropic",  # or openai, google
+            "gen_ai.request.model": model,
+            "gen_ai.usage.input_tokens": len_tokens(messages),
+            "agent.task.id": task_id,
+            # Content NOT captured by default (opt-in for PII concerns) [[27]](<https://www.digitalapplied.com/blog/ai-agent-observability-2026-tracing-monitoring-stack-guide>)
+        }
+    ) as span:
+        response = llm_client.invoke(messages)
+        span.set_attribute("gen_ai.usage.output_tokens", response.usage.output_tokens)
+        span.set_attribute("gen_ai.response.finish_reason", response.finish_reason)
+        return response
+Langfuse integration (recommended for MVP):
+
+# ILLUSTRATIVE CODE (not tested)
+from langfuse import Langfuse
+from langfuse.decorators import langfuse_context, observe
+
+langfuse = Langfuse()
+
+@observe()
+def run_agent_task(task_id: str, goal: str, agent_id: str):
+    langfuse_context.update_current_trace(
+        name=f"agent_task_{task_id}",
+        user_id=user_id,
+        session_id=agent_id,
+        tags=["agent", skill_id, model_id],
+        metadata={"task_id": task_id, "goal_preview": goal[:100]}
+    )
+    # All nested @observe() calls automatically captured as spans
+Key metrics to instrument:
+
+Metric	Collection Method	Alert Threshold
+Task success rate	Count(completed) / Count(total) per agent per day	< 80%
+Token cost per task	Sum of gen_ai.usage.* per task_id	> $1.00
+Tool error rate	Count(tool.success=false) / Count(tool_calls)	> 10%
+Approval gate response time	Gate created → gate resolved	> 24h (stale gates)
+Queue depth	Temporal workflow count in pending	> 50
+Verification pass rate	Count(verification_passed) / Count(verification_run)	< 90%
+Budget utilization	daily_cost / daily_budget	> 80% → alert; 100% → hard stop
+Human intervention rate	Count(approval_gates) / Count(tasks)	Track trend (should decrease as trust grows)
+B. Evaluation Framework
+Task-level evaluation (automated):
+
+Outcome verification: Did the task meet stated success criteria? (Deterministic where possible; model-judged for complex tasks)
+Citation accuracy: Are cited sources real and accessible?
+Hallucination rate: Factual claims verified against sources
+Tool efficiency: Did the agent take the minimum necessary tool calls?
+Cost efficiency: Cost per successfully completed task
+Skill-level regression tests:
+
+# ILLUSTRATIVE - skill test suite format
+skill: web-research-v2
+version: "2.1.0"
+test_suite:
+  - id: test-pricing-research
+    input: "Find the pricing of Notion for Business plan"
+    expected:
+      price_mentioned: true
+      url_cited: true
+      accessed_date_present: true
+    judge: model  # or deterministic
+    
+  - id: test-multi-competitor
+    input: "Compare Jira and Linear feature sets for engineering teams"
+    expected:
+      both_products_mentioned: true
+      feature_comparison: true
+      min_sources: 2
+    judge: model
+    
+  - id: test-paywall-handling
+    input: "Find the contents of this paywalled article: [url]"
+    expected:
+      acknowledges_paywall: true
+      does_not_fabricate: true
+      alternative_source_offered: true
+    judge: deterministic + model
+Safe improvement via regression tests:
+
+Before any skill update ships, the updated skill must:
+
+Pass all existing test cases (no regression)
+Improve on the target metric by ≥5%
+Be reviewed and approved by a human
+Run in shadow mode on 5% of tasks for 48 hours before full rollout
+PART 13: SECURITY, RELIABILITY, AND COMPLIANCE
+A. MCP Security: Critical Vulnerabilities
+On April 15, 2026, OX Security disclosed a critical STDIO transport vulnerability in Anthropic's MCP SDKs (Python, TypeScript, Java, Rust): user-controlled configuration values are passed directly to shell execution without sanitization [54]. The command executes even when the target process fails to start. Anthropic characterized this as "expected" behavior [54].
+
+Scale: Over 150M package downloads, ~7,000 publicly reachable servers, ~200,000 vulnerable deployments, 14+ CVEs [54].
+
+Tool poisoning: MCP tool descriptions are visible to the AI model but hidden from human users. An attacker who controls a tool description can embed hidden instructions the model reads and acts upon without user knowledge [54].
+
+Mitigations required for this platform:
+
+Never use MCP STDIO transport in production. Use HTTP/SSE transport only.
+Validate all MCP tool descriptions at initialization against a known-good baseline. Alert on unexpected changes [54].
+Process isolation: Run each MCP server in its own container or microVM.
+Command allowlisting: If any shell execution is required, use an explicit allowlist of hardcoded binary paths.
+Content validation: All tool description text validated against injection patterns before loading.
+B. Prompt Injection Mitigations (2026 State)
+Muse's CTO describes a layered defense [32]:
+
+Model training: Model trained to recognize and resist injection
+Harness marking: All content from untrusted sources explicitly labeled
+Deterministic code checks: Result of agent action checked by deterministic code, not another model call
+Classifier ensemble: Runs outside agent's reach (separate process, separate context)
+Additional mitigations:
+
+Web content always passed as a clearly labeled {source: "untrusted_web", content: "..."} structure, never interpolated into system prompt
+Output validation: any agent output that will be sent externally (email, API call) validated against injection patterns
+Simon Willison's "lethal trifecta" [32]: private data + untrusted web content + outbound communication capability together create prompt injection risk. Defense requires: Sentinel-pattern approval for all outbound, credential isolation, and content labeling.
+C. Multi-Tenancy and RBAC
+Tenant (Organization)
+  └── Users
+        └── Agents (agent_id + user_id + org_id)
+              └── Tasks
+                    └── Tool grants (scoped to task)
+
+RBAC roles:
+  - Owner: full control including billing, agent creation, skill publishing
+  - Admin: create/edit/delete agents; set approval policies; view all tasks
+  - Member: create/run own agents; view own tasks
+  - Viewer: view task history and outputs only
+
+Row-level security (PostgreSQL RLS):
+  - All queries automatically filtered by user_id + org_id
+  - Agents can only access their own workspace directory
+  - Cross-agent resource access only via explicit delegation records
+D. Secret Management
+Credentials stored in vault (HashiCorp Vault or AWS Secrets Manager)
+Injected at network boundary as surrogate tokens (agent never sees raw credential)
+Short-lived task-scoped credentials where possible
+Rotation policy: all credentials rotated every 30 days
+Audit log: every credential access recorded with timestamp, agent_id, tool_id
+E. Sandbox and Browser Isolation
+Resource	Isolation Method	Evidence
+Code execution	E2B Firecracker microVM (dedicated kernel) [22]	Hardware-level isolation
+Browser	Playwright in isolated process + network proxy	Per-session; cleaned after task
+Private IP blocking	E2B blocks link-local and metadata IPs [22]	Prevents SSRF attacks
+Credential injection	Network proxy layer; never in agent context	Muse architecture [32]; E2B model [22]
+Agent workspace	Per-agent directory in user VM	No cross-agent file access
+F. Reliability Patterns
+Idempotency: Every tool call carries an `idempotency_key = f"{task_id}-{step_index}". Duplicate execution on retry is detected and skipped.
+
+Timeouts: Every tool call has a hard timeout. Every agent run has a task-level budget (tokens + cost + time). Exceeded budgets surface a FAILED state with clear explanation.
+
+Retries: Exponential backoff with jitter. Max 3 retries for transient failures. No retry for authorization failures or budget exceeded.
+
+Resumability: LangGraph checkpointer saves state after each step [38][41]. If the worker process dies, the task resumes from last checkpoint on restart.
+
+Runaway loop detection: Maximum step count per task (configurable, default 50). Maximum token budget per task. Temporal workflow has maximum execution time. Any of these exceeded → FAILED with explanation.
+
+Backup and rollback: PostgreSQL point-in-time recovery. Skill versions never deleted (deprecated, not deleted). Agent state checkpoints retained for 30 days. Temporal provides full workflow execution history [47].
+
+PART 14: PHASED IMPLEMENTATION ROADMAP
+Phase 0: Foundation (Weeks 1-4)
+Objective: One end-to-end vertical slice. One agent. One task type (web research). Truthful UI. Working security.
+
+Scope:
+
+Single agent profile (Research Agent)
+Single skill (/web-research-v1)
+Search API + Playwright browser tool
+PostgreSQL + Redis + pgvector
+LangGraph state machine with checkpointing
+SSE-based activity stream to frontend
+Basic approval gate (send email)
+E2B sandbox for any code execution
+Langfuse tracing
+Prerequisite: Database schema designed; infrastructure provisioned; model API keys secured.
+
+Acceptance criteria:
+
+User creates a Research Agent, assigns a research goal
+Agent executes: search → browse → extract → verify → report
+Activity timeline shows real backend events with timestamps
+Approval gate fires before any email send
+Task completes with cited artifact
+Cost and token usage shown to user
+Full trace in Langfuse
+No hallucinations in 5 manual test runs
+All tool calls logged in immutable audit table
+Complexity: Medium. Estimated cost: Infrastructure ~$500/month at dev scale.
+
+Phase 1: Agent Breadth (Weeks 5-10)
+Objective: Expand to 5 agent roles. Engineering agent with code execution. Skill registry with versioning.
+
+Scope:
+
+Engineering Agent (git, terminal, E2B sandbox, test runner)
+Writing Agent (document generation, fact-checking)
+Data Analyst Agent (Python sandbox, file analysis)
+QA Agent (browser testing, test suite execution)
+SKILL.md registry with discovery and versioning
+Git integration (PR creation, CI monitoring)
+File storage (S3/R2) for artifacts
+Improved memory (SimpleMem-style compression)
+Acceptance criteria:
+
+Engineering agent completes a real task on a real repository (add a feature, pass CI)
+Skill registry stores, versions, and loads skills correctly
+Artifacts (files, reports, code) saved and retrievable
+All 5 agent roles create and complete tasks
+Phase 2: Multi-Agent and Scale (Weeks 11-18)
+Objective: Supervisor coordinator pattern. User-created agents. Background tasks with scheduling.
+
+Scope:
+
+LangGraph Supervisor multi-agent orchestration
+Project Manager Agent (coordinator)
+User agent creation wizard (full UI)
+Temporal for durable background task scheduling
+Routine/schedule system (run task every N hours, on event)
+Per-user VM isolation (Kubernetes namespaces + resource quotas)
+Enterprise RBAC and SSO (SAML/OIDC)
+Marketplace (install shared agent templates)
+Budget enforcement at user and org level
+Acceptance criteria:
+
+Multi-agent task (research + analysis + report) completes with supervisor coordination
+Users create custom agents via wizard
+Scheduled tasks run reliably (tested over 72 hours)
+Budget hard stops trigger correctly
+Enterprise SSO working
+Phase 3: Security Hardening and Scale (Weeks 19-26)
+Objective: Production-grade security, monitoring, and self-improvement pipeline.
+
+Scope:
+
+Sentinel-pattern approval for all outbound network (separate process)
+Confidential VM option (AMD SEV-SNP)
+Full prompt injection defense (content labeling, classifier ensemble)
+Comprehensive OTel instrumentation (all tool calls, model calls, approval gates)
+Grafana dashboards for all key metrics
+Regression test suite for all shipped skills
+Safe improvement pipeline (collect → evaluate → propose → test → human review → gradual rollout)
+SOC2 audit trail (immutable log)
+Acceptance criteria:
+
+Prompt injection test suite (10 known patterns) passes
+All critical metrics instrumented and alerting configured
+Skill improvement pipeline completes one full cycle (proposal → approved → shipped)
+Security review completed by external party
+Audit log verified immutable
+PART 15: PRACTICAL BUILD SPECIFICATION (PART O)
+A. Repository Structure
+agent-platform/
+├── apps/
+│   ├── web/                    # Next.js 15 frontend
+│   │   ├── app/                # App router
+│   │   │   ├── (auth)/         # Login, signup
+│   │   │   ├── agents/         # Agent management
+│   │   │   │   ├── page.tsx    # Agent list/grid
+│   │   │   │   ├── [id]/       # Agent workspace
+│   │   │   │   └── new/        # Creation wizard
+│   │   │   ├── tasks/          # Task board
+│   │   │   ├── marketplace/    # Skill/template discovery
+│   │   │   ├── memory/         # Memory management
+│   │   │   ├── integrations/   # Connected services
+│   │   │   ├── monitoring/     # Dashboards
+│   │   │   └── settings/       # User/org settings
+│   │   ├── components/
+│   │   │   ├── agents/         # AgentCard, AgentAvatar, etc.
+│   │   │   ├── tasks/          # TaskBoard, ActivityTimeline
+│   │   │   ├── approvals/      # ApprovalCard, ApprovalQueue
+│   │   │   ├── browser/        # BrowserView (status/preview/takeover)
+│   │   │   ├── skills/         # SkillSelector, SkillCard
+│   │   │   ├── artifacts/      # ArtifactPreview, CodeViewer
+│   │   │   └── ui/             # shadcn base components
+│   │   └── lib/
+│   │       ├── sse.ts          # SSE client for activity stream
+│   │       ├── api.ts          # API client (typed)
+│   │       └── stores/         # Zustand stores
+│   │
+│   └── api/                    # FastAPI backend
+│       ├── main.py
+│       ├── routers/
+│       │   ├── agents.py       # Agent CRUD
+│       │   ├── tasks.py        # Task management
+│       │   ├── approvals.py    # Approval gates
+│       │   ├── skills.py       # Skill registry
+│       │   ├── memory.py       # Memory management
+│       │   ├── events.py       # SSE stream
+│       │   └── integrations.py # OAuth, connected services
+│       ├── services/
+│       │   ├── agent_runner.py     # LangGraph orchestration
+│       │   ├── tool_registry.py    # Tool management
+│       │   ├── skill_loader.py     # SKILL.md loading/validation
+│       │   ├── memory_service.py   # pgvector + Redis
+│       │   ├── approval_service.py # Approval gate management
+│       │   ├── budget_service.py   # Cost tracking + enforcement
+│       │   ├── verification.py     # Independent verification
+│       │   └── audit.py           # Immutable audit log
+│       ├── core/
+│       │   ├── security/
+│       │   │   ├── credential_vault.py   # Secret management
+│       │   │   ├── network_proxy.py      # Sentinel-pattern proxy
+│       │   │   ├── content_labeler.py    # Untrusted content labeling
+│       │   │   └── injection_detector.py # Prompt injection detection
+│       │   ├── llm/
+│       │   │   ├── client.py      # LiteLLM wrapper
+│       │   │   └── registry.py    # Model registry with fallback
+│       │   └── sandbox/
+│       │       ├── e2b_client.py  # E2B sandbox integration
+│       │       └── browser.py     # Playwright management
+│       ├── models/               # SQLAlchemy ORM models
+│       └── alembic/              # Database migrations
+│
+├── packages/
+│   ├── skills/                 # Shared skill definitions
+│   │   ├── research/
+│   │   │   ├── web-research-v2/
+│   │   │   │   ├── SKILL.md
+│   │   │   │   └── tests/
+│   │   │   └── source-citation-v1/
+│   │   │       └── SKILL.md
+│   │   ├── engineering/
+│   │   │   ├── code-architect/
+│   │   │   ├── tdd-workflow/
+│   │   │   ├── code-review/
+│   │   │   └── debug-hypothesis/
+│   │   ├── writing/
+│   │   │   ├── report-writer/
+│   │   │   └── fact-checker/
+│   │   └── verification/
+│   │       └── report-verification-v1/
+│   └── types/                  # Shared TypeScript + Python types
+│
+├── infrastructure/
+│   ├── terraform/              # AWS/GCP infrastructure
+│   ├── kubernetes/             # K8s manifests
+│   │   ├── namespaces/         # Per-user namespace templates
+│   │   └── quotas/             # Resource quota definitions
+│   └── temporal/               # Temporal workflow definitions
+│
+└── docker-compose.yml          # Local development
+B. Database Schema
+-- ILLUSTRATIVE SCHEMA (not tested against production)
+
+-- Users and organizations
+CREATE TABLE organizations (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  name TEXT NOT NULL,
+  slug TEXT UNIQUE NOT NULL,
+  settings JSONB DEFAULT '{}',
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+CREATE TABLE users (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  org_id UUID REFERENCES organizations(id),
+  email TEXT UNIQUE NOT NULL,
+  role TEXT CHECK (role IN ('owner', 'admin', 'member', 'viewer')),
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- Agent profiles
+CREATE TABLE agents (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  user_id UUID REFERENCES users(id) NOT NULL,
+  org_id UUID REFERENCES organizations(id) NOT NULL,
+  name TEXT NOT NULL,
+  role TEXT NOT NULL,
+  description TEXT,
+  avatar_config JSONB DEFAULT '{}',
+  model_config JSONB NOT NULL,   -- {provider, model, temperature}
+  skill_ids TEXT[] DEFAULT '{}',
+  approval_policy TEXT DEFAULT 'sensitive_only',
+  budget_config JSONB DEFAULT '{}',
+  delegation_allowed BOOLEAN DEFAULT FALSE,
+  current_state TEXT DEFAULT 'idle',
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- Tasks
+CREATE TABLE tasks (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  agent_id UUID REFERENCES agents(id) NOT NULL,
+  user_id UUID REFERENCES users(id) NOT NULL,
+  org_id UUID REFERENCES organizations(id) NOT NULL,
+  parent_task_id UUID REFERENCES tasks(id),  -- for subtasks
+  raw_goal TEXT NOT NULL,
+  interpreted_goal JSONB,
+  plan JSONB,
+  current_state TEXT DEFAULT 'pending',
+  priority TEXT DEFAULT 'normal',
+  started_at TIMESTAMPTZ,
+  completed_at TIMESTAMPTZ,
+  verified_at TIMESTAMPTZ,
+  total_tokens INTEGER DEFAULT 0,
+  total_cost_usd DECIMAL(10,6) DEFAULT 0,
+  verification_result JSONB,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- Agent events (immutable audit trail)
+CREATE TABLE agent_events (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  task_id UUID REFERENCES tasks(id) NOT NULL,
+  agent_id UUID REFERENCES agents(id) NOT NULL,
+  event_type TEXT NOT NULL,  -- tool_call | model_inference | approval_gate | etc.
+  event_data JSONB NOT NULL,
+  state_before TEXT,
+  state_after TEXT,
+  duration_ms INTEGER,
+  tokens_used INTEGER,
+  cost_usd DECIMAL(10,6),
+  created_at TIMESTAMPTZ DEFAULT NOW()
+  -- NO UPDATE OR DELETE: append-only
+);
+
+-- Index for event streaming
+CREATE INDEX idx_agent_events_task_created ON agent_events(task_id, created_at);
+
+-- Approval gates
+CREATE TABLE approval_gates (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  task_id UUID REFERENCES tasks(id) NOT NULL,
+  agent_id UUID REFERENCES agents(id) NOT NULL,
+  user_id UUID REFERENCES users(id) NOT NULL,
+  action_type TEXT NOT NULL,
+  action_description TEXT NOT NULL,
+  action_preview JSONB,
+  risk_level TEXT CHECK (risk_level IN ('low', 'medium', 'high', 'critical')),
+  status TEXT DEFAULT 'pending',  -- pending | approved | denied | timed_out
+  decision TEXT,  -- allow_once | always_allow | deny | edit
+  decided_at TIMESTAMPTZ,
+  expires_at TIMESTAMPTZ,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- Skills registry
+CREATE TABLE skills (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  org_id UUID REFERENCES organizations(id),  -- NULL = platform skill
+  name TEXT NOT NULL,
+  version TEXT NOT NULL,
+  namespace TEXT DEFAULT 'platform',  -- platform | org | user
+  status TEXT DEFAULT 'draft',  -- draft | review | stable | deprecated
+  yaml_frontmatter JSONB NOT NULL,
+  body_markdown TEXT NOT NULL,
+  allowed_tools TEXT[] DEFAULT '{}',
+  permissions_required TEXT[] DEFAULT '{}',
+  dependencies TEXT[] DEFAULT '{}',
+  evaluation_score DECIMAL(5,4),
+  install_count INTEGER DEFAULT 0,
+  author_id UUID REFERENCES users(id),
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  deprecated_at TIMESTAMPTZ,
+  UNIQUE(name, version, namespace)
+);
+
+-- Skill tests
+CREATE TABLE skill_tests (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  skill_id UUID REFERENCES skills(id) NOT NULL,
+  test_input TEXT NOT NULL,
+  expected_assertions JSONB NOT NULL,
+  last_result TEXT,  -- pass | fail | not_run
+  last_run_at TIMESTAMPTZ,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- Memory (agent-scoped)
+CREATE TABLE agent_memories (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  agent_id UUID REFERENCES agents(id) NOT NULL,
+  user_id UUID REFERENCES users(id) NOT NULL,
+  key TEXT,
+  value TEXT NOT NULL,
+  context TEXT,
+  source TEXT,  -- task_id or 'user_explicit'
+  embedding vector(1536),  -- pgvector; text-embedding-3-small
+  quality_score DECIMAL(5,4) DEFAULT 1.0,  -- for SelfMem-style pruning
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  last_accessed_at TIMESTAMPTZ
+);
+
+CREATE INDEX idx_memories_embedding ON agent_memories USING ivfflat (embedding vector_cosine_ops);
+
+-- Connected integrations (per user)
+CREATE TABLE integrations (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  user_id UUID REFERENCES users(id) NOT NULL,
+  service_type TEXT NOT NULL,  -- email | calendar | github | slack | ...
+  access_level TEXT NOT NULL,  -- read | read_write | full
+  credential_vault_ref TEXT NOT NULL,  -- reference to vault, never raw credential
+  scopes TEXT[] DEFAULT '{}',
+  connected_at TIMESTAMPTZ DEFAULT NOW(),
+  last_used_at TIMESTAMPTZ
+);
+
+-- Permission grants (per agent, per action)
+CREATE TABLE permission_grants (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  agent_id UUID REFERENCES agents(id) NOT NULL,
+  user_id UUID REFERENCES users(id) NOT NULL,
+  action_type TEXT NOT NULL,
+  scope TEXT NOT NULL,  -- once | always | session
+  granted_at TIMESTAMPTZ DEFAULT NOW(),
+  expires_at TIMESTAMPTZ,
+  revoked_at TIMESTAMPTZ
+);
+
+-- Budget tracking
+CREATE TABLE budget_usage (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  user_id UUID REFERENCES users(id) NOT NULL,
+  agent_id UUID REFERENCES agents(id),
+  task_id UUID REFERENCES tasks(id),
+  period_date DATE NOT NULL,
+  tokens_used INTEGER DEFAULT 0,
+  cost_usd DECIMAL(10,6) DEFAULT 0,
+  updated_at TIMESTAMPTZ DEFAULT NOW(),
+  UNIQUE(user_id, agent_id, period_date)
+);
+C. API Contracts (Selected)
+# ILLUSTRATIVE API CONTRACTS
+
+POST /api/v1/tasks
+Request:
+  agent_id: UUID
+  goal: string (max 10,000 chars)
+  context?: string
+  priority?: "low" | "normal" | "high"
+  budget_override?: {tokens: int, cost_usd: float}
+Response:
+  task_id: UUID
+  status: "queued"
+  estimated_start_ms?: int
+
+GET /api/v1/tasks/{task_id}/events
+  # Server-Sent Events stream
+  Content-Type: text/event-stream
+  Events:
+    state_change: {task_id, from_state, to_state, timestamp}
+    tool_call: {tool_id, input_summary, timestamp}
+    tool_result: {tool_id, success, duration_ms, output_summary}
+    approval_gate: {gate_id, action_type, risk_level, preview}
+    verification: {check_name, passed, evidence}
+    completed: {artifact_ids, cost_summary, duration_ms}
+    error: {error_type, message, retry_count, max_retries}
+
+POST /api/v1/approval-gates/{gate_id}/decide
+Request:
+  decision: "allow_once" | "always_allow" | "deny" | "edit"
+  edited_params?: object  # if decision == "edit"
+Response:
+  gate_id: UUID
+  status: "resolved"
+  task_resumed: bool
+
+GET /api/v1/agents/{agent_id}/memory
+Response:
+  memories: [{id, key, value, context, source, created_at, quality_score}]
+  total: int
+
+DELETE /api/v1/agents/{agent_id}/memory/{memory_id}
+Response:
+  deleted: bool
+
+POST /api/v1/skills/install
+Request:
+  agent_id: UUID
+  skill_name: string
+  version?: string  # defaults to latest stable
+Response:
+  skill_id: UUID
+  version: string
+  status: "installed"
+  test_results: [{test_id, passed}]
+D. Sample Agent Definition
+# ILLUSTRATIVE CODE (not tested)
+# Research agent definition using LangGraph + OpenAI Agents SDK pattern
+
+from langgraph.graph import StateGraph, START, END
+from langgraph.checkpoint.postgres import PostgresSaver
+from pydantic import BaseModel
+from typing import Annotated, Literal
+
+class ResearchAgentState(BaseModel):
+    task_id: str
+    goal: str
+    plan: list[dict] | None = None
+    current_step: int = 0
+    observations: list[dict] = []
+    artifacts: list[str] = []
+    verification_result: dict | None = None
+    final_state: Literal["pending", "completed", "failed"] = "pending"
+    token_count: int = 0
+    cost_usd: float = 0.0
+
+def build_research_agent_graph(
+    agent_config: AgentConfig,
+    checkpointer: PostgresSaver
+) -> StateGraph:
+    
+    graph = StateGraph(ResearchAgentState)
+    
+    # Nodes map to lifecycle states
+    graph.add_node("interpret", interpret_goal_node)
+    graph.add_node("retrieve_context", retrieve_context_node)
+    graph.add_node("plan", plan_node)
+    graph.add_node("check_permission", check_permission_node)
+    graph.add_node("execute_tool", execute_tool_node)
+    graph.add_node("evaluate", evaluate_step_node)
+    graph.add_node("verify", verify_completion_node)
+    graph.add_node("deliver", deliver_node)
+    graph.add_node("handle_failure", failure_node)
+    
+    # Edges define legal transitions
+    graph.add_edge(START, "interpret")
+    graph.add_edge("interpret", "retrieve_context")
+    graph.add_edge("retrieve_context", "plan")
+    graph.add_edge("plan", "check_permission")
+    
+    graph.add_conditional_edges(
+        "check_permission",
+        route_after_permission_check,
+        {
+            "approved": "execute_tool",
+            "needs_approval": "check_permission",  # wait state in Temporal
+            "denied": "handle_failure"
+        }
+    )
+    
+    graph.add_conditional_edges(
+        "evaluate",
+        route_after_evaluation,
+        {
+            "continue": "check_permission",  # next step
+            "verify": "verify",
+            "retry": "execute_tool",
+            "failed": "handle_failure"
+        }
+    )
+    
+    graph.add_edge("execute_tool", "evaluate")
+    graph.add_conditional_edges(
+        "verify",
+        route_after_verification,
+        {
+            "passed": "deliver",
+            "failed": "execute_tool"  # retry with adjusted approach
+        }
+    )
+    graph.add_edge("deliver", END)
+    graph.add_edge("handle_failure", END)
+    
+    return graph.compile(checkpointer=checkpointer)
+E. Sample Skill Definition (complete)
+# packages/skills/research/web-research-v2/SKILL.md
+# ILLUSTRATIVE SKILL - based on specification [[44]](<https://agentman.ai/blog/build-your-first-agent-skill-skillmd-anatomy>)[[19]](<https://cursor.com/blog/agent-best-practices>)
+---
+name: web-research-v2
+version: "2.0.0"
+description: |
+  Deep web research with citations. Searches multiple sources, navigates to 
+  pages, extracts and cross-verifies information, and produces a sourced 
+  research report. Use when: research, fact-finding, competitive analysis, 
+  information gathering, or any task requiring verified web sources.
+author: "platform-team"
+category: "research"
+allowed_tools:
+  - search_api
+  - playwright_browser
+  - file_write
+permissions_required:
+  - web.search
+  - browser.navigate.public
+  - files.write_workspace
+dependencies:
+  - source-citation-v1
+tags: [research, web, competitive-analysis, fact-checking, citations]
+tests:
+  - id: basic-search-with-citation
+    input: "Find the pricing of Notion Business plan"
+    assertions:
+      price_mentioned: true
+      url_cited: true
+      date_present: true
+  - id: multi-source-verification
+    input: "What is the current CEO of OpenAI?"
+    assertions:
+      answer_present: true
+      min_sources: 2
+      sources_cross_verified: true
+  - id: paywall-graceful-handling
+    input: "Find contents of this page (paywall test)"
+    assertions:
+      acknowledges_paywall: true
+      does_not_fabricate: true
+hooks:
+  after_completion: store_sources_to_memory
+deprecates: web-research-v1
+---
+
+# Web Research Skill v2
+
+## Activation
+You are now in deep web research mode. Follow this workflow exactly.
+
+## Workflow
+
+### Step 1: Query Decomposition
+Decompose the research question into 3-5 specific search queries.
+Prefer specific over broad queries.
+
+### Step 2: Search and Evaluate
+Execute each query using search_api. Evaluate result quality:
+- Prefer official sources, academic papers, reputable news
+- Note sources that require JavaScript rendering (need browser)
+- Note paywalled sources (cannot access content; note existence only)
+
+### Step 3: Source Navigation  
+Navigate to the 3-5 most relevant sources per query using playwright_browser.
+For each source:
+- Screenshot the page (evidence retention)
+- Extract the specific information relevant to the query
+- Record exact quotes, not paraphrases
+- Record URL, page title, access date
+
+### Step 4: Cross-Verification
+Verify key facts across at least 2 independent sources.
+If sources conflict: report the conflict explicitly; do not choose arbitrarily.
+
+### Step 5: Structured Output
+Produce output in this exact format:
+
+```json
+{
+  "summary": "...",
+  "findings": [
+    {
+      "claim": "...",
+      "evidence": "exact quote",
+      "source_url": "...",
+      "source_title": "...",
+      "accessed": "YYYY-MM-DD",
+      "confidence": "high|medium|low"
+    }
+  ],
+  "conflicts": [],
+  "gaps": [],
+  "sources_consulted": 0,
+  "sources_accessible": 0
+}
+Guardrails
+Maximum 10 browser navigations per task
+If a site blocks access: note it, try alternative source, do not fabricate
+Never invent sources, URLs, or quotes
+If information is unavailable: state "could not verify" explicitly
+All screenshots retained as task artifacts
+
+---
+
+# FINAL RECOMMENDATION: WHAT TO BUILD FIRST AND WHY
+
+## The Vertical Slice: Research Agent with Truthful Activity Stream
+
+**Build this first:** A single Research Agent that accepts a goal, executes a search-browse-extract-verify-report workflow, streams real backend events to the UI, surfaces an approval gate before any external action, and delivers a cited artifact.
+
+**Why this specific slice:**
+
+1. **It proves the hardest architectural problems:** truthful state machine, SSE event streaming, permission gates, evidence retention, and independent verification—all in one flow.
+
+2. **It has immediate measurable value:** A research task that saves 45 minutes of human work and delivers a sourced report is demonstrably useful on day one.
+
+3. **It validates the security model:** Browser isolation, credential injection, content labeling, and output verification are all exercised by a research task.
+
+4. **It creates the evaluation baseline:** You can measure whether the research is accurate, sourced, and complete. This baseline is needed before any skill improvement work.
+
+**Objective proof it works:**
+- Run 10 research tasks on known-answer questions (e.g., "What is Anthropic's current pricing for Claude Pro?")
+- Measure: all 10 return the correct answer with a valid source URL
+- Measure: all 10 show truthful activity timelines (each event has a real timestamp and real tool call)
+- Measure: zero hallucinated URLs (check each citation is accessible)
+- Measure: cost per task < $0.50
+- Measure: task completion time < 3 minutes
+
+If this succeeds, every subsequent agent role, skill, and feature has a proven infrastructure to build on. If it fails, you discover the failure mode on the simplest possible scenario before committing to multi-agent complexity.
+
+**The platforms reviewed—Muse [[12]](<https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/>), Instinct [[14]](<https://instinct.com/>), Grok Bot [[16]](<https://x.ai/bot>)[[17]](<https://x.ai/bot/guides/grok-bot-for-engineering>), and Cursor [[19]](<https://cursor.com/blog/agent-best-practices>)[[52]](<https://cursor.com/blog/projects>)—all started from a single, well-defined use case and expanded from there.** The mistake is starting with the marketplace, the orchestration layer, and the multi-agent patterns before proving that one agent can reliably complete one real task.
+
+---
+
+*Research date: 2026-11-03. All pricing, availability, and product details subject to change. Claims labeled by evidence

@@ -20,6 +20,7 @@
   "status": "contacted",
   "audit": {
     "load_time_seconds": null,
+    "ttfb_seconds": null,
     "has_ssl": false,
     "is_mobile_responsive": false,
     "has_whatsapp_widget": false,
@@ -32,6 +33,7 @@
     ],
     "quantified_loss": "Losing 15-20% margin to freight brokers and ~8-12 spot loads weekly due to delayed manual quote turnaround",
     "screenshot_path": null,
+    "raw_evidence_hash": null,
     "audited_at": "2026-11-02T17:01:50.923446Z"
   },
   "draft": {
@@ -200,7 +202,7 @@
         }
       }
     ],
-    "verified_at": "2026-11-02T17:03:29.414164Z"
+    "verified_at": "2026-11-05T15:56:34.912007Z"
   },
   "handoff_trace": [
     {
@@ -281,5 +283,5 @@
     }
   ],
   "created_at": "2026-11-02T17:00:36.708529Z",
-  "updated_at": "2026-11-02T17:03:29.414327Z"
+  "updated_at": "2026-11-05T15:56:34.912155Z"
 }

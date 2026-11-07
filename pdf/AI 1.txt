@@ -1,0 +1,93 @@
+AI 1
+
+# AI Workforce Platform — Deep Research & Build Blueprint
+
+## Mission
+Design a real AI workforce inspired by Muse, Instinct AI, Grok Bot and Cursor—not a chatbot/demo. Users create specialist agents with identities, skills, tools and memory to research, browse, write, code, analyze and execute verified work. Identify the exact Muse product. Optimize for customer value.
+
+## Sources
+Products: https://x.ai/bot | https://x.ai/bot/marketplace/engineering | https://instinct.com/ | https://maven.com/p/e23d9c/how-cursor-turned-ai-agents-into-better-engineers
+
+Repositories:
+https://github.com/CopilotKit/OpenDots
+https://github.com/elie222/rakazo
+https://github.com/OpenHands/OpenHands
+https://github.com/fayazara/coworkers
+https://github.com/twentyhq/twenty
+
+Inspect repo code, stack, frontend/backend, data, agent loop, skills/tools, memory, integrations, tests, license and security. Assess maturity, reuse and production readiness. Evaluate Twenty as a possible CRM/product foundation. Identify conflicts and licensing risks.
+
+Analyze supplied “Exploring Super-agent Design” article. It is machine-translated architecture discussion, not official DeepSeek Harness documentation; its prototype is not an official product and preliminary tests used simplified workloads/simulated coding. Do not overstate evidence.
+
+## Evidence
+Use current primary sources (docs, demos, APIs, source, tests, licenses), credible reviews and arXiv. Cite dated sources; label verified, claimed, demonstrated, reported, inferred or proposed. Separate facts from proprietary unknowns; never invent capabilities, prices or results, or claim unrun tests. State gaps.
+
+## 1. Product/repo teardown
+For Muse, Instinct, Grok and Cursor examine users, product/UI, agent creation, models/tools/skills/memory, browser, coding, delegation, persistence, monitoring, verification, security and limits. Compare strengths, weaknesses and reproducible ideas.
+
+For all five repos assess capabilities, maturity, stack, integration fit, overlap, license, risks and reusable components; recommend reuse/integration/build.
+
+## 2. Product design/UX
+Map onboarding, dashboard, marketplace, agent setup, tasks, skills/tools, memory, browser, code, artifacts, approvals, history and monitoring. Explain avatar/status, permissions, progress, tool logs, previews and error components, including purpose, data and backend.
+
+Specify design system and screens (alignment, spacing, type, color, responsive/accessibility/motion). Map user action → UI → API → backend → agent → verified result.
+
+## 3. Agents, avatars and harness
+Design agent identities, roles, avatars and permissions; map idle/queued/planning/research/browse/code/write/analyze/approval/verify/done/fail/recovery to backend events. Never fake progress: distinguish model, queue, tools, waiting and verified work. Show logs, not private chain-of-thought; support pause/cancel/takeover.
+
+Explain the harness (context, tools, permissions, state, orchestration, memory, evaluation, recovery) and distinguish chatbot/tool-caller/task agent/persistent agent. Trace goal → plan → context → skill/tool → permission → act → observe → evaluate/retry → verify → deliver. Cover APIs, browser/files/terminal, sandbox, persistence, async, approvals, audit and budgets; mark autonomy boundaries.
+
+## 4. Super-agent architecture
+Evaluate the article's mechanisms/trade-offs:
+- **Router/Workers:** persistent Router handles interaction, global context and dispatch; isolated Workers execute concurrently/report back; Workers may spawn subagents/teams.
+- **Triggers:** chat/email/calendar/GitHub/CI; deterministic Fast Path filters noise, semantic LLM Slow Path judges candidates; Thread subscriptions, pass-through and batching.
+- **Context:** Inline relevant content, Spill excess behind references, Chain of Recall across task/thread/session links.
+- **Full-duplex:** async start/stop long tools without blocking new input; completion as events; adapt output for chat/email/GitHub/work UIs.
+- **Persistence:** separate compute, durable state and execution environments; cloud runtime, DB state, local/cloud sandboxes or endpoint daemons, BYOM and reconnect recovery.
+- **Watchdog:** independent monitoring of infrastructure and Worker progress/goal drift; recover, retry, stop or escalate.
+- **Speculative execution:** background action from signals; assess waste, cancellation, risk and permissions.
+
+Assess scale, concurrency, memory, A2A, endpoint trust and security; separate MVP from later stages.
+
+## 5. Skills, browser and multi-agent workforce
+Design versioned skills (instructions, I/O, tools, dependencies, permissions, tests, rollback), discovery/composition/sharing. Cover research, web, coding, QA, design, writing, analytics and automation.
+
+Compare Playwright, browser-use, computer-use, search and MCP. Specify search→navigate→observe→act→extract/cite→verify; cover dynamic sites, files, approved login, CAPTCHA, limits, injection and credentials.
+
+Design Research, Engineering, Browser, Product/UI, Coding, QA, Business Research, Writing and Manager agents. Explain routing, Workers, delegation, parallelism and conflict resolution. Define “unlimited” as profiles vs concurrent runs, quotas and cost; no free/unlimited claims.
+
+## 6. Engineering and self-improvement
+Show engineering workflow: inspect → plan/edit → test → debug/review → verify → PR/CI. Cover TDD, instructions, verification, guardrails, sandbox and rollback. Give a worked example; distinguish code generation from engineering.
+
+Research arXiv on self-improvement, memory, reflection, skill discovery, failure learning, coding and multi-agent agents. For key papers give citation, method, evidence, limits and lesson. Distinguish memory/skill tuning from model training. Propose outcomes→eval→versioned change→held-out test→approval→rollout/rollback.
+
+## 7. Real-world value
+Assess research/leads/sales, reporting, software, QA, data, customer ops and automation. For each: customer pain, agent workflow/output, human checkpoints, verification, KPI/ROI, cost, risks and demand evidence. Separate production from demos; rank opportunities and recommend one initial market.
+
+## 8. Architecture, stack, security and monitoring
+Evaluate React/Next, TypeScript, Tailwind/shadcn; FastAPI/Node; LangGraph, OpenAI Agents SDK, AutoGen, CrewAI; MCP/tools; PostgreSQL/Redis/vector/object storage/queues/sandboxes; OpenTelemetry. Do not select everything.
+
+Recommend coherent affordable MVP and production stacks; justify build-vs-integrate, maturity, alternatives, hosting and cost. Provide architecture/data-flow/sequence/state diagrams, service roles, schema, APIs and repo structure.
+
+Cover tenancy/RBAC, least privilege, secrets, isolation, injection, untrusted outputs, approvals, audit, budgets, retries and rollback. Monitor triggers, task progress, tools, cost, errors and verification; Watchdog detects stalls/drift. Define KPIs, evals, integration tests and cost per success; require independent evaluation.
+
+## 9. Roadmap and deliverables
+Create phases with scope, dependencies, reuse, complexity, cost, risks, tests and acceptance:
+0. Validate customer pain/willingness to pay.
+1. Vertical slice: create agent → assign skill/tool → execute real task → truthful status → verify → deliver artifact → log cost.
+2. Persistence, async Workers, permissions, retries, monitoring.
+3. Skills, browser, integrations, memory.
+4. Router, concurrency, triggers, Watchdog.
+5. Engineering agents, domain workflows, controlled improvement.
+6. Production security, multi-tenancy, scale, observability, billing.
+
+Deliver: strategy/first market; product/repo/reuse/license matrix; UX/avatar blueprint; harness/skills/memory/tools; Super-agent/browser/multi-agent design; engineering/academic review; business KPIs; stack/diagrams/schema/APIs/repo; security/monitoring/evals; pros/cons/costs; roadmap; verified real-world example; build spec and sample code. Label illustrative vs tested.
+
+## Ambition and output
+Act as strategist, researcher, designer, AI/systems architect and business analyst. Apply **Altitude** (outcome), **Depth** (evidence/expert methods), **Range** (design, AI, systems, security, business) and **Speed** (feasible impact). Decide, justify trade-offs, expose uncertainty and challenge assumptions.
+
+The input is compact due to the 10,000-character limit; the final report must NOT be shallow. Cover every deliverable in depth, split into numbered parts if needed; never silently omit sections.
+
+End with strongest product strategy, one architecture, first version to build, pros/cons/risks and objective tests plus customer evidence proving it works.
+
+**Ultimate objective: an AI workforce that performs, verifies and improves useful work—not an impressive demo.**

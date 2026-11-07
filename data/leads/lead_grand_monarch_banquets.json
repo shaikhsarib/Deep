@@ -20,6 +20,7 @@
   "status": "contacted",
   "audit": {
     "load_time_seconds": null,
+    "ttfb_seconds": null,
     "has_ssl": false,
     "is_mobile_responsive": false,
     "has_whatsapp_widget": false,
@@ -32,6 +33,7 @@
     ],
     "quantified_loss": "Losing 40-50% of high-intent wedding and corporate event inquiries arriving after-hours without instant date & package confirmation",
     "screenshot_path": null,
+    "raw_evidence_hash": null,
     "audited_at": "2026-10-27T17:20:07.259563Z"
   },
   "draft": {
@@ -215,7 +217,7 @@
         }
       }
     ],
-    "verified_at": "2026-11-02T17:03:31.802792Z"
+    "verified_at": "2026-11-05T15:56:34.733300Z"
   },
   "handoff_trace": [
     {
@@ -598,8 +600,130 @@
       },
       "proof_artifacts": [],
       "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_69457c81",
+      "source_agent": "scout_agent",
+      "target_agent": "researcher_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-05T15:43:02.217498Z",
+      "status": "validated",
+      "payload": {
+        "company_name": "Grand Monarch Banquets & Event Planners",
+        "business_type": "wedding venue and event management"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_49c5e803",
+      "source_agent": "researcher_agent",
+      "target_agent": "auditor_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-05T15:43:02.217597Z",
+      "status": "initiated",
+      "payload": {
+        "website": "",
+        "company_name": "Grand Monarch Banquets & Event Planners"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_35079a36",
+      "source_agent": "auditor_agent",
+      "target_agent": "copywriter_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-05T15:43:02.217742Z",
+      "status": "validated",
+      "payload": {
+        "key_flaws": [
+          "No direct digital booking or date availability presence",
+          "100% reliant on 3rd-party aggregators and directories (paying 20-30% platform cuts)",
+          "Invisible to event planners searching late evening for venue confirmation",
+          "No automated WhatsApp response system for after-hours inquiries"
+        ],
+        "quantified_loss": "Losing 40-50% of high-intent wedding and corporate event inquiries arriving after-hours without instant date & package confirmation"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_833fa0c4",
+      "source_agent": "copywriter_agent",
+      "target_agent": "paperclip_approval_gate",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-05T15:43:02.824733Z",
+      "status": "validated",
+      "payload": {
+        "whatsapp_message": "Hi team Grand Monarch Banquets & Event Planners, love your events in Delhi NCR! Over 65% of event planners search venues after 8 PM. We build automated WhatsApp date-checkers & instant package quote bots that double site visit bookings. Can I share a 1-min live demo?",
+        "qualified": true
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_471d1e8f",
+      "source_agent": "scout_agent",
+      "target_agent": "researcher_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-05T15:56:22.360386Z",
+      "status": "validated",
+      "payload": {
+        "company_name": "Grand Monarch Banquets & Event Planners",
+        "business_type": "wedding venue and event management"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_b0680e33",
+      "source_agent": "researcher_agent",
+      "target_agent": "auditor_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-05T15:56:22.360516Z",
+      "status": "initiated",
+      "payload": {
+        "website": "",
+        "company_name": "Grand Monarch Banquets & Event Planners"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_61808941",
+      "source_agent": "auditor_agent",
+      "target_agent": "copywriter_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-05T15:56:22.360646Z",
+      "status": "validated",
+      "payload": {
+        "key_flaws": [
+          "No direct digital booking or date availability presence",
+          "100% reliant on 3rd-party aggregators and directories (paying 20-30% platform cuts)",
+          "Invisible to event planners searching late evening for venue confirmation",
+          "No automated WhatsApp response system for after-hours inquiries"
+        ],
+        "quantified_loss": "Losing 40-50% of high-intent wedding and corporate event inquiries arriving after-hours without instant date & package confirmation"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_be41b4c8",
+      "source_agent": "copywriter_agent",
+      "target_agent": "paperclip_approval_gate",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-05T15:56:22.813934Z",
+      "status": "validated",
+      "payload": {
+        "whatsapp_message": "Hi team Grand Monarch Banquets & Event Planners, love your events in Delhi NCR! Over 65% of event planners search venues after 8 PM. We build automated WhatsApp date-checkers & instant package quote bots that double site visit bookings. Can I share a 1-min live demo?",
+        "qualified": true
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
     }
   ],
   "created_at": "2026-10-27T17:19:44.795130Z",
-  "updated_at": "2026-11-02T17:03:32.105623Z"
+  "updated_at": "2026-11-05T15:56:34.733421Z"
 }

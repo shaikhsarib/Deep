@@ -20,6 +20,7 @@
   "status": "contacted",
   "audit": {
     "load_time_seconds": 1.85,
+    "ttfb_seconds": null,
     "has_ssl": true,
     "is_mobile_responsive": true,
     "has_whatsapp_widget": true,
@@ -29,6 +30,7 @@
     ],
     "quantified_loss": "Losing high-intent logistics transport clients weekly due to high friction in contact method",
     "screenshot_path": "data/screenshots/TranspeedLogistics.png",
+    "raw_evidence_hash": null,
     "audited_at": "2026-10-27T16:01:12.891670Z"
   },
   "draft": {
@@ -135,10 +137,10 @@
       {
         "claim_id": "proof_page_speed",
         "category": "performance",
-        "finding": "Observed Time-to-First-Byte + DOM load: 1.85s",
+        "finding": "Observed Full Page Load: 1.85s",
         "evidence_type": "live_http_probe",
         "proof_reference": "https://transpeedlogistics.in/",
-        "reproducibility_command": "curl -o /dev/null -s -w 'Time: %{time_total}s' https://transpeedlogistics.in/",
+        "reproducibility_command": "curl -o /dev/null -s -w 'TTFB: %{time_starttransfer}s | Total: %{time_total}s' https://transpeedlogistics.in/",
         "is_verified": true,
         "pstack_status": "OPTIMAL"
       },
@@ -217,7 +219,7 @@
         }
       }
     ],
-    "verified_at": "2026-11-02T17:03:30.331163Z"
+    "verified_at": "2026-11-05T15:56:34.814102Z"
   },
   "handoff_trace": [
     {
@@ -309,5 +311,5 @@
     }
   ],
   "created_at": "2026-10-27T16:01:42.347552Z",
-  "updated_at": "2026-11-02T17:03:30.331322Z"
+  "updated_at": "2026-11-05T15:56:34.814223Z"
 }

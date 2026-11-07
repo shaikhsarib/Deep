@@ -20,6 +20,7 @@
   "status": "contacted",
   "audit": {
     "load_time_seconds": 2.05,
+    "ttfb_seconds": null,
     "has_ssl": true,
     "is_mobile_responsive": true,
     "has_whatsapp_widget": true,
@@ -27,6 +28,7 @@
     "key_flaws": [],
     "quantified_loss": "Minor friction in mobile speed and search visibility",
     "screenshot_path": null,
+    "raw_evidence_hash": null,
     "audited_at": "2026-10-27T16:05:20.743354Z"
   },
   "draft": {
@@ -118,10 +120,10 @@
       {
         "claim_id": "proof_page_speed",
         "category": "performance",
-        "finding": "Observed Time-to-First-Byte + DOM load: 2.05s",
+        "finding": "Observed Full Page Load: 2.05s",
         "evidence_type": "live_http_probe",
         "proof_reference": "https://www.dentzzmumbai.com/",
-        "reproducibility_command": "curl -o /dev/null -s -w 'Time: %{time_total}s' https://www.dentzzmumbai.com/",
+        "reproducibility_command": "curl -o /dev/null -s -w 'TTFB: %{time_starttransfer}s | Total: %{time_total}s' https://www.dentzzmumbai.com/",
         "is_verified": true,
         "pstack_status": "OPTIMAL"
       },
@@ -192,7 +194,7 @@
         }
       }
     ],
-    "verified_at": "2026-11-02T17:03:30.302047Z"
+    "verified_at": "2026-11-05T15:56:34.872676Z"
   },
   "handoff_trace": [
     {
@@ -267,5 +269,5 @@
     }
   ],
   "created_at": "2026-10-27T16:05:39.113498Z",
-  "updated_at": "2026-11-02T17:03:30.302156Z"
+  "updated_at": "2026-11-05T15:56:34.872795Z"
 }

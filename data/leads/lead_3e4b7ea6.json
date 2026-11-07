@@ -20,6 +20,7 @@
   "status": "contacted",
   "audit": {
     "load_time_seconds": 1.14,
+    "ttfb_seconds": null,
     "has_ssl": true,
     "is_mobile_responsive": true,
     "has_whatsapp_widget": true,
@@ -27,6 +28,7 @@
     "key_flaws": [],
     "quantified_loss": "Minor friction in mobile speed and search visibility",
     "screenshot_path": "data/screenshots/AthenaGlobalLogisticsPvtLtd.png",
+    "raw_evidence_hash": null,
     "audited_at": "2026-11-02T18:22:49.663732Z"
   },
   "draft": {
@@ -121,10 +123,10 @@
       {
         "claim_id": "proof_page_speed",
         "category": "performance",
-        "finding": "Observed Time-to-First-Byte + DOM load: 1.14s",
+        "finding": "Observed Full Page Load: 1.14s",
         "evidence_type": "live_http_probe",
         "proof_reference": "https://athena-logistics.com/",
-        "reproducibility_command": "curl -o /dev/null -s -w 'Time: %{time_total}s' https://athena-logistics.com/",
+        "reproducibility_command": "curl -o /dev/null -s -w 'TTFB: %{time_starttransfer}s | Total: %{time_total}s' https://athena-logistics.com/",
         "is_verified": true,
         "pstack_status": "OPTIMAL"
       },
@@ -203,7 +205,7 @@
         }
       }
     ],
-    "verified_at": "2026-11-02T18:22:49.670852Z"
+    "verified_at": "2026-11-05T15:56:34.792382Z"
   },
   "handoff_trace": [
     {
@@ -279,5 +281,5 @@
     }
   ],
   "created_at": "2026-11-02T16:34:33.816274Z",
-  "updated_at": "2026-11-02T18:22:55.748576Z"
+  "updated_at": "2026-11-05T15:56:34.792558Z"
 }

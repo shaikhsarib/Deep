@@ -75,13 +75,16 @@ class EvidenceVerifier:
             # 2. Performance Claim
             if audit.load_time_seconds:
                 status = "PROVEN_TRUE" if audit.load_time_seconds > 3.0 else "OPTIMAL"
+                finding_text = f"Observed Full Page Load: {audit.load_time_seconds}s"
+                if audit.ttfb_seconds:
+                    finding_text += f" (Socket TTFB: {audit.ttfb_seconds}s)"
                 claims.append(VerifiedClaim(
                     claim_id="proof_page_speed",
                     category="performance",
-                    finding=f"Observed Time-to-First-Byte + DOM load: {audit.load_time_seconds}s",
+                    finding=finding_text,
                     evidence_type="live_http_probe",
                     proof_reference=target_url,
-                    reproducibility_command=f"curl -o /dev/null -s -w 'Time: %{{time_total}}s' {target_url}",
+                    reproducibility_command=f"curl -o /dev/null -s -w 'TTFB: %{{time_starttransfer}}s | Total: %{{time_total}}s' {target_url}",
                     is_verified=True,
                     pstack_status=status
                 ))

@@ -15,7 +15,7 @@
     "vertical": "general",
     "pain_points": [],
     "growth_goals": [],
-    "created_at": "2026-11-02T17:03:32.552827Z"
+    "created_at": "2026-11-05T15:56:23.218923Z"
   },
   "status": "replied",
   "audit": null,
@@ -32,129 +32,49 @@
     {
       "sender": "prospect",
       "message": "We get all business from word of mouth",
-      "timestamp": "2026-11-02T17:03:32.574178+00:00",
+      "timestamp": "2026-11-05T15:56:23.238592+00:00",
       "intent": "general_query"
     },
     {
       "sender": "closer_agent",
       "message": "Word of mouth is undeniably the best source! But even word-of-mouth referrals look up your website or Instagram at 9 PM on their phones. If they hit a static page with no date checker, 60% delay contacting and often end up booking another venue with instant answers.\n\nTake a look at the live date-checker prototype: https://calendly.com/agency-demo/15min",
-      "timestamp": "2026-11-02T17:03:32.574178+00:00"
-    },
-    {
-      "sender": "prospect",
-      "message": "Handle objections",
-      "timestamp": "2026-11-02T17:26:33.867156+00:00",
-      "intent": "interested"
-    },
-    {
-      "sender": "closer_agent",
-      "message": "Awesome to connect! We build automated WhatsApp ordering & mobile booking engines for top event_managements.\n\nHere is a 10-minute slot where our lead architect can walk you through the live prototype: https://calendly.com/agency-demo/15min\nDoes tomorrow or Wednesday afternoon work better for you?",
-      "timestamp": "2026-11-02T17:26:33.867156+00:00"
+      "timestamp": "2026-11-05T15:56:23.238592+00:00"
     },
     {
       "sender": "prospect",
       "message": "Your rates are too expensive compared to local brokers",
-      "timestamp": "2026-11-02T17:29:17.676460+00:00",
+      "timestamp": "2026-11-05T15:57:51.022972+00:00",
       "intent": "price_objection"
     },
     {
       "sender": "closer_agent",
       "message": "Great question! Securing just 1 extra weekend venue or catering booking that would have bounced after 8 PM pays for the entire setup for the year. Our clients typically see a 2x increase in qualified weekend consultations.\n\nLet's hop on a quick 5-min screen share to see live numbers: https://calendly.com/agency-demo/15min",
-      "timestamp": "2026-11-02T17:29:17.676460+00:00"
+      "timestamp": "2026-11-05T15:57:51.022972+00:00"
     },
     {
       "sender": "prospect",
       "message": "We already have brokers on contract",
-      "timestamp": "2026-11-02T17:29:18.665818+00:00",
+      "timestamp": "2026-11-05T15:57:51.272604+00:00",
       "intent": "agency_objection"
     },
     {
       "sender": "closer_agent",
       "message": "That's great that you have marketing support! Many of our clients also have an agency, but agencies typically focus on posts rather than conversion infrastructure.\n\nWe can send a free 1-page technical audit your existing team can use: https://calendly.com/agency-demo/15min",
-      "timestamp": "2026-11-02T17:29:18.665818+00:00"
-    },
-    {
-      "sender": "prospect",
-      "message": "We already have trusted freight brokers",
-      "timestamp": "2026-11-02T17:31:09.278614+00:00",
-      "intent": "agency_objection"
-    },
-    {
-      "sender": "closer_agent",
-      "message": "That's great that you have marketing support! Many of our clients also have an agency, but agencies typically focus on posts rather than conversion infrastructure.\n\nWe can send a free 1-page technical audit your existing team can use: https://calendly.com/agency-demo/15min",
-      "timestamp": "2026-11-02T17:31:09.278614+00:00"
-    },
-    {
-      "sender": "prospect",
-      "message": "Handle objections",
-      "timestamp": "2026-11-02T18:17:42.200564+00:00",
-      "intent": "interested"
-    },
-    {
-      "sender": "closer_agent",
-      "message": "Awesome to connect! We build automated WhatsApp ordering & mobile booking engines for top event_managements.\n\nHere is a 10-minute slot where our lead architect can walk you through the live prototype: https://calendly.com/agency-demo/15min\nDoes tomorrow or Wednesday afternoon work better for you?",
-      "timestamp": "2026-11-02T18:17:42.200564+00:00"
-    },
-    {
-      "sender": "prospect",
-      "message": "Your rates are too expensive compared to local brokers",
-      "timestamp": "2026-11-02T18:19:44.483562+00:00",
-      "intent": "price_objection"
-    },
-    {
-      "sender": "closer_agent",
-      "message": "Great question! Securing just 1 extra weekend venue or catering booking that would have bounced after 8 PM pays for the entire setup for the year. Our clients typically see a 2x increase in qualified weekend consultations.\n\nLet's hop on a quick 5-min screen share to see live numbers: https://calendly.com/agency-demo/15min",
-      "timestamp": "2026-11-02T18:19:44.483562+00:00"
-    },
-    {
-      "sender": "prospect",
-      "message": "We already have brokers on contract",
-      "timestamp": "2026-11-02T18:19:44.745262+00:00",
-      "intent": "agency_objection"
-    },
-    {
-      "sender": "closer_agent",
-      "message": "That's great that you have marketing support! Many of our clients also have an agency, but agencies typically focus on posts rather than conversion infrastructure.\n\nWe can send a free 1-page technical audit your existing team can use: https://calendly.com/agency-demo/15min",
-      "timestamp": "2026-11-02T18:19:44.745262+00:00"
-    },
-    {
-      "sender": "prospect",
-      "message": "Your rates are too expensive compared to local brokers",
-      "timestamp": "2026-11-02T19:15:27.946900+00:00",
-      "intent": "price_objection"
-    },
-    {
-      "sender": "closer_agent",
-      "message": "Great question! Securing just 1 extra weekend venue or catering booking that would have bounced after 8 PM pays for the entire setup for the year. Our clients typically see a 2x increase in qualified weekend consultations.\n\nLet's hop on a quick 5-min screen share to see live numbers: https://calendly.com/agency-demo/15min",
-      "timestamp": "2026-11-02T19:15:27.946900+00:00"
-    },
-    {
-      "sender": "prospect",
-      "message": "We already have brokers on contract",
-      "timestamp": "2026-11-02T19:15:28.431161+00:00",
-      "intent": "agency_objection"
-    },
-    {
-      "sender": "closer_agent",
-      "message": "That's great that you have marketing support! Many of our clients also have an agency, but agencies typically focus on posts rather than conversion infrastructure.\n\nWe can send a free 1-page technical audit your existing team can use: https://calendly.com/agency-demo/15min",
-      "timestamp": "2026-11-02T19:15:28.431161+00:00"
-    },
-    {
-      "sender": "prospect",
-      "message": "We already have trusted freight brokers",
-      "timestamp": "2026-11-02T19:17:29.182040+00:00",
-      "intent": "agency_objection"
-    },
-    {
-      "sender": "closer_agent",
-      "message": "That's great that you have marketing support! Many of our clients also have an agency, but agencies typically focus on posts rather than conversion infrastructure.\n\nWe can send a free 1-page technical audit your existing team can use: https://calendly.com/agency-demo/15min",
-      "timestamp": "2026-11-02T19:17:29.182040+00:00"
+      "timestamp": "2026-11-05T15:57:51.272604+00:00"
     }
   ],
   "meeting_link": null,
   "research": null,
-  "pstack_proof": null,
+  "pstack_proof": {
+    "business_name": "Sample Event Management",
+    "total_claims": 0,
+    "verified_claims": 0,
+    "proof_score_percentage": 100.0,
+    "claims": [],
+    "artifacts": [],
+    "verified_at": "2026-11-05T15:56:34.724649Z"
+  },
   "handoff_trace": [],
-  "created_at": "2026-11-02T17:03:32.552869Z",
-  "updated_at": "2026-11-02T19:17:29.182123Z"
+  "created_at": "2026-11-05T15:56:23.218957Z",
+  "updated_at": "2026-11-05T15:57:51.272633Z"
 }

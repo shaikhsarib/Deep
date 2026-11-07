@@ -20,6 +20,7 @@
   "status": "contacted",
   "audit": {
     "load_time_seconds": 0.51,
+    "ttfb_seconds": null,
     "has_ssl": false,
     "is_mobile_responsive": false,
     "has_whatsapp_widget": false,
@@ -34,6 +35,7 @@
     ],
     "quantified_loss": "Losing 15-20% margin to freight brokers and ~8-12 spot loads weekly due to delayed manual quote turnaround",
     "screenshot_path": "data/screenshots/HINDUSTANCARGOLOGISTICS.png",
+    "raw_evidence_hash": null,
     "audited_at": "2026-11-02T16:25:06.846949Z"
   },
   "draft": {
@@ -130,10 +132,10 @@
       {
         "claim_id": "proof_page_speed",
         "category": "performance",
-        "finding": "Observed Time-to-First-Byte + DOM load: 0.51s",
+        "finding": "Observed Full Page Load: 0.51s",
         "evidence_type": "live_http_probe",
         "proof_reference": "http://www.hindustancargologistic.com/",
-        "reproducibility_command": "curl -o /dev/null -s -w 'Time: %{time_total}s' http://www.hindustancargologistic.com/",
+        "reproducibility_command": "curl -o /dev/null -s -w 'TTFB: %{time_starttransfer}s | Total: %{time_total}s' http://www.hindustancargologistic.com/",
         "is_verified": true,
         "pstack_status": "OPTIMAL"
       },
@@ -222,7 +224,7 @@
         }
       }
     ],
-    "verified_at": "2026-11-02T17:03:30.334569Z"
+    "verified_at": "2026-11-05T15:56:34.806765Z"
   },
   "handoff_trace": [
     {
@@ -305,5 +307,5 @@
     }
   ],
   "created_at": "2026-11-02T16:14:43.029157Z",
-  "updated_at": "2026-11-02T17:03:30.334682Z"
+  "updated_at": "2026-11-05T15:56:34.806858Z"
 }

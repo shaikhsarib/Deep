@@ -15,11 +15,12 @@
     "vertical": "general",
     "pain_points": [],
     "growth_goals": [],
-    "created_at": "2026-11-02T17:00:37.161229Z"
+    "created_at": "2026-11-05T15:41:13.307633Z"
   },
   "status": "contacted",
   "audit": {
     "load_time_seconds": 3.2,
+    "ttfb_seconds": null,
     "has_ssl": true,
     "is_mobile_responsive": true,
     "has_whatsapp_widget": false,
@@ -27,7 +28,8 @@
     "key_flaws": [],
     "quantified_loss": null,
     "screenshot_path": null,
-    "audited_at": "2026-11-02T17:00:37.161256Z"
+    "raw_evidence_hash": null,
+    "audited_at": "2026-11-05T15:41:13.307650Z"
   },
   "draft": {
     "whatsapp_message": "Hi ECC Cargo Logistics, your verified load time is 3.2s. Here is your calculator prototype.",
@@ -45,7 +47,7 @@
   "contacted_channels": [
     "whatsapp"
   ],
-  "last_contacted_at": "2026-11-02T17:03:28.207163Z",
+  "last_contacted_at": "2026-11-05T15:42:56.815660Z",
   "conversation_history": [],
   "meeting_link": null,
   "research": null,
@@ -68,10 +70,10 @@
       {
         "claim_id": "proof_page_speed",
         "category": "performance",
-        "finding": "Observed Time-to-First-Byte + DOM load: 3.2s",
+        "finding": "Observed Full Page Load: 3.2s",
         "evidence_type": "live_http_probe",
         "proof_reference": "No direct website",
-        "reproducibility_command": "curl -o /dev/null -s -w 'Time: %{time_total}s' No direct website",
+        "reproducibility_command": "curl -o /dev/null -s -w 'TTFB: %{time_starttransfer}s | Total: %{time_total}s' No direct website",
         "is_verified": true,
         "pstack_status": "PROVEN_TRUE"
       },
@@ -97,15 +99,15 @@
       }
     ],
     "artifacts": [],
-    "verified_at": "2026-11-02T17:03:29.405554Z"
+    "verified_at": "2026-11-05T15:56:34.939029Z"
   },
   "handoff_trace": [
     {
-      "handoff_id": "hnd_0af83f06",
+      "handoff_id": "hnd_9f6a531c",
       "source_agent": "paperclip_approval_gate",
       "target_agent": "hermes_closer_agent",
       "contract_version": "v2.1",
-      "timestamp": "2026-11-02T17:03:28.207213Z",
+      "timestamp": "2026-11-05T15:42:56.815717Z",
       "status": "validated",
       "payload": {
         "company_name": "ECC Cargo Logistics",
@@ -116,6 +118,6 @@
       "validation_notes": null
     }
   ],
-  "created_at": "2026-11-02T17:00:37.161301Z",
-  "updated_at": "2026-11-02T17:03:29.405624Z"
+  "created_at": "2026-11-05T15:41:13.307684Z",
+  "updated_at": "2026-11-05T15:56:34.939126Z"
 }

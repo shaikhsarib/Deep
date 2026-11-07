@@ -20,6 +20,7 @@
   "status": "contacted",
   "audit": {
     "load_time_seconds": null,
+    "ttfb_seconds": null,
     "has_ssl": false,
     "is_mobile_responsive": false,
     "has_whatsapp_widget": false,
@@ -30,6 +31,7 @@
     ],
     "quantified_loss": "Losing high-intent logistics transport clients weekly due to high friction in contact method",
     "screenshot_path": null,
+    "raw_evidence_hash": null,
     "audited_at": "2026-11-02T18:20:39.373804Z"
   },
   "draft": {
@@ -196,7 +198,7 @@
         }
       }
     ],
-    "verified_at": "2026-11-02T18:20:39.374520Z"
+    "verified_at": "2026-11-05T15:56:34.778877Z"
   },
   "handoff_trace": [
     {
@@ -275,5 +277,5 @@
     }
   ],
   "created_at": "2026-11-02T17:31:08.937212Z",
-  "updated_at": "2026-11-02T18:22:56.995655Z"
+  "updated_at": "2026-11-05T15:56:34.778992Z"
 }

@@ -22,6 +22,7 @@ class OutreachChannel(str, Enum):
 
 class AuditReport(BaseModel):
     load_time_seconds: Optional[float] = None
+    ttfb_seconds: Optional[float] = None
     has_ssl: bool = True
     is_mobile_responsive: bool = True
     has_whatsapp_widget: bool = False
@@ -29,6 +30,7 @@ class AuditReport(BaseModel):
     key_flaws: List[str] = Field(default_factory=list)
     quantified_loss: Optional[str] = None
     screenshot_path: Optional[str] = None
+    raw_evidence_hash: Optional[str] = None
     audited_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
 class BusinessProfile(BaseModel):

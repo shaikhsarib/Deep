@@ -418,3 +418,103 @@
 - **Score:** 0.98
 - **Lesson:** Reinforced by successful human approval & dispatch in logistics_transport
 - **Winning Claim:** Hi team Apex Global Logistics, saw your fleet operations in Navi Mumbai! Shippers book whoever quotes rates within 5 mins. We build instant WhatsApp freight calculators & direct driver dispatch bots so you skip 20% broker fees. Open to a 2-min video preview?
+
+### [2026-11-05T14:20:48.337069+00:00] Hook ID: harn_20261105142048_logist
+- **Score:** 0.95
+- **Lesson:** Self-evolved hook to resolve observed friction: Lost 3 high-value loads due to delayed phone quotes after 7 PM
+- **Winning Claim:** Automating dispatch inquiries on WhatsApp recovers 15-20% margin lost to freight brokers, turning delayed phone quotes into instant 60-second lane confirmations. (Engineered to eliminate 'Lost 3 high-value loads due to delayed phone quotes after 7 PM').
+
+### [2026-11-05T14:20:50.296393+00:00] Hook ID: harn_20261105142050_logist
+- **Score:** 0.95
+- **Lesson:** Standard Harness² empirical hook for logistics_transport
+- **Winning Claim:** Automating dispatch inquiries on WhatsApp recovers 15-20% margin lost to freight brokers, turning delayed phone quotes into instant 60-second lane confirmations.
+
+### [2026-11-05T14:20:50.591155+00:00] Hook ID: harn_20261105142050_logist
+- **Score:** 0.95
+- **Lesson:** Standard Harness² empirical hook for logistics_transport
+- **Winning Claim:** Automating dispatch inquiries on WhatsApp recovers 15-20% margin lost to freight brokers, turning delayed phone quotes into instant 60-second lane confirmations.
+
+### [2026-11-05T15:40:10.190258+00:00] Hook ID: harn_20261105154009_logist
+- **Score:** 0.95
+- **Lesson:** Self-evolved hook to resolve observed friction: Losing 15-20% margin to freight brokers and ~8-12 spot loads weekly due to delayed manual quote turn
+- **Winning Claim:** Automating dispatch inquiries on WhatsApp recovers 15-20% margin lost to freight brokers, turning delayed phone quotes into instant 60-second lane confirmations. (Engineered to eliminate 'Losing 15-20% margin to freight brokers and ~8-12 spot loads weekly due to delayed manual quote turn').
+
+### [2026-11-05T15:40:11.069791+00:00] Hook ID: harn_win_20261105154010
+- **Score:** 0.98
+- **Lesson:** Reinforced by successful human approval & dispatch in logistics_transport
+- **Winning Claim:** Hi team Apex Global Logistics, saw your fleet operations in Navi Mumbai! Shippers book whoever quotes rates within 5 mins. We build instant WhatsApp freight calculators & direct driver dispatch bots so you skip 20% broker fees. Open to a 2-min video preview?
+
+### [2026-11-05T15:41:13.817496+00:00] Hook ID: harn_win_20261105154113
+- **Score:** 0.98
+- **Lesson:** Reinforced by successful human approval & dispatch in logistics_transport
+- **Winning Claim:** Hi Express Fleet, skip 20% broker cuts with instant WhatsApp freight quotes. Open to a 2-min demo?
+
+### [2026-11-05T15:41:46.684179+00:00] Hook ID: harn_20261105154146_logist
+- **Score:** 0.95
+- **Lesson:** Self-evolved hook to resolve observed friction: Losing high-intent logistics transport clients weekly due to high friction in contact method
+- **Winning Claim:** Automating dispatch inquiries on WhatsApp recovers 15-20% margin lost to freight brokers, turning delayed phone quotes into instant 60-second lane confirmations. (Engineered to eliminate 'Losing high-intent logistics transport clients weekly due to high friction in contact method').
+
+### [2026-11-05T15:42:13.860361+00:00] Hook ID: harn_20261105154213_logist
+- **Score:** 0.95
+- **Lesson:** Self-evolved hook to resolve observed friction: Losing 15-20% margin to freight brokers and ~8-12 spot loads weekly due to delayed manual quote turn
+- **Winning Claim:** Automating dispatch inquiries on WhatsApp recovers 15-20% margin lost to freight brokers, turning delayed phone quotes into instant 60-second lane confirmations. (Engineered to eliminate 'Losing 15-20% margin to freight brokers and ~8-12 spot loads weekly due to delayed manual quote turn').
+
+### [2026-11-05T15:42:27.886139+00:00] Hook ID: harn_20261105154227_logist
+- **Score:** 0.95
+- **Lesson:** Self-evolved hook to resolve observed friction: Losing 15-20% margin to freight brokers and ~8-12 spot loads weekly due to delayed manual quote turn
+- **Winning Claim:** Automating dispatch inquiries on WhatsApp recovers 15-20% margin lost to freight brokers, turning delayed phone quotes into instant 60-second lane confirmations. (Engineered to eliminate 'Losing 15-20% margin to freight brokers and ~8-12 spot loads weekly due to delayed manual quote turn').
+
+### [2026-11-05T15:42:50.162540+00:00] Hook ID: harn_20261105154249_logist
+- **Score:** 0.95
+- **Lesson:** Self-evolved hook to resolve observed friction: Losing 15-20% margin to freight brokers and ~8-12 spot loads weekly due to delayed manual quote turn
+- **Winning Claim:** Automating dispatch inquiries on WhatsApp recovers 15-20% margin lost to freight brokers, turning delayed phone quotes into instant 60-second lane confirmations. (Engineered to eliminate 'Losing 15-20% margin to freight brokers and ~8-12 spot loads weekly due to delayed manual quote turn').
+
+### [2026-11-05T15:42:53.988613+00:00] Hook ID: harn_win_20261105154253
+- **Score:** 0.98
+- **Lesson:** Reinforced by successful human approval & dispatch in logistics_transport
+- **Winning Claim:** Reviewed and verified via Paperclip.
+
+### [2026-11-05T15:42:55.031876+00:00] Hook ID: harn_win_20261105154254
+- **Score:** 0.98
+- **Lesson:** Reinforced by successful human approval & dispatch in logistics_transport
+- **Winning Claim:** Hi team Ahuja Freight Carriers, saw your fleet operations in Bhiwandi! Shippers book whoever quotes rates within 5 mins. We build instant WhatsApp freight calculators & direct driver dispatch bots so you skip 20% broker fees. Open to a 2-min video preview?
+
+### [2026-11-05T15:42:55.514874+00:00] Hook ID: harn_win_20261105154255
+- **Score:** 0.98
+- **Lesson:** Reinforced by successful human approval & dispatch in logistics_transport
+- **Winning Claim:** Hi team Maharashtra Freight Carriers P Ltd, saw your fleet operations in Bhiwandi! Shippers book whoever quotes rates within 5 mins. We build instant WhatsApp freight calculators & direct driver dispatch bots so you skip 20% broker fees. Open to a 2-min video preview?
+
+### [2026-11-05T15:42:55.940631+00:00] Hook ID: harn_win_20261105154255
+- **Score:** 0.98
+- **Lesson:** Reinforced by successful human approval & dispatch in logistics_transport
+- **Winning Claim:** Hi team Jaguar Shipping & Logistics Private Limited, saw your fleet operations in Mumbai! Shippers book whoever quotes rates within 5 mins. We build instant WhatsApp freight calculators & direct driver dispatch bots so you skip 20% broker fees. Open to a 2-min video preview?
+
+### [2026-11-05T15:42:56.622438+00:00] Hook ID: harn_win_20261105154256
+- **Score:** 0.98
+- **Lesson:** Reinforced by successful human approval & dispatch in logistics_transport
+- **Winning Claim:** Hi team Jet Freight Logistics Ltd, saw your fleet operations in Mumbai! Shippers book whoever quotes rates within 5 mins. We build instant WhatsApp freight calculators & direct driver dispatch bots so you skip 20% broker fees. Open to a 2-min video preview?
+
+### [2026-11-05T15:42:57.075499+00:00] Hook ID: harn_win_20261105154256
+- **Score:** 0.98
+- **Lesson:** Reinforced by successful human approval & dispatch in logistics_transport
+- **Winning Claim:** Hi ECC Cargo Logistics, your verified load time is 3.2s. Here is your calculator prototype.
+
+### [2026-11-05T15:42:57.580977+00:00] Hook ID: harn_20261105154257_logist
+- **Score:** 0.95
+- **Lesson:** Self-evolved hook to resolve observed friction: Lost 3 high-value loads due to delayed phone quotes after 7 PM
+- **Winning Claim:** Automating dispatch inquiries on WhatsApp recovers 15-20% margin lost to freight brokers, turning delayed phone quotes into instant 60-second lane confirmations. (Engineered to eliminate 'Lost 3 high-value loads due to delayed phone quotes after 7 PM').
+
+### [2026-11-05T15:43:01.853461+00:00] Hook ID: harn_20261105154301_logist
+- **Score:** 0.95
+- **Lesson:** Self-evolved hook to resolve observed friction: Losing 15-20% margin to freight brokers and ~8-12 spot loads weekly due to delayed manual quote turn
+- **Winning Claim:** Automating dispatch inquiries on WhatsApp recovers 15-20% margin lost to freight brokers, turning delayed phone quotes into instant 60-second lane confirmations. (Engineered to eliminate 'Losing 15-20% margin to freight brokers and ~8-12 spot loads weekly due to delayed manual quote turn').
+
+### [2026-11-05T15:56:22.116501+00:00] Hook ID: harn_20261105155621_logist
+- **Score:** 0.95
+- **Lesson:** Self-evolved hook to resolve observed friction: Losing 15-20% margin to freight brokers and ~8-12 spot loads weekly due to delayed manual quote turn
+- **Winning Claim:** Automating dispatch inquiries on WhatsApp recovers 15-20% margin lost to freight brokers, turning delayed phone quotes into instant 60-second lane confirmations. (Engineered to eliminate 'Losing 15-20% margin to freight brokers and ~8-12 spot loads weekly due to delayed manual quote turn').
+
+### [2026-11-05T15:56:33.865662+00:00] Hook ID: harn_20261105155633_logist
+- **Score:** 0.95
+- **Lesson:** Self-evolved hook to resolve observed friction: Lost 3 high-value loads due to delayed phone quotes after 7 PM
+- **Winning Claim:** Automating dispatch inquiries on WhatsApp recovers 15-20% margin lost to freight brokers, turning delayed phone quotes into instant 60-second lane confirmations. (Engineered to eliminate 'Lost 3 high-value loads due to delayed phone quotes after 7 PM').

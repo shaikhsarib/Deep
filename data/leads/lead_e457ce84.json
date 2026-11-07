@@ -1,0 +1,309 @@
+{
+  "id": "lead_e457ce84",
+  "profile": {
+    "company_name": "Jet Freight Logistics Ltd",
+    "business_type": "freight logistics",
+    "location": "Mumbai",
+    "phone": "+02261043700",
+    "email": null,
+    "website": "https://www.jfll.com/",
+    "has_website": true,
+    "address": "\n706, 7th Floor, Wing C, Cardinal Gracious Rd, Chakala, Andheri East, Mumbai, Maharashtra 400099",
+    "rating": "4.5",
+    "source": "google_maps",
+    "source_url": "https://www.google.com/maps/place/Jet+Freight+Logistics+Ltd/data=!4m7!3m6!1s0x3be7c9eb69e5ef3b:0xc5d99624f1a8d3ce!8m2!3d19.113958!4d72.85981!16s%2Fg%2F11f01h45cs!19sChIJO-_laevJ5zsRztOo8SSW2cU?authuser=0&hl=en&g_ep=EgoyMDI2MTEwMi4wIJJjKgBIAVAD&rclk=1",
+    "vertical": "logistics_transport",
+    "pain_points": [],
+    "growth_goals": [],
+    "created_at": "2026-11-05T15:39:11.265539Z"
+  },
+  "status": "contacted",
+  "audit": {
+    "load_time_seconds": 3.35,
+    "ttfb_seconds": null,
+    "has_ssl": true,
+    "is_mobile_responsive": true,
+    "has_whatsapp_widget": false,
+    "has_online_booking": true,
+    "key_flaws": [
+      "No instant WhatsApp ordering/inquiry widget on landing page",
+      "No instant freight rate calculator or live lane quote tool for shippers"
+    ],
+    "quantified_loss": "Losing high-intent logistics transport clients weekly due to high friction in contact method",
+    "screenshot_path": "data/screenshots/JetFreightLogisticsLtd.png",
+    "raw_evidence_hash": null,
+    "audited_at": "2026-11-05T15:41:46.433514Z"
+  },
+  "draft": {
+    "whatsapp_message": "Hi team Jet Freight Logistics Ltd, saw your fleet operations in Mumbai! Shippers book whoever quotes rates within 5 mins. We build instant WhatsApp freight calculators & direct driver dispatch bots so you skip 20% broker fees. Open to a 2-min video preview?",
+    "email_subject": "Automating direct shipper quotes for Jet Freight Logistics Ltd (skip 18% broker cuts)",
+    "email_body": "Hi Team Jet Freight Logistics Ltd,\n\nI was checking out commercial freight and transport operators in Mumbai and came across your business.\n\nThe #1 bottleneck in freight right now is quote turnaround time: shippers searching for trucks request 3 quotes and book the first one who responds within 15 minutes. We build direct WhatsApp freight rate estimators and automated dispatch bots that capture shippers instantly and help fleet operators bypass 15-25% broker commissions.\n\nWould you be open to a 5-minute screen share this week to see how this works for your lane routes?\n\nWarm regards,\nFreight Automation & Tech Team",
+    "pain_points": [
+      "No instant WhatsApp ordering/inquiry widget on landing page",
+      "No instant freight rate calculator or live lane quote tool for shippers"
+    ],
+    "business_loss": "Losing 15-20% margin to freight brokers and ~8-12 spot loads weekly due to delayed manual quote turnaround"
+  },
+  "contact_name": null,
+  "contact_email": null,
+  "budget": null,
+  "interest_level": null,
+  "summary": "Hi team Jet Freight Logistics Ltd, saw your fleet operations in Mumbai! Shippers book whoever quotes rates within 5 mins. We build instant WhatsApp freight calculators & direct driver dispatch bots so you skip 20% broker fees. Open to a 2-min video preview?",
+  "qualified": true,
+  "contacted_channels": [
+    "whatsapp"
+  ],
+  "last_contacted_at": "2026-11-05T15:42:56.159179Z",
+  "conversation_history": [],
+  "meeting_link": null,
+  "research": {
+    "market_overview": "Competitive local market for freight logistics services in Mumbai.",
+    "target_demographics": "Local consumers in Mumbai seeking fast, mobile-friendly services.",
+    "top_customer_complaints": [
+      "High aggregator commissions passed onto consumers",
+      "Unanswered inquiries after business closing hours"
+    ],
+    "competitors": [
+      {
+        "competitor_name": "Top freight logistics in Mumbai",
+        "strength": "High Google review volume",
+        "weakness": "Missing automated WhatsApp lead capture"
+      }
+    ],
+    "untapped_revenue_opportunities": [
+      "Direct-to-consumer VIP loyalty broadcasts on WhatsApp",
+      "1-click mobile appointment booking"
+    ],
+    "recommended_hook": "Help Jet Freight Logistics Ltd capture direct customer orders without 20-30% platform cuts.",
+    "citations": [
+      {
+        "title": "Jet Freight Logistics Ltd in Andheri East, Mumbai - Best Logistic ...",
+        "url": "https://www.justdial.com/Mumbai/Jet-Freight-Logistics-Ltd-Opposite-Holy-Family-Chruch-Chakala-Andheri-East/022PXX22-XX22-210920145550-K7Q3_BZDET",
+        "snippet": "Jet Freight Logistics Ltd Catalogue - View range of products and services offered by Jet Freight Logistics Ltd in Andheri East, Mumbai. Get Best Price, Address, Contact Number, Reviews and Ratings of Jet Freight Logistics Ltd in Mumbai on Justdial."
+      },
+      {
+        "title": "Jet Freight Logistics Ltd - Client reviews and contact information",
+        "url": "https://forwardingcompanies.com/company/jet-freight-logistics-limited",
+        "snippet": "An In-Depth Review of Jet Freight Logistics Pvt. Ltd With a globalised and diverse economy, the importance of an efficient and reliable logistics service cannot be overstated. An indispensable player in this industry, offering remarkable services all"
+      },
+      {
+        "title": "19 Top Logistics Companies in Mumbai · November 2026 | F6S",
+        "url": "https://www.f6s.com/companies/logistics/india/maharashtra/mumbai/co",
+        "snippet": "4 days ago · Detailed info and reviews on 19 top Logistics companies and startups in Mumbai in 2026. Get the latest updates on their products, jobs, funding, investors, founders and more."
+      },
+      {
+        "title": "44 Top Logistics/Supply Chain Companies in Mumbai - F6S",
+        "url": "https://www.f6s.com/companies/logistics-supply-chain/india/maharashtra/mumbai/co",
+        "snippet": "Oct 2, 2026 · Detailed info and reviews on 44 top Logistics/Supply Chain companies and startups in Mumbai in 2026. Get the latest updates on their products, jobs, funding, investors, founders and more."
+      },
+      {
+        "title": "Top 10 best Logistics Companies in Mumbai [2026 list]",
+        "url": "https://godamwale.com/logistics-companies-in-mumbai/",
+        "snippet": "Aug 3, 2026 · The best logistics companies according to all your logistics needs and challenges are— Godamwale and others are frequently ranked among the best for warehousing, 3PL, express delivery, and freight forwarding."
+      }
+    ],
+    "evidence_verified": true,
+    "treg_enrichment": {
+      "lead_id": "Jet Freight Logistics Ltd",
+      "owner_or_director_name": "Managing Director / Proprietor",
+      "verified_whatsapp": true,
+      "gstin_or_registration": null,
+      "tools_invoked": [
+        "verify_whatsapp",
+        "search_director"
+      ],
+      "total_tool_cost_usd": 0.0
+    }
+  },
+  "pstack_proof": {
+    "business_name": "Jet Freight Logistics Ltd",
+    "total_claims": 7,
+    "verified_claims": 7,
+    "proof_score_percentage": 100.0,
+    "claims": [
+      {
+        "claim_id": "proof_ssl_active",
+        "category": "security",
+        "finding": "Valid HTTPS encryption verified",
+        "evidence_type": "live_http_probe",
+        "proof_reference": "https://www.jfll.com/",
+        "reproducibility_command": "curl -Iv --tlsv1.3 https://www.jfll.com/ || openssl s_client -connect www.jfll.com:443",
+        "is_verified": true,
+        "pstack_status": "PROVEN_TRUE"
+      },
+      {
+        "claim_id": "proof_page_speed",
+        "category": "performance",
+        "finding": "Observed Full Page Load: 3.35s",
+        "evidence_type": "live_http_probe",
+        "proof_reference": "https://www.jfll.com/",
+        "reproducibility_command": "curl -o /dev/null -s -w 'TTFB: %{time_starttransfer}s | Total: %{time_total}s' https://www.jfll.com/",
+        "is_verified": true,
+        "pstack_status": "PROVEN_TRUE"
+      },
+      {
+        "claim_id": "proof_mobile_viewport",
+        "category": "conversion",
+        "finding": "Mobile viewport configured: True",
+        "evidence_type": "dom_selector",
+        "proof_reference": "meta[name='viewport']",
+        "reproducibility_command": "document.querySelector(\"meta[name='viewport']\")?.getAttribute('content') || 'none'",
+        "is_verified": true,
+        "pstack_status": "PROVEN_TRUE"
+      },
+      {
+        "claim_id": "proof_no_wa_widget",
+        "category": "conversion",
+        "finding": "Absence of 1-click WhatsApp lead CTA on landing view",
+        "evidence_type": "dom_selector",
+        "proof_reference": "a[href*='wa.me'], a[href*='whatsapp.com']",
+        "reproducibility_command": "document.querySelector(\"a[href*='wa.me'], a[href*='whatsapp.com']\")",
+        "is_verified": true,
+        "pstack_status": "PROVEN_TRUE"
+      },
+      {
+        "claim_id": "proof_citation_1",
+        "category": "market_intelligence",
+        "finding": "Live source citation: Jet Freight Logistics Ltd in Andheri East, Mumbai - Best Logistic ...",
+        "evidence_type": "web_citation",
+        "proof_reference": "https://www.justdial.com/Mumbai/Jet-Freight-Logistics-Ltd-Opposite-Holy-Family-Chruch-Chakala-Andheri-East/022PXX22-XX22-210920145550-K7Q3_BZDET",
+        "reproducibility_command": "web_search \"Jet Freight Logistics Ltd in Andheri East, Mumbai - Best Logistic ...\"",
+        "is_verified": true,
+        "pstack_status": "PROVEN_TRUE"
+      },
+      {
+        "claim_id": "proof_citation_2",
+        "category": "market_intelligence",
+        "finding": "Live source citation: Jet Freight Logistics Ltd - Client reviews and contact information",
+        "evidence_type": "web_citation",
+        "proof_reference": "https://forwardingcompanies.com/company/jet-freight-logistics-limited",
+        "reproducibility_command": "web_search \"Jet Freight Logistics Ltd - Client reviews and contact information\"",
+        "is_verified": true,
+        "pstack_status": "PROVEN_TRUE"
+      },
+      {
+        "claim_id": "proof_citation_3",
+        "category": "market_intelligence",
+        "finding": "Live source citation: 19 Top Logistics Companies in Mumbai · November 2026 | F6S",
+        "evidence_type": "web_citation",
+        "proof_reference": "https://www.f6s.com/companies/logistics/india/maharashtra/mumbai/co",
+        "reproducibility_command": "web_search \"19 Top Logistics Companies in Mumbai · November 2026 | F6S\"",
+        "is_verified": true,
+        "pstack_status": "PROVEN_TRUE"
+      }
+    ],
+    "artifacts": [
+      {
+        "artifact_type": "mobile_screenshot",
+        "uri_or_path": "data/screenshots/JetFreightLogisticsLtd.png",
+        "verified": true,
+        "details": {
+          "viewport": "390x844 iPhone 14"
+        }
+      },
+      {
+        "artifact_type": "search_citation",
+        "uri_or_path": "https://www.justdial.com/Mumbai/Jet-Freight-Logistics-Ltd-Opposite-Holy-Family-Chruch-Chakala-Andheri-East/022PXX22-XX22-210920145550-K7Q3_BZDET",
+        "verified": true,
+        "details": {
+          "title": "Jet Freight Logistics Ltd in Andheri East, Mumbai - Best Logistic ..."
+        }
+      },
+      {
+        "artifact_type": "search_citation",
+        "uri_or_path": "https://forwardingcompanies.com/company/jet-freight-logistics-limited",
+        "verified": true,
+        "details": {
+          "title": "Jet Freight Logistics Ltd - Client reviews and contact information"
+        }
+      },
+      {
+        "artifact_type": "search_citation",
+        "uri_or_path": "https://www.f6s.com/companies/logistics/india/maharashtra/mumbai/co",
+        "verified": true,
+        "details": {
+          "title": "19 Top Logistics Companies in Mumbai · November 2026 | F6S"
+        }
+      }
+    ],
+    "verified_at": "2026-11-05T15:56:34.935215Z"
+  },
+  "handoff_trace": [
+    {
+      "handoff_id": "hnd_3a17657e",
+      "source_agent": "scout_agent",
+      "target_agent": "researcher_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-05T15:41:14.222290Z",
+      "status": "validated",
+      "payload": {
+        "company_name": "Jet Freight Logistics Ltd",
+        "business_type": "freight logistics"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_ab2d625b",
+      "source_agent": "researcher_agent",
+      "target_agent": "auditor_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-05T15:41:32.409289Z",
+      "status": "initiated",
+      "payload": {
+        "website": "https://www.jfll.com/",
+        "company_name": "Jet Freight Logistics Ltd"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_b3b50c45",
+      "source_agent": "auditor_agent",
+      "target_agent": "copywriter_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-05T15:41:46.436968Z",
+      "status": "validated",
+      "payload": {
+        "key_flaws": [
+          "No instant WhatsApp ordering/inquiry widget on landing page",
+          "No instant freight rate calculator or live lane quote tool for shippers"
+        ],
+        "quantified_loss": "Losing high-intent logistics transport clients weekly due to high friction in contact method"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_5ca5e3cb",
+      "source_agent": "copywriter_agent",
+      "target_agent": "paperclip_approval_gate",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-05T15:41:46.890911Z",
+      "status": "validated",
+      "payload": {
+        "whatsapp_message": "Hi team Jet Freight Logistics Ltd, saw your fleet operations in Mumbai! Shippers book whoever quotes rates within 5 mins. We build instant WhatsApp freight calculators & direct driver dispatch bots so you skip 20% broker fees. Open to a 2-min video preview?",
+        "qualified": true
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_cc139f0a",
+      "source_agent": "paperclip_approval_gate",
+      "target_agent": "hermes_closer_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-05T15:42:56.159230Z",
+      "status": "validated",
+      "payload": {
+        "company_name": "Jet Freight Logistics Ltd",
+        "channel": "whatsapp",
+        "pitch_sent": "Hi team Jet Freight Logistics Ltd, saw your fleet operations in Mumbai! Shippers book whoever quotes rates within 5 mins. We build instant WhatsApp freight calculators & direct driver dispatch bots so you skip 20% broker fees. Open to a 2-min video preview?"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    }
+  ],
+  "created_at": "2026-11-05T15:39:21.979840Z",
+  "updated_at": "2026-11-05T15:56:34.935448Z"
+}

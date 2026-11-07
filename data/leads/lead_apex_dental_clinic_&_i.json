@@ -20,6 +20,7 @@
   "status": "contacted",
   "audit": {
     "load_time_seconds": null,
+    "ttfb_seconds": null,
     "has_ssl": false,
     "is_mobile_responsive": false,
     "has_whatsapp_widget": false,
@@ -32,6 +33,7 @@
     ],
     "quantified_loss": "Losing 20-30% margin to aggregators and ~15-25 direct customer inquiries weekly",
     "screenshot_path": null,
+    "raw_evidence_hash": null,
     "audited_at": "2026-10-27T17:20:27.124679Z"
   },
   "draft": {
@@ -200,7 +202,7 @@
         }
       }
     ],
-    "verified_at": "2026-11-02T17:03:32.169565Z"
+    "verified_at": "2026-11-05T15:56:34.728318Z"
   },
   "handoff_trace": [
     {
@@ -583,8 +585,130 @@
       },
       "proof_artifacts": [],
       "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_b84d74a3",
+      "source_agent": "scout_agent",
+      "target_agent": "researcher_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-05T15:43:02.923936Z",
+      "status": "validated",
+      "payload": {
+        "company_name": "Apex Dental Clinic & Implant Care",
+        "business_type": "dental clinic and implant care"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_a4fc2d62",
+      "source_agent": "researcher_agent",
+      "target_agent": "auditor_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-05T15:43:02.924069Z",
+      "status": "initiated",
+      "payload": {
+        "website": "",
+        "company_name": "Apex Dental Clinic & Implant Care"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_70d4e710",
+      "source_agent": "auditor_agent",
+      "target_agent": "copywriter_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-05T15:43:02.924223Z",
+      "status": "validated",
+      "payload": {
+        "key_flaws": [
+          "No direct digital booking or ordering presence",
+          "100% reliant on 3rd-party aggregators (paying 20-30% platform cuts)",
+          "Invisible to high-intent Google searchers looking for official website",
+          "No automated WhatsApp response system for after-hours inquiries"
+        ],
+        "quantified_loss": "Losing 20-30% margin to aggregators and ~15-25 direct customer inquiries weekly"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_50e75c45",
+      "source_agent": "copywriter_agent",
+      "target_agent": "paperclip_approval_gate",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-05T15:43:03.715112Z",
+      "status": "validated",
+      "payload": {
+        "whatsapp_message": "Hi team Apex Dental Clinic & Implant Care, noticed you're doing great work in Bandra, Mumbai! We build direct online booking websites so you don't lose commission to aggregators. Would you be open to a 2-min demo?",
+        "qualified": true
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_1bf632e4",
+      "source_agent": "scout_agent",
+      "target_agent": "researcher_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-05T15:56:22.862650Z",
+      "status": "validated",
+      "payload": {
+        "company_name": "Apex Dental Clinic & Implant Care",
+        "business_type": "dental clinic and implant care"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_5731d220",
+      "source_agent": "researcher_agent",
+      "target_agent": "auditor_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-05T15:56:22.862739Z",
+      "status": "initiated",
+      "payload": {
+        "website": "",
+        "company_name": "Apex Dental Clinic & Implant Care"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_7d0bd613",
+      "source_agent": "auditor_agent",
+      "target_agent": "copywriter_agent",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-05T15:56:22.862816Z",
+      "status": "validated",
+      "payload": {
+        "key_flaws": [
+          "No direct digital booking or ordering presence",
+          "100% reliant on 3rd-party aggregators (paying 20-30% platform cuts)",
+          "Invisible to high-intent Google searchers looking for official website",
+          "No automated WhatsApp response system for after-hours inquiries"
+        ],
+        "quantified_loss": "Losing 20-30% margin to aggregators and ~15-25 direct customer inquiries weekly"
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
+    },
+    {
+      "handoff_id": "hnd_a8c71b61",
+      "source_agent": "copywriter_agent",
+      "target_agent": "paperclip_approval_gate",
+      "contract_version": "v2.1",
+      "timestamp": "2026-11-05T15:56:23.180942Z",
+      "status": "validated",
+      "payload": {
+        "whatsapp_message": "Hi team Apex Dental Clinic & Implant Care, noticed you're doing great work in Bandra, Mumbai! We build direct online booking websites so you don't lose commission to aggregators. Would you be open to a 2-min demo?",
+        "qualified": true
+      },
+      "proof_artifacts": [],
+      "validation_notes": null
     }
   ],
   "created_at": "2026-10-27T17:20:07.333351Z",
-  "updated_at": "2026-11-02T17:03:32.490459Z"
+  "updated_at": "2026-11-05T15:56:34.728422Z"
 }

@@ -20,6 +20,7 @@
   "status": "contacted",
   "audit": {
     "load_time_seconds": 6.74,
+    "ttfb_seconds": null,
     "has_ssl": false,
     "is_mobile_responsive": true,
     "has_whatsapp_widget": false,
@@ -33,6 +34,7 @@
     ],
     "quantified_loss": "Losing 15-20% margin to freight brokers and ~8-12 spot loads weekly due to delayed manual quote turnaround",
     "screenshot_path": "data/screenshots/RyalLogisticsPvtLtd.png",
+    "raw_evidence_hash": null,
     "audited_at": "2026-11-02T16:24:04.967232Z"
   },
   "draft": {
@@ -128,10 +130,10 @@
       {
         "claim_id": "proof_page_speed",
         "category": "performance",
-        "finding": "Observed Time-to-First-Byte + DOM load: 6.74s",
+        "finding": "Observed Full Page Load: 6.74s",
         "evidence_type": "live_http_probe",
         "proof_reference": "http://www.ryal.in/",
-        "reproducibility_command": "curl -o /dev/null -s -w 'Time: %{time_total}s' http://www.ryal.in/",
+        "reproducibility_command": "curl -o /dev/null -s -w 'TTFB: %{time_starttransfer}s | Total: %{time_total}s' http://www.ryal.in/",
         "is_verified": true,
         "pstack_status": "PROVEN_TRUE"
       },
@@ -220,7 +222,7 @@
         }
       }
     ],
-    "verified_at": "2026-11-02T17:03:30.338733Z"
+    "verified_at": "2026-11-05T15:56:34.797283Z"
   },
   "handoff_trace": [
     {
@@ -302,5 +304,5 @@
     }
   ],
   "created_at": "2026-11-02T16:14:43.134028Z",
-  "updated_at": "2026-11-02T17:03:30.338843Z"
+  "updated_at": "2026-11-05T15:56:34.797397Z"
 }

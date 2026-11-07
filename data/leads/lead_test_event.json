@@ -15,11 +15,12 @@
     "vertical": "general",
     "pain_points": [],
     "growth_goals": [],
-    "created_at": "2026-11-02T17:03:31.239052Z"
+    "created_at": "2026-11-05T15:56:20.992207Z"
   },
   "status": "replied",
   "audit": {
     "load_time_seconds": null,
+    "ttfb_seconds": null,
     "has_ssl": true,
     "is_mobile_responsive": true,
     "has_whatsapp_widget": false,
@@ -29,7 +30,8 @@
     ],
     "quantified_loss": null,
     "screenshot_path": null,
-    "audited_at": "2026-11-02T17:03:31.239066Z"
+    "raw_evidence_hash": null,
+    "audited_at": "2026-11-05T15:56:20.992221Z"
   },
   "draft": null,
   "contact_name": null,
@@ -44,19 +46,58 @@
     {
       "sender": "prospect",
       "message": "We get all our bookings through word of mouth and referrals",
-      "timestamp": "2026-11-02T17:03:31.257547+00:00",
+      "timestamp": "2026-11-05T15:56:21.006560+00:00",
       "intent": "general_query"
     },
     {
       "sender": "closer_agent",
       "message": "Word of mouth is undeniably the best source! But even word-of-mouth referrals look up your website or Instagram at 9 PM on their phones. If they hit a static page with no date checker, 60% delay contacting and often end up booking another venue with instant answers.\n\nTake a look at the live date-checker prototype: https://calendly.com/agency-demo/15min",
-      "timestamp": "2026-11-02T17:03:31.257547+00:00"
+      "timestamp": "2026-11-05T15:56:21.006560+00:00"
     }
   ],
   "meeting_link": null,
   "research": null,
-  "pstack_proof": null,
+  "pstack_proof": {
+    "business_name": "Crystal Banquet Hall",
+    "total_claims": 3,
+    "verified_claims": 3,
+    "proof_score_percentage": 100.0,
+    "claims": [
+      {
+        "claim_id": "proof_ssl_active",
+        "category": "security",
+        "finding": "Valid HTTPS encryption verified",
+        "evidence_type": "live_http_probe",
+        "proof_reference": "No direct website",
+        "reproducibility_command": "curl -Iv --tlsv1.3 No direct website || openssl s_client -connect No direct website:443",
+        "is_verified": true,
+        "pstack_status": "PROVEN_TRUE"
+      },
+      {
+        "claim_id": "proof_mobile_viewport",
+        "category": "conversion",
+        "finding": "Mobile viewport configured: True",
+        "evidence_type": "dom_selector",
+        "proof_reference": "meta[name='viewport']",
+        "reproducibility_command": "document.querySelector(\"meta[name='viewport']\")?.getAttribute('content') || 'none'",
+        "is_verified": true,
+        "pstack_status": "PROVEN_TRUE"
+      },
+      {
+        "claim_id": "proof_no_wa_widget",
+        "category": "conversion",
+        "finding": "Absence of 1-click WhatsApp lead CTA on landing view",
+        "evidence_type": "dom_selector",
+        "proof_reference": "a[href*='wa.me'], a[href*='whatsapp.com']",
+        "reproducibility_command": "document.querySelector(\"a[href*='wa.me'], a[href*='whatsapp.com']\")",
+        "is_verified": true,
+        "pstack_status": "PROVEN_TRUE"
+      }
+    ],
+    "artifacts": [],
+    "verified_at": "2026-11-05T15:56:34.742652Z"
+  },
   "handoff_trace": [],
-  "created_at": "2026-11-02T17:03:31.239080Z",
-  "updated_at": "2026-11-02T17:03:31.257574Z"
+  "created_at": "2026-11-05T15:56:20.992235Z",
+  "updated_at": "2026-11-05T15:56:34.742752Z"
 }

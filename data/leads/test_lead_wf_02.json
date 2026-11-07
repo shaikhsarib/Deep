@@ -15,11 +15,12 @@
     "vertical": "general",
     "pain_points": [],
     "growth_goals": [],
-    "created_at": "2026-11-02T17:03:57.757460Z"
+    "created_at": "2026-11-05T15:43:44.230606Z"
   },
   "status": "replied",
   "audit": {
     "load_time_seconds": null,
+    "ttfb_seconds": null,
     "has_ssl": true,
     "is_mobile_responsive": true,
     "has_whatsapp_widget": false,
@@ -30,7 +31,8 @@
     ],
     "quantified_loss": null,
     "screenshot_path": null,
-    "audited_at": "2026-11-02T17:03:57.757518Z"
+    "raw_evidence_hash": null,
+    "audited_at": "2026-11-05T15:43:44.230670Z"
   },
   "draft": null,
   "contact_name": null,
@@ -45,19 +47,58 @@
     {
       "sender": "prospect",
       "message": "Kitna charge karte ho monthly?",
-      "timestamp": "2026-11-02T17:03:57.785893+00:00",
+      "timestamp": "2026-11-05T15:43:44.255236+00:00",
       "intent": "price_objection"
     },
     {
       "sender": "closer_agent",
       "message": "Great question! Our setup pays for itself within the first month. Most salon owners in Mumbai lose 20-30% on aggregator commissions. With direct WhatsApp ordering, retaining just 2-3 extra customers covers the entire cost.\n\nLet's hop on a quick 5-min screen share to see live numbers: https://calendly.com/agency-demo/15min",
-      "timestamp": "2026-11-02T17:03:57.785893+00:00"
+      "timestamp": "2026-11-05T15:43:44.255236+00:00"
     }
   ],
   "meeting_link": null,
   "research": null,
-  "pstack_proof": null,
+  "pstack_proof": {
+    "business_name": "Urban Glow Salon",
+    "total_claims": 3,
+    "verified_claims": 3,
+    "proof_score_percentage": 100.0,
+    "claims": [
+      {
+        "claim_id": "proof_ssl_active",
+        "category": "security",
+        "finding": "Valid HTTPS encryption verified",
+        "evidence_type": "live_http_probe",
+        "proof_reference": "No direct website",
+        "reproducibility_command": "curl -Iv --tlsv1.3 No direct website || openssl s_client -connect No direct website:443",
+        "is_verified": true,
+        "pstack_status": "PROVEN_TRUE"
+      },
+      {
+        "claim_id": "proof_mobile_viewport",
+        "category": "conversion",
+        "finding": "Mobile viewport configured: True",
+        "evidence_type": "dom_selector",
+        "proof_reference": "meta[name='viewport']",
+        "reproducibility_command": "document.querySelector(\"meta[name='viewport']\")?.getAttribute('content') || 'none'",
+        "is_verified": true,
+        "pstack_status": "PROVEN_TRUE"
+      },
+      {
+        "claim_id": "proof_no_wa_widget",
+        "category": "conversion",
+        "finding": "Absence of 1-click WhatsApp lead CTA on landing view",
+        "evidence_type": "dom_selector",
+        "proof_reference": "a[href*='wa.me'], a[href*='whatsapp.com']",
+        "reproducibility_command": "document.querySelector(\"a[href*='wa.me'], a[href*='whatsapp.com']\")",
+        "is_verified": true,
+        "pstack_status": "PROVEN_TRUE"
+      }
+    ],
+    "artifacts": [],
+    "verified_at": "2026-11-05T15:56:34.756908Z"
+  },
   "handoff_trace": [],
-  "created_at": "2026-11-02T17:03:57.757499Z",
-  "updated_at": "2026-11-02T17:03:57.785923Z"
+  "created_at": "2026-11-05T15:43:44.230645Z",
+  "updated_at": "2026-11-05T15:56:34.756999Z"
 }

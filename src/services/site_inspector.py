@@ -1,5 +1,6 @@
 import time
 import logging
+import hashlib
 from typing import Optional, List, Dict, Any
 from urllib.parse import urlparse
 import requests
@@ -92,6 +93,8 @@ class SiteInspector:
             flaws.append("Missing SSL certificate (browsers warn visitors: 'Not Secure')")
 
         load_time: Optional[float] = None
+        ttfb_seconds: Optional[float] = None
+        raw_evidence_hash: Optional[str] = None
         html_text = ""
         is_mobile_responsive = False
         has_whatsapp_widget = False
@@ -99,12 +102,22 @@ class SiteInspector:
 
         start_time = time.time()
         try:
-            resp = requests.get(url, headers=self.headers, timeout=self.timeout, allow_redirects=True)
+            # Stream request to accurately measure Time-to-First-Byte (socket headers)
+            ttfb_start = time.perf_counter()
+            resp = requests.get(url, headers=self.headers, timeout=self.timeout, allow_redirects=True, stream=True)
+            ttfb_seconds = round(time.perf_counter() - ttfb_start, 3)
+
+            # Consume full body to measure total page load
+            _ = resp.content
             load_time = round(time.time() - start_time, 2)
             html_text = resp.text
 
+            # Deterministic proof hash over raw response headers + status code
+            raw_headers_bytes = f"{resp.status_code}:{sorted(resp.headers.items())}".encode("utf-8")
+            raw_evidence_hash = hashlib.sha256(raw_headers_bytes).hexdigest()[:16]
+
             if load_time > 3.5:
-                flaws.append(f"Slow mobile page load ({load_time}s) — Google reports 53% of mobile visits abandon sites taking >3s")
+                flaws.append(f"Slow mobile page load ({load_time}s, TTFB: {ttfb_seconds}s) — Google reports 53% of mobile visits abandon sites taking >3s")
 
             # Parse DOM
             soup = BeautifulSoup(html_text, "html.parser")
@@ -174,13 +187,15 @@ class SiteInspector:
 
         return AuditReport(
             load_time_seconds=load_time,
+            ttfb_seconds=ttfb_seconds,
             has_ssl=has_ssl,
             is_mobile_responsive=is_mobile_responsive,
             has_whatsapp_widget=has_whatsapp_widget,
             has_online_booking=has_online_booking,
             key_flaws=flaws,
             quantified_loss=loss_statement,
-            screenshot_path=screenshot_path
+            screenshot_path=screenshot_path,
+            raw_evidence_hash=raw_evidence_hash
         )
 
 site_inspector = SiteInspector()
